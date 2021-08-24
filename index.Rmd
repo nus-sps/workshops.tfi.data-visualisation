@@ -31,7 +31,17 @@ xaringanExtra::use_panelset()
 
 `# (PART) Welcome {-}`
 
-# Welcome {.unnumbered}
+# {.unnumbered}
+
+<style>
+.front-title{
+color:red;
+}
+</style>
+
+<div class="front-title">
+TFI eWorkshop | Using Python To Tell Stories With Data
+</div>
 
 ```{r,echo=F,out.width = "100%"}
 knitr::include_graphics('http://sps.nus.edu.sg/~chammika/workshops/2019_tfi_hanoi/img/sps_all-2017-edited.jpg')
