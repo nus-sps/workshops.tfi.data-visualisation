@@ -1,12 +1,12 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "TFI eWorkshop | Using Python To Tell Stories With Data"
+author: "SPS Science Communication Team"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-documentclass: book
+# documentclass: book
 bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
+#cover-image: 'http://sps.nus.edu.sg/~chammika/workshops/2019_tfi_hanoi/img/sps_all-2017-edited.jpg'
 description: |
   This is a minimal example of using the bookdown package to write a book.
   The HTML output format for this example is bookdown::bs4_book,
@@ -15,46 +15,47 @@ biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
 
-# About
+```{r setup,echo=F}
+knitr::opts_chunk$set(
+  echo = T, 
+  message=F, 
+  warning=F, 
+  error=F, 
+  comment='#', 
+  R.options=list(width=220),
+  fig.align = 'center',
+  out.width = "85%")
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
-
-## Usage 
-
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
-
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
-
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-## Render book
-
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
-
-```{r, eval=FALSE}
-bookdown::render_book()
+xaringanExtra::use_panelset()
 ```
 
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+`# (PART) Welcome {-}`
 
-## Preview book
+# Welcome {.unnumbered}
 
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
+```{r,echo=F,out.width = "100%"}
+knitr::include_graphics('http://sps.nus.edu.sg/~chammika/workshops/2019_tfi_hanoi/img/sps_all-2017-edited.jpg')
 ```
 
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+## About this eWorkshop {.unnumbered .panelset}
+
+### Abstract {.unnumbered}
+<br>
+Data is all-powerful; it can make or break scientific theories and cast far-reaching influence on, for example, our beliefs and society. A pertinent example is the use (and misuse) of data in the handling of the COVID-19 pandemic. All this has highlighted the need to, at least, teach simple analytical and visualisation skills and tools to gain insights from data.
+
+Python is a friendly, extremely popular and powerful computational language that is free. Python is versatile and can be used for simple visualisation and analytical tasks or even to interrogate big data sets.  This workshop will gently guide you to using Python to visualise data and to make simple statistical queries. This will equip you and your students with a powerful computational tool that can readily be used to gain insight into scientific data. Learning Python will also open other endless computational possibilities (e.g. machine learning, image analysis).
+
+No prior programming knowledge is expected, just lots of enthusiasm and a sense of humour.
+
+### Dates {.unnumbered}
+<br>
+
+### Institutions  {.unnumbered}
+<br>
+
+ - Temasek Foundation International (TFI)
+ - National University of Singapore (NUS)
+    - Special Programme in Science (SPS, [sps.nus.edu.sg](http://sps.nus.edu.sg))
+    - Science Communication Programme, Faculty of Science
+
