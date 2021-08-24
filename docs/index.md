@@ -19,7 +19,18 @@ csl: chicago-fullnote-bibliography.csl
 
 `# (PART) Welcome {-}`
 
-# Welcome {.unnumbered}
+# {.unnumbered}
+
+<style>
+.front-title{
+font-size:1.5em;
+font-weight: bold;
+}
+</style>
+
+<div class="front-title">
+<span style="color:#096B72;opacity:.75;">TFI eWorkshop </span> | Using Python To Tell Stories With Data
+</div>
 
 <img src="http://sps.nus.edu.sg/~chammika/workshops/2019_tfi_hanoi/img/sps_all-2017-edited.jpg" width="100%" style="display: block; margin: auto;" />
 

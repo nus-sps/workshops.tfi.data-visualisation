@@ -35,12 +35,13 @@ xaringanExtra::use_panelset()
 
 <style>
 .front-title{
-color:red;
+font-size:1.5em;
+font-weight: bold;
 }
 </style>
 
 <div class="front-title">
-TFI eWorkshop | Using Python To Tell Stories With Data
+<span style="color:#096B72;opacity:.75;">TFI eWorkshop </span> | Using Python To Tell Stories With Data
 </div>
 
 ```{r,echo=F,out.width = "100%"}
