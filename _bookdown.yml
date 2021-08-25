@@ -8,5 +8,6 @@ language:
     chapter_name: "Chapter "
 rmd_files: [
   'index.Rmd',
-  '00-introduction.Rmd'
+  #'00_introduction.Rmd',
+  '01_pre-workshop_01_basic-python.Rmd'
 ]

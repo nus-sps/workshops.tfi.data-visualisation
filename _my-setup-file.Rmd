@@ -1,0 +1,143 @@
+```{r,echo = F}
+# Visit https://yihui.org/knitr/options/#text-output for the meanings of the following options
+knitr::opts_chunk$set(
+  echo = T,
+  message=F,
+  warning=F,
+  error=F,
+  comment = '###',
+  collapse = F,
+  strip.white = F,
+  prompt = F,
+  highlight = T,
+  size = 'normalsize',
+  # background = '#FFFFFF',
+  # engine = 'python'
+  # class.source = 'rrrr'
+  tidy = T,
+  tidy.opts=list(blank=F, width.cutoff=100),
+  fig.width = 4,
+  R.options=list(width=220),
+  fig.align = 'center',
+  out.width = "85%"
+)
+
+xaringanExtra::use_panelset()                    # This is to allow tabs
+```
+
+```{r}
+ctr_eg <- 0
+ctr_ex <- 0
+ctr_subcnt <- 0
+long_string <- "|Term|Meaning|"
+
+me <- list(ctr_eg = 0)
+class(me) <- "my_functions"
+
+me.high <- function(text){
+  return (paste("<i>",text,"</i>"))
+}
+
+me.colour <- function(text){
+  return (paste("<font color='darkgreen'>",text,"</font>"))
+}
+
+me.warn <- function(text){
+  return (paste("<font color='darkred'>",text,"</font>"))
+}
+
+me.side <- function(text,warn){
+  if(missing(warn)){
+    output <- paste("^[",text,"]")
+  }else{
+    output <- paste("^[",me.warn(text),"]")
+  }
+  return(output)
+}
+
+me.ex <- function(text,reset,same = F){
+   if(!missing(reset)){    ctr_ex <<- 0   }
+
+  if (same){
+
+  }else{
+  ctr_ex <<- ctr_ex + 1
+  }
+  return(paste('## <span class="exercise">Exercise ',ctr_ex,'',text,'</span> {-}\n'))
+
+}
+
+me.subcnt <- function(text = '',reset){
+   if(!missing(reset)){    ctr_subcnt<<- 0   }
+
+  ctr_subcnt <<- ctr_subcnt + 1
+  return(paste('\t(',text,'.',ctr_subcnt,') '))
+}
+
+# me.eg <- function(text,reset){
+#    if(!missing(reset)){    ctr_eg <<- 0   }
+#   
+#   ctr_eg <<- ctr_eg + 1
+#   return(paste('<font color="#AD4848">Example ',ctr_eg,':',text,'</font>'))
+#   
+# }
+
+# me.eg <- function(text,reset){
+#    if(!missing(reset)){    ctr_eg <<- 0   }
+#   
+#   ctr_eg <<- ctr_eg + 1
+#   
+#   return(paste('<span class="example">Examples ',ctr_eg,':',text,'</span>'))
+# }
+
+me.terms <- function(term,meaning){
+  long_string <<- paste(long_string,'\n|',term,'|',meaning,'|')
+  return (me.high(term))
+}
+
+me.head <- function(text){
+  return(paste('<h2>',text,'</h2>'))
+}
+
+me.spc <- function(n){
+  br <- '<br>'
+  out <- ''
+  for (i in 0:n) {
+    out <- paste(out,br)
+  }
+
+  return(out)
+}
+
+me.downlink <- function(text,path){
+  out <- paste('<a href="',path,'" download>',text,'</a>')
+  return(out)
+}
+```
+
+```{r, echo = F}
+blank <- '<div class="just-space">x</div>'
+```
+
+<!-- ```{r, engine='python',echo = F} -->
+
+<!-- def fun(number,text): -->
+
+<!--     out = ' -->
+
+<!--     out += '<span class="margin-examples">Examples XXX: YYY</span>\n' -->
+
+<!--     out += '```\n' -->
+
+<!--     out = out.replace('XXX',str(number)) -->
+
+<!--     out = out.replace('YYY',text) -->
+
+<!--     return out -->
+
+<!-- ``` -->
+
+<!-- LaTeX Stuff -->
+
+\\newcommand\\myPt{\\bullet\\;}
+\\renewcommand\\myPt{-\\;}

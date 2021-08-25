@@ -1,0 +1,122 @@
+# (PART) Pre Workshop Material
+
+```{r echo=F}
+my_section <- function(title){
+  s <- paste('## ',title,' {}')
+  return(s)
+}
+
+```
+
+# Some Python Basics
+
+`r my_section('Python is Case Sensitive')`
+
+This will work.
+
+```{r echo = T, engine = 'python'}
+print('Hello World')
+```
+
+This will **not**.
+
+```{r echo = T, engine = 'python', error=T}
+Print('Hello World')
+```
+
+`r my_section('<code>x</code> is a variable. \'x\' is an English letter')`
+
+We asking Python to print the English letter 'x'.
+```{r echo = T, engine = 'python'}
+print('x')
+```
+
+We asking Python to print the value related to the **variable** `x`.
+```{r echo = T, engine = 'python'}
+x = 10
+print(x)
+```
+
+`r my_section('We can use f\'letters{x}\' to combine English with variables')`
+
+```{r echo = T, engine = 'python'}
+x = 10
+text = 'My age is {x}.'
+print(text)
+```
+
+`r my_section('Be mindful of spaces(indentation) at the start of a line')`
+
+This will work.
+
+```{r echo = T, engine = 'python'}
+x = 10
+y = 20
+```
+
+This will **not**.
+
+```{r echo=T, engine='python', eval = F}
+x = 10
+  y = 20
+```
+
+
+`r my_section('Python has functions')`
+
+`print()` is a good example of a function in Python. For this function to work it needs something (which we call an argument) to print. We need supply this argument within the function's brackets `()`.
+
+```{r echo = T, engine = 'python'}
+print('Hello World')
+```
+
+A typical function usually can accept additional arguments to do more things. For example the `print()` function allows us to add something to the end.
+
+```{r echo = T, engine = 'python'}
+print('Hello World', end = '******')
+```
+
+You can find out all about a function my looking at its help file as follows
+
+```{r echo = T, engine = 'python', eval = F}
+print?
+```
+```
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+```
+
+`r my_section('Brackets in Python`
+
+```{r echo=T,engine='python'}
+print('Hello World')
+
+```
+
+`r my_section('Python has many (many) cool packages')`
+
+```{r echo=T,engine='python'}
+print('Hello World')
+```
+-   Example: `math.sqrt()` means `sqrt()` belonging to `math`
+
+`r my_section('You can think of the dot(\'.\') as indicating ownership')`
+
+```{r echo=T,engine='python'}
+print('Hello World')
+
+```
+
+`r my_section('Python sometimes act like a prima donna when you make an error')`
+
+```{r echo=T,engine='python'}
+print('Hello World')
+
+```

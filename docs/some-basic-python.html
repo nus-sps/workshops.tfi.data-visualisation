@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Some Basic Python | TFI e-Workshop | Using Python To Tell Stories With Data</title>
+<meta name="author" content="SPS Science Communication Team">
+<meta name="description" content="2.1 Python is Case Sensitive print('Hello World') #&gt; Hello World  2.2 x is a variable. ‘x’ is an English letter. print('Hello World') #&gt; Hello World  2.3 We can use f'letters{x}' to combine...">
+<meta name="generator" content="bookdown 0.23 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Some Basic Python | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta property="og:type" content="book">
+<meta property="og:description" content="2.1 Python is Case Sensitive print('Hello World') #&gt; Hello World  2.2 x is a variable. ‘x’ is an English letter. print('Hello World') #&gt; Hello World  2.3 We can use f'letters{x}' to combine...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Some Basic Python | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta name="twitter:description" content="2.1 Python is Case Sensitive print('Hello World') #&gt; Hello World  2.2 x is a variable. ‘x’ is an English letter. print('Hello World') #&gt; Hello World  2.3 We can use f'letters{x}' to combine...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">TFI e-Workshop | Using Python To Tell Stories With Data</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li class="book-part">Pre Workshop Material</li>
+<li><a class="active" href="some-basic-python.html"><span class="header-section-number">2</span> Some Basic Python</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="some-basic-python" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Some Basic Python<a class="anchor" aria-label="anchor" href="#some-basic-python"><i class="fas fa-link"></i></a>
+</h1>
+<div id="python-is-case-sensitive" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Python is Case Sensitive<a class="anchor" aria-label="anchor" href="#python-is-case-sensitive"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="some-basic-python.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span>
+<span id="cb2-2"><a href="some-basic-python.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Hello World</span></span></code></pre></div>
+</div>
+<div id="x-is-a-variable.-x-is-an-english-letter." class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> <code>x</code> is a variable. ‘x’ is an English letter.<a class="anchor" aria-label="anchor" href="#x-is-a-variable.-x-is-an-english-letter."><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="some-basic-python.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span>
+<span id="cb3-2"><a href="some-basic-python.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Hello World</span></span></code></pre></div>
+</div>
+<div id="we-can-use-flettersx-to-combine-english-with-variables." class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> We can use <code>f'letters{x}'</code> to combine English with variables.<a class="anchor" aria-label="anchor" href="#we-can-use-flettersx-to-combine-english-with-variables."><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="some-basic-python.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span>
+<span id="cb4-2"><a href="some-basic-python.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Hello World</span></span></code></pre></div>
+</div>
+<div id="be-mindful-of-spacesindentation-at-the-start-of-a-line." class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Be mindful of spaces(indentation) at the start of a line.<a class="anchor" aria-label="anchor" href="#be-mindful-of-spacesindentation-at-the-start-of-a-line."><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="some-basic-python.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span>
+<span id="cb5-2"><a href="some-basic-python.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Hello World</span></span></code></pre></div>
+</div>
+<div id="python-has-functions." class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Python has functions.<a class="anchor" aria-label="anchor" href="#python-has-functions."><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="some-basic-python.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span>
+<span id="cb6-2"><a href="some-basic-python.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Hello World</span></span></code></pre></div>
+</div>
+<div id="python-uses-these-brackets" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> Python uses these brackets: ( ), [ ],<a class="anchor" aria-label="anchor" href="#python-uses-these-brackets"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="some-basic-python.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span>
+<span id="cb7-2"><a href="some-basic-python.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Hello World</span></span></code></pre></div>
+</div>
+<div id="python-sometimes-act-like-a-prima-donna-when-you-make-an-error." class="section level2" number="2.7">
+<h2>
+<span class="header-section-number">2.7</span> Python sometimes act like a prima donna when you make an error.<a class="anchor" aria-label="anchor" href="#python-sometimes-act-like-a-prima-donna-when-you-make-an-error."><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="some-basic-python.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span>
+<span id="cb8-2"><a href="some-basic-python.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Hello World</span></span></code></pre></div>
+</div>
+<div id="python-has-many-many-cool-packages." class="section level2" number="2.8">
+<h2>
+<span class="header-section-number">2.8</span> Python has many (many) cool packages.<a class="anchor" aria-label="anchor" href="#python-has-many-many-cool-packages."><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="some-basic-python.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span>
+<span id="cb9-2"><a href="some-basic-python.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Hello World</span></span></code></pre></div>
+</div>
+<div id="you-can-think-of-the-dot.-as-indicating-ownership." class="section level2" number="2.9">
+<h2>
+<span class="header-section-number">2.9</span> You can think of the dot(‘.’) as indicating ownership.<a class="anchor" aria-label="anchor" href="#you-can-think-of-the-dot.-as-indicating-ownership."><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="some-basic-python.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span>
+<span id="cb10-2"><a href="some-basic-python.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Hello World</span></span></code></pre></div>
+<ul>
+<li>Example: <code>math.sqrt()</code> means <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> belonging to <code>math</code>
+</li>
+</ul>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"></a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#some-basic-python"><span class="header-section-number">2</span> Some Basic Python</a></li>
+<li><a class="nav-link" href="#python-is-case-sensitive"><span class="header-section-number">2.1</span> Python is Case Sensitive</a></li>
+<li><a class="nav-link" href="#x-is-a-variable.-x-is-an-english-letter."><span class="header-section-number">2.2</span> x is a variable. ‘x’ is an English letter.</a></li>
+<li><a class="nav-link" href="#we-can-use-flettersx-to-combine-english-with-variables."><span class="header-section-number">2.3</span> We can use f'letters{x}' to combine English with variables.</a></li>
+<li><a class="nav-link" href="#be-mindful-of-spacesindentation-at-the-start-of-a-line."><span class="header-section-number">2.4</span> Be mindful of spaces(indentation) at the start of a line.</a></li>
+<li><a class="nav-link" href="#python-has-functions."><span class="header-section-number">2.5</span> Python has functions.</a></li>
+<li><a class="nav-link" href="#python-uses-these-brackets"><span class="header-section-number">2.6</span> Python uses these brackets: ( ), [ ],</a></li>
+<li><a class="nav-link" href="#python-sometimes-act-like-a-prima-donna-when-you-make-an-error."><span class="header-section-number">2.7</span> Python sometimes act like a prima donna when you make an error.</a></li>
+<li><a class="nav-link" href="#python-has-many-many-cool-packages."><span class="header-section-number">2.8</span> Python has many (many) cool packages.</a></li>
+<li><a class="nav-link" href="#you-can-think-of-the-dot.-as-indicating-ownership."><span class="header-section-number">2.9</span> You can think of the dot(‘.’) as indicating ownership.</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-08-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

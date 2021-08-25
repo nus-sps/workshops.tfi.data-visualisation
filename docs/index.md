@@ -1,4 +1,4 @@
---- 
+---
 title: "TFI e-Workshop | Using Python To Tell Stories With Data"
 author: "SPS Science Communication Team"
 date: "2021-08-25"
@@ -26,16 +26,16 @@ font-weight: bold;
 }
 </style>
 
-<div class="front-title">
-<span style="color:#096B72;opacity:.75;">TFI eWorkshop </span> | Using Python To Tell Stories With Data
+<div class = "front-title">
+<span style = "color:#096B72;opacity:.75;">TFI eWorkshop </span> | Using Python To Tell Stories With Data
 </div>
 
 <img src="http://sps.nus.edu.sg/~chammika/workshops/2019_tfi_hanoi/img/sps_all-2017-edited.jpg" width="100%" style="display: block; margin: auto;" />
 
-
 ## About this eWorkshop {.unnumbered .panelset}
 
 ### Abstract {.unnumbered}
+
 <br>
 Data is all-powerful; it can make or break scientific theories and cast far-reaching influence on, for example, our beliefs and society. A pertinent example is the use (and misuse) of data in the handling of the COVID-19 pandemic. All this has highlighted the need to, at least, teach simple analytical and visualisation skills and tools to gain insights from data.
 
@@ -44,8 +44,8 @@ Python is a friendly, extremely popular and powerful computational language that
 No prior programming knowledge is expected, just lots of enthusiasm and a sense of humour.
 
 ### Workflow {.unnumbered}
-<br>
 
+<br>
 
 
 
@@ -58,44 +58,45 @@ No prior programming knowledge is expected, just lots of enthusiasm and a sense 
 .table > tbody  tr:nth-child(12)  {border-bottom:2px solid rgb(0,0,0,.5);}
 </style>
 
-<div class="front-table">
+<div class = "front-table">
 
-|        Dates        |      Part       |          | Things to do                                                 |
-| :-----------------: | :-------------: | :------------: | ------------------------------------------------------------ |
-| September 4 Onwards | Before Workshop |          | Create (free) Google Account                                 |
-|                     |                 |          | Watch 10 min video to learn the basics of Python             |
-|                     |                 |          | Practice exercises for Python basics                         |
-|                     |                 |          | Watch 15 min video to learn the basics of Pandas             |
-|                     |                 |          | Practice exercises for Pandas basics                         |
-|    September 11     |    Workshop     | 10:00 AM | Introduction to SPS and the Workshop                         |
-|                     |                 | 10:15 AM | Basic plotting using matplotlib                              |
-|                     |                 | 11:00 AM | Exploratory Analysis + Visualistion using Pandas             |
-|                     |                 | 11:45 AM | Analysing COVID-19 data using Pandas                         |
-|                     |                 | 12:30 PM | Core visualisation concepts                                  |
+|        Dates        |       Part      |          | Things to do                                                            |
+| :-----------------: | :-------------: | :------: | ----------------------------------------------------------------------- |
+| September 4 Onwards | Before Workshop |          | Create (free) Google Account                                            |
+|                     |                 |          | Watch 10 min video to learn the basics of Python                        |
+|                     |                 |          | Practice exercises for Python basics                                    |
+|                     |                 |          | Watch 15 min video to learn the basics of Pandas                        |
+|                     |                 |          | Practice exercises for Pandas basics                                    |
+|     September 11    |     Workshop    | 10:00 AM | Introduction to SPS and the Workshop                                    |
+|                     |                 | 10:15 AM | Basic plotting using matplotlib                                         |
+|                     |                 | 11:00 AM | Exploratory Analysis + Visualistion using Pandas                        |
+|                     |                 | 11:45 AM | Analysing COVID-19 data using Pandas                                    |
+|                     |                 | 12:30 PM | Core visualisation concepts                                             |
 |                     |                 | 12:45 PM | Discussion. Survey (About workshop, requests & possible collaborations) |
-|                     |                 | 1:00 PM  | Workshop ends                                                |
+|                     |                 |  1:00 PM | Workshop ends                                                           |
 
 </div>
 
--  We will email the participants more details, closer to the date of the workshop.
+-   We will email the participants more details, closer to the date of the workshop.
 
 ### Objectives {-}
+
 <br>
 
-1. To help those of you who want to start programming to get started.
-   - We do not expect your code to be super-efficient; it just needs to work. Perfection can come later.
-   - You can borrow code from the internet but you should at least know **what**  it is doing even if you do not know **how**.
-1. Learn the least amount of code and concepts that can achieve the most common tasks related to data visualisation.
-   In particular, we will focus on code related to:
-   - basic Python
-   - handling data
-   - plotting.
+1.  To help those of you who want to start programming to get started.
+    -   We do not expect your code to be super-efficient; it just needs to work. Perfection can come later.
+    -   You can borrow code from the internet but you should at least know **what**  it is doing even if you do not know **how**.
+2.  Learn the least amount of code and concepts that can achieve the most common tasks related to data visualisation.
+    In particular, we will focus on code related to:
+    -   basic Python
+    -   handling data
+    -   plotting.
 
 ### Supporting Institutions  {.unnumbered}
+
 <br>
 
- - Temasek Foundation International (TFI)
- - National University of Singapore (NUS)
-    - Special Programme in Science (SPS, [sps.nus.edu.sg](http://sps.nus.edu.sg))
-    - Science Communication Programme, Faculty of Science
-
+-   Temasek Foundation International (TFI)
+-   National University of Singapore (NUS)
+    -   Special Programme in Science (SPS, [sps.nus.edu.sg](http://sps.nus.edu.sg))
+    -   Science Communication Programme, Faculty of Science
