@@ -7,5 +7,6 @@ language:
   ui:
     chapter_name: "Chapter "
 rmd_files: [
-  'index.Rmd'
+  'index.Rmd',
+  '00-introduction.Rmd'
 ]

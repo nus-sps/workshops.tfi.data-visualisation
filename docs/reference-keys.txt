@@ -1,0 +1,17 @@
+fig:fig-jupyter-example
+part-introduction
+hello
+what-topics-will-we-discuss
+some-tips
+python
+ways-to-access-python
+jupyter-notebooks
+colab
+installing-python-with-anaconda
+updating-packages-with-anaconda
+using-anaconda-navigator
+markdown
+what-is-markdown
+conventions
+sec:resources
+jupyter-notebooks-1

@@ -40,7 +40,11 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="active" href="index.html"></a></li></ul>
+        <ul class="book-toc list-unstyled">
+<li><a class="active" href="index.html"></a></li>
+<li class="book-part">Introduction</li>
+<li><a class="" href="hello.html"><span class="header-section-number">2</span> Hello</a></li>
+</ul>
 
         <div class="book-extra">
           
@@ -176,6 +180,27 @@ Data is all-powerful; it can make or break scientific theories and cast far-reac
 <li>We will email the participants more details, closer to the date of the workshop.</li>
 </ul>
 </div>
+<div id="objectives" class="section level3 unnumbered">
+<h3>Objectives<a class="anchor" aria-label="anchor" href="#objectives"><i class="fas fa-link"></i></a>
+</h3>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li>To help those of you who want to start programming to get started.
+<ul>
+<li>We do not expect your code to be super-efficient; it just needs to work. Perfection can come later.</li>
+<li>You can borrow code from the internet but you should at least know <strong>what</strong> it is doing even if you do not know <strong>how</strong>.</li>
+</ul>
+</li>
+<li>Learn the least amount of code and concepts that can achieve the most common tasks related to data visualisation.
+In particular, we will focus on code related to:
+<ul>
+<li>basic Python</li>
+<li>handling data</li>
+<li>plotting.</li>
+</ul>
+</li>
+</ol>
+</div>
 <div id="supporting-institutions" class="section level3 unnumbered">
 <h3>Supporting Institutions<a class="anchor" aria-label="anchor" href="#supporting-institutions"><i class="fas fa-link"></i></a>
 </h3>
@@ -194,7 +219,7 @@ Data is all-powerful; it can make or break scientific theories and cast far-reac
 </div>
   <div class="chapter-nav">
 <div class="empty"></div>
-<div class="empty"></div>
+<div class="next"><a href="hello.html"><span class="header-section-number">2</span> Hello</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -203,6 +228,7 @@ Data is all-powerful; it can make or break scientific theories and cast far-reac
 <a class="nav-link" href="#about-this-eworkshop">About this eWorkshop</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#abstract">Abstract</a></li>
 <li><a class="nav-link" href="#workflow">Workflow</a></li>
+<li><a class="nav-link" href="#objectives">Objectives</a></li>
 <li><a class="nav-link" href="#supporting-institutions">Supporting Institutions</a></li>
 </ul>
 </li>
@@ -230,6 +256,34 @@ Data is all-powerful; it can make or break scientific theories and cast far-reac
   </div>
 
 </div></div>
-</footer>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
 </body>
 </html>

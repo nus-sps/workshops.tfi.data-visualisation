@@ -79,6 +79,18 @@ No prior programming knowledge is expected, just lots of enthusiasm and a sense 
 
 -  We will email the participants more details, closer to the date of the workshop.
 
+### Objectives {-}
+<br>
+
+1. To help those of you who want to start programming to get started.
+   - We do not expect your code to be super-efficient; it just needs to work. Perfection can come later.
+   - You can borrow code from the internet but you should at least know **what**  it is doing even if you do not know **how**.
+1. Learn the least amount of code and concepts that can achieve the most common tasks related to data visualisation.
+   In particular, we will focus on code related to:
+   - basic Python
+   - handling data
+   - plotting.
+
 ### Supporting Institutions  {.unnumbered}
 <br>
 
