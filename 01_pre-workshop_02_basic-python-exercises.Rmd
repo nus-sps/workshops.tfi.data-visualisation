@@ -1,0 +1,10 @@
+# Python Basics : Exercises
+
+```{r echo=F}
+my_section <- function(title){
+  s <- paste('## ',title,' {}')
+  return(s)
+}
+
+```
+
