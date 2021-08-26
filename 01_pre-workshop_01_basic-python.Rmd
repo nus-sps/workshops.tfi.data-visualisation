@@ -1,4 +1,4 @@
-# (PART) Pre Workshop Material
+# Some Python Basics
 
 ```{r echo=F}
 my_section <- function(title){
@@ -7,8 +7,6 @@ my_section <- function(title){
 }
 
 ```
-
-# Some Python Basics
 
 `r my_section('Python is Case Sensitive')`
 
@@ -93,7 +91,7 @@ print(...)
     flush: whether to forcibly flush the stream.
 ```
 
-`r my_section('Brackets in Python`
+`r my_section('Brackets in Python')`
 
 ```{r echo=T,engine='python'}
 print('Hello World')
@@ -113,6 +111,12 @@ print('Hello World')
 print('Hello World')
 
 ```
+
+`r my_section('We can store data using lists')`
+
+`r my_section('We can store data using dictionaries')`
+
+`r my_section('We can store data using numpy arrays')`
 
 `r my_section('Python sometimes act like a prima donna when you make an error')`
 

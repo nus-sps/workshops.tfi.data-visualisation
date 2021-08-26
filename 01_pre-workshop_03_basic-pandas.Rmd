@@ -1,96 +1,82 @@
-# Some Python Basics
+# Some Pandas Basics
 
+```{r echo=F}
+my_section <- function(title){
+  s <- paste('## ',title,' {}')
+  return(s)
+}
 
+```
 
-##  Python is Case Sensitive  {}
+`r my_section('Python is Case Sensitive')`
 
 This will work.
 
-
-```python
+```{r echo = T, engine = 'python'}
 print('Hello World')
-#> Hello World
 ```
 
 This will **not**.
 
-
-```python
+```{r echo = T, engine = 'python', error=T}
 Print('Hello World')
-#> Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name 'Print' is not defined
-#> 
-#> Detailed traceback: 
-#>   File "<string>", line 1, in <module>
 ```
 
-##  <code>x</code> is a variable. 'x' is an English letter  {}
+`r my_section('<code>x</code> is a variable. \'x\' is an English letter')`
 
 We asking Python to print the English letter 'x'.
-
-```python
+```{r echo = T, engine = 'python'}
 print('x')
-#> x
 ```
 
 We asking Python to print the value related to the **variable** `x`.
-
-```python
+```{r echo = T, engine = 'python'}
 x = 10
 print(x)
-#> 10
 ```
 
-##  We can use f'letters{x}' to combine English with variables  {}
+`r my_section('We can use f\'letters{x}\' to combine English with variables')`
 
-
-```python
+```{r echo = T, engine = 'python'}
 x = 10
 text = 'My age is {x}.'
 print(text)
-#> My age is {x}.
 ```
 
-##  Be mindful of spaces(indentation) at the start of a line  {}
+`r my_section('Be mindful of spaces(indentation) at the start of a line')`
 
 This will work.
 
-
-```python
+```{r echo = T, engine = 'python'}
 x = 10
 y = 20
 ```
 
 This will **not**.
 
-
-```python
+```{r echo=T, engine='python', eval = F}
 x = 10
   y = 20
 ```
 
 
-##  Python has functions  {}
+`r my_section('Python has functions')`
 
 `print()` is a good example of a function in Python. For this function to work it needs something (which we call an argument) to print. We need supply this argument within the function's brackets `()`.
 
-
-```python
+```{r echo = T, engine = 'python'}
 print('Hello World')
-#> Hello World
 ```
 
 A typical function usually can accept additional arguments to do more things. For example the `print()` function allows us to add something to the end.
 
-
-```python
+```{r echo = T, engine = 'python'}
 print('Hello World', end = '******')
-#> Hello World******
 ```
 
 You can find out all about a function my looking at its help file as follows
 
-
-```python
+```{r echo = T, engine = 'python', eval = F}
 print?
 ```
 ```
@@ -105,41 +91,36 @@ print(...)
     flush: whether to forcibly flush the stream.
 ```
 
-##  Brackets in Python  {}
+`r my_section('Brackets in Python')`
 
-
-```python
+```{r echo=T,engine='python'}
 print('Hello World')
-#> Hello World
+
 ```
 
-##  Python has many (many) cool packages  {}
+`r my_section('Python has many (many) cool packages')`
 
-
-```python
+```{r echo=T,engine='python'}
 print('Hello World')
-#> Hello World
 ```
 -   Example: `math.sqrt()` means `sqrt()` belonging to `math`
 
-##  You can think of the dot('.') as indicating ownership  {}
+`r my_section('You can think of the dot(\'.\') as indicating ownership')`
 
-
-```python
+```{r echo=T,engine='python'}
 print('Hello World')
-#> Hello World
+
 ```
 
-##  We can store data using lists  {}
+`r my_section('We can store data using lists')`
 
-##  We can store data using dictionaries  {}
+`r my_section('We can store data using dictionaries')`
 
-##  We can store data using numpy arrays  {}
+`r my_section('We can store data using numpy arrays')`
 
-##  Python sometimes act like a prima donna when you make an error  {}
+`r my_section('Python sometimes act like a prima donna when you make an error')`
 
-
-```python
+```{r echo=T,engine='python'}
 print('Hello World')
-#> Hello World
+
 ```
