@@ -25,6 +25,7 @@ knitr::opts_chunk$set(
   strip.white = F,
   prompt = F,
   highlight = T,
+  cache = T,
   size = 'normalsize',
   # background = '#FFFFFF',
   # engine = 'python'
@@ -38,18 +39,14 @@ knitr::opts_chunk$set(
 )
 
 xaringanExtra::use_panelset()
+
+library(reticulate)
 ```
 
 `# (PART) Welcome {-}`
 
 # {.unnumbered}
 
-<style>
-.front-title{
-font-size:1.5em;
-font-weight: bold;
-}
-</style>
 
 <div class = "front-title">
 <span style = "color:#096B72;opacity:.75;">TFI eWorkshop </span> | Using Python To Tell Stories With Data
@@ -86,15 +83,6 @@ df %>%
   kable_paper("hover", full_width = F) %>%
   collapse_rows(columns = 1:2)
 ```
-
-<style>
-.table >  {font-size:.75em;border-collapse:collapse;}
-.table > thead {color:#096B72;}
-.table > tbody  tr:nth-child(even) {background-color: rgb(0,0,0,.025);}
-.table > tbody  tr:nth-child(1)  {border-top:2px solid rgb(0,0,0,.5) !important;}
-.table > tbody  tr:nth-child(5)  {border-bottom:2px solid rgb(0,0,0,.5);}
-.table > tbody  tr:nth-child(12)  {border-bottom:2px solid rgb(0,0,0,.5);}
-</style>
 
 <div class = "front-table">
 

@@ -1,22 +1,22 @@
 book_filename: "workshops.tfi.visualisation"
 output_dir: "docs"
 new_session: true
-before_chapter_script: _common.R
+before_chapter_script: [_common.R, _my_common_setup_info.R]
 delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter "
 rmd_files: [
   'index.Rmd',
-  '00_introduction.Rmd',
-  '01_pre-workshop_00_instructions.Rmd',
-  '01_pre-workshop_01_basic-python.Rmd',
-  '01_pre-workshop_02_basic-python-exercises.Rmd',
-  '01_pre-workshop_03_basic-pandas.Rmd',
-  '01_pre-workshop_04_basic-pandas-exercises.Rmd',
-  '02_workshop_00_instructions.Rmd',
-  '02_workshop_01_basic-plotting.Rmd',
-  '02_workshop_02_exploratory-analysis-with-pandas.Rmd',
-  '02_workshop_03_covid-19-data-with-pandas.Rmd',
-  '02_workshop_04_core-visualisation-concepts.Rmd'
+  # '00_introduction.Rmd',
+  # '01_pre-workshop_00_instructions.Rmd',
+  # '01_pre-workshop_01_basic-python.Rmd',
+  # '01_pre-workshop_02_basic-python-exercises.Rmd',
+  # '01_pre-workshop_03_basic-pandas.Rmd',
+  # '01_pre-workshop_04_basic-pandas-exercises.Rmd',
+  # '02_workshop_00_instructions.Rmd',
+  # '02_workshop_01_basic-plotting.Rmd',
+  # '02_workshop_02_exploratory-analysis-with-pandas.Rmd',
+  '02_workshop_03_covid-19-data-with-pandas.Rmd'
+  # '02_workshop_04_core-visualisation-concepts.Rmd'
 ]

@@ -5,14 +5,6 @@ link <- '<a href="https://www.anaconda.com/products/individual" target="_blank" 
 jup <- '**Jupyter notebook**'
 ```
 
-<style>
-.float-right {
-float:right;
-padding:10px;
-margin-left:10px;
-}
-</style>
-
 ```{r fig-logos, echo=F}
 my_logo_jupyter <- '<img src="http://bollwyvl.github.io/jupyter.github.io/images/jupyter-sq-text.svg" class="float-right" width="110px"/>'
 my_logo_python <-  '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/500px-Python-logo-notext.svg.png" class="float-right" width="110px"/>'

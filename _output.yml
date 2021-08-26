@@ -1,5 +1,5 @@
 bookdown::bs4_book:
-  css: bs4_style.css
+  css: [bs4_style.css,my-style.css]
   theme:
     primary: "#096B72"
   # repo:
@@ -12,4 +12,3 @@ bookdown::bs4_book:
 #   citation_package: natbib
 #   keep_tex: yes
 # bookdown::epub_book: default
-
