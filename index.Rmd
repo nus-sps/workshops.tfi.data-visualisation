@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
   strip.white = F,
   prompt = F,
   highlight = T,
-  cache = T,
+  cache = F,
   size = 'normalsize',
   # background = '#FFFFFF',
   # engine = 'python'
@@ -41,6 +41,8 @@ knitr::opts_chunk$set(
 xaringanExtra::use_panelset()
 
 library(reticulate)
+library(readr)
+library(kableExtra)
 ```
 
 `# (PART) Welcome {-}`
@@ -71,9 +73,7 @@ No prior programming knowledge is expected, just lots of enthusiasm and a sense 
 
 <br>
 
-```{r workshop-worksflow,echo = F}
-library(readr)
-library(kableExtra)
+```{r workshop-worksflow,echo = F,eval=T}
 filename <- "./files/2021 _ Planning - Python Workshop _ Workflow.csv"
 df <- read_csv(filename,col_types = cols(...3 = col_character(),Duration = col_skip()),na = "empty")
 #View(X2021_Planning_Python_Workshop_Workflow)

@@ -48,4 +48,6 @@ part-workshop
 basic-plotting-with-pandas
 using-pandas-to-explore-data
 using-pandas-to-explore-covid-19-data
+plans-for-this-section
+housekeeping
 core-visualisation-principles
