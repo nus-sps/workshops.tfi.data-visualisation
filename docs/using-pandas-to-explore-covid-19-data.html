@@ -68,7 +68,7 @@
 <h1>
 <span class="header-section-number">11</span> Using Pandas to Explore COVID-19 Data<a class="anchor" aria-label="anchor" href="#using-pandas-to-explore-covid-19-data"><i class="fas fa-link"></i></a>
 </h1>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/reticulate">reticulate</a></span><span class="op">)</span></code></pre></div>
 <div id="plans-for-this-section" class="section level2" number="11.1">
 <h2>
@@ -100,41 +100,41 @@
 <div id="solution" class="section level4 unnumbered">
 <h4>Solution<a class="anchor" aria-label="anchor" href="#solution"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="using-pandas-to-explore-covid-19-data.html#cb60-1" aria-hidden="true" tabindex="-1"></a>data_url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv'</span></span>
-<span id="cb60-2"><a href="using-pandas-to-explore-covid-19-data.html#cb60-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(data_url)</span>
-<span id="cb60-3"><a href="using-pandas-to-explore-covid-19-data.html#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-4"><a href="using-pandas-to-explore-covid-19-data.html#cb60-4" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div>
-<pre><code>#&gt; (113490, 5)</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="using-pandas-to-explore-covid-19-data.html#cb62-1" aria-hidden="true" tabindex="-1"></a>df.columns</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="using-pandas-to-explore-covid-19-data.html#cb65-1" aria-hidden="true" tabindex="-1"></a>data_url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv'</span></span>
+<span id="cb65-2"><a href="using-pandas-to-explore-covid-19-data.html#cb65-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(data_url)</span>
+<span id="cb65-3"><a href="using-pandas-to-explore-covid-19-data.html#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-4"><a href="using-pandas-to-explore-covid-19-data.html#cb65-4" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div>
+<pre><code>#&gt; (113685, 5)</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="using-pandas-to-explore-covid-19-data.html#cb67-1" aria-hidden="true" tabindex="-1"></a>df.columns</span></code></pre></div>
 <pre><code>#&gt; Index(['Date', 'Country', 'Confirmed', 'Recovered', 'Deaths'], dtype='object')</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="using-pandas-to-explore-covid-19-data.html#cb64-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="using-pandas-to-explore-covid-19-data.html#cb69-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre><code>#&gt;          Date      Country  Confirmed  Recovered  Deaths
 #&gt; 0  2020-01-22  Afghanistan          0          0       0
 #&gt; 1  2020-01-23  Afghanistan          0          0       0
 #&gt; 2  2020-01-24  Afghanistan          0          0       0
 #&gt; 3  2020-01-25  Afghanistan          0          0       0
 #&gt; 4  2020-01-26  Afghanistan          0          0       0</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="using-pandas-to-explore-covid-19-data.html#cb66-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="using-pandas-to-explore-covid-19-data.html#cb71-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code></pre></div>
 <pre><code>#&gt;           Confirmed     Recovered         Deaths
-#&gt; count  1.134900e+05  1.134900e+05  113490.000000
-#&gt; mean   3.782746e+05  2.069914e+05    8844.252075
-#&gt; std    2.036529e+06  1.157633e+06   40344.690616
+#&gt; count  1.136850e+05  1.136850e+05  113685.000000
+#&gt; mean   3.795136e+05  2.066364e+05    8868.441527
+#&gt; std    2.041767e+06  1.156672e+06   40435.414999
 #&gt; min    0.000000e+00  0.000000e+00       0.000000
-#&gt; 25%    4.240000e+02  3.000000e+01       5.000000
-#&gt; 50%    9.509500e+03  3.950500e+03     152.000000
-#&gt; 75%    1.191045e+05  6.243950e+04    2137.000000
-#&gt; max    3.822303e+07  3.097475e+07  632272.000000</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="using-pandas-to-explore-covid-19-data.html#cb68-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div>
+#&gt; 25%    4.290000e+02  2.900000e+01       6.000000
+#&gt; 50%    9.581000e+03  3.915000e+03     153.000000
+#&gt; 75%    1.196400e+05  6.218300e+04    2148.000000
+#&gt; max    3.838436e+07  3.097475e+07  633564.000000</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="using-pandas-to-explore-covid-19-data.html#cb73-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div>
 <pre><code>#&gt; &lt;class 'pandas.core.frame.DataFrame'&gt;
-#&gt; RangeIndex: 113490 entries, 0 to 113489
+#&gt; RangeIndex: 113685 entries, 0 to 113684
 #&gt; Data columns (total 5 columns):
 #&gt;  #   Column     Non-Null Count   Dtype 
 #&gt; ---  ------     --------------   ----- 
-#&gt;  0   Date       113490 non-null  object
-#&gt;  1   Country    113490 non-null  object
-#&gt;  2   Confirmed  113490 non-null  int64 
-#&gt;  3   Recovered  113490 non-null  int64 
-#&gt;  4   Deaths     113490 non-null  int64 
+#&gt;  0   Date       113685 non-null  object
+#&gt;  1   Country    113685 non-null  object
+#&gt;  2   Confirmed  113685 non-null  int64 
+#&gt;  3   Recovered  113685 non-null  int64 
+#&gt;  4   Deaths     113685 non-null  int64 
 #&gt; dtypes: int64(3), object(2)
 #&gt; memory usage: 4.3+ MB</code></pre>
 <!-- Exercise -->
@@ -197,7 +197,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-08-27.</p>
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-08-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

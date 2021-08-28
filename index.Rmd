@@ -43,6 +43,7 @@ xaringanExtra::use_panelset()
 library(reticulate)
 library(readr)
 library(kableExtra)
+use_python('D:\\minconda')
 ```
 
 `# (PART) Welcome {-}`
