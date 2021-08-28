@@ -104,7 +104,7 @@
 <span id="cb65-2"><a href="using-pandas-to-explore-covid-19-data.html#cb65-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(data_url)</span>
 <span id="cb65-3"><a href="using-pandas-to-explore-covid-19-data.html#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-4"><a href="using-pandas-to-explore-covid-19-data.html#cb65-4" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div>
-<pre><code>#&gt; (113685, 5)</code></pre>
+<pre><code>#&gt; (113880, 5)</code></pre>
 <div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="using-pandas-to-explore-covid-19-data.html#cb67-1" aria-hidden="true" tabindex="-1"></a>df.columns</span></code></pre></div>
 <pre><code>#&gt; Index(['Date', 'Country', 'Confirmed', 'Recovered', 'Deaths'], dtype='object')</code></pre>
 <div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="using-pandas-to-explore-covid-19-data.html#cb69-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
@@ -116,25 +116,25 @@
 #&gt; 4  2020-01-26  Afghanistan          0          0       0</code></pre>
 <div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="using-pandas-to-explore-covid-19-data.html#cb71-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code></pre></div>
 <pre><code>#&gt;           Confirmed     Recovered         Deaths
-#&gt; count  1.136850e+05  1.136850e+05  113685.000000
-#&gt; mean   3.795136e+05  2.066364e+05    8868.441527
-#&gt; std    2.041767e+06  1.156672e+06   40435.414999
+#&gt; count  1.138800e+05  1.138800e+05  113880.000000
+#&gt; mean   3.807556e+05  2.062825e+05    8892.648244
+#&gt; std    2.047039e+06  1.155713e+06   40526.301052
 #&gt; min    0.000000e+00  0.000000e+00       0.000000
-#&gt; 25%    4.290000e+02  2.900000e+01       6.000000
-#&gt; 50%    9.581000e+03  3.915000e+03     153.000000
-#&gt; 75%    1.196400e+05  6.218300e+04    2148.000000
-#&gt; max    3.838436e+07  3.097475e+07  633564.000000</code></pre>
+#&gt; 25%    4.340000e+02  2.800000e+01       6.000000
+#&gt; 50%    9.642500e+03  3.887000e+03     154.000000
+#&gt; 75%    1.202160e+05  6.183175e+04    2158.250000
+#&gt; max    3.870725e+07  3.097475e+07  636720.000000</code></pre>
 <div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="using-pandas-to-explore-covid-19-data.html#cb73-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div>
 <pre><code>#&gt; &lt;class 'pandas.core.frame.DataFrame'&gt;
-#&gt; RangeIndex: 113685 entries, 0 to 113684
+#&gt; RangeIndex: 113880 entries, 0 to 113879
 #&gt; Data columns (total 5 columns):
 #&gt;  #   Column     Non-Null Count   Dtype 
 #&gt; ---  ------     --------------   ----- 
-#&gt;  0   Date       113685 non-null  object
-#&gt;  1   Country    113685 non-null  object
-#&gt;  2   Confirmed  113685 non-null  int64 
-#&gt;  3   Recovered  113685 non-null  int64 
-#&gt;  4   Deaths     113685 non-null  int64 
+#&gt;  0   Date       113880 non-null  object
+#&gt;  1   Country    113880 non-null  object
+#&gt;  2   Confirmed  113880 non-null  int64 
+#&gt;  3   Recovered  113880 non-null  int64 
+#&gt;  4   Deaths     113880 non-null  int64 
 #&gt; dtypes: int64(3), object(2)
 #&gt; memory usage: 4.3+ MB</code></pre>
 <!-- Exercise -->
@@ -148,6 +148,7 @@
 <h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks-1"><i class="fas fa-link"></i></a>
 </h4>
 <p><br></p>
+<p>Assuming we are only interested in Number of Deaths and Number of Confirmed cases.</p>
 <ol style="list-style-type: decimal">
 <li>What are all the columns in the this dataset.</li>
 <li>Drop unnecessary columns.</li>
@@ -157,11 +158,109 @@
 <h4>Solution<a class="anchor" aria-label="anchor" href="#solution-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>This solution specifies what columns to <strong>drop</strong>.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="using-pandas-to-explore-covid-19-data.html#cb75-1" aria-hidden="true" tabindex="-1"></a>df_dropped <span class="op">=</span> df.drop(columns <span class="op">=</span> <span class="st">'Recovered'</span>)</span>
+<span id="cb75-2"><a href="using-pandas-to-explore-covid-19-data.html#cb75-2" aria-hidden="true" tabindex="-1"></a>df_dropped.head()</span></code></pre></div>
+<pre><code>#&gt;          Date      Country  Confirmed  Deaths
+#&gt; 0  2020-01-22  Afghanistan          0       0
+#&gt; 1  2020-01-23  Afghanistan          0       0
+#&gt; 2  2020-01-24  Afghanistan          0       0
+#&gt; 3  2020-01-25  Afghanistan          0       0
+#&gt; 4  2020-01-26  Afghanistan          0       0</code></pre>
 </div>
 <div id="another-solution" class="section level4 unnumbered">
 <h4>Another Solution<a class="anchor" aria-label="anchor" href="#another-solution"><i class="fas fa-link"></i></a>
 </h4>
 <p>This solution specifies what columns to <strong>keep</strong>.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="using-pandas-to-explore-covid-19-data.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We want date, Country, Confirmed and Deaths</span></span>
+<span id="cb77-2"><a href="using-pandas-to-explore-covid-19-data.html#cb77-2" aria-hidden="true" tabindex="-1"></a>df_keep <span class="op">=</span> df[[<span class="st">"Date"</span>, <span class="st">"Country"</span>, <span class="st">"Confirmed"</span>, <span class="st">"Deaths"</span>]]</span>
+<span id="cb77-3"><a href="using-pandas-to-explore-covid-19-data.html#cb77-3" aria-hidden="true" tabindex="-1"></a>df_keep.head()</span></code></pre></div>
+<pre><code>#&gt;          Date      Country  Confirmed  Deaths
+#&gt; 0  2020-01-22  Afghanistan          0       0
+#&gt; 1  2020-01-23  Afghanistan          0       0
+#&gt; 2  2020-01-24  Afghanistan          0       0
+#&gt; 3  2020-01-25  Afghanistan          0       0
+#&gt; 4  2020-01-26  Afghanistan          0       0</code></pre>
+<!-- Exercise -->
+</div>
+</div>
+<div id="exercise-4-subset-to-asean-countries-only" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-exercises">Exercise 4 | </span> Subset to ASEAN countries only<a class="anchor" aria-label="anchor" href="#exercise-4-subset-to-asean-countries-only"><i class="fas fa-link"></i></a>
+</h3>
+<div id="tasks-2" class="section level4 unnumbered">
+<h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks-2"><i class="fas fa-link"></i></a>
+</h4>
+<p><br></p>
+<p>The dataframe is huge with many countries!</p>
+<ol style="list-style-type: decimal">
+<li><p>Find a way to subset the dataframe to only contain ASEAN countries. The list containing all ASEAN countries have been provided for you.</p></li>
+<li><p><code>ASEAN_countries_list = ['Brunei', 'Cambodia', 'Indonesia', 'Laos', 'Malaysia', 'Burma', 'Philippines', 'Singapore', 'Vietnam']</code></p></li>
+</ol>
+</div>
+<div id="solution-2" class="section level4 unnumbered">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-2"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="using-pandas-to-explore-covid-19-data.html#cb79-1" aria-hidden="true" tabindex="-1"></a>ASEAN_countries_list <span class="op">=</span> [<span class="st">'Brunei'</span>, <span class="st">'Cambodia'</span>, <span class="st">'Indonesia'</span>, <span class="st">'Laos'</span>, <span class="st">'Malaysia'</span>, <span class="st">'Burma'</span>, <span class="st">'Philippines'</span>, <span class="st">'Singapore'</span>, <span class="st">'Vietnam'</span>]</span>
+<span id="cb79-2"><a href="using-pandas-to-explore-covid-19-data.html#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="using-pandas-to-explore-covid-19-data.html#cb79-3" aria-hidden="true" tabindex="-1"></a>asean_df <span class="op">=</span> df_dropped[df_dropped[<span class="st">'Country'</span>].isin(ASEAN_countries_list)]</span>
+<span id="cb79-4"><a href="using-pandas-to-explore-covid-19-data.html#cb79-4" aria-hidden="true" tabindex="-1"></a>asean_df.head()</span></code></pre></div>
+<pre><code>#&gt;              Date Country  Confirmed  Deaths
+#&gt; 14016  2020-01-22  Brunei          0       0
+#&gt; 14017  2020-01-23  Brunei          0       0
+#&gt; 14018  2020-01-24  Brunei          0       0
+#&gt; 14019  2020-01-25  Brunei          0       0
+#&gt; 14020  2020-01-26  Brunei          0       0</code></pre>
+</div>
+</div>
+</div>
+<div id="exploration-of-covid19-dataset-bar-chart" class="section level2" number="11.3">
+<h2>
+<span class="header-section-number">11.3</span> Exploration of COVID19 dataset: Bar Chart<a class="anchor" aria-label="anchor" href="#exploration-of-covid19-dataset-bar-chart"><i class="fas fa-link"></i></a>
+</h2>
+<!-- Exercise -->
+<div id="exercise-5-plotting-the-total-deaths-in-each-country" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-exercises">Exercise 5 | </span> Plotting the Total Deaths in each country<a class="anchor" aria-label="anchor" href="#exercise-5-plotting-the-total-deaths-in-each-country"><i class="fas fa-link"></i></a>
+</h3>
+<div id="tasks-3" class="section level4 unnumbered">
+<h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks-3"><i class="fas fa-link"></i></a>
+</h4>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li>Subset the dataset so that it contains only the latest date of each country.</li>
+<li>Using either <code>pandas</code> or <code>matplotlib</code> or both, plot the total number of deaths in each country.</li>
+<li>Is there a better way to represent this plot?</li>
+</ol>
+</div>
+<div id="solution-3" class="section level4 unnumbered">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-3"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="using-pandas-to-explore-covid-19-data.html#cb81-1" aria-hidden="true" tabindex="-1"></a>latest_date <span class="op">=</span> <span class="bu">max</span>(asean_df[<span class="st">'Date'</span>])</span>
+<span id="cb81-2"><a href="using-pandas-to-explore-covid-19-data.html#cb81-2" aria-hidden="true" tabindex="-1"></a>asean_df_latest <span class="op">=</span> asean_df[asean_df[<span class="st">'Date'</span>] <span class="op">==</span> latest_date]</span>
+<span id="cb81-3"><a href="using-pandas-to-explore-covid-19-data.html#cb81-3" aria-hidden="true" tabindex="-1"></a>asean_df_latest.set_index(<span class="st">'Country'</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb81-4"><a href="using-pandas-to-explore-covid-19-data.html#cb81-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-5"><a href="using-pandas-to-explore-covid-19-data.html#cb81-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-6"><a href="using-pandas-to-explore-covid-19-data.html#cb81-6" aria-hidden="true" tabindex="-1"></a>asean_df_latest[<span class="st">'Deaths'</span>].plot(kind <span class="op">=</span> <span class="st">'barh'</span>, ).set_xlabel(<span class="st">'Total Deaths'</span>)</span></code></pre></div>
+<pre><code>#&gt; Text(0.5, 0, 'Total Deaths')</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="using-pandas-to-explore-covid-19-data.html#cb83-1" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb83-2"><a href="using-pandas-to-explore-covid-19-data.html#cb83-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="workshops.tfi.visualisation_files/figure-html/unnamed-chunk-7-1.png" width="85%" style="display: block; margin: auto;"></div>
+</div>
+<div id="solution-better-way" class="section level4 unnumbered">
+<h4>Solution Better Way<a class="anchor" aria-label="anchor" href="#solution-better-way"><i class="fas fa-link"></i></a>
+</h4>
+<p>As you can tell, it is not really clean. A better way to present the other plot would be to sort the countries in descending order of deaths!</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="using-pandas-to-explore-covid-19-data.html#cb84-1" aria-hidden="true" tabindex="-1"></a>plt.cla()</span>
+<span id="cb84-2"><a href="using-pandas-to-explore-covid-19-data.html#cb84-2" aria-hidden="true" tabindex="-1"></a>latest_date <span class="op">=</span> <span class="bu">max</span>(asean_df[<span class="st">'Date'</span>])</span>
+<span id="cb84-3"><a href="using-pandas-to-explore-covid-19-data.html#cb84-3" aria-hidden="true" tabindex="-1"></a>asean_df_latest <span class="op">=</span> asean_df[asean_df[<span class="st">'Date'</span>] <span class="op">==</span> latest_date]</span>
+<span id="cb84-4"><a href="using-pandas-to-explore-covid-19-data.html#cb84-4" aria-hidden="true" tabindex="-1"></a>asean_df_latest.set_index(<span class="st">'Country'</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb84-5"><a href="using-pandas-to-explore-covid-19-data.html#cb84-5" aria-hidden="true" tabindex="-1"></a>asean_df_latest <span class="op">=</span> asean_df_latest.sort_values(by <span class="op">=</span> <span class="st">'Deaths'</span>, ascending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb84-6"><a href="using-pandas-to-explore-covid-19-data.html#cb84-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-7"><a href="using-pandas-to-explore-covid-19-data.html#cb84-7" aria-hidden="true" tabindex="-1"></a>asean_df_latest[<span class="st">'Deaths'</span>].plot(kind <span class="op">=</span> <span class="st">'barh'</span>, ).set_xlabel(<span class="st">'Total Deaths'</span>)</span></code></pre></div>
+<pre><code>#&gt; Text(0.5, 0, 'Total Deaths')</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="using-pandas-to-explore-covid-19-data.html#cb86-1" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb86-2"><a href="using-pandas-to-explore-covid-19-data.html#cb86-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="workshops.tfi.visualisation_files/figure-html/unnamed-chunk-7-3.png" width="85%" style="display: block; margin: auto;"></div>
 
 </div>
 </div>
@@ -179,7 +278,11 @@
 <a class="nav-link" href="#housekeeping"><span class="header-section-number">11.2</span> Housekeeping</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#exercise-2-what-are-we-dealing-with">Exercise 2 |  What are we dealing with?</a></li>
 <li><a class="nav-link" href="#exercise-3-drop-those-unnecessary-columns">Exercise 3 |  Drop those unnecessary columns?</a></li>
+<li><a class="nav-link" href="#exercise-4-subset-to-asean-countries-only">Exercise 4 |  Subset to ASEAN countries only</a></li>
 </ul>
+</li>
+<li>
+<a class="nav-link" href="#exploration-of-covid19-dataset-bar-chart"><span class="header-section-number">11.3</span> Exploration of COVID19 dataset: Bar Chart</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise-5-plotting-the-total-deaths-in-each-country">Exercise 5 |  Plotting the Total Deaths in each country</a></li></ul>
 </li>
 </ul>
 

@@ -57,14 +57,90 @@ knitr::kable(head(py$df))
 #### Tasks {-}
 <br>
 
+Assuming we are only interested in Number of Deaths and Number of Confirmed cases.
+
 1. What are all the columns in the this dataset.
-1. Drop unnecessary columns.
+2. Drop unnecessary columns.
 
 #### Solution {-}
 
-
 This solution specifies what columns to **drop**.
+
+```{python,include=T}
+df_dropped = df.drop(columns = 'Recovered')
+df_dropped.head()
+```
 
 #### Another Solution {-}
 
 This solution specifies what columns to **keep**.
+
+```{python,include=T}
+# We want date, Country, Confirmed and Deaths
+df_keep = df[["Date", "Country", "Confirmed", "Deaths"]]
+df_keep.head()
+```
+<!-- Exercise -->
+`r my_fun.exercise('Subset to ASEAN countries only')`
+
+#### Tasks {-}
+<br>
+
+The dataframe is huge with many countries!
+
+1. Find a way to subset the dataframe to only contain ASEAN countries. The list containing all ASEAN countries have been provided for you.
+
+2. `ASEAN_countries_list = ['Brunei', 'Cambodia', 'Indonesia', 'Laos', 'Malaysia', 'Burma', 'Philippines', 'Singapore', 'Vietnam']`
+
+#### Solution {-}
+
+```{python, include = T}
+ASEAN_countries_list = ['Brunei', 'Cambodia', 'Indonesia', 'Laos', 'Malaysia', 'Burma', 'Philippines', 'Singapore', 'Vietnam']
+
+asean_df = df_dropped[df_dropped['Country'].isin(ASEAN_countries_list)]
+asean_df.head()
+```
+
+
+## Exploration of COVID19 dataset: Bar Chart
+
+<!-- Exercise -->
+`r my_fun.exercise('Plotting the Total Deaths in each country')`
+
+#### Tasks {-}
+<br>
+
+1. Subset the dataset so that it contains only the latest date of each country.
+2. Using either `pandas` or `matplotlib` or both, plot the total number of deaths in each country.
+3. Is there a better way to represent this plot?
+
+#### Solution {-}
+
+```{python, include = T}
+latest_date = max(asean_df['Date'])
+asean_df_latest = asean_df[asean_df['Date'] == latest_date]
+asean_df_latest.set_index('Country', inplace = True)
+
+
+asean_df_latest['Deaths'].plot(kind = 'barh', ).set_xlabel('Total Deaths')
+
+plt.tight_layout()
+plt.show()
+```
+
+#### Solution Better Way {-}
+
+As you can tell, it is not really clean. A better way to present the other plot would be to sort the countries in descending order of deaths!
+
+```{python, include = T}
+plt.cla()
+latest_date = max(asean_df['Date'])
+asean_df_latest = asean_df[asean_df['Date'] == latest_date]
+asean_df_latest.set_index('Country', inplace = True)
+asean_df_latest = asean_df_latest.sort_values(by = 'Deaths', ascending=True)
+
+asean_df_latest['Deaths'].plot(kind = 'barh', ).set_xlabel('Total Deaths')
+
+plt.tight_layout()
+plt.show()
+```

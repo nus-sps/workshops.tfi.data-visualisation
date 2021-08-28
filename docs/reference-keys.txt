@@ -50,4 +50,5 @@ using-pandas-to-explore-data
 using-pandas-to-explore-covid-19-data
 plans-for-this-section
 housekeeping
+exploration-of-covid19-dataset-bar-chart
 core-visualisation-principles
