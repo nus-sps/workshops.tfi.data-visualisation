@@ -99,26 +99,27 @@
 <span id="cb59-7"><a href="using-pandas-to-explore-data.html#cb59-7" aria-hidden="true" tabindex="-1"></a>plt.subplots(figsize <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">7</span>))</span>
 <span id="cb59-8"><a href="using-pandas-to-explore-data.html#cb59-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb59-9"><a href="using-pandas-to-explore-data.html#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading in the dataset as df</span></span>
-<span id="cb59-10"><a href="using-pandas-to-explore-data.html#cb59-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv"</span>)</span>
+<span id="cb59-10"><a href="using-pandas-to-explore-data.html#cb59-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv"</span>)</span>
 <span id="cb59-11"><a href="using-pandas-to-explore-data.html#cb59-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb59-12"><a href="using-pandas-to-explore-data.html#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a function to calculate standard error</span></span>
 <span id="cb59-13"><a href="using-pandas-to-explore-data.html#cb59-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> se(data):</span>
 <span id="cb59-14"><a href="using-pandas-to-explore-data.html#cb59-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.std(data) <span class="op">/</span> np.sqrt(data.count())</span>
 <span id="cb59-15"><a href="using-pandas-to-explore-data.html#cb59-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-16"><a href="using-pandas-to-explore-data.html#cb59-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Grouping the data set of "Petal.Length" by Species</span></span>
-<span id="cb59-17"><a href="using-pandas-to-explore-data.html#cb59-17" aria-hidden="true" tabindex="-1"></a>grouped_species <span class="op">=</span> df.groupby(<span class="st">"Species"</span>)[<span class="st">'Petal.Length'</span>]</span>
+<span id="cb59-16"><a href="using-pandas-to-explore-data.html#cb59-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Grouping the data set of "Height" by Gender</span></span>
+<span id="cb59-17"><a href="using-pandas-to-explore-data.html#cb59-17" aria-hidden="true" tabindex="-1"></a>grouped_gender <span class="op">=</span> df.groupby(<span class="st">"Gender"</span>)[<span class="st">'Height'</span>]</span>
 <span id="cb59-18"><a href="using-pandas-to-explore-data.html#cb59-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb59-19"><a href="using-pandas-to-explore-data.html#cb59-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying functions np.mean() and se() to our grouped dataset</span></span>
-<span id="cb59-20"><a href="using-pandas-to-explore-data.html#cb59-20" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> grouped_species.agg([np.mean, se])</span>
+<span id="cb59-20"><a href="using-pandas-to-explore-data.html#cb59-20" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> grouped_gender.agg([np.mean, se])</span>
 <span id="cb59-21"><a href="using-pandas-to-explore-data.html#cb59-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb59-22"><a href="using-pandas-to-explore-data.html#cb59-22" aria-hidden="true" tabindex="-1"></a>new_df.plot(kind <span class="op">=</span> <span class="st">'bar'</span>, yerr <span class="op">=</span> <span class="st">'se'</span>,capsize<span class="op">=</span><span class="dv">10</span>, rot<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb59-23"><a href="using-pandas-to-explore-data.html#cb59-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb59-24"><a href="using-pandas-to-explore-data.html#cb59-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Don't forget to add the labels for clarity!</span></span>
-<span id="cb59-25"><a href="using-pandas-to-explore-data.html#cb59-25" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Petal Length'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb59-26"><a href="using-pandas-to-explore-data.html#cb59-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Species'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb59-27"><a href="using-pandas-to-explore-data.html#cb59-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Petal Length vs Species'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
-<span id="cb59-28"><a href="using-pandas-to-explore-data.html#cb59-28" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb59-29"><a href="using-pandas-to-explore-data.html#cb59-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<span id="cb59-25"><a href="using-pandas-to-explore-data.html#cb59-25" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Height (cm)'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb59-26"><a href="using-pandas-to-explore-data.html#cb59-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb59-27"><a href="using-pandas-to-explore-data.html#cb59-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Height (cm) vs Gender'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
+<span id="cb59-28"><a href="using-pandas-to-explore-data.html#cb59-28" aria-hidden="true" tabindex="-1"></a>plt.legend().remove</span>
+<span id="cb59-29"><a href="using-pandas-to-explore-data.html#cb59-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb59-30"><a href="using-pandas-to-explore-data.html#cb59-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -149,15 +150,15 @@
 <span id="cb60-6"><a href="using-pandas-to-explore-data.html#cb60-6" aria-hidden="true" tabindex="-1"></a>plt.subplots(figsize <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">7</span>))</span>
 <span id="cb60-7"><a href="using-pandas-to-explore-data.html#cb60-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-8"><a href="using-pandas-to-explore-data.html#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading in the dataset as df</span></span>
-<span id="cb60-9"><a href="using-pandas-to-explore-data.html#cb60-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv"</span>)</span>
+<span id="cb60-9"><a href="using-pandas-to-explore-data.html#cb60-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv"</span>)</span>
 <span id="cb60-10"><a href="using-pandas-to-explore-data.html#cb60-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-11"><a href="using-pandas-to-explore-data.html#cb60-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Petal.Length'</span>].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span>
+<span id="cb60-11"><a href="using-pandas-to-explore-data.html#cb60-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Height'</span>].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span>
 <span id="cb60-12"><a href="using-pandas-to-explore-data.html#cb60-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-13"><a href="using-pandas-to-explore-data.html#cb60-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-14"><a href="using-pandas-to-explore-data.html#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Label your axis</span></span>
 <span id="cb60-15"><a href="using-pandas-to-explore-data.html#cb60-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb60-16"><a href="using-pandas-to-explore-data.html#cb60-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Petal Length'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb60-17"><a href="using-pandas-to-explore-data.html#cb60-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Frequency of Petal Length'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
+<span id="cb60-16"><a href="using-pandas-to-explore-data.html#cb60-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Height (cm)'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb60-17"><a href="using-pandas-to-explore-data.html#cb60-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Height (cm)'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
 <span id="cb60-18"><a href="using-pandas-to-explore-data.html#cb60-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb60-19"><a href="using-pandas-to-explore-data.html#cb60-19" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb60-20"><a href="using-pandas-to-explore-data.html#cb60-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
@@ -182,16 +183,16 @@
 <span id="cb61-6"><a href="using-pandas-to-explore-data.html#cb61-6" aria-hidden="true" tabindex="-1"></a>plt.subplots(figsize <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">7</span>))</span>
 <span id="cb61-7"><a href="using-pandas-to-explore-data.html#cb61-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb61-8"><a href="using-pandas-to-explore-data.html#cb61-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading in the dataset as df</span></span>
-<span id="cb61-9"><a href="using-pandas-to-explore-data.html#cb61-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv"</span>)</span>
+<span id="cb61-9"><a href="using-pandas-to-explore-data.html#cb61-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv"</span>)</span>
 <span id="cb61-10"><a href="using-pandas-to-explore-data.html#cb61-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-11"><a href="using-pandas-to-explore-data.html#cb61-11" aria-hidden="true" tabindex="-1"></a>grouped_species <span class="op">=</span> df.groupby(<span class="st">"Species"</span>)[<span class="st">'Petal.Length'</span>]</span>
-<span id="cb61-12"><a href="using-pandas-to-explore-data.html#cb61-12" aria-hidden="true" tabindex="-1"></a>grouped_species.plot(kind<span class="op">=</span><span class="st">'hist'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb61-11"><a href="using-pandas-to-explore-data.html#cb61-11" aria-hidden="true" tabindex="-1"></a>grouped_gender <span class="op">=</span> df.groupby(<span class="st">"Gender"</span>)[<span class="st">'Height'</span>]</span>
+<span id="cb61-12"><a href="using-pandas-to-explore-data.html#cb61-12" aria-hidden="true" tabindex="-1"></a>grouped_gender.plot(kind<span class="op">=</span><span class="st">'hist'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, bins <span class="op">=</span> <span class="dv">15</span>)</span>
 <span id="cb61-13"><a href="using-pandas-to-explore-data.html#cb61-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb61-14"><a href="using-pandas-to-explore-data.html#cb61-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb61-15"><a href="using-pandas-to-explore-data.html#cb61-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Label your axis</span></span>
 <span id="cb61-16"><a href="using-pandas-to-explore-data.html#cb61-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb61-17"><a href="using-pandas-to-explore-data.html#cb61-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Petal Length'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb61-18"><a href="using-pandas-to-explore-data.html#cb61-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Frequency of Petal Length grouped by Species'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
+<span id="cb61-17"><a href="using-pandas-to-explore-data.html#cb61-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Height (cm)'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb61-18"><a href="using-pandas-to-explore-data.html#cb61-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Height (cm) grouped by Gender'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
 <span id="cb61-19"><a href="using-pandas-to-explore-data.html#cb61-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb61-20"><a href="using-pandas-to-explore-data.html#cb61-20" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb61-21"><a href="using-pandas-to-explore-data.html#cb61-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
@@ -225,15 +226,15 @@
 <span id="cb62-6"><a href="using-pandas-to-explore-data.html#cb62-6" aria-hidden="true" tabindex="-1"></a>plt.subplots(figsize <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">7</span>))</span>
 <span id="cb62-7"><a href="using-pandas-to-explore-data.html#cb62-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb62-8"><a href="using-pandas-to-explore-data.html#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading in the dataset as df</span></span>
-<span id="cb62-9"><a href="using-pandas-to-explore-data.html#cb62-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv"</span>)</span>
+<span id="cb62-9"><a href="using-pandas-to-explore-data.html#cb62-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv"</span>)</span>
 <span id="cb62-10"><a href="using-pandas-to-explore-data.html#cb62-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb62-11"><a href="using-pandas-to-explore-data.html#cb62-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-12"><a href="using-pandas-to-explore-data.html#cb62-12" aria-hidden="true" tabindex="-1"></a>df.plot(<span class="st">"Petal.Width"</span>, <span class="st">'Petal.Length'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span>
+<span id="cb62-12"><a href="using-pandas-to-explore-data.html#cb62-12" aria-hidden="true" tabindex="-1"></a>df.plot(<span class="st">"Height"</span>, <span class="st">'Weight'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span>
 <span id="cb62-13"><a href="using-pandas-to-explore-data.html#cb62-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb62-14"><a href="using-pandas-to-explore-data.html#cb62-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Label your axis</span></span>
-<span id="cb62-15"><a href="using-pandas-to-explore-data.html#cb62-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Petal Length'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb62-16"><a href="using-pandas-to-explore-data.html#cb62-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Petal Width'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb62-17"><a href="using-pandas-to-explore-data.html#cb62-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Length vs Width of Petals'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
+<span id="cb62-15"><a href="using-pandas-to-explore-data.html#cb62-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Height (cm)'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb62-16"><a href="using-pandas-to-explore-data.html#cb62-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Weight (kg)'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb62-17"><a href="using-pandas-to-explore-data.html#cb62-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Weight (kg) vs Height (cm)'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
 <span id="cb62-18"><a href="using-pandas-to-explore-data.html#cb62-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb62-19"><a href="using-pandas-to-explore-data.html#cb62-19" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb62-20"><a href="using-pandas-to-explore-data.html#cb62-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
@@ -257,21 +258,21 @@
 <span id="cb63-6"><a href="using-pandas-to-explore-data.html#cb63-6" aria-hidden="true" tabindex="-1"></a>plt.subplots(figsize <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">7</span>))</span>
 <span id="cb63-7"><a href="using-pandas-to-explore-data.html#cb63-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb63-8"><a href="using-pandas-to-explore-data.html#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading in the dataset as df</span></span>
-<span id="cb63-9"><a href="using-pandas-to-explore-data.html#cb63-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv"</span>)</span>
+<span id="cb63-9"><a href="using-pandas-to-explore-data.html#cb63-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv"</span>)</span>
 <span id="cb63-10"><a href="using-pandas-to-explore-data.html#cb63-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-11"><a href="using-pandas-to-explore-data.html#cb63-11" aria-hidden="true" tabindex="-1"></a>grouped_species <span class="op">=</span> df.groupby(<span class="st">"Species"</span>)</span>
+<span id="cb63-11"><a href="using-pandas-to-explore-data.html#cb63-11" aria-hidden="true" tabindex="-1"></a>grouped_gender <span class="op">=</span> df.groupby(<span class="st">"Gender"</span>)</span>
 <span id="cb63-12"><a href="using-pandas-to-explore-data.html#cb63-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb63-13"><a href="using-pandas-to-explore-data.html#cb63-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calling plt.subplots().</span></span>
 <span id="cb63-14"><a href="using-pandas-to-explore-data.html#cb63-14" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
 <span id="cb63-15"><a href="using-pandas-to-explore-data.html#cb63-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-16"><a href="using-pandas-to-explore-data.html#cb63-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, species <span class="kw">in</span> grouped_species:</span>
-<span id="cb63-17"><a href="using-pandas-to-explore-data.html#cb63-17" aria-hidden="true" tabindex="-1"></a>    ax.scatter(species[<span class="st">"Petal.Width"</span>], species[<span class="st">"Petal.Length"</span>], label<span class="op">=</span>name)</span>
+<span id="cb63-16"><a href="using-pandas-to-explore-data.html#cb63-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, gender <span class="kw">in</span> grouped_gender:</span>
+<span id="cb63-17"><a href="using-pandas-to-explore-data.html#cb63-17" aria-hidden="true" tabindex="-1"></a>    ax.scatter(gender[<span class="st">"Height"</span>], gender[<span class="st">"Weight"</span>], label<span class="op">=</span>name)</span>
 <span id="cb63-18"><a href="using-pandas-to-explore-data.html#cb63-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb63-19"><a href="using-pandas-to-explore-data.html#cb63-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb63-20"><a href="using-pandas-to-explore-data.html#cb63-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Label your axis</span></span>
-<span id="cb63-21"><a href="using-pandas-to-explore-data.html#cb63-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Petal Length'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb63-22"><a href="using-pandas-to-explore-data.html#cb63-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Petal Width'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb63-23"><a href="using-pandas-to-explore-data.html#cb63-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Length vs Width of Petals grouped by Species'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
+<span id="cb63-21"><a href="using-pandas-to-explore-data.html#cb63-21" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Height (cm)'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb63-22"><a href="using-pandas-to-explore-data.html#cb63-22" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Weight (kg)'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb63-23"><a href="using-pandas-to-explore-data.html#cb63-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Weight (kg) vs Height (cm) grouped by Gender'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
 <span id="cb63-24"><a href="using-pandas-to-explore-data.html#cb63-24" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb63-25"><a href="using-pandas-to-explore-data.html#cb63-25" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb63-26"><a href="using-pandas-to-explore-data.html#cb63-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
@@ -306,18 +307,19 @@
 <span id="cb64-6"><a href="using-pandas-to-explore-data.html#cb64-6" aria-hidden="true" tabindex="-1"></a>plt.subplots(figsize <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">7</span>))</span>
 <span id="cb64-7"><a href="using-pandas-to-explore-data.html#cb64-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb64-8"><a href="using-pandas-to-explore-data.html#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading in the dataset as df</span></span>
-<span id="cb64-9"><a href="using-pandas-to-explore-data.html#cb64-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv"</span>)</span>
+<span id="cb64-9"><a href="using-pandas-to-explore-data.html#cb64-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv"</span>)</span>
 <span id="cb64-10"><a href="using-pandas-to-explore-data.html#cb64-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb64-11"><a href="using-pandas-to-explore-data.html#cb64-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting boxplot</span></span>
-<span id="cb64-12"><a href="using-pandas-to-explore-data.html#cb64-12" aria-hidden="true" tabindex="-1"></a>df.boxplot(<span class="st">'Petal.Length'</span>, by<span class="op">=</span><span class="st">'Species'</span>)</span>
-<span id="cb64-13"><a href="using-pandas-to-explore-data.html#cb64-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-14"><a href="using-pandas-to-explore-data.html#cb64-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Don't forget to add the labels for clarity!</span></span>
-<span id="cb64-15"><a href="using-pandas-to-explore-data.html#cb64-15" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">''</span>)</span>
-<span id="cb64-16"><a href="using-pandas-to-explore-data.html#cb64-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Petal Length vs Species'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
-<span id="cb64-17"><a href="using-pandas-to-explore-data.html#cb64-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Petal Length'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb64-18"><a href="using-pandas-to-explore-data.html#cb64-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Species'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb64-19"><a href="using-pandas-to-explore-data.html#cb64-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb64-20"><a href="using-pandas-to-explore-data.html#cb64-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<span id="cb64-12"><a href="using-pandas-to-explore-data.html#cb64-12" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> df.boxplot(<span class="st">'Height'</span>, by<span class="op">=</span><span class="st">'Gender'</span>)</span>
+<span id="cb64-13"><a href="using-pandas-to-explore-data.html#cb64-13" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">False</span>)</span>
+<span id="cb64-14"><a href="using-pandas-to-explore-data.html#cb64-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-15"><a href="using-pandas-to-explore-data.html#cb64-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Don't forget to add the labels for clarity!</span></span>
+<span id="cb64-16"><a href="using-pandas-to-explore-data.html#cb64-16" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">''</span>)</span>
+<span id="cb64-17"><a href="using-pandas-to-explore-data.html#cb64-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of Height (cm) grouped by Gender'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
+<span id="cb64-18"><a href="using-pandas-to-explore-data.html#cb64-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Height (cm)'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb64-19"><a href="using-pandas-to-explore-data.html#cb64-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>, fontsize <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb64-20"><a href="using-pandas-to-explore-data.html#cb64-20" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb64-21"><a href="using-pandas-to-explore-data.html#cb64-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 
 </div>
 </div>

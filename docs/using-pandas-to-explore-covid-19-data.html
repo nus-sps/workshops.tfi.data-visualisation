@@ -102,7 +102,7 @@
 <span id="cb65-2"><a href="using-pandas-to-explore-covid-19-data.html#cb65-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(data_url)</span>
 <span id="cb65-3"><a href="using-pandas-to-explore-covid-19-data.html#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-4"><a href="using-pandas-to-explore-covid-19-data.html#cb65-4" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div>
-<pre><code>#&gt; (113880, 5)</code></pre>
+<pre><code>#&gt; (114075, 5)</code></pre>
 <div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="using-pandas-to-explore-covid-19-data.html#cb67-1" aria-hidden="true" tabindex="-1"></a>df.columns</span></code></pre></div>
 <pre><code>#&gt; Index(['Date', 'Country', 'Confirmed', 'Recovered', 'Deaths'], dtype='object')</code></pre>
 <div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="using-pandas-to-explore-covid-19-data.html#cb69-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
@@ -114,27 +114,27 @@
 #&gt; 4  2020-01-26  Afghanistan          0          0       0</code></pre>
 <div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="using-pandas-to-explore-covid-19-data.html#cb71-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code></pre></div>
 <pre><code>#&gt;           Confirmed     Recovered         Deaths
-#&gt; count  1.138800e+05  1.138800e+05  113880.000000
-#&gt; mean   3.807556e+05  2.062825e+05    8892.648244
-#&gt; std    2.047039e+06  1.155713e+06   40526.301052
+#&gt; count  1.140750e+05  1.140750e+05  114075.000000
+#&gt; mean   3.819981e+05  2.059299e+05    8916.847530
+#&gt; std    2.052300e+06  1.154756e+06   40616.979073
 #&gt; min    0.000000e+00  0.000000e+00       0.000000
-#&gt; 25%    4.340000e+02  2.800000e+01       6.000000
-#&gt; 50%    9.642500e+03  3.887000e+03     154.000000
-#&gt; 75%    1.202160e+05  6.183175e+04    2158.250000
-#&gt; max    3.870725e+07  3.097475e+07  636720.000000</code></pre>
+#&gt; 25%    4.390000e+02  2.700000e+01       6.000000
+#&gt; 50%    9.700000e+03  3.864000e+03     154.000000
+#&gt; 75%    1.208565e+05  6.157650e+04    2173.000000
+#&gt; max    3.875701e+07  3.097475e+07  637244.000000</code></pre>
 <div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="using-pandas-to-explore-covid-19-data.html#cb73-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div>
 <pre><code>#&gt; &lt;class 'pandas.core.frame.DataFrame'&gt;
-#&gt; RangeIndex: 113880 entries, 0 to 113879
+#&gt; RangeIndex: 114075 entries, 0 to 114074
 #&gt; Data columns (total 5 columns):
 #&gt;  #   Column     Non-Null Count   Dtype 
 #&gt; ---  ------     --------------   ----- 
-#&gt;  0   Date       113880 non-null  object
-#&gt;  1   Country    113880 non-null  object
-#&gt;  2   Confirmed  113880 non-null  int64 
-#&gt;  3   Recovered  113880 non-null  int64 
-#&gt;  4   Deaths     113880 non-null  int64 
+#&gt;  0   Date       114075 non-null  object
+#&gt;  1   Country    114075 non-null  object
+#&gt;  2   Confirmed  114075 non-null  int64 
+#&gt;  3   Recovered  114075 non-null  int64 
+#&gt;  4   Deaths     114075 non-null  int64 
 #&gt; dtypes: int64(3), object(2)
-#&gt; memory usage: 4.3+ MB</code></pre>
+#&gt; memory usage: 4.4+ MB</code></pre>
 <!-- Exercise -->
 </div>
 </div>
@@ -212,11 +212,11 @@
 #&gt;   self._setitem_single_column(ilocs[0], value, pi)</code></pre>
 <div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="using-pandas-to-explore-covid-19-data.html#cb81-1" aria-hidden="true" tabindex="-1"></a>asean_df.head()</span></code></pre></div>
 <pre><code>#&gt;             Date Country  Confirmed  Deaths
-#&gt; 14016 2020-01-22  Brunei          0       0
-#&gt; 14017 2020-01-23  Brunei          0       0
-#&gt; 14018 2020-01-24  Brunei          0       0
-#&gt; 14019 2020-01-25  Brunei          0       0
-#&gt; 14020 2020-01-26  Brunei          0       0</code></pre>
+#&gt; 14040 2020-01-22  Brunei          0       0
+#&gt; 14041 2020-01-23  Brunei          0       0
+#&gt; 14042 2020-01-24  Brunei          0       0
+#&gt; 14043 2020-01-25  Brunei          0       0
+#&gt; 14044 2020-01-26  Brunei          0       0</code></pre>
 </div>
 </div>
 </div>
@@ -318,7 +318,7 @@ Hint: Maybe make the barchart descending!</p></li>
 #&gt; &lt;AxesSubplot:xlabel='Date'&gt;
 #&gt; &lt;AxesSubplot:xlabel='Date'&gt;</code></pre>
 <div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="using-pandas-to-explore-covid-19-data.html#cb95-1" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code></pre></div>
-<pre><code>#&gt; &lt;matplotlib.legend.Legend object at 0x0000000061D318B0&gt;</code></pre>
+<pre><code>#&gt; &lt;matplotlib.legend.Legend object at 0x000000006233D580&gt;</code></pre>
 <div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="using-pandas-to-explore-covid-19-data.html#cb97-1" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Confirmed Cases'</span>, fontsize <span class="op">=</span> <span class="dv">15</span>)</span></code></pre></div>
 <pre><code>#&gt; Text(0.5, 0, 'Number of Confirmed Cases')</code></pre>
 <div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="using-pandas-to-explore-covid-19-data.html#cb99-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Number of Confirmed Cases over time in ASEAN countries'</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span></code></pre></div>
