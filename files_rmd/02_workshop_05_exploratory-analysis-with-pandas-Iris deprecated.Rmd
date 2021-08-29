@@ -1,0 +1,222 @@
+# Using Pandas to Explore Data
+
+## Barcharts
+
+`r my_fun.example('Barcharts with error bars')`
+
+#### Result {-}
+
+Nothing here yet.
+
+#### Code {-}
+
+- `df.agg` function applies various functions to a data set.
+- `yerr` in `df.plot` applies error bars to the bar chart.
+
+```{python,eval=F}
+# Import relevant packages
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.cla()
+plt.subplots(figsize = (10,7))
+
+# Reading in the dataset as df
+df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
+
+# Creating a function to calculate standard error
+def se(data):
+    return np.std(data) / np.sqrt(data.count())
+
+# Grouping the data set of "Petal.Length" by Species
+grouped_species = df.groupby("Species")['Petal.Length']
+
+# Applying functions np.mean() and se() to our grouped dataset
+new_df = grouped_species.agg([np.mean, se])
+
+new_df.plot(kind = 'bar', yerr = 'se',capsize=10, rot=0)
+
+# Don't forget to add the labels for clarity!
+plt.ylabel('Average Petal Length', fontsize = 10)
+plt.xlabel('Species', fontsize = 10)
+plt.title('Average Petal Length vs Species', fontsize = 20)
+plt.tight_layout()
+plt.show()
+```
+
+## Histograms
+
+`r my_fun.example('Histograms with Grouping')`
+
+#### Result (No Group){-}
+
+Nothing here yet.
+
+#### Code (No Group) {-}
+
+- Note the use of `kind = hist` to generate histograms.
+
+```{python,eval=F}
+# Import relevant packages
+import pandas as pd
+import matplotlib.pyplot as plt
+
+plt.cla()
+plt.subplots(figsize = (10,7))
+
+# Reading in the dataset as df
+df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
+
+df['Petal.Length'].plot(kind='hist')
+
+
+# Label your axis
+plt.ylabel('Frequency', fontsize = 10)
+plt.xlabel('Petal Length', fontsize = 10)
+plt.title('Frequency of Petal Length', fontsize = 20)
+plt.tight_layout()
+plt.legend()
+plt.show()
+```
+
+#### Result (Grouped){-}
+
+Nothing here yet.
+
+#### Code (Grouped) {-}
+
+- Note the use of `alpha = 0.5` to generate semi-transparent histograms.
+- This would help to get your messages across!
+
+```{python,eval=F}
+# Import relevant packages
+import pandas as pd
+import matplotlib.pyplot as plt
+
+plt.cla()
+plt.subplots(figsize = (10,7))
+
+# Reading in the dataset as df
+df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
+
+grouped_species = df.groupby("Species")['Petal.Length']
+grouped_species.plot(kind='hist', alpha = 0.5)
+
+
+# Label your axis
+plt.ylabel('Frequency', fontsize = 10)
+plt.xlabel('Petal Length', fontsize = 10)
+plt.title('Frequency of Petal Length grouped by Species', fontsize = 20)
+plt.tight_layout()
+plt.legend()
+plt.show()
+```
+
+## Scatterplots
+
+`r my_fun.example('Grouped Scatterplots')`
+
+#### Result (No Group){-}
+
+Nothing here yet.
+
+#### Code (No Group){-}
+
+- Recall on the use of `for loops` and `ax` plotting in `matplotlib`.
+
+```{python,eval=F}
+# Import relevant packages
+import pandas as pd
+import matplotlib.pyplot as plt
+
+plt.cla()
+plt.subplots(figsize = (10,7))
+
+# Reading in the dataset as df
+df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
+
+
+df.plot("Petal.Width", 'Petal.Length', kind='scatter')
+
+# Label your axis
+plt.ylabel('Petal Length', fontsize = 10)
+plt.xlabel('Petal Width', fontsize = 10)
+plt.title('Length vs Width of Petals', fontsize = 20)
+plt.tight_layout()
+plt.legend()
+plt.show()
+```
+
+#### Result (Grouped){-}
+
+Nothing here yet.
+
+#### Code (Grouped){-}
+
+- Recall on the use of `for loops` and `ax` plotting in `matplotlib`.
+
+```{python,eval=F}
+# Import relevant packages
+import pandas as pd
+import matplotlib.pyplot as plt
+
+plt.cla()
+plt.subplots(figsize = (10,7))
+
+# Reading in the dataset as df
+df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
+
+grouped_species = df.groupby("Species")
+
+# Calling plt.subplots().
+fig, ax = plt.subplots()
+
+for name, species in grouped_species:
+    ax.scatter(species["Petal.Width"], species["Petal.Length"], label=name)
+
+
+# Label your axis
+plt.ylabel('Petal Length', fontsize = 10)
+plt.xlabel('Petal Width', fontsize = 10)
+plt.title('Length vs Width of Petals grouped by Species', fontsize = 20)
+plt.tight_layout()
+plt.legend()
+plt.show()
+```
+
+## Boxplots
+
+`r my_fun.example('Boxplots')`
+
+#### Result {-}
+
+Nothing here yet.
+
+#### Code {-}
+
+- Note the use of `df.boxplot` for boxplot instead of `df.plot`.
+- For our purposes `plt.suptitle('')` was used to remove the secondary title of our boxplot.
+
+```{python,eval=F}
+# Import relevant packages
+import pandas as pd
+import matplotlib.pyplot as plt
+
+plt.cla()
+plt.subplots(figsize = (10,7))
+
+# Reading in the dataset as df
+df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
+
+#Plotting boxplot
+df.boxplot('Petal.Length', by='Species')
+
+# Don't forget to add the labels for clarity!
+plt.suptitle('')
+plt.title('Average Petal Length vs Species', fontsize = 20)
+plt.ylabel('Petal Length', fontsize = 10)
+plt.xlabel('Species', fontsize = 10)
+plt.tight_layout()
+plt.show()
+```
