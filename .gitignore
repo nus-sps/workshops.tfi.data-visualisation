@@ -3,4 +3,5 @@ _bookdown_files
 .Rproj.user/
 .Rhistory
 *.rds
+__pycache__
 workshops.tfi.visualisation.rds

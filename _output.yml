@@ -1,7 +1,8 @@
 bookdown::bs4_book:
-  css: [bs4_style.css,my-style.css]
+  css: [bs4_style.css, my-style.css, my-pygments.css]
   theme:
     primary: "#096B72"
+    highlight: pygments
   # repo:
   #     base: https://github.com/nus-sps/workshops.tfi.data-visualisation
   #     branch: main

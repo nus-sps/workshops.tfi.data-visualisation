@@ -43,6 +43,8 @@ xaringanExtra::use_panelset()
 library(reticulate)
 library(readr)
 library(kableExtra)
+
+use_python('/home/chammika/miniconda3/bin/python')
 ```
 
 `# (PART) Welcome {-}`
@@ -75,8 +77,7 @@ No prior programming knowledge is expected, just lots of enthusiasm and a sense 
 
 ```{r workshop-worksflow,echo = F,eval=T}
 filename <- "./files/2021 _ Planning - Python Workshop _ Workflow.csv"
-df <- read_csv(filename,col_types = cols(...3 = col_character(),Duration = col_skip()),na = "empty")
-#View(X2021_Planning_Python_Workshop_Workflow)
+df <- read_csv(filename, col_types = cols(Time = col_character(), Duration = col_skip()), na = "empty")
 
 df %>%
   kbl() %>%

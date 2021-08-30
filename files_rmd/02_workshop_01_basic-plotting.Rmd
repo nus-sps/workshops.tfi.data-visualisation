@@ -35,9 +35,9 @@ plt.show()
 
 ```
 
+`r my_fun.example('Test: A Simple Plot')`
 
-## gggg {-.panelset}
-
-### ha {-}
-
-### hahh {-}
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('test'))
+```
