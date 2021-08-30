@@ -1,4 +1,5 @@
 import copy
+import glob
 import os
 import re
 
@@ -6,7 +7,7 @@ from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import PythonLexer
 
-tag_image_file = '__my_python_img__'
+tag_output_file = '__my_python_output__'
 
 
 class My_Section:
@@ -39,7 +40,7 @@ class My_Section:
         else:
             self.code = None
 
-        self.output = self.create_output()
+        self.create_output()
 
     def format_code(self, code):
         tag_open = '<div class="sourceCode">'
@@ -52,7 +53,7 @@ class My_Section:
 
         tag_remove = '___REMOVE___'
 
-        regex = re.compile(r'^.*\#!\s[hH][iI][dD][eE].*$', flags=re.MULTILINE)
+        regex = re.compile(r'^.*\#\s*[hH][iI][dD][eE].*$', flags=re.MULTILINE)
         code = regex.sub(tag_remove, code)
 
         cleaned_code = ''
@@ -69,8 +70,8 @@ class My_Section:
 
     def create_output(self):
 
-        if self.heading.find('Result') != -1:
-            self.text = f'<img src="./imgs/{tag_image_file}{self.filename}.png" class="python-result-img"></img>'
+        # if self.heading.find('Result') != -1:
+            # self.text = f'<img src="python_outputs/{tag_output_file}{self.filename}.png" class="python-result-img"></img>'
 
         output = f'#### {self.heading} {{-.panelset}}\n<br>\n'
         if self.text is not None:
@@ -81,24 +82,12 @@ class My_Section:
             output += self.format_code(self.code)
             output += '\n'
 
-        return output
+        self.output = output
 
 
 def render_python(filename, result_type='image'):
-
-    filepath = f'./files_python/{filename}'
-    temp_filepath = f'./{tag_image_file}{filename}'
-    result_filepath = f'./imgs/{tag_image_file}{filename}.png'
-
-    # Generate the result
-    if not os.path.exists(result_filepath):
-        cmd = f'cp {filepath} {temp_filepath}' + ' && '
-        cmd += f'python {temp_filepath}' + ' && '
-        cmd += f'rm {temp_filepath}' + ' && '
-        cmd += f'mv {tag_image_file}{filename}.png ./imgs'
-        os.system(cmd)
-
-    with open(filepath, 'r') as file:
+    py_filepath = f'files_python/{filename}'
+    with open(py_filepath, 'r') as file:
         file_content = file.read()
 
     # A quick clean
@@ -117,13 +106,47 @@ def render_python(filename, result_type='image'):
 
     section_info = []
 
+    # Analyse the sections
     for i in range(0, len(section_locations) - 1):
         s, e = section_locations[i:i + 2]
         section_text = file_content[s:e]
         section_info.append(My_Section(filename, section_text))
 
+    # Is there a results section?
+    for section in section_info:
+        if section.heading.find('Result') != -1:
+            section.text = create_result_output(filename)
+            section.create_output()
+
     return '\n'.join([section.output for section in section_info])
 
 
-# print(render_python('test'))
+def create_result_output(filename):
+    py_filepath = f'files_python/{filename}'
+    temp_py_filepath = f'{tag_output_file}{filename}'
+
+    result_files = glob.glob(f'python_outputs/*{filename}*')
+
+    if not result_files:
+        cmd = f'cp {py_filepath} {temp_py_filepath}' + ' && '
+        cmd += f'python {temp_py_filepath}' + ' && '
+        cmd += f'rm {temp_py_filepath}' + ' && '
+        cmd += f'mv {tag_output_file}{filename}.* python_outputs'
+        os.system(cmd)
+        result_files = glob.glob(f'python_outputs/*{filename}*')
+
+    result_filename = result_files[0];
+    result_fileext = result_filename.split('.')
+    result_fileext = result_fileext[-1]
+
+    if result_fileext == 'html':
+        with open(result_filename,'r') as file:
+            output = file.read()
+    else:
+        output =  f'<img src="{result_filename}" class="python-result-img"></img>'
+
+    return output
+
+#print(render_python('a-simple-plot.py'))
+# print(render_python('covid-subset-asean.py'))
 # print(HtmlFormatter().get_style_defs('.highlight'))

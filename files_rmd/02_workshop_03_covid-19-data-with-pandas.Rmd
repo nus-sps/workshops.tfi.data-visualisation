@@ -106,6 +106,13 @@ asean_df.loc[:,'Date'] = pd.to_datetime(asean_df['Date'])
 asean_df.head()
 ```
 
+<!-- Exercise -->
+`r my_fun.exercise('Subset to ASEAN countries only')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('covid-subset-asean.py'))
+```
 
 ## Exploration of COVID19 dataset: Bar Chart
 
@@ -197,7 +204,7 @@ plt.xlabel('Date', fontsize = 15)
 plt.title('Number of Confirmed Cases over time in ASEAN countries', fontsize = 20)
 plt.tight_layout()
 plt.show()
-``` 
+```
 
 ## Exploration of COVID19 dataset: Time-Series Daily Cases
 

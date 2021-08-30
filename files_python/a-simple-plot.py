@@ -1,18 +1,14 @@
-# Basic Plotting with Pandas
+# %% Results
 
-`r my_fun.example('A Simple Plot')`
-
-#### Result {-}
-
-![](./imgs/simple-01.png)
-
-#### Code {-}
-
+# %% Code
+'''
 - You can have only a `scatter` (without error bars) by using scatter (which is commented below).
 - `fmt` is short for ‘format string’. This decides the shape of the data point.
 - The $…$ allows us to use (a limited set of) LaTeX commands!
+'''
 
-```{python,eval=F}
+from sys import argv  # Hide
+
 from matplotlib import pyplot as plt
 
 # Some data for plotting
@@ -31,13 +27,5 @@ plt.ylabel('y-values')
 plt.title('X vs Y')
 plt.grid(alpha=.25)
 plt.legend(loc='upper left')
+plt.savefig(f'{argv[0]}.png', dpi=150)  # Hide
 plt.show()
-
-```
-
-`r my_fun.example('Test: A Simple Plot')`
-
-```{python,results='asis',echo=F,cache=F}
-from my_functions import render_python
-print(render_python('a-simple-plot.py'))
-```

@@ -49,9 +49,12 @@ if (Sys.info()['user'] == 'chammika') {
 } else if (Sys.info()['user'] == 'Darren') {
   use_python('D:\\minconda')
 } else {
-
+  use_python('D:\\minconda')
 }
 ```
+
+<!-- Dirty way to force Bookdown to include the folder python_outputs -->
+<!-- ![](python_outputs/__my_python_img__test.png) -->
 
 `# (PART) Welcome {-}`
 
