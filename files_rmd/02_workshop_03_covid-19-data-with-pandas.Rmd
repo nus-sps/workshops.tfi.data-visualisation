@@ -132,7 +132,11 @@ asean_df_latest = asean_df[asean_df['Date'] == latest_date]
 asean_df_latest.set_index('Country', inplace = True)
 
 
-asean_df_latest['Deaths'].plot(kind = 'barh').set_xlabel('Total Deaths')
+ax = asean_df_latest['Deaths'].plot(kind = 'barh')
+
+ax.set_xlabel('Total Deaths', fontsize = 15)
+ax.set_ylabel('Country', fontsize = 15)
+ax.set_title('Number of Deaths due to COVID-19\nby countries', fontsize = 20)
 
 plt.tight_layout()
 plt.show()
@@ -150,8 +154,11 @@ asean_df_latest = asean_df[asean_df['Date'] == latest_date]
 asean_df_latest.set_index('Country', inplace = True)
 asean_df_latest = asean_df_latest.sort_values(by = 'Deaths', ascending=True)
 
-asean_df_latest['Deaths'].plot(kind = 'barh').set_xlabel('Total Deaths')
+ax = asean_df_latest['Deaths'].plot(kind = 'barh')
 
+ax.set_xlabel('Total Deaths', fontsize = 15)
+ax.set_ylabel('Country', fontsize = 15)
+ax.set_title('Number of Deaths due to COVID-19\nsorted by descending order by countries', fontsize = 20)
 plt.tight_layout()
 plt.show()
 ```
@@ -185,8 +192,10 @@ for country in ASEAN_countries_list:
     asean_df[asean_df['Country'] == country].plot('Date','Confirmed',ax=ax, label = country)
 
 plt.legend()
-plt.xlabel('Number of Confirmed Cases', fontsize = 15)
+plt.ylabel('Number of Confirmed Cases', fontsize = 15)
+plt.xlabel('Date', fontsize = 15)
 plt.title('Number of Confirmed Cases over time in ASEAN countries', fontsize = 20)
+plt.tight_layout()
 plt.show()
 ``` 
 
@@ -200,19 +209,45 @@ plt.show()
 
 Using the dataframe containing **ALL DATES** of ASEAN countries only:
 
-1. Find the daily cases for each country using `pd.diff()`.
+1. Find the daily cases for each country using `.diff()`.
 
-2. Plot the daily number of confirmed cases against dates.
+2. Set all negative values to NaN or 0s.
 
-3. Ensure that each country has their own `colour`.
+3. Plot the daily number of confirmed cases against dates.
 
-4. Enable the legend
+4. Ensure that each country has their own `colour`.
+
+5. Enable the legend
 
 #### Solution {-}
 
 ```{python, include = T}
+import numpy as np
+
 # asean_df is the df of choice
 
-# I actually don't know....
+# Make a copy
+t_asean = asean_df.copy()
 
+# Using .diff() to find the difference between rows
+t_asean.loc[:, 'Daily'] = t_asean['Confirmed'].diff()
+
+# Setting Negative Values to 0 or NaN because of Math
+t_asean[t_asean['Daily'] < 0] = np.NaN
+
+
+plt.cla()
+fig, ax = plt.subplots(figsize = (10,5))
+
+
+#Iterate through our countries so we can plot automatically plot them!
+for country in ASEAN_countries_list:
+    t_asean[t_asean['Country'] == country].plot('Date','Daily',ax=ax, label = country)
+
+plt.legend()
+plt.ylabel('Number of Daily Cases', fontsize = 15)
+plt.xlabel('Date', fontsize = 15)
+plt.title('Number of Daily Cases over time in ASEAN countries', fontsize = 20)
+plt.tight_layout()
+plt.show()
 ```
