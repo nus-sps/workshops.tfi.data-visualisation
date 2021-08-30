@@ -7,7 +7,7 @@ from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import PythonLexer
 
-tag_output_file = 'my_python_output__'
+tag_output_file = '__my_python_output__'
 
 
 class My_Section:
