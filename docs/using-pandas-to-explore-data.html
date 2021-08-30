@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 10 Using Pandas to Explore Data | TFI e-Workshop | Using Python To Tell Stories With Data</title>
+<meta name="author" content="SPS Science Communication Team">
+<meta name="description" content="Here we will be using pandas to do some exploratory plots on a dataset containing Gender, Height and, Weight. The dataset we are going to be using is an edited version from Kaggle where we trimmed...">
+<meta name="generator" content="bookdown 0.23 with bs4_book()">
+<meta property="og:title" content="Chapter 10 Using Pandas to Explore Data | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Here we will be using pandas to do some exploratory plots on a dataset containing Gender, Height and, Weight. The dataset we are going to be using is an edited version from Kaggle where we trimmed...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 10 Using Pandas to Explore Data | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta name="twitter:description" content="Here we will be using pandas to do some exploratory plots on a dataset containing Gender, Height and, Weight. The dataset we are going to be using is an edited version from Kaggle where we trimmed...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+<link rel="stylesheet" href="my-style.css">
+<link rel="stylesheet" href="my-pygments.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">TFI e-Workshop | Using Python To Tell Stories With Data</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li class="book-part">Introduction</li>
+<li><a class="" href="hello.html"><span class="header-section-number">2</span> Hello</a></li>
+<li class="book-part">Pre Workshop Material</li>
+<li><a class="" href="instructions.html">Instructions</a></li>
+<li><a class="" href="some-python-basics.html"><span class="header-section-number">4</span> Some Python Basics</a></li>
+<li><a class="" href="python-basics-exercises.html"><span class="header-section-number">5</span> Python Basics : Exercises</a></li>
+<li><a class="" href="some-pandas-basics.html"><span class="header-section-number">6</span> Some Pandas Basics</a></li>
+<li><a class="" href="python-pandas-exercises.html"><span class="header-section-number">7</span> Python Pandas : Exercises</a></li>
+<li class="book-part">Workshop</li>
+<li><a class="" href="instructions-1.html">Instructions</a></li>
+<li><a class="" href="basic-plotting-with-pandas.html"><span class="header-section-number">9</span> Basic Plotting with Pandas</a></li>
+<li><a class="active" href="using-pandas-to-explore-data.html"><span class="header-section-number">10</span> Using Pandas to Explore Data</a></li>
+<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">11</span> Using Pandas to Explore COVID-19 Data</a></li>
+<li><a class="" href="core-visualisation-principles.html"><span class="header-section-number">12</span> Core Visualisation Principles</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="using-pandas-to-explore-data" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Using Pandas to Explore Data<a class="anchor" aria-label="anchor" href="#using-pandas-to-explore-data"><i class="fas fa-link"></i></a>
+</h1>
+<p>Here we will be using pandas to do some exploratory plots on a dataset containing <code>Gender</code>, <code>Height</code> and, <code>Weight</code>. The dataset we are going to be using is an edited version from <a href="https://www.kaggle.com/mustafaali96/weight-height/version/1">Kaggle</a> where we trimmed to 200 total rows and converted everything to the metric system.</p>
+<div id="barcharts" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Barcharts<a class="anchor" aria-label="anchor" href="#barcharts"><i class="fas fa-link"></i></a>
+</h2>
+<div id="example-2-barcharts-with-error-bars" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 2 | </span> Barcharts with error bars<a class="anchor" aria-label="anchor" href="#example-2-barcharts-with-error-bars"><i class="fas fa-link"></i></a>
+</h3>
+<div id="result-1" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-1"><i class="fas fa-link"></i></a>
+</h4>
+<p><br><img src="python_outputs/__my_python_output__pandas-explore-bar.py.png" class="python-result-img"></p>
+</div>
+<div id="things-to-take-note" class="section level4 unnumbered panelset">
+<h4>Things to take note<a class="anchor" aria-label="anchor" href="#things-to-take-note"><i class="fas fa-link"></i></a>
+</h4>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li>Loading in the dataset from <a href="https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv" class="uri">https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv</a>
+</li>
+<li>Standard Error is calculated ourselves.</li>
+<li>Usage of <code>groupby</code>, <code>.agg</code> and <code>yerr</code>.</li>
+</ol>
+</div>
+<div id="example" class="section level4 unnumbered panelset">
+<h4>Example<a class="anchor" aria-label="anchor" href="#example"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Reading in the dataset as df</span>
+<span class="n">link</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+<span class="c1"># Creating a function to calculate standard error</span>
+<span class="k">def</span> <span class="nf">se</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+
+<span class="n">df_height_grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Gender"</span><span class="p">)[</span><span class="s1">'Height'</span><span class="p">]</span>
+
+
+<span class="n">df_height_mean_se_gender</span> <span class="o">=</span> <span class="n">df_height_grouped</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">se</span><span class="p">])</span>
+<span class="n">df_height_mean_se_gender</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="n">yerr</span> <span class="o">=</span> <span class="s1">'se'</span><span class="p">,</span><span class="n">capsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Average Height (cm)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Gender'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Average Height (cm) vs Gender'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="histograms" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> Histograms<a class="anchor" aria-label="anchor" href="#histograms"><i class="fas fa-link"></i></a>
+</h2>
+<div id="example-3-histograms-with-grouping" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 3 | </span> Histograms with Grouping<a class="anchor" aria-label="anchor" href="#example-3-histograms-with-grouping"><i class="fas fa-link"></i></a>
+</h3>
+<div id="result-grouped" class="section level4 unnumbered panelset">
+<h4>Result (Grouped)<a class="anchor" aria-label="anchor" href="#result-grouped"><i class="fas fa-link"></i></a>
+</h4>
+<p><br><img src="python_outputs/__my_python_output__pandas-explore-hist.py.png" class="python-result-img"></p>
+</div>
+<div id="things-to-take-note-1" class="section level4 unnumbered panelset">
+<h4>Things to take note<a class="anchor" aria-label="anchor" href="#things-to-take-note-1"><i class="fas fa-link"></i></a>
+</h4>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li>Loading in the dataset from <a href="https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv" class="uri">https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv</a>
+</li>
+<li>Usage of <code>.groupby</code> to group in histograms</li>
+</ol>
+</div>
+<div id="example-no-grouping" class="section level4 unnumbered panelset">
+<h4>Example (No Grouping)<a class="anchor" aria-label="anchor" href="#example-no-grouping"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Reading in the dataset as df</span>
+<span class="n">link</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+
+<span class="n">df</span><span class="p">[</span><span class="s1">'Height'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'hist'</span><span class="p">)</span>
+
+<span class="c1"># Label your axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Frequency'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Height (cm)'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Histogram of Height (cm)'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
+</div>
+<div id="example-grouped" class="section level4 unnumbered panelset">
+<h4>Example (Grouped)<a class="anchor" aria-label="anchor" href="#example-grouped"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Reading in the dataset as df</span>
+<span class="n">link</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+
+<span class="n">grouped_gender</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Gender"</span><span class="p">)[</span><span class="s1">'Height'</span><span class="p">]</span>
+<span class="n">grouped_gender</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'hist'</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Label your axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Frequency'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Height (cm)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Histogram of Height (cm) grouped by Gender'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="scatterplots" class="section level2" number="10.3">
+<h2>
+<span class="header-section-number">10.3</span> Scatterplots<a class="anchor" aria-label="anchor" href="#scatterplots"><i class="fas fa-link"></i></a>
+</h2>
+<div id="example-4-grouped-scatterplots" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 4 | </span> Grouped Scatterplots<a class="anchor" aria-label="anchor" href="#example-4-grouped-scatterplots"><i class="fas fa-link"></i></a>
+</h3>
+<div id="result-grouping" class="section level4 unnumbered panelset">
+<h4>Result (Grouping)<a class="anchor" aria-label="anchor" href="#result-grouping"><i class="fas fa-link"></i></a>
+</h4>
+<p><br><img src="python_outputs/__my_python_output__pandas-explore-scatter.py.png" class="python-result-img"></p>
+</div>
+<div id="things-to-take-note-2" class="section level4 unnumbered panelset">
+<h4>Things to take note<a class="anchor" aria-label="anchor" href="#things-to-take-note-2"><i class="fas fa-link"></i></a>
+</h4>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li>Loading in the dataset from <a href="https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv" class="uri">https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv</a>
+</li>
+</ol>
+</div>
+<div id="example-no-grouping-1" class="section level4 unnumbered panelset">
+<h4>Example (No Grouping)<a class="anchor" aria-label="anchor" href="#example-no-grouping-1"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Reading in the dataset as df</span>
+<span class="n">link</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">"Height"</span><span class="p">,</span> <span class="s1">'Weight'</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">'scatter'</span><span class="p">)</span>
+
+<span class="c1"># Label your axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Height (cm)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Weight (kg)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Weight (kg) vs Height (cm)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
+</div>
+<div id="example-grouped-1" class="section level4 unnumbered panelset">
+<h4>Example (Grouped)<a class="anchor" aria-label="anchor" href="#example-grouped-1"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Reading in the dataset as df</span>
+<span class="n">link</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+
+<span class="n">df_grouped_gender</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Gender"</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">gender</span> <span class="ow">in</span> <span class="n">df_grouped_gender</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gender</span><span class="p">[</span><span class="s2">"Height"</span><span class="p">],</span> <span class="n">gender</span><span class="p">[</span><span class="s2">"Weight"</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># Label your axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Height (cm)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Weight (kg)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Weight (kg) vs Height (cm) grouped by Gender'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="boxplots" class="section level2" number="10.4">
+<h2>
+<span class="header-section-number">10.4</span> Boxplots<a class="anchor" aria-label="anchor" href="#boxplots"><i class="fas fa-link"></i></a>
+</h2>
+<div id="example-5-boxplots" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 5 | </span> Boxplots<a class="anchor" aria-label="anchor" href="#example-5-boxplots"><i class="fas fa-link"></i></a>
+</h3>
+<div id="result-2" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-2"><i class="fas fa-link"></i></a>
+</h4>
+<p><br><img src="python_outputs/__my_python_output__pandas-explore-boxplot.py.png" class="python-result-img"></p>
+</div>
+<div id="things-to-take-note-3" class="section level4 unnumbered panelset">
+<h4>Things to take note<a class="anchor" aria-label="anchor" href="#things-to-take-note-3"><i class="fas fa-link"></i></a>
+</h4>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li>Loading in the dataset from <a href="https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv" class="uri">https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv</a>
+</li>
+<li>Note the use of <code>df.boxplot</code> for boxplot instead of <code>df.plot</code>.</li>
+<li>For our purposes <code>plt.suptitle('')</code> was used
+to remove the secondary title of our boxplot.</li>
+</ol>
+</div>
+<div id="example-1" class="section level4 unnumbered panelset">
+<h4>Example<a class="anchor" aria-label="anchor" href="#example-1"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Reading in the dataset as df</span>
+<span class="n">link</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/height-weight-metric.csv'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+
+<span class="c1">#Plotting boxplot</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s1">'Height'</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">'Gender'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Don't forget to add the labels for clarity!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Boxplot of Height (cm) grouped by Gender'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Height (cm)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Gender'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="basic-plotting-with-pandas.html"><span class="header-section-number">9</span> Basic Plotting with Pandas</a></div>
+<div class="next"><a href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">11</span> Using Pandas to Explore COVID-19 Data</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#using-pandas-to-explore-data"><span class="header-section-number">10</span> Using Pandas to Explore Data</a></li>
+<li>
+<a class="nav-link" href="#barcharts"><span class="header-section-number">10.1</span> Barcharts</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-2-barcharts-with-error-bars">Example 2 |  Barcharts with error bars</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#histograms"><span class="header-section-number">10.2</span> Histograms</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-3-histograms-with-grouping">Example 3 |  Histograms with Grouping</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#scatterplots"><span class="header-section-number">10.3</span> Scatterplots</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-4-grouped-scatterplots">Example 4 |  Grouped Scatterplots</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#boxplots"><span class="header-section-number">10.4</span> Boxplots</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-5-boxplots">Example 5 |  Boxplots</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-08-30.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

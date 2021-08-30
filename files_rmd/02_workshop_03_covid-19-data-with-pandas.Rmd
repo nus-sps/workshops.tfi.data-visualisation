@@ -15,95 +15,18 @@ It is always good to get a rough idea about a dataset, right at the start.
 <!-- Exercise -->
 `r my_fun.exercise('What are we dealing with?')`
 
-#### Tasks {-}
-
-1. Load the data from https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv
-1. What is the shape of the data? I.e. how many rows and columns are there?
-1. Are there any missing numbers?
-1. What are column names?
-
-#### Solution {-}
-```{python,echo=F}
-import pandas as pd
-import matplotlib.pyplot as plt
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('covid-housekeeping1.py'))
 ```
-
-```{python,include=T}
-data_url = 'https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv'
-df = pd.read_csv(data_url)
-
-df.shape
-
-df.columns
-
-df.head()
-
-df.describe()
-
-df.info()
-
-
-```
-
-```{r, echo = F, eval=FALSE}
-knitr::kable(head(py$df))
-```
-
 
 
 <!-- Exercise -->
 `r my_fun.exercise('Drop those unnecessary columns?')`
 
-#### Tasks {-}
-<br>
-
-Assuming we are only interested in Number of Deaths and Number of Confirmed cases.
-
-1. What are all the columns in the this dataset.
-2. Drop unnecessary columns.
-
-#### Solution {-}
-
-This solution specifies what columns to **drop**.
-
-```{python,include=T}
-df_dropped = df.drop(columns = 'Recovered')
-df_dropped.head()
-```
-
-#### Another Solution {-}
-
-This solution specifies what columns to **keep**.
-
-```{python,include=T}
-# We want date, Country, Confirmed and Deaths
-df_keep = df[["Date", "Country", "Confirmed", "Deaths"]]
-df_keep.head()
-```
-<!-- Exercise -->
-`r my_fun.exercise('Subset to ASEAN countries only')`
-
-#### Tasks {-}
-<br>
-
-The dataframe is huge with many countries!
-
-1. Find a way to subset the dataframe to only contain ASEAN countries. The list containing all ASEAN countries have been provided for you.
-
-2. `ASEAN_countries_list = ['Brunei', 'Cambodia', 'Indonesia', 'Laos', 'Malaysia', 'Burma', 'Philippines', 'Singapore', 'Vietnam']`
-
-3. Convert the dates in `Date` to `datetime` using `pd.to_datetime`.
-
-#### Solution {-}
-
-```{python, include = T, warning = F}
-ASEAN_countries_list = ['Brunei', 'Cambodia', 'Indonesia', 'Laos', 'Malaysia', 'Burma', 'Philippines', 'Singapore', 'Vietnam']
-
-asean_df = df_dropped[df_dropped['Country'].isin(ASEAN_countries_list)]
-
-asean_df.loc[:,'Date'] = pd.to_datetime(asean_df['Date'])
-
-asean_df.head()
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('covid-housekeeping2.py'))
 ```
 
 <!-- Exercise -->
@@ -119,55 +42,9 @@ print(render_python('covid-subset-asean.py'))
 <!-- Exercise -->
 `r my_fun.exercise('Plotting the Total Deaths in each country')`
 
-#### Tasks {-}
-<br>
-
-1. Subset the dataset so that it contains only the latest date of each country.
-2. Using either `pandas` or `matplotlib` or both, plot the total number of deaths in each country.
-
-3. Is there a better way to represent this plot?
-Hint: Maybe make the barchart descending!
-
-#### Solution {-}
-
-```{python, include = T}
-plt.cla()
-plt.subplots(figsize = (10,7))
-
-latest_date = max(asean_df['Date'])
-asean_df_latest = asean_df[asean_df['Date'] == latest_date]
-asean_df_latest.set_index('Country', inplace = True)
-
-
-ax = asean_df_latest['Deaths'].plot(kind = 'barh')
-
-ax.set_xlabel('Total Deaths', fontsize = 15)
-ax.set_ylabel('Country', fontsize = 15)
-ax.set_title('Number of Deaths due to COVID-19\nby countries', fontsize = 20)
-
-plt.tight_layout()
-plt.show()
-```
-
-#### Solution Better Way {-}
-
-As you can tell, it is not really clean. A better way to present the other plot would be to sort the countries in descending order of deaths!
-
-```{python, include = T}
-plt.cla()
-plt.subplots(figsize = (10,7))
-latest_date = max(asean_df['Date'])
-asean_df_latest = asean_df[asean_df['Date'] == latest_date]
-asean_df_latest.set_index('Country', inplace = True)
-asean_df_latest = asean_df_latest.sort_values(by = 'Deaths', ascending=True)
-
-ax = asean_df_latest['Deaths'].plot(kind = 'barh')
-
-ax.set_xlabel('Total Deaths', fontsize = 15)
-ax.set_ylabel('Country', fontsize = 15)
-ax.set_title('Number of Deaths due to COVID-19\nsorted by descending order by countries', fontsize = 20)
-plt.tight_layout()
-plt.show()
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('covid-barchart.py'))
 ```
 
 ## Exploration of COVID19 dataset: Time-Series
@@ -175,35 +52,9 @@ plt.show()
 <!-- Exercise -->
 `r my_fun.exercise('Total Confirmed Cases in each country over time')`
 
-#### Tasks {-}
-<br>
-
-Using the dataframe containing **ALL DATES** of ASEAN countries only:
-
-1. Plot the total number of confirmed cases against dates.
-
-2. Ensure that each country has their own `colour`.
-
-3. Enable the legend
-
-#### Solution {-}
-
-```{python, include = T}
-# asean_df is the df of choice
-
-plt.cla()
-fig, ax = plt.subplots(figsize = (10,5))
-
-#Iterate through our countries so we can plot automatically plot them!
-for country in ASEAN_countries_list:
-    asean_df[asean_df['Country'] == country].plot('Date','Confirmed',ax=ax, label = country)
-
-plt.legend()
-plt.ylabel('Number of Confirmed Cases', fontsize = 15)
-plt.xlabel('Date', fontsize = 15)
-plt.title('Number of Confirmed Cases over time in ASEAN countries', fontsize = 20)
-plt.tight_layout()
-plt.show()
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('covid-time-series.py'))
 ```
 
 ## Exploration of COVID19 dataset: Time-Series Daily Cases
@@ -211,50 +62,7 @@ plt.show()
 <!-- Exercise -->
 `r my_fun.exercise('Daily Confirmed Cases in each country over time')`
 
-#### Tasks {-}
-<br>
-
-Using the dataframe containing **ALL DATES** of ASEAN countries only:
-
-1. Find the daily cases for each country using `.diff()`.
-
-2. Set all negative values to NaN or 0s.
-
-3. Plot the daily number of confirmed cases against dates.
-
-4. Ensure that each country has their own `colour`.
-
-5. Enable the legend
-
-#### Solution {-}
-
-```{python, include = T}
-import numpy as np
-
-# asean_df is the df of choice
-
-# Make a copy
-t_asean = asean_df.copy()
-
-# Using .diff() to find the difference between rows
-t_asean.loc[:, 'Daily'] = t_asean['Confirmed'].diff()
-
-# Setting Negative Values to 0 or NaN because of Math
-t_asean[t_asean['Daily'] < 0] = np.NaN
-
-
-plt.cla()
-fig, ax = plt.subplots(figsize = (10,5))
-
-
-#Iterate through our countries so we can plot automatically plot them!
-for country in ASEAN_countries_list:
-    t_asean[t_asean['Country'] == country].plot('Date','Daily',ax=ax, label = country)
-
-plt.legend()
-plt.ylabel('Number of Daily Cases', fontsize = 15)
-plt.xlabel('Date', fontsize = 15)
-plt.title('Number of Daily Cases over time in ASEAN countries', fontsize = 20)
-plt.tight_layout()
-plt.show()
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('covid-time-series-daily.py'))
 ```
