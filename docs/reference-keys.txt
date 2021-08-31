@@ -7,9 +7,7 @@ python
 ways-to-access-python
 jupyter-notebooks
 colab
-installing-python-with-anaconda
-updating-packages-with-anaconda
-using-anaconda-navigator
+installing-python
 markdown
 what-is-markdown
 conventions

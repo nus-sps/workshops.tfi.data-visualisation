@@ -38,15 +38,17 @@ sn2 <- '^[The best way to learn is to teach!]'
 
 ## Python?
 
-### What is Python? {.unnumbered}
+`r my_fun.tab('')`
+
+#### What is Python? {.unnumbered}
 
 `r my_logo_python`Python is a free and friendly programming language. The 'brain' of Python is called an **interpreter**. The newest version of the Python interpreter is **Python 3**.
 
-### How do I use Python? {.unnumbered}
+#### How do I use Python? {.unnumbered}
 
-The Python interpreter can only understand one instruction at a time. Therefore, we usually write many instructions in a single file (code) and then 'pass' it onto the interpreter. These files typically have the extension `.py.` However, Python can also be used interactively using an environment called `r jup`.
+The Python interpreter can only understand one instruction at a time. Therefore, we usually write many instructions in a single file (code) and then 'pass' it onto the interpreter. These files typically have the extension `.py`. However, Python can also be used interactively using an environment called `r jup`.
 
-### How do I use Python? {.unnumbered}
+#### How do I use Python? {.unnumbered}
 
 One of the best (and easiest) ways to get started with Python is to use an online environment like Colab. However, if want you can also install it on your computer using the **Anaconda distribution**.
 
@@ -76,16 +78,37 @@ Let's see what Colab can do by watching their introductory video.<br>
 
 <iframe width="100%" height="450px" src="https://www.youtube.com/embed/inN8seMm7UI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Installing Python with Anaconda
+### Installing Python
 
+
+`r my_fun.tab('')`
+
+#### With Anaconda {-}
 You **do not** have to install Python locally on your machine for this workshop. However, if you like to have Python on your computer we recommend that you use the Anaconda distribution called **miniconda**.
 
-**Step 1.** Visit the `r link` at Anaconda.<br>
+**Step 1.** Visit the `r link` at [Anaconda](https://www.anaconda.com/products/individual).<br>
 **Step 2.** Download and install the 64-bit _Python 3_ distribution suitable for your operating system.<br>(**Windows** users should run Anaconda as **Administrator**)
 
-#### Updating packages with Anaconda
 
-#### Using Anaconda-Navigator
+##### Updating packages with Anaconda {-}
+
+##### Using Anaconda-Navigator {-}
+
+#### Without Anaconda {-}
+If you would like to install Python locally on your machine for this workshop or for your own use:
+
+**Step 1.** Visit the `r link` at [python.org](https://www.python.org/downloads/).<br>
+**Step 2.** Download and install the 64-bit _Python 3_ version (_3.7_ and above is fine) suitable for your operating system.<br>
+**Step 3.** Ensure that "Add Python to PATH" option is ticked in the installer!<br>
+**Step 4.** Open your favorite editor OR search "IDLE" in your computer to start typing python commands!
+
+##### Installing packages with command prompt {-}
+**Step 1.** Open `run.exe` by pressing the windows key AND 'R' key
+
+**Step 2.** Type `cmd.exe` and click "Ok"
+
+**Step 3.** type in `python -m pip install PACKAGE_NAME` and press enter <br>
+(replace `PACKAGE_NAME` with the relevant python packages you would like to install.)
 
 ## Markdown
 
@@ -103,7 +126,7 @@ Python code is shown in a grey box like this:
 print('Code is shown in a box like this')
 ```
 
-A `#` will be used to show the result (or output) of the code. This will appear immediately after the code, like this:
+A `#>` will be used to show the result (or output) of the code. This will appear immediately after the code, like this:
 
 ```{r, engine='python', eval=TRUE}
 print('Code is shown in a box like this')
