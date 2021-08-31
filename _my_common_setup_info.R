@@ -37,3 +37,10 @@ my_fun.exercise <- function(text, reset, same = F){
 
   return(paste('### <span class = "my-exercises">Exercise ',counter_exercises,'| </span>',text,'{.unnumbered .panelset}\n'))
 }
+
+
+# Additional Tabbing
+my_fun.tab <- function(text){
+
+  return(paste('### <span class = "tabbing-section"></span>',text,'{.unnumbered .panelset}\n'))
+}
