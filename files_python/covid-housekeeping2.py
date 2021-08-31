@@ -32,6 +32,3 @@ df = pd.read_csv(data_url) # Hide
 
 df_keep = df[["Date", "Country", "Confirmed", "Deaths"]]
 df_keep.head()
-
-with open(f'{argv[0]}.html', 'w') as file:                 # Hide
-    file.write(df_keep.head().to_html())                  # Hide

@@ -37,7 +37,7 @@ df_ASEAN.loc[:, 'Daily'] = df_ASEAN['Confirmed'].diff()
 df_ASEAN[df_ASEAN['Daily'] < 0] = np.NaN
 
 # Plotting #
-fig, ax = plt.subplots(figsize=(5, 5))
+fig, ax = plt.subplots(figsize=(6, 5))
 
 # Iterate through our countries so we can plot automatically plot them!
 for country in ASEAN_countries:
@@ -46,12 +46,12 @@ for country in ASEAN_countries:
 
 # Pretty Things #
 plt.legend()
-plt.ylabel('Number of Daily Cases', fontsize = 10)
-plt.xlabel('Date', fontsize = 10)
-plt.xticks(fontsize = 5)
-plt.yticks(fontsize = 7)
-plt.title('Number of Daily Cases over time in ASEAN countries', fontsize = 10)
+plt.ylabel('Number of Daily Cases', fontsize = 12)
+plt.xlabel('Date', fontsize = 12)
+plt.title('Daily Cases over time in ASEAN countries', fontsize = 15)
+plt.xticks(fontsize = 8)
+plt.yticks(fontsize = 8)
 plt.tight_layout()
-plt.savefig(f'{argv[0]}.png', dpi=150)  # Hide
+plt.savefig(f'{argv[0]}.png')  # Hide
 plt.show()
 

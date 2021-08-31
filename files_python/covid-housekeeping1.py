@@ -20,15 +20,16 @@ from sys import argv  # Hide
 data_url = 'https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv'
 df = pd.read_csv(data_url)
 
-#df.shape
+df.shape
 
-#df.columns
+df.columns
 
-#df.describe()
+df.describe()
 
-#df.info()
+df.info()
 
 df.head()
 
 with open(f'{argv[0]}.html', 'w') as file:                 # Hide
-    file.write(df.head().to_html())                  # Hide
+    file.write(df.describe().to_html())                        # Hide
+    file.write(df.head().to_html())                        # Hide

@@ -25,7 +25,7 @@ filtered_ASEAN_rows = df_all['Country'].isin(ASEAN_countries) # Hide
 df_ASEAN = df_all[filtered_ASEAN_rows]                     # Hide
 
 
-plt.figure(figsize=(5, 5)) # Hide
+fig, ax = plt.subplots(figsize=(6, 5)) # Hide
 
 # Pandas Manipulation #
 latest_date = max(df_ASEAN['Date'])
@@ -37,12 +37,12 @@ df_ASEAN_latest_date.sort_values(by = 'Deaths', ascending=True, inplace = True)
 ax = df_ASEAN_latest_date['Deaths'].plot(kind = 'barh')
 
 # Pretty Things #
-ax.set_xlabel('Total Deaths', fontsize = 10)
-ax.set_ylabel('Country', fontsize = 10)
-ax.set_title('Number of Deaths due to COVID-19 by countries', fontsize = 10)
-plt.xticks(fontsize = 7)
-plt.yticks(fontsize = 7)
+ax.set_xlabel('Total Deaths', fontsize = 12)
+ax.set_ylabel('Country', fontsize = 12)
+ax.set_title('Number of Deaths due to COVID-19 by countries', fontsize = 15)
+plt.xticks(fontsize = 8)
+plt.yticks(fontsize = 8)
 plt.tight_layout()
-plt.savefig(f'{argv[0]}.png', dpi=150)  # Hide
+plt.savefig(f'{argv[0]}.png')  # Hide
 plt.show()
 

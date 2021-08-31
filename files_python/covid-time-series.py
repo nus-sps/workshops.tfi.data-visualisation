@@ -26,7 +26,7 @@ filtered_ASEAN_rows = df_all['Country'].isin(ASEAN_countries) # Hide
 df_ASEAN = df_all[filtered_ASEAN_rows]                     # Hide
 
 # Plotting #
-fig, ax = plt.subplots(figsize=(5, 5))
+fig, ax = plt.subplots(figsize=(6, 5))
 
 # Iterate through our countries so we can plot automatically plot them!
 for country in ASEAN_countries:
@@ -35,12 +35,12 @@ for country in ASEAN_countries:
 
 # Pretty Things #
 plt.legend()
-plt.ylabel('Number of Confirmed Cases', fontsize = 10)
-plt.xlabel('Date', fontsize = 10)
-plt.xticks(fontsize = 5)
-plt.yticks(fontsize = 7)
-plt.title('Number of Confirmed Cases over time in ASEAN countries\n', fontsize = 10)
+plt.ylabel('Number of Confirmed Cases', fontsize = 12)
+plt.xlabel('Date', fontsize = 12)
+plt.title('Confirmed Cases over time in ASEAN countries\n', fontsize = 15)
+plt.xticks(fontsize = 8)
+plt.yticks(fontsize = 8)
 plt.tight_layout()
-plt.savefig(f'{argv[0]}.png', dpi=150)  # Hide
+plt.savefig(f'{argv[0]}.png')  # Hide
 plt.show()
 
