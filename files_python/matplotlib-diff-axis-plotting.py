@@ -2,7 +2,7 @@
 
 # %% Code
 '''
-- We generate two sets of data `data_1` and `data_2`
+- We generate two sets of data sin x and cos x
 - We want to plot these two graphs side by side but do not want them to be on
 the same figure!
 - This is done using the `plt.subplots()` argument.
