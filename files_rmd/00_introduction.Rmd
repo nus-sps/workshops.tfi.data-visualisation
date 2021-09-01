@@ -11,6 +11,7 @@ my_logo_python <-  '<img src="https://upload.wikimedia.org/wikipedia/commons/thu
 my_logo_anaconda <- '<img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png" class="float-right" width="110px"/>'
 my_logo_colab <- '<img src="https://miro.medium.com/max/1940/1*ddtqWGkJz1TUCg1WM9qKeQ.jpeg" class="float-right" width="110px"/>'
 my_logo_markdown <- '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/128px-Markdown-mark.svg.png" class="float-right" width="110px"/>'
+my_logo_python_IDLE <- '<img src="https://bugs.python.org/file48758/python.png" class="float-right" width="110px"/>'
 ```
 
 # Hello
@@ -50,11 +51,13 @@ The Python interpreter can only understand one instruction at a time. Therefore,
 
 #### How do I use Python? {.unnumbered}
 
-One of the best (and easiest) ways to get started with Python is to use an online environment like Colab. However, if want you can also install it on your computer using the **Anaconda distribution**.
+One of the best (and easiest) ways to get started with Python is to use an online environment like Colab. However, if want you can also install it on your computer using the **Anaconda distribution** OR installing it locally on your machine without Anaconda!
 
 ## Ways to access Python?
 
-### Jupyter Notebooks
+`r my_fun.tab('')`
+
+#### Jupyter Notebooks {-}
 
 ```{r fig-jupyter-example, echo=F, out.width='75%',fig.align='center', fig.cap="Examples of Jupyter Notebooks (from [jupyter.org](https://jupyter.org))"}
 knitr::include_graphics('https://jupyter.org/assets/jupyterpreview.png')
@@ -64,7 +67,20 @@ knitr::include_graphics('https://jupyter.org/assets/jupyterpreview.png')
 
 `r jup` files have the extension `.ipynb`^[`ipynb` stands for *i-python-notebook*].
 
-### Colab
+#### Raw Python {-}
+```{r fig-sublime-example, echo=F, out.width='75%',fig.align='center', fig.cap="Example of Code Editor such as Sublime Text."}
+knitr::include_graphics('imgs/Sublimetext.PNG')
+```
+
+`r my_logo_python_IDLE` Alternatively, if you want something more simple, you can just install Python (see section below) and use the various code editors to run python code. Python files have the extension `.py`!
+
+Some Pyhton editors that are commonly used include (but not limited to) [Sublime Text](https://www.sublimetext.com/), [Spyder](https://www.spyder-ide.org/), [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/). 
+
+#### Colab {-}
+
+```{r fig-colab-example, echo=F, out.width='75%',fig.align='center', fig.cap="Example of a Colab notebook."}
+knitr::include_graphics('imgs/Colab.PNG')
+```
 
 `r my_logo_colab` **Colab** is a (free) platform offered by Google for coding in Python (and some other languages). Colab offers an environment (almost) identical to `r jup`.
 
@@ -74,9 +90,9 @@ Some advantages of using Colab are:
 -   Colab will enable us to share our code with others (just like any other Google document)
 -   Colab does all the processing on their servers. So, it won't tax your computer^[Of course you pay the price of computations being slightly slower].
 
-Let's see what Colab can do by watching their introductory video.<br>
+<!-- Let's see what Colab can do by watching their introductory video.<br> -->
 
-<iframe width="100%" height="450px" src="https://www.youtube.com/embed/inN8seMm7UI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="450px" src="https://www.youtube.com/embed/inN8seMm7UI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
 ### Installing Python
 
@@ -110,13 +126,13 @@ If you would like to install Python locally on your machine for this workshop or
 **Step 3.** type in `python -m pip install PACKAGE_NAME` and press enter <br>
 (replace `PACKAGE_NAME` with the relevant python packages you would like to install.)
 
-## Markdown
+<!-- ## Markdown -->
 
-### What is Markdown?
+<!-- ### What is Markdown? -->
 
-`r my_logo_markdown`**Markdown** is a simple, but powerful language for 'word processing'. Markdown is a simple and efficient way to write. Like $\LaTeX$ it tries to separate content from style. You can convert the content of Markdown (`.md`) files directly into PDF or HTML formats. Markdown can be used in `r jup` to add text. You can read more about it at the [Wikipedia](https://en.wikipedia.org/wiki/Markdown).
+<!-- `r my_logo_markdown`**Markdown** is a simple, but powerful language for 'word processing'. Markdown is a simple and efficient way to write. Like $\LaTeX$ it tries to separate content from style. You can convert the content of Markdown (`.md`) files directly into PDF or HTML formats. Markdown can be used in `r jup` to add text. You can read more about it at the [Wikipedia](https://en.wikipedia.org/wiki/Markdown). -->
 
-One of our favorite free, cross-platform Markdown editors is  [Typora](https://typora.io). There are also web based editors ([StackEdit](https://stackedit.io), [Dillinger](http://dillinger.io), [Madoko](https://www.madoko.net), [Markdown & LaTeX Editor](https://upmath.me)).
+<!-- One of our favorite free, cross-platform Markdown editors is  [Typora](https://typora.io). There are also web based editors ([StackEdit](https://stackedit.io), [Dillinger](http://dillinger.io), [Madoko](https://www.madoko.net), [Markdown & LaTeX Editor](https://upmath.me)). -->
 
 ## Conventions
 

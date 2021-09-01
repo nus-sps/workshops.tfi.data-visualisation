@@ -1,15 +1,13 @@
 fig:fig-jupyter-example
+fig:fig-sublime-example
+fig:fig-colab-example
 part-introduction
 hello
 what-topics-will-we-discuss
 some-tips
 python
 ways-to-access-python
-jupyter-notebooks
-colab
 installing-python
-markdown
-what-is-markdown
 conventions
 sec:resources
 jupyter-notebooks-1
