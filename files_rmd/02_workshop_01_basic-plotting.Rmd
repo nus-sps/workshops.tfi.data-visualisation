@@ -1,4 +1,4 @@
-# Basic Plotting with Pandas
+# Basic Plotting with Matplotlib
 
 `r my_fun.example('A Simple Plot')`
 

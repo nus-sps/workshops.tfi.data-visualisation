@@ -41,7 +41,7 @@ we-can-store-data-using-numpy-arrays-1
 python-sometimes-act-like-a-prima-donna-when-you-make-an-error-1
 python-pandas-exercises
 part-workshop
-basic-plotting-with-pandas
+basic-plotting-with-matplotlib
 using-pandas-to-explore-data
 barcharts
 histograms
