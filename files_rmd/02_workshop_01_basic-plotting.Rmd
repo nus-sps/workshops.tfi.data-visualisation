@@ -1,43 +1,46 @@
 # Basic Plotting with Matplotlib
 
-`r my_fun.example('A Simple Plot')`
-
-#### Result {-}
-
-![](./imgs/simple-01.png)
-
-#### Code {-}
-
-- You can have only a `scatter` (without error bars) by using scatter (which is commented below).
-- `fmt` is short for ‘format string’. This decides the shape of the data point.
-- The $…$ allows us to use (a limited set of) LaTeX commands!
-
-```{python,eval=F}
-from matplotlib import pyplot as plt
-
-# Some data for plotting
-x = [0, 1, 2, 3, 4, 5]
-y_1 = [0, 2, 4, 6, 8, 10]
-y_2 = [0, 4, 8, 12, 16, 20]
-err = [0.0, 0.5, 1.0, 1.5, 2.0, 2.5]
-
-# Lets start plotting
-plt.figure(figsize=(5, 5))
-plt.plot(x, y_1, color='red', linestyle='dashed', label='$Y_1$ values')
-plt.errorbar(x, y_2, yerr=err, color='black', fmt='o', label='$Y_2$ values')
-
-plt.xlabel('x-values')
-plt.ylabel('y-values')
-plt.title('X vs Y')
-plt.grid(alpha=.25)
-plt.legend(loc='upper left')
-plt.show()
-
-```
 
 `r my_fun.example('Test: A Simple Plot')`
 
 ```{python,results='asis',echo=F,cache=F}
 from my_functions import render_python
 print(render_python('a-simple-plot.py'))
+```
+
+`r my_fun.example('Histograms')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib-histograms.py'))
+```
+
+`r my_fun.example('Boxplots')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib-boxplot.py'))
+```
+
+
+`r my_fun.example('Plotting on the same axis')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib-same-axis-plotting.py'))
+```
+
+`r my_fun.example('Plotting on different axis')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib-diff-axis-plotting.py'))
+```
+
+
+`r my_fun.example('Something more advanced')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib-advanced.py'))
 ```
