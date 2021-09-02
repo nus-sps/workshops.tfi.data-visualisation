@@ -87,7 +87,7 @@ class My_Section:
 
 def render_python(filename, result_type='image'):
     py_filepath = f'files_python/{filename}'
-    with open(py_filepath, 'r') as file:
+    with open(py_filepath, 'r',encoding='UTF-8') as file:
         file_content = file.read()
 
     # A quick clean
