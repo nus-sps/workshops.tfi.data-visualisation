@@ -20,13 +20,14 @@ print(data1)
 fig, ax = plt.subplots(figsize=(6, 5)) # Hide
 
 # Actual plotting #
-ax.boxplot([data, data1], labels = ['data','data1'])
+ax.boxplot([data, data1], labels = ['data','data1']) # Hide
+plt.boxplot([data, data1], labels = ['data','data1'])
 
 
 # Aesthetics #
-plt.xlabel('This is the x-axis')
-plt.ylabel('This is the y-axis', fontsize = 12)
-plt.title('This is the Title!', fontsize = 15)
+plt.xlabel('This is the x-axis', fontsize = 16)
+plt.ylabel('This is the y-axis', fontsize = 16)
+plt.title('This is the Title!', fontsize = 20)
 plt.tight_layout()
 plt.savefig(f'{argv[0]}.png')  # Hide
 plt.show()

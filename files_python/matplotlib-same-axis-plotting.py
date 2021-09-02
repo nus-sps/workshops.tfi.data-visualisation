@@ -4,7 +4,7 @@
 '''
 - We generate two sets of data `data_1` and `data_2`
 - Note the use of `marker`, `linestyle`, `color` and `label`!
-- Note that both grpahs are plotted on the same figure!
+- Note that both graphs are plotted on the same figure!
 - If you would like a scatterplot with no lines, try `plt.scatter()`!
 '''
 
@@ -24,16 +24,16 @@ fig, ax = plt.subplots(figsize=(6, 5)) # Hide
 
 # Actual plotting #
 plt.plot(x_1, y_1, marker = 'o', linestyle = '-', 
-          color = 'red', label = 'Graph 1')
+          color = '#08D9D6', label = 'Graph 1')
 
-plt.plot(x_2, y_2, marker = '*', linestyle = 'dashed',
-          color = '#2a4858', label = 'Graph 2')
+plt.plot(x_2, y_2, marker = '*', markersize='5', linestyle = 'dashed',
+          color = '#FF2E63', label = 'Graph 2')
 
 # Aesthetics #
 plt.legend()
-plt.xlabel('This is the x-axis')
-plt.ylabel('This is the y-axis', fontsize = 12)
-plt.title('This is the Title!', fontsize = 15)
+plt.xlabel('This is the x-axis', fontsize = 16)
+plt.ylabel('This is the y-axis', fontsize = 16)
+plt.title('This is the Title!', fontsize = 20)
 plt.tight_layout()
 plt.savefig(f'{argv[0]}.png')  # Hide
 plt.show()
