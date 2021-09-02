@@ -4,6 +4,7 @@
 '''
 - We generate a set of data that are Normally distributed
 - We used `plt.boxplot()` to generate the boxplot!
+- Here we used another package,numpy to create a separate array
 '''
 
 from sys import argv  # Hide

@@ -99,36 +99,6 @@
 <span class="n">err</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
 
 <span class="c1"># Lets start plotting</span>
-</pre></div>
-</code></pre>
-</div>
-</div>
-<div id="results-1" class="section level4 unnumbered panelset">
-<h4>Results<a class="anchor" aria-label="anchor" href="#results-1"><i class="fas fa-link"></i></a>
-</h4>
-<p><br><img src="python_outputs/__my_python_output__a-simple-plot.py.png" class="python-result-img"></p>
-</div>
-<div id="code-1" class="section level4 unnumbered panelset">
-<h4>Code<a class="anchor" aria-label="anchor" href="#code-1"><i class="fas fa-link"></i></a>
-</h4>
-<p><br></p>
-<ul>
-<li>You can have only a <code>scatter</code> (without error bars) by using scatter (which is commented below).</li>
-<li>
-<code>fmt</code> is short for ‘format string.’ This decides the shape of the data point.</li>
-<li>The <span class="math inline">\(…\)</span> allows us to use (a limited set of) LaTeX commands!</li>
-</ul>
-<div class="sourceCode">
-<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="c1"># Some data for plotting</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">y_0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">4.5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">7.5</span><span class="p">]</span>
-<span class="n">y_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="n">y_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
-<span class="n">err</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
-
-<span class="c1"># Lets start plotting</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y_0</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">"#004B63"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$Y_0$ values'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#30B8B2"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$Y_1$ values'</span><span class="p">)</span>
@@ -154,12 +124,12 @@
 </h4>
 <p><br><img src="python_outputs/__my_python_output__matplotlib-histograms.py.png" class="python-result-img"></p>
 </div>
-<div id="code-2" class="section level4 unnumbered panelset">
-<h4>Code<a class="anchor" aria-label="anchor" href="#code-2"><i class="fas fa-link"></i></a>
+<div id="code-1" class="section level4 unnumbered panelset">
+<h4>Code<a class="anchor" aria-label="anchor" href="#code-1"><i class="fas fa-link"></i></a>
 </h4>
 <p><br></p>
 <ul>
-<li>We generate a set of data that are Normally distributed</li>
+<li>We generate a set of data that are Continously distributed</li>
 <li>We used <code>plt.hist()</code> to generate the histogram!</li>
 </ul>
 <div class="sourceCode">
@@ -172,12 +142,12 @@
 
 
 <span class="c1"># Actual plotting #</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'#C0C0C0'</span><span class="p">)</span>
 
 <span class="c1"># Aesthetics #</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'This is the x-axis'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'This is the x-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'This is the y-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'This is the Title!'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'This is the Title!'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -194,13 +164,14 @@
 </h4>
 <p><br><img src="python_outputs/__my_python_output__matplotlib-boxplot.py.png" class="python-result-img"></p>
 </div>
-<div id="code-3" class="section level4 unnumbered panelset">
-<h4>Code<a class="anchor" aria-label="anchor" href="#code-3"><i class="fas fa-link"></i></a>
+<div id="code-2" class="section level4 unnumbered panelset">
+<h4>Code<a class="anchor" aria-label="anchor" href="#code-2"><i class="fas fa-link"></i></a>
 </h4>
 <p><br></p>
 <ul>
 <li>We generate a set of data that are Normally distributed</li>
 <li>We used <code>plt.boxplot()</code> to generate the boxplot!</li>
+<li>Here we used another package,numpy to create a separate array</li>
 </ul>
 <div class="sourceCode">
 <pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -237,8 +208,8 @@
 </h4>
 <p><br><img src="python_outputs/__my_python_output__matplotlib-same-axis-plotting.py.png" class="python-result-img"></p>
 </div>
-<div id="code-4" class="section level4 unnumbered panelset">
-<h4>Code<a class="anchor" aria-label="anchor" href="#code-4"><i class="fas fa-link"></i></a>
+<div id="code-3" class="section level4 unnumbered panelset">
+<h4>Code<a class="anchor" aria-label="anchor" href="#code-3"><i class="fas fa-link"></i></a>
 </h4>
 <p><br></p>
 <ul>
@@ -289,8 +260,8 @@
 </h4>
 <p><br><img src="python_outputs/__my_python_output__matplotlib-diff-axis-plotting.py.png" class="python-result-img"></p>
 </div>
-<div id="code-5" class="section level4 unnumbered panelset">
-<h4>Code<a class="anchor" aria-label="anchor" href="#code-5"><i class="fas fa-link"></i></a>
+<div id="code-4" class="section level4 unnumbered panelset">
+<h4>Code<a class="anchor" aria-label="anchor" href="#code-4"><i class="fas fa-link"></i></a>
 </h4>
 <p><br></p>
 <ul>
@@ -351,8 +322,8 @@ the same figure!</li>
 </h4>
 <p><br><img src="python_outputs/__my_python_output__matplotlib-advanced.py.png" class="python-result-img"></p>
 </div>
-<div id="code-6" class="section level4 unnumbered panelset">
-<h4>Code<a class="anchor" aria-label="anchor" href="#code-6"><i class="fas fa-link"></i></a>
+<div id="code-5" class="section level4 unnumbered panelset">
+<h4>Code<a class="anchor" aria-label="anchor" href="#code-5"><i class="fas fa-link"></i></a>
 </h4>
 <p><br></p>
 <ul>
