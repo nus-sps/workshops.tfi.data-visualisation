@@ -10,7 +10,7 @@ X=[-1,-2,0,2,1]
 Y=[1,2,0,-2,-1]
 #Building on the same plot 
 #plt.plot(X,Y,color='red', marker='o',mfc='black')
-plt.plot(X,Y,color='red', marker='o',mfc='black' )
+plt.plot(X,Y,color='red', marker='o',mfc='black' ) # Hide
 
 #Add x_labels, y_labels and Title
 plt.xlabel('x-axis') # Hide

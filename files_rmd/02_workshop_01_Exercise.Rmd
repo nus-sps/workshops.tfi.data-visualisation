@@ -12,11 +12,18 @@ print(render_python('Exercise1.py'))
 ```
 ## Exercise 2
 Next we would try to add labels to the graph
-Referring to the previous page, we can start by assigning three different axis.
-
+Referring to the previous page, we can start by assigning three different labels to the graph generated.
 
 `r my_fun.example('Exercise 2')`
 ```{python,results='asis',echo=F,cache=F}
 from my_functions import render_python
 print(render_python('Exercise2.py'))
+```
+## Exercise 3
+Next we would try to add an additional graph to the figure. Here we would use subplot function to generate the figure.
+
+`r my_fun.example('Exercise 3')`
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('Exercise3.py'))
 ```

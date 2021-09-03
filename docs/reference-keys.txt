@@ -52,6 +52,7 @@ integrating-advance-elements-into-plotting
 exercise-for-basic-plotting-for-matplotlib
 exercise-1
 exercise-2
+exercise-3-1
 using-pandas-to-explore-data
 barcharts
 histograms-1

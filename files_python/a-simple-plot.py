@@ -32,3 +32,27 @@ plt.grid(alpha=.25)
 plt.legend(loc='upper left')
 plt.savefig(f'{argv[0]}.png', dpi=150)  # Hide
 plt.show()
+# %%
+X=[2,3,4,5,6]
+Y=[-2,-3,-4,-5,-6]
+#Allocating the column and rows for Figure 
+fig, ax = plt.subplots(nrows = 1, ncols = 2, figsize = (5,5)) 
+
+#Building on the same plot 
+## Let's start with assigning the plot to different graphs
+ax[0].scatter(X,Y,color='cyan', marker='*' ) # Assign the plot to first graph
+ax[1].plot(X,Y,color='cyan',marker='o') # Assign the plot to second graph
+
+#Add x_labels, y_labels and Title to first plot
+ax[0].set_xlabel('x-axis of graph 1') 
+ax[0].set_ylabel('y-axis of graph 1') 
+ax[0].title.set_text('title 1') 
+
+
+
+#Add x_labels, y_labels and Title to second plot
+ax[1].set_xlabel('x-axis of graph 2')
+ax[1].set_ylabel('y-axis of graph 2') 
+ax[1].title.set_text('title 2') 
+plt.show() 
+plt.savefig(f'{argv[0]}.png', dpi=100) # Hide

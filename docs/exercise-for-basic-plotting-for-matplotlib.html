@@ -126,7 +126,7 @@ Let’s try generating the following graph with black circle markers and Red lin
 <span class="header-section-number">10.2</span> Exercise 2<a class="anchor" aria-label="anchor" href="#exercise-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>Next we would try to add labels to the graph
-Referring to the previous page, we can start by assigning three different axis.</p>
+Referring to the previous page, we can start by assigning three different labels to the graph generated.</p>
 <div id="example-3-exercise-2" class="section level3 unnumbered panelset">
 <h3>
 <span class="my-examples">Example 3 | </span> Exercise 2<a class="anchor" aria-label="anchor" href="#example-3-exercise-2"><i class="fas fa-link"></i></a>
@@ -143,7 +143,6 @@ Referring to the previous page, we can start by assigning three different axis.<
 <span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="c1">#Building on the same plot </span>
 <span class="c1">#plt.plot(X,Y,color='red', marker='o',mfc='black')</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span><span class="n">mfc</span><span class="o">=</span><span class="s1">'black'</span> <span class="p">)</span>
 
 <span class="c1">#Add x_labels, y_labels and Title</span>
 <span class="c1">#plt.   ()</span>
@@ -178,6 +177,87 @@ Referring to the previous page, we can start by assigning three different axis.<
 </pre></div>
 </code></pre>
 </div>
+</div>
+</div>
+</div>
+<div id="exercise-3-1" class="section level2" number="10.3">
+<h2>
+<span class="header-section-number">10.3</span> Exercise 3<a class="anchor" aria-label="anchor" href="#exercise-3-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Next we would try to add an additional graph to the figure. Here we would use subplot</p>
+<div id="example-4-exercise-3" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 4 | </span> Exercise 3<a class="anchor" aria-label="anchor" href="#example-4-exercise-3"><i class="fas fa-link"></i></a>
+</h3>
+<div id="exercise-4" class="section level4 unnumbered panelset">
+<h4>Exercise<a class="anchor" aria-label="anchor" href="#exercise-4"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1">#Introduction to Subplot to plot on multiple axis</span>
+
+<span class="c1">#Some data for X and Y Datasets </span>
+<span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+<span class="c1">#Allocating the column and rows for Figure </span>
+<span class="c1">##fig, ax = plt.subplots(nrows =  , ncols = , )</span>
+
+<span class="c1">#Building on the same plot </span>
+<span class="c1">## Let's start with assigning the plot to different graphs</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'*'</span> <span class="p">)</span> <span class="c1"># Assign the plot to first graph</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">)</span> <span class="c1"># Assign the plot to second graph</span>
+
+<span class="c1">#Add x_labels, y_labels and Title to first plot</span>
+<span class="c1">##.set_xlabel('x-axis of graph 1')</span>
+<span class="c1">##.set_ylabel('y-axis of graph 1')</span>
+<span class="c1">##.title.set_text('title 1')</span>
+
+<span class="c1">#Add x_labels, y_labels and Title to second plot</span>
+<span class="c1">##.set_xlabel('x-axis of graph 2')</span>
+<span class="c1">##.set_ylabel('y-axis of graph 2')</span>
+<span class="c1">##.title.set_text('title 2')</span>
+<span class="c1">#Next we would need to showcase the plot generated.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
+</div>
+<div id="results-3" class="section level4 unnumbered panelset">
+<h4>Results<a class="anchor" aria-label="anchor" href="#results-3"><i class="fas fa-link"></i></a>
+</h4>
+<p><br><img src="python_outputs/__my_python_output__Exercise3.py.png" class="python-result-img"></p>
+</div>
+<div id="solution-2" class="section level4 unnumbered panelset">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-2"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="c1">#Some data for X and Y Datasets </span>
+<span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+<span class="c1">#Allocating the column and rows for Figure </span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">constrained_layout</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> 
+
+<span class="c1">#Building on the same plot </span>
+<span class="c1">## Let's start with assigning the plot to different graphs</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'*'</span> <span class="p">)</span> <span class="c1"># Assign the plot to first graph</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">)</span> <span class="c1"># Assign the plot to second graph</span>
+
+<span class="c1">#Add x_labels, y_labels and Title to first plot</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'x-axis of graph 1'</span><span class="p">)</span> 
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y-axis of graph 1'</span><span class="p">)</span> 
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">'title 1'</span><span class="p">)</span> 
+
+
+
+<span class="c1">#Add x_labels, y_labels and Title to second plot</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'x-axis of graph 2'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y-axis of graph 2'</span><span class="p">)</span> 
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">'title 2'</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
 
 </div>
 </div>
@@ -195,6 +275,9 @@ Referring to the previous page, we can start by assigning three different axis.<
 </li>
 <li>
 <a class="nav-link" href="#exercise-2"><span class="header-section-number">10.2</span> Exercise 2</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-3-exercise-2">Example 3 |  Exercise 2</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#exercise-3-1"><span class="header-section-number">10.3</span> Exercise 3</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-4-exercise-3">Example 4 |  Exercise 3</a></li></ul>
 </li>
 </ul>
 
