@@ -38,28 +38,13 @@ plt.show()
 - Try generating the following graph with black circle markers and Red line
 '''
 
+
 #X and Y Datasets 
 X=[-1,0,1]
 Y=[1,0,-1]
-plt.plot(X,Y,color='red', fmt='bo') # Hide
-plt.savefig(f'{argv[0]}.png', dpi=100) # Hide
-plt.show()
-# %%
-from matplotlib import pyplot as plt
-import numpy as np
-plt.figure(figsize=(5,5))
-#plot unit circle
-t = np.linspace(0,2*np.pi,101)
-plt.plot(np.cos(t),np.sin(t),color='#6A6C6E')
-
-plt.xticks([])
-plt.yticks([])
-
-plt.xlabel('Real Values')
-plt.ylabel('Imaginary')
-plt.title('Complex Roots')
-plt.grid(False)
-plt.box(False)
-#plt.legend(loc='upper left')
-
-plt.show()
+#Here we would need to start by using plt.plot(X-array,Y-Array)
+plt.plot(X,Y     )
+plt.plot(X,Y,color='red', marker='o',mfc='black' ) # Hide
+#plt.savefig(f'{argv[0]}.png', dpi=100) # Hide
+#Next we would need to showcase the plot generated.
+plt.show() 

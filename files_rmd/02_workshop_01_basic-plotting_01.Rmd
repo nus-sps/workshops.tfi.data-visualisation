@@ -1,0 +1,8 @@
+# Exercise for Basic Plotting for Matplotlib
+
+`r my_fun.example('Exercise 1')`
+
+```{r Exercise_1, echo=F, out.width='75%',fig.align='center', fig.cap="Example of Code Editor such as Exercise_1."}
+knitr::include_graphics('imgs/Exercise_1.PNG')
+```
+

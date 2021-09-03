@@ -1,1 +1,5 @@
 # Core Visualisation Principles
+
+Here we would be covering the Principles of visualization 
+
+`r my_fun.example('')`

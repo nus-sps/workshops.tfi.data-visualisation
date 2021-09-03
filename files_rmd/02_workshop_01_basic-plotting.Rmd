@@ -3,6 +3,7 @@
 
 `r my_fun.example('Test: A Simple Plot')`
 
+
 ```{python,results='asis',echo=F,cache=F}
 from my_functions import render_python
 print(render_python('a-simple-plot.py'))
