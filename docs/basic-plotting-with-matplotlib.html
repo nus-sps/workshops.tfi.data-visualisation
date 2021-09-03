@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 9 Basic Plotting with Matplotlib | TFI e-Workshop | Using Python To Tell Stories With Data</title>
 <meta name="author" content="SPS Science Communication Team">
-<meta name="description" content="Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error bars) by using scatter (which is commented below). fmt is short for ‘format string.’ This decides the...">
+<meta name="description" content="We would first be exploring how one begin to plot with Matplotlib with Python.  9.1 Elementary Plot  Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error...">
 <meta name="generator" content="bookdown 0.23 with bs4_book()">
 <meta property="og:title" content="Chapter 9 Basic Plotting with Matplotlib | TFI e-Workshop | Using Python To Tell Stories With Data">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error bars) by using scatter (which is commented below). fmt is short for ‘format string.’ This decides the...">
+<meta property="og:description" content="We would first be exploring how one begin to plot with Matplotlib with Python.  9.1 Elementary Plot  Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 9 Basic Plotting with Matplotlib | TFI e-Workshop | Using Python To Tell Stories With Data">
-<meta name="twitter:description" content="Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error bars) by using scatter (which is commented below). fmt is short for ‘format string.’ This decides the...">
+<meta name="twitter:description" content="We would first be exploring how one begin to plot with Matplotlib with Python.  9.1 Elementary Plot  Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -55,9 +55,10 @@
 <li class="book-part">Workshop</li>
 <li><a class="" href="instructions-1.html">Instructions</a></li>
 <li><a class="active" href="basic-plotting-with-matplotlib.html"><span class="header-section-number">9</span> Basic Plotting with Matplotlib</a></li>
-<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">10</span> Using Pandas to Explore Data</a></li>
-<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">11</span> Using Pandas to Explore COVID-19 Data</a></li>
-<li><a class="" href="core-visualisation-principles.html"><span class="header-section-number">12</span> Core Visualisation Principles</a></li>
+<li><a class="" href="exercise-for-basic-plotting-for-matplotlib.html"><span class="header-section-number">10</span> Exercise for Basic Plotting for Matplotlib</a></li>
+<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">11</span> Using Pandas to Explore Data</a></li>
+<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">12</span> Using Pandas to Explore COVID-19 Data</a></li>
+<li><a class="" href="core-visualisation-principles.html"><span class="header-section-number">13</span> Core Visualisation Principles</a></li>
 </ul>
 
         <div class="book-extra">
@@ -69,6 +70,11 @@
 <h1>
 <span class="header-section-number">9</span> Basic Plotting with Matplotlib<a class="anchor" aria-label="anchor" href="#basic-plotting-with-matplotlib"><i class="fas fa-link"></i></a>
 </h1>
+<p>We would first be exploring how one begin to plot with Matplotlib with Python.</p>
+<div id="elementary-plot" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Elementary Plot<a class="anchor" aria-label="anchor" href="#elementary-plot"><i class="fas fa-link"></i></a>
+</h2>
 <div id="example-2-test-a-simple-plot" class="section level3 unnumbered panelset">
 <h3>
 <span class="my-examples">Example 2 | </span> Test: A Simple Plot<a class="anchor" aria-label="anchor" href="#example-2-test-a-simple-plot"><i class="fas fa-link"></i></a>
@@ -114,27 +120,12 @@
 </code></pre>
 </div>
 </div>
-<div id="exercises" class="section level4 unnumbered panelset">
-<h4>Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
-</h4>
-<p><br></p>
-<ul>
-<li>Here we covered how basic plotting works</li>
-<li>Try generating the following graph with black circle markers and Red line</li>
-</ul>
-<div class="sourceCode">
-<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="c1">#X and Y Datasets </span>
-<span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="c1">#Here we would need to start by using plt.plot(X-array,Y-Array)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span>     <span class="p">)</span>
-<span class="c1">#Next we would need to showcase the plot generated.</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</code></pre>
 </div>
 </div>
-</div>
+<div id="histograms" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Histograms<a class="anchor" aria-label="anchor" href="#histograms"><i class="fas fa-link"></i></a>
+</h2>
 <div id="example-3-histograms" class="section level3 unnumbered panelset">
 <h3>
 <span class="my-examples">Example 3 | </span> Histograms<a class="anchor" aria-label="anchor" href="#example-3-histograms"><i class="fas fa-link"></i></a>
@@ -175,6 +166,11 @@
 </div>
 </div>
 </div>
+</div>
+<div id="boxplots" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Boxplots<a class="anchor" aria-label="anchor" href="#boxplots"><i class="fas fa-link"></i></a>
+</h2>
 <div id="example-4-boxplots" class="section level3 unnumbered panelset">
 <h3>
 <span class="my-examples">Example 4 | </span> Boxplots<a class="anchor" aria-label="anchor" href="#example-4-boxplots"><i class="fas fa-link"></i></a>
@@ -218,6 +214,16 @@
 </code></pre>
 </div>
 </div>
+</div>
+</div>
+<div id="plotting-on-multiple-axis" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> Plotting on Multiple axis<a class="anchor" aria-label="anchor" href="#plotting-on-multiple-axis"><i class="fas fa-link"></i></a>
+</h2>
+<div id="same-axis" class="section level3" number="9.4.1">
+<h3>
+<span class="header-section-number">9.4.1</span> Same Axis<a class="anchor" aria-label="anchor" href="#same-axis"><i class="fas fa-link"></i></a>
+</h3>
 </div>
 <div id="example-5-plotting-on-the-same-axis" class="section level3 unnumbered panelset">
 <h3>
@@ -270,6 +276,11 @@
 </code></pre>
 </div>
 </div>
+</div>
+<div id="different-axis" class="section level3" number="9.4.2">
+<h3>
+<span class="header-section-number">9.4.2</span> Different axis<a class="anchor" aria-label="anchor" href="#different-axis"><i class="fas fa-link"></i></a>
+</h3>
 </div>
 <div id="example-6-plotting-on-different-axis" class="section level3 unnumbered panelset">
 <h3>
@@ -333,6 +344,11 @@ the same figure!</li>
 </div>
 </div>
 </div>
+<div id="integrating-advance-elements-into-plotting" class="section level3" number="9.4.3">
+<h3>
+<span class="header-section-number">9.4.3</span> Integrating advance elements into plotting<a class="anchor" aria-label="anchor" href="#integrating-advance-elements-into-plotting"><i class="fas fa-link"></i></a>
+</h3>
+</div>
 <div id="example-7-something-more-advanced" class="section level3 unnumbered panelset">
 <h3>
 <span class="my-examples">Example 7 | </span> Something more advanced<a class="anchor" aria-label="anchor" href="#example-7-something-more-advanced"><i class="fas fa-link"></i></a>
@@ -390,21 +406,34 @@ the same figure!</li>
 </div>
 </div>
 </div>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="instructions-1.html">Instructions</a></div>
-<div class="next"><a href="using-pandas-to-explore-data.html"><span class="header-section-number">10</span> Using Pandas to Explore Data</a></div>
+<div class="next"><a href="exercise-for-basic-plotting-for-matplotlib.html"><span class="header-section-number">10</span> Exercise for Basic Plotting for Matplotlib</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li>
-<a class="nav-link" href="#basic-plotting-with-matplotlib"><span class="header-section-number">9</span> Basic Plotting with Matplotlib</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#example-2-test-a-simple-plot">Example 2 |  Test: A Simple Plot</a></li>
-<li><a class="nav-link" href="#example-3-histograms">Example 3 |  Histograms</a></li>
-<li><a class="nav-link" href="#example-4-boxplots">Example 4 |  Boxplots</a></li>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#basic-plotting-with-matplotlib"><span class="header-section-number">9</span> Basic Plotting with Matplotlib</a></li>
+<li>
+<a class="nav-link" href="#elementary-plot"><span class="header-section-number">9.1</span> Elementary Plot</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-2-test-a-simple-plot">Example 2 |  Test: A Simple Plot</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#histograms"><span class="header-section-number">9.2</span> Histograms</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-3-histograms">Example 3 |  Histograms</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#boxplots"><span class="header-section-number">9.3</span> Boxplots</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-4-boxplots">Example 4 |  Boxplots</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#plotting-on-multiple-axis"><span class="header-section-number">9.4</span> Plotting on Multiple axis</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#same-axis"><span class="header-section-number">9.4.1</span> Same Axis</a></li>
 <li><a class="nav-link" href="#example-5-plotting-on-the-same-axis">Example 5 |  Plotting on the same axis</a></li>
+<li><a class="nav-link" href="#different-axis"><span class="header-section-number">9.4.2</span> Different axis</a></li>
 <li><a class="nav-link" href="#example-6-plotting-on-different-axis">Example 6 |  Plotting on different axis</a></li>
+<li><a class="nav-link" href="#integrating-advance-elements-into-plotting"><span class="header-section-number">9.4.3</span> Integrating advance elements into plotting</a></li>
 <li><a class="nav-link" href="#example-7-something-more-advanced">Example 7 |  Something more advanced</a></li>
 </ul>
-</li></ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

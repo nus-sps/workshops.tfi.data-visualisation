@@ -1,5 +1,13 @@
 # Core Visualisation Principles
 
 Here we would be covering the Principles of visualization 
+## Color 
 
+
+
+## Aspect Ratios
+
+
+
+## Text and Labels
 `r my_fun.example('')`

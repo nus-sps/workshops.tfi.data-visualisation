@@ -1,6 +1,7 @@
 # Basic Plotting with Matplotlib
+We would first be exploring how one begin to plot with Matplotlib with Python. 
 
-
+## Elementary Plot
 `r my_fun.example('Test: A Simple Plot')`
 
 
@@ -8,14 +9,14 @@
 from my_functions import render_python
 print(render_python('a-simple-plot.py'))
 ```
-
+## Histograms
 `r my_fun.example('Histograms')`
 
 ```{python,results='asis',echo=F,cache=F}
 from my_functions import render_python
 print(render_python('matplotlib-histograms.py'))
 ```
-
+## Boxplots
 `r my_fun.example('Boxplots')`
 
 ```{python,results='asis',echo=F,cache=F}
@@ -23,14 +24,15 @@ from my_functions import render_python
 print(render_python('matplotlib-boxplot.py'))
 ```
 
-
+## Plotting on Multiple axis
+### Same Axis
 `r my_fun.example('Plotting on the same axis')`
 
 ```{python,results='asis',echo=F,cache=F}
 from my_functions import render_python
 print(render_python('matplotlib-same-axis-plotting.py'))
 ```
-
+### Different axis
 `r my_fun.example('Plotting on different axis')`
 
 ```{python,results='asis',echo=F,cache=F}
@@ -38,7 +40,7 @@ from my_functions import render_python
 print(render_python('matplotlib-diff-axis-plotting.py'))
 ```
 
-
+### Integrating advance elements into plotting
 `r my_fun.example('Something more advanced')`
 
 ```{python,results='asis',echo=F,cache=F}
