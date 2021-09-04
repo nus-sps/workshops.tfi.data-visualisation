@@ -1,13 +1,22 @@
 # Core Visualisation Principles
 
-Here we would be covering the Principles of visualization 
+Here we would be covering the Principles of visualization.
+Despite the concepts being abstract, one would find it easy to improve their graphical styles in producing plots.
+
+We will break down three basic concepts that one can cover for their graphs
 ## Color 
+The usage of color varies from different fields of 
+
+### Saturation and Hue
+
+### Complementary Colors
 
 
+## Aspect Ratios of Graphical plots
 
-## Aspect Ratios
-
-
+### Continunity 
 
 ## Text and Labels
+
+### Types of font and text
 `r my_fun.example('')`
