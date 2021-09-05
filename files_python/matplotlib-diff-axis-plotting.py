@@ -13,7 +13,7 @@ from sys import argv  # Hide
 from matplotlib import pyplot as plt
 import numpy as np
 
-# Generating data
+# Generating data via numpy package
 x = np.linspace(-np.pi, np.pi, num=30, endpoint=True)
 cos_x = np.cos(x)
 sin_x = np.sin(x)
@@ -27,15 +27,15 @@ ax[1].set_xlabel('x-axis!', fontsize = 12)
 # Aesthetics & Plotting for ax[0] #
 ax[0].plot(x, sin_x, marker = 'o', linestyle = '-' ,label='sin x')
 ax[0].hlines(0, xmin = -np.pi, xmax = np.pi, linestyle = 'dashed')
-ax[0].set_ylabel('y-axis for sin x!',fontsize = 12)
-ax[0].set_title('title for sin x!',fontsize = 15)
+ax[0].set_ylabel('y-axis for sin x!',fontsize = 16)
+ax[0].set_title('title for sin x!',fontsize = 20)
 
 
 # Aesthetics & Plotting for ax[1] #
 ax[1].plot(x, cos_x, label='cos x', color='green')
 ax[1].hlines(0, xmin = -np.pi, xmax = np.pi, linestyle = 'dashed')
-ax[1].set_ylabel('y-axis for cos x!',fontsize = 12)
-ax[1].set_title('title for cos x!',fontsize = 15)
+ax[1].set_ylabel('y-axis for cos x!',fontsize = 16)
+ax[1].set_title('title for cos x!',fontsize = 20)
 
 for axes in ax.flat:
      axes.legend(loc='upper left', frameon=False)

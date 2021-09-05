@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 9 Basic Plotting with Matplotlib | TFI e-Workshop | Using Python To Tell Stories With Data</title>
 <meta name="author" content="SPS Science Communication Team">
-<meta name="description" content="Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error bars) by using scatter (which is commented below). fmt is short for ‘format string.’ This decides the...">
+<meta name="description" content="We would first be exploring how one begin to plot with Matplotlib with Python.  9.1 Elementary Plot  Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error...">
 <meta name="generator" content="bookdown 0.23 with bs4_book()">
 <meta property="og:title" content="Chapter 9 Basic Plotting with Matplotlib | TFI e-Workshop | Using Python To Tell Stories With Data">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error bars) by using scatter (which is commented below). fmt is short for ‘format string.’ This decides the...">
+<meta property="og:description" content="We would first be exploring how one begin to plot with Matplotlib with Python.  9.1 Elementary Plot  Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 9 Basic Plotting with Matplotlib | TFI e-Workshop | Using Python To Tell Stories With Data">
-<meta name="twitter:description" content="Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error bars) by using scatter (which is commented below). fmt is short for ‘format string.’ This decides the...">
+<meta name="twitter:description" content="We would first be exploring how one begin to plot with Matplotlib with Python.  9.1 Elementary Plot  Example 2 | Test: A Simple Plot  Results   Code  You can have only a scatter (without error...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -55,9 +55,10 @@
 <li class="book-part">Workshop</li>
 <li><a class="" href="instructions-1.html">Instructions</a></li>
 <li><a class="active" href="basic-plotting-with-matplotlib.html"><span class="header-section-number">9</span> Basic Plotting with Matplotlib</a></li>
-<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">10</span> Using Pandas to Explore Data</a></li>
-<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">11</span> Using Pandas to Explore COVID-19 Data</a></li>
-<li><a class="" href="core-visualisation-principles.html"><span class="header-section-number">12</span> Core Visualisation Principles</a></li>
+<li><a class="" href="exercise-for-basic-plotting-for-matplotlib.html"><span class="header-section-number">10</span> Exercise for Basic Plotting for Matplotlib</a></li>
+<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">11</span> Using Pandas to Explore Data</a></li>
+<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">12</span> Using Pandas to Explore COVID-19 Data</a></li>
+<li><a class="" href="core-visualisation-principles.html"><span class="header-section-number">13</span> Core Visualisation Principles</a></li>
 </ul>
 
         <div class="book-extra">
@@ -69,6 +70,11 @@
 <h1>
 <span class="header-section-number">9</span> Basic Plotting with Matplotlib<a class="anchor" aria-label="anchor" href="#basic-plotting-with-matplotlib"><i class="fas fa-link"></i></a>
 </h1>
+<p>We would first be exploring how one begin to plot with Matplotlib with Python.</p>
+<div id="elementary-plot" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Elementary Plot<a class="anchor" aria-label="anchor" href="#elementary-plot"><i class="fas fa-link"></i></a>
+</h2>
 <div id="example-2-test-a-simple-plot" class="section level3 unnumbered panelset">
 <h3>
 <span class="my-examples">Example 2 | </span> Test: A Simple Plot<a class="anchor" aria-label="anchor" href="#example-2-test-a-simple-plot"><i class="fas fa-link"></i></a>
@@ -76,7 +82,7 @@
 <div id="results" class="section level4 unnumbered panelset">
 <h4>Results<a class="anchor" aria-label="anchor" href="#results"><i class="fas fa-link"></i></a>
 </h4>
-<p><br><img src="python_outputs/my_python_output__a-simple-plot.py.png" class="python-result-img"></p>
+<p><br><img src="python_outputs/__my_python_output__a-simple-plot.py.png" class="python-result-img"></p>
 </div>
 <div id="code" class="section level4 unnumbered panelset">
 <h4>Code<a class="anchor" aria-label="anchor" href="#code"><i class="fas fa-link"></i></a>
@@ -93,14 +99,16 @@
 
 <span class="c1"># Some data for plotting</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y_0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">4.5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">7.5</span><span class="p">]</span>
 <span class="n">y_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="n">y_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
 <span class="n">err</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
 
 <span class="c1"># Lets start plotting</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$Y_1$ values'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_2</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">err</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$Y_2$ values'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y_0</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">"#004B63"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$Y_0$ values'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#30B8B2"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$Y_1$ values'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_2</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">err</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#FF7A4F"</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$Y_2$ values'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x-values'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'y-values'</span><span class="p">)</span>
@@ -112,7 +120,41 @@
 </code></pre>
 </div>
 </div>
+<div id="section-4" class="section level4 unnumbered panelset">
+<h4 class="unnumbered panelset"><a class="anchor" aria-label="anchor" href="#section-4"><i class="fas fa-link"></i></a></h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+<span class="c1">#Allocating the column and rows for Figure </span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> 
+
+<span class="c1">#Building on the same plot </span>
+<span class="c1">## Let's start with assigning the plot to different graphs</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'cyan'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'*'</span> <span class="p">)</span> <span class="c1"># Assign the plot to first graph</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'cyan'</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">)</span> <span class="c1"># Assign the plot to second graph</span>
+
+<span class="c1">#Add x_labels, y_labels and Title to first plot</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'x-axis of graph 1'</span><span class="p">)</span> 
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y-axis of graph 1'</span><span class="p">)</span> 
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">'title 1'</span><span class="p">)</span> 
+
+
+
+<span class="c1">#Add x_labels, y_labels and Title to second plot</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'x-axis of graph 2'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y-axis of graph 2'</span><span class="p">)</span> 
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">'title 2'</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div id="histograms" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Histograms<a class="anchor" aria-label="anchor" href="#histograms"><i class="fas fa-link"></i></a>
+</h2>
 <div id="example-3-histograms" class="section level3 unnumbered panelset">
 <h3>
 <span class="my-examples">Example 3 | </span> Histograms<a class="anchor" aria-label="anchor" href="#example-3-histograms"><i class="fas fa-link"></i></a>
@@ -127,7 +169,7 @@
 </h4>
 <p><br></p>
 <ul>
-<li>We generate a set of data that are Normally distributed</li>
+<li>We generate a set of data that are Continously distributed</li>
 <li>We used <code>plt.hist()</code> to generate the histogram!</li>
 </ul>
 <div class="sourceCode">
@@ -140,12 +182,12 @@
 
 
 <span class="c1"># Actual plotting #</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'#C0C0C0'</span><span class="p">)</span>
 
 <span class="c1"># Aesthetics #</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'This is the x-axis'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'This is the x-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'This is the y-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'This is the Title!'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'This is the Title!'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -153,6 +195,11 @@
 </div>
 </div>
 </div>
+</div>
+<div id="boxplots" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Boxplots<a class="anchor" aria-label="anchor" href="#boxplots"><i class="fas fa-link"></i></a>
+</h2>
 <div id="example-4-boxplots" class="section level3 unnumbered panelset">
 <h3>
 <span class="my-examples">Example 4 | </span> Boxplots<a class="anchor" aria-label="anchor" href="#example-4-boxplots"><i class="fas fa-link"></i></a>
@@ -169,6 +216,7 @@
 <ul>
 <li>We generate a set of data that are Normally distributed</li>
 <li>We used <code>plt.boxplot()</code> to generate the boxplot!</li>
+<li>Here we used another package,numpy to create a separate array</li>
 </ul>
 <div class="sourceCode">
 <pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -182,19 +230,29 @@
 
 
 <span class="c1"># Actual plotting #</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">boxplot</span><span class="p">([</span><span class="n">data</span><span class="p">,</span> <span class="n">data1</span><span class="p">],</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'data'</span><span class="p">,</span><span class="s1">'data1'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">([</span><span class="n">data</span><span class="p">,</span> <span class="n">data1</span><span class="p">],</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'data'</span><span class="p">,</span><span class="s1">'data1'</span><span class="p">])</span>
 
 
 <span class="c1"># Aesthetics #</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'This is the x-axis'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'This is the y-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'This is the Title!'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'This is the x-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'This is the y-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'This is the Title!'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </code></pre>
 </div>
 </div>
+</div>
+</div>
+<div id="plotting-on-multiple-axis" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> Plotting on Multiple axis<a class="anchor" aria-label="anchor" href="#plotting-on-multiple-axis"><i class="fas fa-link"></i></a>
+</h2>
+<div id="same-axis" class="section level3" number="9.4.1">
+<h3>
+<span class="header-section-number">9.4.1</span> Same Axis<a class="anchor" aria-label="anchor" href="#same-axis"><i class="fas fa-link"></i></a>
+</h3>
 </div>
 <div id="example-5-plotting-on-the-same-axis" class="section level3 unnumbered panelset">
 <h3>
@@ -213,7 +271,7 @@
 <li>We generate two sets of data <code>data_1</code> and <code>data_2</code>
 </li>
 <li>Note the use of <code>marker</code>, <code>linestyle</code>, <code>color</code> and <code>label</code>!</li>
-<li>Note that both grpahs are plotted on the same figure!</li>
+<li>Note that both graphs are plotted on the same figure!</li>
 <li>If you would like a scatterplot with no lines, try <code>plt.scatter()</code>!</li>
 </ul>
 <div class="sourceCode">
@@ -231,22 +289,27 @@
 
 <span class="c1"># Actual plotting #</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">y_1</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">'-'</span><span class="p">,</span> 
-          <span class="n">color</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'Graph 1'</span><span class="p">)</span>
+          <span class="n">color</span> <span class="o">=</span> <span class="s1">'#08D9D6'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'Graph 1'</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="n">y_2</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">'*'</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">'dashed'</span><span class="p">,</span>
-          <span class="n">color</span> <span class="o">=</span> <span class="s1">'#2a4858'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'Graph 2'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="n">y_2</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">'*'</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="s1">'5'</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">'dashed'</span><span class="p">,</span>
+          <span class="n">color</span> <span class="o">=</span> <span class="s1">'#FF2E63'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'Graph 2'</span><span class="p">)</span>
 
 <span class="c1"># Aesthetics #</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'This is the x-axis'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'This is the y-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'This is the Title!'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'This is the x-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'This is the y-axis'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'This is the Title!'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </code></pre>
 </div>
 </div>
+</div>
+<div id="different-axis" class="section level3" number="9.4.2">
+<h3>
+<span class="header-section-number">9.4.2</span> Different axis<a class="anchor" aria-label="anchor" href="#different-axis"><i class="fas fa-link"></i></a>
+</h3>
 </div>
 <div id="example-6-plotting-on-different-axis" class="section level3 unnumbered panelset">
 <h3>
@@ -273,7 +336,7 @@ the same figure!</li>
 <pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># Generating data</span>
+<span class="c1"># Generating data via numpy package</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">cos_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">sin_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -287,15 +350,15 @@ the same figure!</li>
 <span class="c1"># Aesthetics &amp; Plotting for ax[0] #</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sin_x</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">'-'</span> <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'sin x'</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmin</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">'dashed'</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y-axis for sin x!'</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'title for sin x!'</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y-axis for sin x!'</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'title for sin x!'</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
 
 
 <span class="c1"># Aesthetics &amp; Plotting for ax[1] #</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cos_x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'cos x'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmin</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">'dashed'</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y-axis for cos x!'</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'title for cos x!'</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'y-axis for cos x!'</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'title for cos x!'</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">axes</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
      <span class="n">axes</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'upper left'</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -308,6 +371,11 @@ the same figure!</li>
 </code></pre>
 </div>
 </div>
+</div>
+<div id="integrating-advance-elements-into-plotting" class="section level3" number="9.4.3">
+<h3>
+<span class="header-section-number">9.4.3</span> Integrating advance elements into plotting<a class="anchor" aria-label="anchor" href="#integrating-advance-elements-into-plotting"><i class="fas fa-link"></i></a>
+</h3>
 </div>
 <div id="example-7-something-more-advanced" class="section level3 unnumbered panelset">
 <h3>
@@ -366,21 +434,34 @@ the same figure!</li>
 </div>
 </div>
 </div>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="instructions-1.html">Instructions</a></div>
-<div class="next"><a href="using-pandas-to-explore-data.html"><span class="header-section-number">10</span> Using Pandas to Explore Data</a></div>
+<div class="next"><a href="exercise-for-basic-plotting-for-matplotlib.html"><span class="header-section-number">10</span> Exercise for Basic Plotting for Matplotlib</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li>
-<a class="nav-link" href="#basic-plotting-with-matplotlib"><span class="header-section-number">9</span> Basic Plotting with Matplotlib</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#example-2-test-a-simple-plot">Example 2 |  Test: A Simple Plot</a></li>
-<li><a class="nav-link" href="#example-3-histograms">Example 3 |  Histograms</a></li>
-<li><a class="nav-link" href="#example-4-boxplots">Example 4 |  Boxplots</a></li>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#basic-plotting-with-matplotlib"><span class="header-section-number">9</span> Basic Plotting with Matplotlib</a></li>
+<li>
+<a class="nav-link" href="#elementary-plot"><span class="header-section-number">9.1</span> Elementary Plot</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-2-test-a-simple-plot">Example 2 |  Test: A Simple Plot</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#histograms"><span class="header-section-number">9.2</span> Histograms</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-3-histograms">Example 3 |  Histograms</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#boxplots"><span class="header-section-number">9.3</span> Boxplots</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-4-boxplots">Example 4 |  Boxplots</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#plotting-on-multiple-axis"><span class="header-section-number">9.4</span> Plotting on Multiple axis</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#same-axis"><span class="header-section-number">9.4.1</span> Same Axis</a></li>
 <li><a class="nav-link" href="#example-5-plotting-on-the-same-axis">Example 5 |  Plotting on the same axis</a></li>
+<li><a class="nav-link" href="#different-axis"><span class="header-section-number">9.4.2</span> Different axis</a></li>
 <li><a class="nav-link" href="#example-6-plotting-on-different-axis">Example 6 |  Plotting on different axis</a></li>
+<li><a class="nav-link" href="#integrating-advance-elements-into-plotting"><span class="header-section-number">9.4.3</span> Integrating advance elements into plotting</a></li>
 <li><a class="nav-link" href="#example-7-something-more-advanced">Example 7 |  Something more advanced</a></li>
 </ul>
-</li></ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -396,7 +477,7 @@ the same figure!</li>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-01.</p>
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
