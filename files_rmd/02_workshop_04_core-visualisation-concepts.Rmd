@@ -3,20 +3,104 @@
 Here we would be covering the Principles of visualization.
 Despite the concepts being abstract, one would find it easy to improve their graphical styles in producing plots.
 
-We will break down three basic concepts that one can cover for their graphs
-## Color 
-The usage of color varies from different fields of 
+Core visualisation would be different to grasp has it is quite an abstract concept
 
-### Saturation and Hue
+Here we would try to break down the elements needed to produce the best graphical outputs.
 
-### Complementary Colors
+First, one would need to try to abide by the four principles of producing a graph.
+
+- Minimalistic
+
+- Truthfulness 
+
+- Functional 
+
+- Beautiful 
+
+- Inspiring
+
+However, it would be difficult to grasp such concepts without interacting much with the data. 
+We would be covering some concepts that have been built on top of the previous sections.
+
+## Truthfulness 
+
+### Graphical scaling
+
+Using the graphs replicated from Kansas Covid data, we would observe that the trend lines are deceptive as the trendline overlap one another. 
 
 
-## Aspect Ratios of Graphical plots
 
-### Continunity 
+However, truthfulness can be further taught of how accurate the graphs would be by placing them to each other and understanding the differences.
+Produce figure with area of triangle equal to area of square.
+line produced y axis to compare length
+As seen from the figure above, we can more easily compare between length rather than area. 
 
-## Text and Labels
+### Axis unit scale labels. 
 
-### Types of font and text
-`r my_fun.example('')`
+Using the line graph produced above, rescale the axis to square numbers of y  squared axis versus parabolic nature of the graph produced in the same graph. 
+Depending on what relationship the type of axis scale would matter, it is often seen in empirical relationship in the field of science, show the Laminar Turbleunt graphs generated previously see poly data.
+
+## Function 
+
+Next we would be covering the functional of visualization. 
+Here’s a graph on how we would decide what graph should be used after we have done an exploratory plot as suggested in the previous section. 
+
+### Discrete or Continuous, dots versus bars
+
+When we are compelled to show data, we often refer to previous works or what is usually commonplace in field. However, when one starts to do explortary analysis, the outlook of how one would produce the graphs would be pretty varied. Once we have classify these data, we would attempt to show it in the variety graphs. 
+Let’s take covid exploratory plots for an example.
+
+### Organisation
+
+DeathCase by a certain time. Here we would first plot the country on the x axis and numbers on the y-axis forms the first figure. However, seen in the figure it is not organized, thus we would first classify the data according to an order, we can sort by the ascending order as illustrated in the graph alone.
+When we showcase an ascending order, we are able to showcase a difference of data.
+
+## Multiplicative scaling 
+
+In the case of progression of infections in a case as seen the exercise, we would understand we can see country X with the most infections. However, we would not be able to see the other countries progression which effectively shows (*individual plot*) + (countries + plot). For more insights, we can attempt to use a logarithmic function to illustrate the progression in the follow graph.  
+
+## Aestatics
+
+Here, this is what would help improve the contrast between the each element
+
+### Orientation
+
+Using the figures from the section organization, we notice that it is pretty awkward to read veritical for a bar chart. We can attempt to flip the bar chart horizontial to illustrate bar chart that is more suitable one to read which is seen as how we have done in Darren exercise
+
+### Size
+
+Using one of the basic plotting figures, we showcased this graph with varying with labels. It is often awkward and one would often attempt to make it complementary as seen the future labels. 
+
+### Color
+
+Color is one of the key elements used in to attract audiences directly without dismissing attention.
+Insert figure nonsense here,
+On the left is a figure produced from a Nature article which includes the 3 of the 4 principles.
+
+It is truthful as it covers the usage of 95 percentage confidence interval of the growth shark eggs which helps the audience of the paper understand how much deviation one would expect from line generated. However, one would find it difficult to interpret the difference in graph seen by the dashed line.
+Next we will cover how one would try to attempt to improve such a figure. 
+
+### Saturation
+
+insert the annotation of circled areas of Solid dashed line.
+One would try to reduce the overlapping area by reducing saturation or increasing transparency which produces a clean figure seen below by decreasing the saturation of the colors. It reduces the distracting elements which can help us comprehend it quickly
+
+### Hue
+
+In the next graph, we can attempt to narrow down the emphasis on a graph by dulling the difference in color as seen in following graph. Here we would be able to plant a greater emphasis on what we plan to illustrate which is seen from the temperature graph. 
+
+### Color palette
+
+Here we try to introduce to the complementary colors of what one would attempt to do by introducing what would work best
+Here are some graphs generated to illustrate the differences. 
+Yellow/white Darkblue on black, Neutral Grey on white, certain colors on something
+We can see why the colors on the left would not be able to showcase the difference as the colors are of the same category of saturation and Hue which makes it difficult to use on a palette when one tried to illustrate their ideas. Using Neutral colors are okay but they do not seem to really stand out when one tried to illustrate different elements. However, the graphs achieved on the right are astatically pleasing as they are part of a complementary wheel which makes the design of the graph more smooth. 
+
+### Grid lines,line type and line width
+
+In the area of grid lines, one would attempt to remove them as they would stand out in the figure which makes it distracting as discussed earlier, we can reduce the existence of the object by changing its saturation or by removing in. Show 3 examples where removing doesn’t work. You may opt for a minimalistic style by making the intervals shaded white to keep it as simple as possible.
+
+## Inspiring
+
+### Synergy between elements
+Here we would be covering the final part of the workshop
