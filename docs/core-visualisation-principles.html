@@ -146,315 +146,25 @@ Let’s take COVID-19 exploratory plots for an example.</p>
 <span class="header-section-number">13.2.2</span> Organisation<a class="anchor" aria-label="anchor" href="#organisation"><i class="fas fa-link"></i></a>
 </h3>
 <p>Here we would first plot the country on the x axis and numbers on the y-axis forms the first figure. However, seen in the figure it is not organized, thus we would first classify the data according to an order, we can sort by the ascending order as illustrated in the graph alone.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-76"></span>
+<img src="imgs/Core6.png" alt="Example of Reinstating graphs to represent right data" width="100%"><p class="caption">
+Figure 13.5: Example of Reinstating graphs to represent right data
+</p>
 </div>
-<div id="example-2-what-are-we-dealing-with" class="section level3 unnumbered panelset">
-<h3>
-<span class="my-examples">Example 2 | </span> What are we dealing with?<a class="anchor" aria-label="anchor" href="#example-2-what-are-we-dealing-with"><i class="fas fa-link"></i></a>
-</h3>
-<div id="result-13" class="section level4 unnumbered panelset">
-<h4>Result<a class="anchor" aria-label="anchor" href="#result-13"><i class="fas fa-link"></i></a>
-</h4>
-<br><div class="inline-table"><table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th>
-</th>
-<th>
-Confirmed
-</th>
-<th>
-Recovered
-</th>
-<th>
-Deaths
-</th>
-</tr></thead>
-<tbody>
-<tr>
-<th>
-count
-</th>
-<td>
-1.156350e+05
-</td>
-<td>
-1.156350e+05
-</td>
-<td>
-115635.000000
-</td>
-</tr>
-<tr>
-<th>
-mean
-</th>
-<td>
-3.919759e+05
-</td>
-<td>
-2.031518e+05
-</td>
-<td>
-9110.392053
-</td>
-</tr>
-<tr>
-<th>
-std
-</th>
-<td>
-2.094573e+06
-</td>
-<td>
-1.147186e+06
-</td>
-<td>
-41338.182732
-</td>
-</tr>
-<tr>
-<th>
-min
-</th>
-<td>
-0.000000e+00
-</td>
-<td>
-0.000000e+00
-</td>
-<td>
-0.000000
-</td>
-</tr>
-<tr>
-<th>
-25%
-</th>
-<td>
-4.630000e+02
-</td>
-<td>
-2.000000e+01
-</td>
-<td>
-6.000000
-</td>
-</tr>
-<tr>
-<th>
-50%
-</th>
-<td>
-1.020400e+04
-</td>
-<td>
-3.598000e+03
-</td>
-<td>
-160.000000
-</td>
-</tr>
-<tr>
-<th>
-75%
-</th>
-<td>
-1.253120e+05
-</td>
-<td>
-5.941900e+04
-</td>
-<td>
-2259.000000
-</td>
-</tr>
-<tr>
-<th>
-max
-</th>
-<td>
-3.994499e+07
-</td>
-<td>
-3.097475e+07
-</td>
-<td>
-648468.000000
-</td>
-</tr>
-</tbody>
-</table></div>
-<div class="inline-table"><table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th>
-</th>
-<th>
-Date
-</th>
-<th>
-Country
-</th>
-<th>
-Confirmed
-</th>
-<th>
-Recovered
-</th>
-<th>
-Deaths
-</th>
-</tr></thead>
-<tbody>
-<tr>
-<th>
-0
-</th>
-<td>
-2020-01-22
-</td>
-<td>
-Afghanistan
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-</tr>
-<tr>
-<th>
-1
-</th>
-<td>
-2020-01-23
-</td>
-<td>
-Afghanistan
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-</tr>
-<tr>
-<th>
-2
-</th>
-<td>
-2020-01-24
-</td>
-<td>
-Afghanistan
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-</tr>
-<tr>
-<th>
-3
-</th>
-<td>
-2020-01-25
-</td>
-<td>
-Afghanistan
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-</tr>
-<tr>
-<th>
-4
-</th>
-<td>
-2020-01-26
-</td>
-<td>
-Afghanistan
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<div id="solution-8" class="section level4 unnumbered panelset">
-<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-8"><i class="fas fa-link"></i></a>
-</h4>
-<br><div class="sourceCode">
-<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv'</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
-
-
-
-
-
-
-
-
-<span class="n">filtered_ASEAN_rows</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Country'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ASEAN_countries</span><span class="p">)</span> 
-
-<span class="n">df_ASEAN</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">filtered_ASEAN_rows</span><span class="p">]</span>                     
-
-
-
-<span class="c1"># Pandas Manipulation #</span>
-<span class="n">latest_date</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df_ASEAN</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">])</span>
-<span class="n">df_ASEAN_latest_date</span> <span class="o">=</span> <span class="n">df_ASEAN</span><span class="p">[</span><span class="n">df_ASEAN</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span> <span class="o">==</span> <span class="n">latest_date</span><span class="p">]</span>
-<span class="c1">#df_ASEAN_latest_date.set_index('Country', inplace = True)</span>
-<span class="c1">#df_ASEAN_latest_date.sort_values(by = 'Deaths', ascending=True, inplace = True)</span>
-
-<span class="c1"># Plotting #</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">df_ASEAN_latest_date</span><span class="p">[</span><span class="s1">'Deaths'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">'bar'</span><span class="p">)</span>
-
-<span class="c1"># Pretty Things #</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Country'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Total Death by Countries'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Number of Deaths due to COVID-19 by countries'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</code></pre>
-</div>
-<p>When we showcase an ascending order, we are able to showcase a difference of data.</p>
-</div>
+<p>When we showcase an ascending order, we are able to showcase a difference of data. However, the labels would appear to be different to be seen. Another method would be used to help remedy the situation.</p>
 </div>
 <div id="multiplicative-scaling" class="section level3" number="13.2.3">
 <h3>
 <span class="header-section-number">13.2.3</span> Multiplicative scaling<a class="anchor" aria-label="anchor" href="#multiplicative-scaling"><i class="fas fa-link"></i></a>
 </h3>
-<p>In the case of progression of infections in a case as seen the exercise, we would understand we can see country X with the most infections. However, we would not be able to see the other countries progression which effectively shows (<em>individual plot</em>) + (countries + plot). For more insights, we can attempt to use a logarithmic function to illustrate the progression in the follow graph.</p>
+In the case of progression of infections in a case as seen the exercise, we would understand we can see country X with the most infections. However, we would not be able to see the other countries progression which effectively seen in 12.4 For more insights, we can attempt to use a semi-Logarithmic function to illustrate the progression of infections instead.
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-77"></span>
+<img src="imgs/Core7.png" alt="Example of Reinstating graphs to represent right data" width="100%"><p class="caption">
+Figure 13.6: Example of Reinstating graphs to represent right data
+</p>
+</div>
 </div>
 </div>
 <div id="aestatics" class="section level2" number="13.3">
@@ -466,7 +176,13 @@ Afghanistan
 <h3>
 <span class="header-section-number">13.3.1</span> Orientation<a class="anchor" aria-label="anchor" href="#orientation"><i class="fas fa-link"></i></a>
 </h3>
-<p>Using the figures from the section organization, we notice that it is pretty awkward to read veritical for a bar chart. We can attempt to flip the bar chart horizontial to illustrate bar chart that is more suitable one to read which is seen as how we have done in Darren exercise</p>
+Using the figures from the section organization, we notice that it is pretty awkward to read vertical for a bar chart as the text are too small for each country, making it different to read. However, a simple solution to this is to have it be read horizontially instead.
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-78"></span>
+<img src="imgs/Core8.png" alt="Example of Reinstating graphs to represent right data" width="100%"><p class="caption">
+Figure 13.7: Example of Reinstating graphs to represent right data
+</p>
+</div>
 </div>
 <div id="size" class="section level3" number="13.3.2">
 <h3>
@@ -511,17 +227,6 @@ We can see why the colors on the left would not be able to showcase the differen
 <span class="header-section-number">13.3.7</span> Grid lines,line type and line width<a class="anchor" aria-label="anchor" href="#grid-linesline-type-and-line-width"><i class="fas fa-link"></i></a>
 </h3>
 <p>In the area of grid lines, one would attempt to remove them as they would stand out in the figure which makes it distracting as discussed earlier, we can reduce the existence of the object by changing its saturation or by removing in. Show 3 examples where removing doesn’t work. You may opt for a minimalistic style by making the intervals shaded white to keep it as simple as possible.</p>
-</div>
-</div>
-<div id="inspiring" class="section level2" number="13.4">
-<h2>
-<span class="header-section-number">13.4</span> Inspiring<a class="anchor" aria-label="anchor" href="#inspiring"><i class="fas fa-link"></i></a>
-</h2>
-<div id="synergy-between-elements" class="section level3" number="13.4.1">
-<h3>
-<span class="header-section-number">13.4.1</span> Synergy between elements<a class="anchor" aria-label="anchor" href="#synergy-between-elements"><i class="fas fa-link"></i></a>
-</h3>
-<p>Here we would be covering the final part of the workshop</p>
 
 </div>
 </div>
@@ -554,7 +259,6 @@ We can see why the colors on the left would not be able to showcase the differen
 <a class="nav-link" href="#function"><span class="header-section-number">13.2</span> Function</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#discrete-or-continuous-dots-versus-bars"><span class="header-section-number">13.2.1</span> Discrete or Continuous, dots versus bars</a></li>
 <li><a class="nav-link" href="#organisation"><span class="header-section-number">13.2.2</span> Organisation</a></li>
-<li><a class="nav-link" href="#example-2-what-are-we-dealing-with">Example 2 |  What are we dealing with?</a></li>
 <li><a class="nav-link" href="#multiplicative-scaling"><span class="header-section-number">13.2.3</span> Multiplicative scaling</a></li>
 </ul>
 </li>
@@ -568,9 +272,6 @@ We can see why the colors on the left would not be able to showcase the differen
 <li><a class="nav-link" href="#color-palette"><span class="header-section-number">13.3.6</span> Color palette</a></li>
 <li><a class="nav-link" href="#grid-linesline-type-and-line-width"><span class="header-section-number">13.3.7</span> Grid lines,line type and line width</a></li>
 </ul>
-</li>
-<li>
-<a class="nav-link" href="#inspiring"><span class="header-section-number">13.4</span> Inspiring</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#synergy-between-elements"><span class="header-section-number">13.4.1</span> Synergy between elements</a></li></ul>
 </li>
 </ul>
 
@@ -588,7 +289,7 @@ We can see why the colors on the left would not be able to showcase the differen
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-06.</p>
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

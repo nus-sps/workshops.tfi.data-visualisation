@@ -47,7 +47,7 @@ However, truthfulness can be further taught of how accurate the graphs would be 
 
 Using the line graph produced above, rescale the axis to square numbers of y  squared axis versus parabolic nature of the graph produced in the same graph.
 
-```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Choosing the appropriate scale for graphs"}
 knitr::include_graphics('imgs/Core4.PNG')
 ```
 Depending on what relationship the type of axis scale would matter, it is often seen in empirical relationship in the field of science.
@@ -61,7 +61,7 @@ Here’s a graph on how we would decide what graph should be used after we have 
 
 When we are compelled to show data, we often refer to previous works or what is usually commonplace in field. However, when one starts to do exploratory analysis, the outlook of how one would produce the graphs would be pretty varied.
 
-```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Deciding what graphs to pick"}
 knitr::include_graphics('imgs/Core5.PNG')
 ```
 Once we have classify these data, we would attempt to show it in the variety graphs. 
@@ -71,7 +71,7 @@ Let’s take COVID-19 exploratory plots for an example.
 
 Here we would first plot the country on the x axis and numbers on the y-axis forms the first figure. However, seen in the figure it is not organized, thus we would first classify the data according to an order, we can sort by the ascending order as illustrated in the graph alone.
 
-```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Organising Data in Bar Charts"}
 knitr::include_graphics('imgs/Core6.PNG')
 ```
 
@@ -80,7 +80,8 @@ When we showcase an ascending order, we are able to showcase a difference of dat
 ### Multiplicative scaling 
 
 In the case of progression of infections in a case as seen the exercise, we would understand we can see country X with the most infections. However, we would not be able to see the other countries progression which effectively seen in 12.4 For more insights, we can attempt to use a semi-Logarithmic function to illustrate the progression of infections instead.
-```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Illustrating the use of a Semi-logarithmic Curve"}
 knitr::include_graphics('imgs/Core7.PNG')
 ```
 
@@ -91,7 +92,7 @@ Here, this is what would help improve the contrast between the each element
 ### Orientation
 
 Using the figures from the section organization, we notice that it is pretty awkward to read vertical for a bar chart as the text are too small for each country, making it different to read. However, a simple solution to this is to have it be read horizontially instead.
-```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of re-orientating charts to improve its aestatics "}
 knitr::include_graphics('imgs/Core8.PNG')
 ```
 
@@ -103,7 +104,7 @@ Using one of the basic plotting figures, we showcased this graph with varying wi
 ### Color
 
 Color is one of the key elements used in to attract audiences directly without dismissing attention.
-Insert figure nonsense here,
+
 On the left is a figure produced from a Nature article which includes the 3 of the 4 principles.
 
 It is truthful as it covers the usage of 95 percentage confidence interval of the growth shark eggs which helps the audience of the paper understand how much deviation one would expect from line generated. However, one would find it difficult to interpret the difference in graph seen by the dashed line.
@@ -114,9 +115,17 @@ Next we will cover how one would try to attempt to improve such a figure.
 insert the annotation of circled areas of Solid dashed line.
 One would try to reduce the overlapping area by reducing saturation or increasing transparency which produces a clean figure seen below by decreasing the saturation of the colors. It reduces the distracting elements which can help us comprehend it quickly
 
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Removing visual clutter"}
+knitr::include_graphics('imgs/Core10.PNG')
+```
+
 ### Hue
 
 In the next graph, we can attempt to narrow down the emphasis on a graph by dulling the difference in color as seen in following graph. Here we would be able to plant a greater emphasis on what we plan to illustrate which is seen from the temperature graph. 
+
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of emphasizing on a single element in the graph"}
+knitr::include_graphics('imgs/Core11.PNG')
+```
 
 ### Color palette
 
@@ -124,6 +133,7 @@ Here we try to introduce to the complementary colors of what one would attempt t
 Here are some graphs generated to illustrate the differences. 
 Yellow/white Darkblue on black, Neutral Grey on white, certain colors on something
 We can see why the colors on the left would not be able to showcase the difference as the colors are of the same category of saturation and Hue which makes it difficult to use on a palette when one tried to illustrate their ideas. Using Neutral colors are okay but they do not seem to really stand out when one tried to illustrate different elements. However, the graphs achieved on the right are astatically pleasing as they are part of a complementary wheel which makes the design of the graph more smooth. 
+
 
 ### Grid lines,line type and line width
 
