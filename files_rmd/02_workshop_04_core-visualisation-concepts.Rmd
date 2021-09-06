@@ -1,4 +1,4 @@
-# Core Visualisation Principles
+# Core Visualisation Principles{.tabset .tabset-fade} 
 
 Here we would be covering the Principles of visualization.
 Despite the concepts being abstract, one would find it easy to improve their graphical styles in producing plots.
@@ -22,23 +22,35 @@ First, one would need to try to abide by the four principles of producing a grap
 However, it would be difficult to grasp such concepts without interacting much with the data. 
 We would be covering some concepts that have been built on top of the previous sections.
 
+
+
 ## Truthfulness 
 
-### Graphical scaling
+### Graphical scaling 
 
 Using the graphs replicated from Kansas Covid data, we would observe that the trend lines are deceptive as the trendline overlap one another. 
 
 
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of misusing graphs to represent wrong data"}
+knitr::include_graphics('imgs/Core1.PNG')
+```
+
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+knitr::include_graphics('imgs/Core2.PNG')
+```
+
 
 However, truthfulness can be further taught of how accurate the graphs would be by placing them to each other and understanding the differences.
-Produce figure with area of triangle equal to area of square.
-line produced y axis to compare length
-As seen from the figure above, we can more easily compare between length rather than area. 
 
 ### Axis unit scale labels. 
 
-Using the line graph produced above, rescale the axis to square numbers of y  squared axis versus parabolic nature of the graph produced in the same graph. 
-Depending on what relationship the type of axis scale would matter, it is often seen in empirical relationship in the field of science, show the Laminar Turbleunt graphs generated previously see poly data.
+
+Using the line graph produced above, rescale the axis to square numbers of y  squared axis versus parabolic nature of the graph produced in the same graph.
+
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+knitr::include_graphics('imgs/Core4.PNG')
+```
+Depending on what relationship the type of axis scale would matter, it is often seen in empirical relationship in the field of science.
 
 ## Function 
 
@@ -47,29 +59,46 @@ Here’s a graph on how we would decide what graph should be used after we have 
 
 ### Discrete or Continuous, dots versus bars
 
-When we are compelled to show data, we often refer to previous works or what is usually commonplace in field. However, when one starts to do explortary analysis, the outlook of how one would produce the graphs would be pretty varied. Once we have classify these data, we would attempt to show it in the variety graphs. 
-Let’s take covid exploratory plots for an example.
+When we are compelled to show data, we often refer to previous works or what is usually commonplace in field. However, when one starts to do exploratory analysis, the outlook of how one would produce the graphs would be pretty varied.
+
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+knitr::include_graphics('imgs/Core5.PNG')
+```
+Once we have classify these data, we would attempt to show it in the variety graphs. 
+Let’s take COVID-19 exploratory plots for an example.
 
 ### Organisation
 
-DeathCase by a certain time. Here we would first plot the country on the x axis and numbers on the y-axis forms the first figure. However, seen in the figure it is not organized, thus we would first classify the data according to an order, we can sort by the ascending order as illustrated in the graph alone.
-When we showcase an ascending order, we are able to showcase a difference of data.
+Here we would first plot the country on the x axis and numbers on the y-axis forms the first figure. However, seen in the figure it is not organized, thus we would first classify the data according to an order, we can sort by the ascending order as illustrated in the graph alone.
 
-## Multiplicative scaling 
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+knitr::include_graphics('imgs/Core6.PNG')
+```
 
-In the case of progression of infections in a case as seen the exercise, we would understand we can see country X with the most infections. However, we would not be able to see the other countries progression which effectively shows (*individual plot*) + (countries + plot). For more insights, we can attempt to use a logarithmic function to illustrate the progression in the follow graph.  
+When we showcase an ascending order, we are able to showcase a difference of data. However, the labels would appear to be different to be seen. Another method would be used to help remedy the situation.
 
-## Aestatics
+### Multiplicative scaling 
+
+In the case of progression of infections in a case as seen the exercise, we would understand we can see country X with the most infections. However, we would not be able to see the other countries progression which effectively seen in 12.4 For more insights, we can attempt to use a semi-Logarithmic function to illustrate the progression of infections instead.
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+knitr::include_graphics('imgs/Core7.PNG')
+```
+
+## Aestatics 
 
 Here, this is what would help improve the contrast between the each element
 
 ### Orientation
 
-Using the figures from the section organization, we notice that it is pretty awkward to read veritical for a bar chart. We can attempt to flip the bar chart horizontial to illustrate bar chart that is more suitable one to read which is seen as how we have done in Darren exercise
+Using the figures from the section organization, we notice that it is pretty awkward to read vertical for a bar chart as the text are too small for each country, making it different to read. However, a simple solution to this is to have it be read horizontially instead.
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
+knitr::include_graphics('imgs/Core8.PNG')
+```
 
 ### Size
 
 Using one of the basic plotting figures, we showcased this graph with varying with labels. It is often awkward and one would often attempt to make it complementary as seen the future labels. 
+
 
 ### Color
 
@@ -99,8 +128,3 @@ We can see why the colors on the left would not be able to showcase the differen
 ### Grid lines,line type and line width
 
 In the area of grid lines, one would attempt to remove them as they would stand out in the figure which makes it distracting as discussed earlier, we can reduce the existence of the object by changing its saturation or by removing in. Show 3 examples where removing doesn’t work. You may opt for a minimalistic style by making the intervals shaded white to keep it as simple as possible.
-
-## Inspiring
-
-### Synergy between elements
-Here we would be covering the final part of the workshop

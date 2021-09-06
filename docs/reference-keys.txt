@@ -1,6 +1,10 @@
 fig:fig-jupyter-example
 fig:fig-sublime-example
 fig:fig-colab-example
+fig:unnamed-chunk-72
+fig:unnamed-chunk-73
+fig:unnamed-chunk-74
+fig:unnamed-chunk-75
 part-introduction
 hello
 what-topics-will-we-discuss
@@ -71,6 +75,7 @@ axis-unit-scale-labels.
 function
 discrete-or-continuous-dots-versus-bars
 organisation
+multiplicative-scaling
 aestatics
 orientation
 size
