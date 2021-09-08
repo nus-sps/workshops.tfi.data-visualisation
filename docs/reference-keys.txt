@@ -8,8 +8,11 @@ fig:unnamed-chunk-75
 fig:unnamed-chunk-76
 fig:unnamed-chunk-77
 fig:unnamed-chunk-78
-fig:unnamed-chunk-79
+fig:unnamed-chunk-79-1
+fig:unnamed-chunk-79-2
 fig:unnamed-chunk-80
+fig:unnamed-chunk-81
+fig:unnamed-chunk-82
 part-introduction
 hello
 what-topics-will-we-discuss

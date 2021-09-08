@@ -98,7 +98,12 @@ knitr::include_graphics('imgs/Core8.PNG')
 
 ### Size
 
-Using one of the basic plotting figures, we showcased this graph with varying with labels. It is often awkward and one would often attempt to make it complementary as seen the future labels. 
+Using one of the basic plotting figures, we showcased this graph with varying with labels. 
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of how label changes improve its aestatics "}
+knitr::include_graphics(c('imgs/Core9.PNG','imgs/Core9_1.PNG'))
+```
+
+As seen from exercise 9.1 and 9.2, there is a difference in the observed images. It is often awkward and one would often attempt to make it complementary as seen the future labels.
 
 
 ### Color
@@ -131,10 +136,14 @@ knitr::include_graphics('imgs/Core11.PNG')
 
 Here we try to introduce to the complementary colors of what one would attempt to do by introducing what would work best
 Here are some graphs generated to illustrate the differences. 
-Yellow/white Darkblue on black, Neutral Grey on white, certain colors on something
-We can see why the colors on the left would not be able to showcase the difference as the colors are of the same category of saturation and Hue which makes it difficult to use on a palette when one tried to illustrate their ideas. Using Neutral colors are okay but they do not seem to really stand out when one tried to illustrate different elements. However, the graphs achieved on the right are astatically pleasing as they are part of a complementary wheel which makes the design of the graph more smooth. 
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of how label changes improve its aestatics "}
+knitr::include_graphics('imgs/Core9_2.PNG')
+```
+
+We can see why the colors on the left would not be able to showcase the difference as the colors are of the same category of saturation and Hue which makes it difficult to use on a palette when one tried to illustrate their ideas. Using Neutral colors are okay but they do not seem to really stand out when one tried to illustrate different elements. However, the graphs achieved on the right are aestatically pleasing as they are part of a complementary wheel which makes the design of the graph more smooth. 
 
 
 ### Grid lines,line type and line width
 
 In the area of grid lines, one would attempt to remove them as they would stand out in the figure which makes it distracting as discussed earlier, we can reduce the existence of the object by changing its saturation or by removing in. Show 3 examples where removing doesn’t work. You may opt for a minimalistic style by making the intervals shaded white to keep it as simple as possible.
+
