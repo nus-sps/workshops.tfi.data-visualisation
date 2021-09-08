@@ -46,7 +46,7 @@ library(kableExtra)
 
 if (Sys.info()['user'] == 'chammika') {
   use_python('/home/chammika/miniconda3/bin/python')
-} else if (Sys.info()['user'] == 'Darren') {
+} else if (Sys.info()['user'] == 'Darren Teo') {
   use_python('D:\\minconda')
 } else {
   use_python('D:\\minconda')
