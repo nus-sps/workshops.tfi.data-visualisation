@@ -1,4 +1,5 @@
-# Core Visualisation Principles{.tabset .tabset-fade} 
+# Core Visualisation Principles
+
 
 Here we would be covering the Principles of visualization.
 Despite the concepts being abstract, one would find it easy to improve their graphical styles in producing plots.
@@ -24,89 +25,142 @@ We would be covering some concepts that have been built on top of the previous s
 
 
 
-## Truthfulness 
+## Truthfulness {-}
+`r my_fun.tab('')`
 
-### Graphical scaling 
+#### Graphical scaling {-}
+Here we explore how Kansas Covid data was used to mislead people. Some questions that we can ask is why is the data misleading?
 
-Using the graphs replicated from Kansas Covid data, we would observe that the trend lines are deceptive as the trendline overlap one another. 
+- How does the addition of secondary y-axis change our perception of the data?
 
+- How does restricting the axis boundaries affect how graph generated?
 
+###### Untruthful Graph {-}
 ```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of misusing graphs to represent wrong data"}
 knitr::include_graphics('imgs/Core1.PNG')
 ```
 
+After one can answer these questions, we can generate graph suitable for the audience
+
+###### Accurate Graph {-}
 ```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Reinstating graphs to represent right data"}
 knitr::include_graphics('imgs/Core2.PNG')
 ```
 
 
-However, truthfulness can be further taught of how accurate the graphs would be by placing them to each other and understanding the differences.
+#### Axis scaled units. {-}
 
-### Axis unit scale labels. 
+In modern science, we would do two types of plots typically:
 
+- Standard y-x graph
 
-Using the line graph produced above, rescale the axis to square numbers of y  squared axis versus parabolic nature of the graph produced in the same graph.
+- Logarithmic y-x Plot 
 
-```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Choosing the appropriate scale for graphs"}
+However, nth root relationships between y-x can be done to illustrated below, but take note to adjust the scale of the axis labels to not misrepresent the data.
+
+Some questions when one wants to adjust axis scale:
+
+- How does the changing the scale of the axis tell a better story compared to using a standard y-x graph?
+
+```{r , echo=F, out.width='150%',fig.align='center', fig.cap="Example of Choosing the appropriate scale for graphs"}
 knitr::include_graphics('imgs/Core4.PNG')
 ```
-Depending on what relationship the type of axis scale would matter, it is often seen in empirical relationship in the field of science.
 
-## Function 
+
+## Function  {-}
+
+`r my_fun.tab('')`
 
 Next we would be covering the functional of visualization. 
 Here’s a graph on how we would decide what graph should be used after we have done an exploratory plot as suggested in the previous section. 
 
-### Discrete or Continuous, dots versus bars
+#### Discrete or Continuous, dots versus bars {-}
 
-When we are compelled to show data, we often refer to previous works or what is usually commonplace in field. However, when one starts to do exploratory analysis, the outlook of how one would produce the graphs would be pretty varied.
+One would need to find what graphs would be suitable for Discrete or Continuous data. 
+Some questions that we can ask while conducting exploratory plot are:
 
-```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Deciding what graphs to pick"}
-knitr::include_graphics('imgs/Core5.PNG')
-```
-Once we have classify these data, we would attempt to show it in the variety graphs. 
+- Has the data been represented in other sources such as literature ?
+
+- Is the data Discrete or Continuous?
+
+- Is the data better portrayed in certain graphs compared to others?
+
+
+Once we have answered these, we would attempt to show it in the variety graphs. 
 Let’s take COVID-19 exploratory plots for an example.
 
-### Organisation
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Deciding what graphs to pick, borrowed from http://sps.nus.edu.sg/~chammika/workshops/viz/#some-practical-considerations"}
+knitr::include_graphics('imgs/Core5.PNG')
+```
 
-Here we would first plot the country on the x axis and numbers on the y-axis forms the first figure. However, seen in the figure it is not organized, thus we would first classify the data according to an order, we can sort by the ascending order as illustrated in the graph alone.
 
-```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Organising Data in Bar Charts"}
+#### Organisation {-}
+
+Here we will revisit the COVID-19 bar chart panda examples.
+If we were to just plot the data with country, we would first obtain the first graph.
+
+Some points for us to consider when organising data points:
+
+- Does the data portrayed tell any distinctive trends from the graph?
+
+- Can we tell the differences between two similar bars while far apart? 
+
+Organisation helps us answer these question, thus we would first classify the data according to an order, we can sort by the ascending order as illustrated in the graph alone.
+
+```{r , echo=F, out.width='150%',fig.align='center', fig.cap="Example of Organising Data in Bar Charts"}
 knitr::include_graphics('imgs/Core6.PNG')
 ```
 
-When we showcase an ascending order, we are able to showcase a difference of data. However, the labels would appear to be different to be seen. Another method would be used to help remedy the situation.
+#### Multiplicative scaling  {-}
 
-### Multiplicative scaling 
+Here, we would try to showcase data from the rate of infections in multiple countries. Some questions that we might ask in the graph generation are of the following:
 
-In the case of progression of infections in a case as seen the exercise, we would understand we can see country X with the most infections. However, we would not be able to see the other countries progression which effectively seen in 12.4 For more insights, we can attempt to use a semi-Logarithmic function to illustrate the progression of infections instead.
+- Does the graph tell much information in 75% of the covered region?
+
+- Would one consider the extreme points of the graph as outliers?
+
+With the help of these questions, we would be able to modify the graphs accordingly with the aid of Axis scaled units.
 
 ```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Illustrating the use of a Semi-logarithmic Curve"}
 knitr::include_graphics('imgs/Core7.PNG')
 ```
 
-## Aestatics 
+## Aestatics {-}
+`r my_fun.tab('')`
 
 Here, this is what would help improve the contrast between the each element
 
-### Orientation
+#### Orientation {-}
 
-Using the figures from the section organization, we notice that it is pretty awkward to read vertical for a bar chart as the text are too small for each country, making it different to read. However, a simple solution to this is to have it be read horizontially instead.
+Here we would continue building on the example from organization, it is often that we would find ourselves wanting to read in a unidirectional path. Thus, the vertical bar chart generated would make it difficult to squeeze horizontal x-axis labels uniformly.
+
+Thus, we would try to ask whether rotation of the graph would make it simpler to read for both an aestatics point of view. Some food for thought questions to ask:
+
+- Does switching the axis between the two variables tell a better picture?
+
+- Would the labels be squeezed badly to illustrate our point?
+
+
 ```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of re-orientating charts to improve its aestatics "}
 knitr::include_graphics('imgs/Core8.PNG')
 ```
 
-### Size
+#### Size {-}
 
-Using one of the basic plotting figures, we showcased this graph with varying with labels. 
+The next point to consider while generating a plot is the variation of size of elements within the graph.
+
+Using the next two graphical outputs, we would be able to showcase the differences in the role of size labels. 
+
+- Would different size element be distracting in the graph generated?
+
+- Is there a role for these elements?
+
 ```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of how label changes improve its aestatics "}
 knitr::include_graphics(c('imgs/Core9.PNG','imgs/Core9_1.PNG'))
 ```
 
-As seen from exercise 9.1 and 9.2, there is a difference in the observed images. It is often awkward and one would often attempt to make it complementary as seen the future labels.
 
 
-### Color
 
 Color is one of the key elements used in to attract audiences directly without dismissing attention.
 
@@ -115,35 +169,71 @@ On the left is a figure produced from a Nature article which includes the 3 of t
 It is truthful as it covers the usage of 95 percentage confidence interval of the growth shark eggs which helps the audience of the paper understand how much deviation one would expect from line generated. However, one would find it difficult to interpret the difference in graph seen by the dashed line.
 Next we will cover how one would try to attempt to improve such a figure. 
 
-### Saturation
+#### Hue, Color Part I {-}
 
-insert the annotation of circled areas of Solid dashed line.
-One would try to reduce the overlapping area by reducing saturation or increasing transparency which produces a clean figure seen below by decreasing the saturation of the colors. It reduces the distracting elements which can help us comprehend it quickly
+Color is one of the key elements used in to attract audiences directly without dismissing attention. The wrong combination of colors would often create confusion in interpreting the graph pretty easily.
+
+Color comes in two forms, Saturation and Hue. In this section, we will focus on Hue.
+
+In this example, we would be trying to recreate a graph from the first figure of a Nature article listed below with their data, https://www.nature.com/articles/s41598-020-79953-0 
+
+The graph generated by the article is decent but we would like to explore ways to minimise distracting elements. Thus, we would aim to answer some questions in how Color affects the graphs produced here.
+
+- How to remove the overlapping regions between plots?
+
+- Can we minimise the affect of different colors in the same graph?
 
 ```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of Removing visual clutter"}
 knitr::include_graphics('imgs/Core10.PNG')
 ```
 
-### Hue
+#### Saturation, Color Part II {-}
 
-In the next graph, we can attempt to narrow down the emphasis on a graph by dulling the difference in color as seen in following graph. Here we would be able to plant a greater emphasis on what we plan to illustrate which is seen from the temperature graph. 
+Saturation is another element that one would be able to integrate into the graph without much of a concern. 
+
+One would be able to place emphasis on particular element by dulling the saturation of other elements in the graph.
 
 ```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of emphasizing on a single element in the graph"}
 knitr::include_graphics('imgs/Core11.PNG')
 ```
 
-### Color palette
+#### Color palette, Color Part III {-}
 
-Here we try to introduce to the complementary colors of what one would attempt to do by introducing what would work best
-Here are some graphs generated to illustrate the differences. 
+The color palette is one of the most utilised tools on the internet for a notable reason, it helps blend the usage of different colors well.
+ 
+Here are some graphs generated to illustrate the difference in blending colors.
+
+Questions that one would like to ask when tackling the usage of colors are of the following:
+
+- Is there a distinctive contrast between the colors used?
+
+- Would the differences of colors distract your audience easily?
+
+
 ```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of how label changes improve its aestatics "}
 knitr::include_graphics('imgs/Core9_2.PNG')
 ```
 
-We can see why the colors on the left would not be able to showcase the difference as the colors are of the same category of saturation and Hue which makes it difficult to use on a palette when one tried to illustrate their ideas. Using Neutral colors are okay but they do not seem to really stand out when one tried to illustrate different elements. However, the graphs achieved on the right are aestatically pleasing as they are part of a complementary wheel which makes the design of the graph more smooth. 
+ 
 
 
-### Grid lines,line type and line width
+#### Grid lines {-}
 
-In the area of grid lines, one would attempt to remove them as they would stand out in the figure which makes it distracting as discussed earlier, we can reduce the existence of the object by changing its saturation or by removing in. Show 3 examples where removing doesn’t work. You may opt for a minimalistic style by making the intervals shaded white to keep it as simple as possible.
+Grid Lines are an important element as they help us gauge the length of the element in both axis. However,they would distract the audience when its use is unnecessary.
+
+Questions that we would have to ask are:
+
+- What role does the grid lines play in gauging the data between points?
+
+- Would the removal of grid lines help us understand the quantitative difference between different elements?
+
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of using grid lines to gauge cases between each day"}
+knitr::include_graphics('imgs/Core2.PNG')
+```
+
+
+```{r , echo=F, out.width='100%',fig.align='center', fig.cap="Example of a pie chart without grid lines"}
+knitr::include_graphics('imgs/Core12.PNG')
+```
+
 
