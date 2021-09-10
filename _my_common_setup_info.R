@@ -1,7 +1,7 @@
-counter_exercises <- 1
-counter_exercises_all <- 1
-counter_examples <- 1
-counter_examples_all <- 1
+counter_exercises <- 0
+counter_exercises_all <- 0
+counter_examples <- 0
+counter_examples_all <- 0
 
 my_fun <- list(counter_exercises = 0)
 class(my_fun) <- "My Functions"

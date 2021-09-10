@@ -1,18 +1,6 @@
-fig:fig-jupyter-example
-fig:fig-sublime-example
-fig:fig-colab-example
-part-introduction
-hello
-what-topics-will-we-discuss
-some-tips
-python
-ways-to-access-python
-installing-python
-conventions
-sec:resources
-jupyter-notebooks-1
 part-pre-workshop-material
 some-python-basics
+<<<<<<< HEAD
 python-is-case-sensitive
 x-is-a-variable.-x-is-an-english-letter
 we-can-use-flettersx-to-combine-english-with-variables
@@ -40,3 +28,5 @@ we-can-store-data-using-dictionaries-1
 we-can-store-data-using-numpy-arrays-1
 python-sometimes-act-like-a-prima-donna-when-you-make-an-error-1
 python-pandas-exercises
+=======
+>>>>>>> chammika-branch

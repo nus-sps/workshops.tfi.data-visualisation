@@ -27,6 +27,12 @@
   background-color: #f2f2f2;
 }
 
+.python-result-img{
+  width:75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* index.Rmd */
 .front-title {
   font-size: 1.5em;

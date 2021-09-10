@@ -6,29 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 2 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data</title>
 <meta name="author" content="SPS Science Communication Team">
-<<<<<<< HEAD
-<meta name="description" content="4.1 Python is Case Sensitive This will work. print('Hello World') #&gt; Hello World This will not. Print('Hello World') #&gt; Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 4 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
-=======
-<meta name="description" content="This chapter will quickly introduce you to some basic of Python. You need to: Watch the 10 minute video in section. and You can access the Colab notebook relevant to the video here. Work on the...">
+<meta name="description" content="This chapter will quickly introduce you to some basic of Python. You need to: Watch the 10 miniute video in section. and You can access the Colab notebook relevant to the video here. Work on the...">
 <meta name="generator" content="bookdown 0.23 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
->>>>>>> chammika-branch
 <meta property="og:type" content="book">
-<meta property="og:description" content="This chapter will quickly introduce you to some basic of Python. You need to: Watch the 10 minute video in section. and You can access the Colab notebook relevant to the video here. Work on the...">
+<meta property="og:description" content="This chapter will quickly introduce you to some basic of Python. You need to: Watch the 10 miniute video in section. and You can access the Colab notebook relevant to the video here. Work on the...">
 <meta name="twitter:card" content="summary">
-<<<<<<< HEAD
-<meta name="twitter:title" content="Chapter 4 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
-<meta name="twitter:description" content="4.1 Python is Case Sensitive This will work. print('Hello World') #&gt; Hello World This will not. Print('Hello World') #&gt; Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-=======
 <meta name="twitter:title" content="Chapter 2 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
-<meta name="twitter:description" content="This chapter will quickly introduce you to some basic of Python. You need to: Watch the 10 minute video in section. and You can access the Colab notebook relevant to the video here. Work on the...">
+<meta name="twitter:description" content="This chapter will quickly introduce you to some basic of Python. You need to: Watch the 10 miniute video in section. and You can access the Colab notebook relevant to the video here. Work on the...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
->>>>>>> chammika-branch
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
@@ -58,14 +46,7 @@
 <li><a class="" href="index.html"></a></li>
 <li class="book-part">Pre Workshop Material</li>
 <li><a class="" href="instructions.html">Instructions</a></li>
-<<<<<<< HEAD
-<li><a class="active" href="some-python-basics.html"><span class="header-section-number">4</span> Some Python Basics</a></li>
-<li><a class="" href="python-basics-exercises.html"><span class="header-section-number">5</span> Python Basics : Exercises</a></li>
-<li><a class="" href="some-pandas-basics.html"><span class="header-section-number">6</span> Some Pandas Basics</a></li>
-<li><a class="" href="python-pandas-exercises.html"><span class="header-section-number">7</span> Python Pandas : Exercises</a></li>
-=======
-<li><a class="active" href="some-python-basics.html"><span class="header-section-number">2</span> Some Python Basics</a></li>
->>>>>>> chammika-branch
+<li><a class="active" href="sec:python-basics.html"><span class="header-section-number">2</span> Some Python Basics</a></li>
 </ul>
 
         <div class="book-extra">
@@ -73,25 +54,25 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="some-python-basics" class="section level1" number="2">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="sec:python-basics" class="section level1" number="2">
 <h1>
-<span class="header-section-number">2</span> Some Python Basics<a class="anchor" aria-label="anchor" href="#some-python-basics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2</span> Some Python Basics<a class="anchor" aria-label="anchor" href="#sec:python-basics"><i class="fas fa-link"></i></a>
 </h1>
 <p>This chapter will quickly introduce you to some basic of Python.
 You need to:</p>
 <ol style="list-style-type: decimal">
-<li>Watch the 10 minute video in section. and
+<li>Watch the 10 miniute video in section. and</li>
+</ol>
 <ul>
-<li>You can access the Colab notebook relevant to the video <a href="link" target="_blank"><img src="https://miro.medium.com/max/512/0*zNcjWYiZcJgreZAs.png" width="25px">here</a>.</li>
+<li>You can access the Colab notebook relevant to the video here.</li>
 </ul>
-</li>
-<li>Work on the exercises shown below.
+<ol style="list-style-type: decimal">
+<li>Work on the exercises shown below.</li>
+</ol>
 <ul>
 <li>Here is a template</li>
-<li>The solution to the exercises can be found <a href="">here</a>.</li>
+<li>The solution to the exercise can be found here.</li>
 </ul>
-</li>
-</ol>
 <div id="a-quick-summary" class="section level2 unnumbered">
 <h2>A Quick Summary<a class="anchor" aria-label="anchor" href="#a-quick-summary"><i class="fas fa-link"></i></a>
 </h2>
@@ -131,7 +112,7 @@ You need to:</p>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#some-python-basics"><span class="header-section-number">2</span> Some Python Basics</a></li>
+<li><a class="nav-link" href="#sec:python-basics"><span class="header-section-number">2</span> Some Python Basics</a></li>
 <li><a class="nav-link" href="#a-quick-summary">A Quick Summary</a></li>
 </ul>
 
@@ -149,11 +130,7 @@ You need to:</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-<<<<<<< HEAD
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-08.</p>
-=======
     <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-10.</p>
->>>>>>> chammika-branch
   </div>
 
   <div class="col-12 col-md-6 mt-3">
