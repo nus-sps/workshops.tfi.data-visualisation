@@ -1,11 +1,11 @@
-# (PART) Pre Workshop Material
+# (PART\*) Pre Workshop Material {-}
 
 ```{r}
 my_logo_piazza <- '<img src="http://piazza.com/images/splash/PageTop/Piazza-Icon.png" class="float-right" width="110px"/>'
 ```
 
 
-# Instructions {.unnumbered}
+# Instructions
 
 We like for you to have learnt some basics about Python and Colab **before** the workshop. This way, we can use the workshop time to focus on more advanced ideas and pay more attention to solving difficulties you might encounter. So,  please **work on the activities given in section [Some Python Basics] before you come to the workshop**. It will take no more than 30 minutes.
 

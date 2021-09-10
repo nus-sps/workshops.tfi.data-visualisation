@@ -35,13 +35,28 @@ colab_file <- function(link,text){
 This chapter will quickly introduce you to some basic of Python.
 You need to:
 
-1. Watch the 10 minute video in section. and
-    - You can access the Colab notebook relevant to the video below.
-1. Work on the exercises shown below on Colab.
+1. Watch the two videos (4 mins and 12 mins) videos in below.
+    - We have also shared Colab notebook relevant to the video.
+1. Work on the short exercises shown below on Colab.
     - The solution to the exercises can also be found below.
+    - This should take you about 20 minutes.
 
 
 ## Exercises & Video File {.panelset}
+
+### Videos {-}
+
+#### Getting started with Colab (3.5 mins) {-}
+<iframe src="https://drive.google.com/file/d/1bjsUaTFVj_cySD8QHOGo-aUha6PcKR6s/preview" width="640" height="480"></iframe>
+
+#### Some Python Basics (12 mins) {-}
+<iframe src="https://drive.google.com/file/d/1it2IHEpLOetka_bZdZfYrb87yXbKFlfM/preview" width="640" height="480"></iframe>
+
+### Video (Colab file) {.unnumbered}
+
+```{r,echo=F,out.width="100%"}
+knitr::include_url("files_jupyter/python-basics_python-fundamentals_colab.html",height="6000px")
+```
 
 ### Basic Exercises {.unnumbered}
 
@@ -124,8 +139,4 @@ Create a new notebook in Colab and use it to answer the following questions.
 knitr::include_url("files_jupyter/python-basics_some-fundamentals_exercises-solutions_colab.html",height="6000px")
 ```
 
-### Colab file for Video {.unnumbered}
 
-```{r,echo=F,out.width="100%"}
-knitr::include_url("files_jupyter/python-basics_python-fundamentals_colab.html",height="6000px")
-```
