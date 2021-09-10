@@ -1,4 +1,0 @@
-part-pre-workshop-material
-some-python-basics
-before-the-workshop
-exercises-video-file
