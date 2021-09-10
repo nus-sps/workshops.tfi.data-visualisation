@@ -1,3 +1,4 @@
+<<<<<<< gh-pages
 fig:fig-jupyter-example
 fig:fig-sublime-example
 fig:fig-colab-example
@@ -15,3 +16,5 @@ part-pre-workshop-material
 some-python-basics
 before-the-workshop
 exercises-video-file
+=======
+>>>>>>> More updates for the website
