@@ -1,6 +1,8 @@
 fig:fig-jupyter-example
 fig:fig-sublime-example
 fig:fig-colab-example
+fig:unnamed-chunk-20
+fig:unnamed-chunk-22
 welcome-to
 hello
 what-topics-will-we-discuss
@@ -15,3 +17,10 @@ instructions
 some-python-basics
 before-the-workshop
 exercises-video-file
+instructions-1
+general-flow
+if-you-have-any-difficulties
+basic-plotting-with-matplotlib
+some-simple-plots
+multiple-plots
+other-plots

@@ -1,6 +1,4 @@
-# %% Results
-
-# %% Tasks
+# %% Exercise
 
 from sys import argv  # Hide
 
@@ -16,6 +14,7 @@ plt.plot(X, Y, color='red', marker='o', mfc='black')  # Hide
 # Next we would need to showcase the plot generated.
 # plt.   ()
 
+# %% Results
 
 # %% Solution
 # X and Y Datasets

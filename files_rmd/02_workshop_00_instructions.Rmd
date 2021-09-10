@@ -1,35 +1,37 @@
-# (PART) Workshop
+# (PART\*) Workshop {-}
 
-```{r}
-my_logo_piazza <- '<img src="http://piazza.com/images/splash/PageTop/Piazza-Icon.png" class="float-right" width="110px"/>'
+
+# Instructions
+
+## General flow
+
+1. The workshop material is composed of many **Examples** and **Exercises**.
+
+2. **Examples**:
+
+   1.  **Copy and paste** (use the button) the code for the examples in your Colab.
+
+```{r,fig.cap='Use the **Copy to Clipboard** button.',fig.align='center',out.width='80%',echo=F}
+knitr::include_graphics('imgs/copy-to-clipboard.jpg')
 ```
 
+   2.  Run it and see if things work.
 
-# Instructions {.unnumbered}
+   3. Try to make sense of the code.
 
-We like for you to have learnt some basics about Python and Colab **before** the workshop. This way, we can use the workshop time to focus on more advanced ideas and pay more attention to solving difficulties you might encounter.
+3. **Exercises**:
 
-So, before you come to the workshop, please:
+   1. These are included to get you started on new features or new ways of using code.
+   2. Please work through these together with your classmates and the facilitators.
 
-1. Watch the 5 minute video on using Colab for Python.
-1. Watch the 15 minute video on 'A Whirlwind Introduction to Python'.
-1. Work on the basic exercise.
-<!-- 1. Watch the 20 minute video on 'A Whirlwind Introduction to Python'.
-1. Work on the basic exercise. -->
+## If you have any difficulties
 
-if you have any questions or encounter any difficulties please reach out to us through Piazza (see below).
-
-## Start Communication {.unnumbered}
-
-`r my_logo_piazza`We are going to use the platform Piazza before and during the workshop. This way, you can start to communicate with the instructors and other participants even before the workshop. So, please use the email from Piazza to register and start talking to us!
-
-Please use Piazza for **all** your questions.
-
-::: {.rmdtip}
-if necessary Piazza allows you to share Python code.
-
-![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48040066646/original/YNJ0m8Wsz1UVTf7arF8gqzjKERE22B71-A.png?1589490612)
-
-![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48040066775/original/lqkaZfbo_fEhdKNj-h3HeD11ddf_JwHQrw.png?1589490718)
-
-:::
+1. Please speak (through Zoom) or use the chat (in Zoom) to raise questions and contribute to the discussion.
+1. We will **not** use the breakout rooms in Zoom because we like everyone to benefit from the discussions that take place.
+1. Remember that you can use Piazza to communicate with your **whole class**! (even after the workshop).
+1. Please **use Piazza** to post your questions/difficulties to the team.
+     1. Please indicate the section related to your question in the question heading.
+        - E.g. *Basic plotting: Plot does not show?*
+     1. If you are having trouble with some code, please copy and paste them in your question.
+     1. **If** necessary you can also add a screenshot.
+1. Please share code amongst yourselves too.
