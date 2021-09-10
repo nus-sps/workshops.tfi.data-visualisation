@@ -58,7 +58,7 @@ if (Sys.info()['user'] == 'chammika') {
 
 `# (PART) Welcome {-}`
 
-# {.unnumbered}
+# Welcome to...
 
 
 <div class = "front-title">

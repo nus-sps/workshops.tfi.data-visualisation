@@ -1,4 +1,4 @@
-# (PART) Introduction
+# (PART\*) Introduction {-}
 
 ```{r, eval=TRUE,echo=FALSE}
 link <- '<a href="https://www.anaconda.com/products/individual" target="_blank" />download page</a>'
@@ -74,7 +74,7 @@ knitr::include_graphics('imgs/Sublimetext.PNG')
 
 `r my_logo_python_IDLE` Alternatively, if you want something more simple, you can just install Python (see section below) and use the various code editors to run python code. Python files have the extension `.py`!
 
-Some Pyhton editors that are commonly used include (but not limited to) [Sublime Text](https://www.sublimetext.com/), [Spyder](https://www.spyder-ide.org/), [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/). 
+Some Pyhton editors that are commonly used include (but not limited to) [Sublime Text](https://www.sublimetext.com/), [Spyder](https://www.spyder-ide.org/), [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/).
 
 #### Colab {-}
 

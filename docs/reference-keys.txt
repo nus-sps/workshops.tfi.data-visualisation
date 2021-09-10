@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< gh-pages
 fig:fig-jupyter-example
 fig:fig-sublime-example
 fig:fig-colab-example
-part-introduction
+welcome-to
 hello
 what-topics-will-we-discuss
 some-tips
@@ -13,11 +11,7 @@ installing-python
 conventions
 sec:resources
 jupyter-notebooks-1
-part-pre-workshop-material
+instructions
 some-python-basics
 before-the-workshop
 exercises-video-file
-=======
->>>>>>> More updates for the website
-=======
->>>>>>> main
