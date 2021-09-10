@@ -1,3 +1,16 @@
+fig:fig-jupyter-example
+fig:fig-sublime-example
+fig:fig-colab-example
+part-introduction
+hello
+what-topics-will-we-discuss
+some-tips
+python
+ways-to-access-python
+installing-python
+conventions
+sec:resources
+jupyter-notebooks-1
 part-pre-workshop-material
 some-python-basics
 before-the-workshop

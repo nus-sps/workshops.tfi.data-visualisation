@@ -9,7 +9,7 @@ language:
 include: [python_outputs/*]
 rmd_files: [
  'index.Rmd',
-# 'files_rmd/00_introduction.Rmd',
+ 'files_rmd/00_introduction.Rmd',
  'files_rmd/01_pre-workshop_00_instructions.Rmd',
  'files_rmd/01_pre-workshop_01_basic-python.Rmd',
 # 'files_rmd/01_pre-workshop_02_basic-python-exercises.Rmd',
