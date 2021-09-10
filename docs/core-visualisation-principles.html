@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 13 Core Visualisation Principles | TFI e-Workshop | Using Python To Tell Stories With Data</title>
+<title>Chapter 1 Core Visualisation Principles | TFI e-Workshop | Using Python To Tell Stories With Data</title>
 <meta name="author" content="SPS Science Communication Team">
 <meta name="description" content="Here we would be covering the Principles of visualization. Despite the concepts being abstract, one would find it easy to improve their graphical styles in producing plots. Core visualisation...">
 <meta name="generator" content="bookdown 0.23 with bs4_book()">
-<meta property="og:title" content="Chapter 13 Core Visualisation Principles | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta property="og:title" content="Chapter 1 Core Visualisation Principles | TFI e-Workshop | Using Python To Tell Stories With Data">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Here we would be covering the Principles of visualization. Despite the concepts being abstract, one would find it easy to improve their graphical styles in producing plots. Core visualisation...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 13 Core Visualisation Principles | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta name="twitter:title" content="Chapter 1 Core Visualisation Principles | TFI e-Workshop | Using Python To Tell Stories With Data">
 <meta name="twitter:description" content="Here we would be covering the Principles of visualization. Despite the concepts being abstract, one would find it easy to improve their graphical styles in producing plots. Core visualisation...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10.6/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -44,21 +44,7 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"></a></li>
-<li class="book-part">Introduction</li>
-<li><a class="" href="hello.html"><span class="header-section-number">2</span> Hello</a></li>
-<li class="book-part">Pre Workshop Material</li>
-<li><a class="" href="instructions.html">Instructions</a></li>
-<li><a class="" href="some-python-basics.html"><span class="header-section-number">4</span> Some Python Basics</a></li>
-<li><a class="" href="python-basics-exercises.html"><span class="header-section-number">5</span> Python Basics : Exercises</a></li>
-<li><a class="" href="some-pandas-basics.html"><span class="header-section-number">6</span> Some Pandas Basics</a></li>
-<li><a class="" href="python-pandas-exercises.html"><span class="header-section-number">7</span> Python Pandas : Exercises</a></li>
-<li class="book-part">Workshop</li>
-<li><a class="" href="instructions-1.html">Instructions</a></li>
-<li><a class="" href="basic-plotting-with-matplotlib.html"><span class="header-section-number">9</span> Basic Plotting with Matplotlib</a></li>
-<li><a class="" href="exercise-for-basic-plotting-for-matplotlib.html"><span class="header-section-number">10</span> Exercise for Basic Plotting for Matplotlib</a></li>
-<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">11</span> Using Pandas to Explore Data</a></li>
-<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">12</span> Using Pandas to Explore COVID-19 Data</a></li>
-<li><a class="active" href="core-visualisation-principles.html"><span class="header-section-number">13</span> Core Visualisation Principles</a></li>
+<li><a class="active" href="core-visualisation-principles.html"><span class="header-section-number">1</span> Core Visualisation Principles</a></li>
 </ul>
 
         <div class="book-extra">
@@ -66,9 +52,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="core-visualisation-principles" class="section level1 tabset tabset-fade" number="13">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="core-visualisation-principles" class="section level1" number="1">
 <h1>
-<span class="header-section-number">13</span> Core Visualisation Principles<a class="anchor" aria-label="anchor" href="#core-visualisation-principles"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1</span> Core Visualisation Principles<a class="anchor" aria-label="anchor" href="#core-visualisation-principles"><i class="fas fa-link"></i></a>
 </h1>
 <p>Here we would be covering the Principles of visualization.
 Despite the concepts being abstract, one would find it easy to improve their graphical styles in producing plots.</p>
@@ -84,223 +70,267 @@ Despite the concepts being abstract, one would find it easy to improve their gra
 </ul>
 <p>However, it would be difficult to grasp such concepts without interacting much with the data.
 We would be covering some concepts that have been built on top of the previous sections.</p>
-<div id="truthfulness" class="section level2" number="13.1">
-<h2>
-<span class="header-section-number">13.1</span> Truthfulness<a class="anchor" aria-label="anchor" href="#truthfulness"><i class="fas fa-link"></i></a>
+<div id="truthfulness" class="section level2 unnumbered">
+<h2>Truthfulness<a class="anchor" aria-label="anchor" href="#truthfulness"><i class="fas fa-link"></i></a>
 </h2>
-<div id="graphical-scaling" class="section level3" number="13.1.1">
+<div id="section-1" class="section level3 unnumbered panelset">
 <h3>
-<span class="header-section-number">13.1.1</span> Graphical scaling<a class="anchor" aria-label="anchor" href="#graphical-scaling"><i class="fas fa-link"></i></a>
+<span class="tabbing-section"></span><a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>Using the graphs replicated from Kansas Covid data, we would observe that the trend lines are deceptive as the trendline overlap one another.</p>
+<div id="graphical-scaling" class="section level4 unnumbered">
+<h4>Graphical scaling<a class="anchor" aria-label="anchor" href="#graphical-scaling"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here we explore how Kansas Covid data was used to mislead people. Some questions that we can ask is why is the data misleading?</p>
+<ul>
+<li><p>How does the addition of secondary y-axis change our perception of the data?</p></li>
+<li><p>How does restricting the axis boundaries affect how graph generated?</p></li>
+</ul>
+<div id="untruthful-graph" class="section level6 unnumbered">
+<h6>Untruthful Graph<a class="anchor" aria-label="anchor" href="#untruthful-graph"><i class="fas fa-link"></i></a>
+</h6>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-72"></span>
+<span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="imgs/Core1.png" alt="Example of misusing graphs to represent wrong data" width="100%"><p class="caption">
-Figure 13.1: Example of misusing graphs to represent wrong data
+Figure 1.1: Example of misusing graphs to represent wrong data
 </p>
 </div>
+<p>After one can answer these questions, we can generate graph suitable for the audience</p>
+</div>
+<div id="accurate-graph" class="section level6 unnumbered">
+<h6>Accurate Graph<a class="anchor" aria-label="anchor" href="#accurate-graph"><i class="fas fa-link"></i></a>
+</h6>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-73"></span>
+<span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="imgs/Core2.png" alt="Example of Reinstating graphs to represent right data" width="100%"><p class="caption">
-Figure 13.2: Example of Reinstating graphs to represent right data
+Figure 1.2: Example of Reinstating graphs to represent right data
 </p>
 </div>
-<p>However, truthfulness can be further taught of how accurate the graphs would be by placing them to each other and understanding the differences.</p>
 </div>
-<div id="axis-unit-scale-labels." class="section level3" number="13.1.2">
-<h3>
-<span class="header-section-number">13.1.2</span> Axis unit scale labels.<a class="anchor" aria-label="anchor" href="#axis-unit-scale-labels."><i class="fas fa-link"></i></a>
-</h3>
-<p>Using the line graph produced above, rescale the axis to square numbers of y squared axis versus parabolic nature of the graph produced in the same graph.</p>
+</div>
+<div id="axis-scaled-units." class="section level4 unnumbered">
+<h4>Axis scaled units.<a class="anchor" aria-label="anchor" href="#axis-scaled-units."><i class="fas fa-link"></i></a>
+</h4>
+<p>In modern science, we would do two types of plots typically:</p>
+<ul>
+<li><p>Standard y-x graph</p></li>
+<li><p>Logarithmic y-x Plot</p></li>
+</ul>
+<p>However, nth root relationships between y-x can be done to illustrated below, but take note to adjust the scale of the axis labels to not misrepresent the data.</p>
+<p>Some questions when one wants to adjust axis scale:</p>
+<ul>
+<li>How does the changing the scale of the axis tell a better story compared to using a standard y-x graph?</li>
+</ul>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-74"></span>
-<img src="imgs/Core4.png" alt="Example of Choosing the appropriate scale for graphs" width="100%"><p class="caption">
-Figure 13.3: Example of Choosing the appropriate scale for graphs
+<span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="imgs/Core4.png" alt="Example of Choosing the appropriate scale for graphs" width="150%"><p class="caption">
+Figure 1.3: Example of Choosing the appropriate scale for graphs
 </p>
 </div>
-<p>Depending on what relationship the type of axis scale would matter, it is often seen in empirical relationship in the field of science.</p>
 </div>
 </div>
-<div id="function" class="section level2" number="13.2">
-<h2>
-<span class="header-section-number">13.2</span> Function<a class="anchor" aria-label="anchor" href="#function"><i class="fas fa-link"></i></a>
+</div>
+<div id="function" class="section level2 unnumbered">
+<h2>Function<a class="anchor" aria-label="anchor" href="#function"><i class="fas fa-link"></i></a>
 </h2>
+<div id="section-2" class="section level3 unnumbered panelset">
+<h3>
+<span class="tabbing-section"></span><a class="anchor" aria-label="anchor" href="#section-2"><i class="fas fa-link"></i></a>
+</h3>
 <p>Next we would be covering the functional of visualization.
 Here’s a graph on how we would decide what graph should be used after we have done an exploratory plot as suggested in the previous section.</p>
-<div id="discrete-or-continuous-dots-versus-bars" class="section level3" number="13.2.1">
-<h3>
-<span class="header-section-number">13.2.1</span> Discrete or Continuous, dots versus bars<a class="anchor" aria-label="anchor" href="#discrete-or-continuous-dots-versus-bars"><i class="fas fa-link"></i></a>
-</h3>
-<p>When we are compelled to show data, we often refer to previous works or what is usually commonplace in field. However, when one starts to do exploratory analysis, the outlook of how one would produce the graphs would be pretty varied.</p>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-75"></span>
-<img src="imgs/Core5.png" alt="Example of Deciding what graphs to pick" width="100%"><p class="caption">
-Figure 13.4: Example of Deciding what graphs to pick
-</p>
-</div>
-<p>Once we have classify these data, we would attempt to show it in the variety graphs.
+<div id="discrete-or-continuous-dots-versus-bars" class="section level4 unnumbered">
+<h4>Discrete or Continuous, dots versus bars<a class="anchor" aria-label="anchor" href="#discrete-or-continuous-dots-versus-bars"><i class="fas fa-link"></i></a>
+</h4>
+<p>One would need to find what graphs would be suitable for Discrete or Continuous data.
+Some questions that we can ask while conducting exploratory plot are:</p>
+<ul>
+<li><p>Has the data been represented in other sources such as literature ?</p></li>
+<li><p>Is the data Discrete or Continuous?</p></li>
+<li><p>Is the data better portrayed in certain graphs compared to others?</p></li>
+</ul>
+<p>Once we have answered these, we would attempt to show it in the variety graphs.
 Let’s take COVID-19 exploratory plots for an example.</p>
-</div>
-<div id="organisation" class="section level3" number="13.2.2">
-<h3>
-<span class="header-section-number">13.2.2</span> Organisation<a class="anchor" aria-label="anchor" href="#organisation"><i class="fas fa-link"></i></a>
-</h3>
-<p>Here we would first plot the country on the x axis and numbers on the y-axis forms the first figure. However, seen in the figure it is not organized, thus we would first classify the data according to an order, we can sort by the ascending order as illustrated in the graph alone.</p>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-76"></span>
-<img src="imgs/Core6.png" alt="Example of Organising Data in Bar Charts" width="100%"><p class="caption">
-Figure 13.5: Example of Organising Data in Bar Charts
+<span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="imgs/Core5.png" alt="Example of Deciding what graphs to pick, borrowed from http://sps.nus.edu.sg/~chammika/workshops/viz/#some-practical-considerations" width="100%"><p class="caption">
+Figure 1.4: Example of Deciding what graphs to pick, borrowed from <a href="http://sps.nus.edu.sg/~chammika/workshops/viz/#some-practical-considerations" class="uri">http://sps.nus.edu.sg/~chammika/workshops/viz/#some-practical-considerations</a>
 </p>
 </div>
-<p>When we showcase an ascending order, we are able to showcase a difference of data. However, the labels would appear to be different to be seen. Another method would be used to help remedy the situation.</p>
 </div>
-<div id="multiplicative-scaling" class="section level3" number="13.2.3">
-<h3>
-<span class="header-section-number">13.2.3</span> Multiplicative scaling<a class="anchor" aria-label="anchor" href="#multiplicative-scaling"><i class="fas fa-link"></i></a>
-</h3>
-<p>In the case of progression of infections in a case as seen the exercise, we would understand we can see country X with the most infections. However, we would not be able to see the other countries progression which effectively seen in 12.4 For more insights, we can attempt to use a semi-Logarithmic function to illustrate the progression of infections instead.</p>
+<div id="organisation" class="section level4 unnumbered">
+<h4>Organisation<a class="anchor" aria-label="anchor" href="#organisation"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here we will revisit the COVID-19 bar chart panda examples.
+If we were to just plot the data with country, we would first obtain the first graph.</p>
+<p>Some points for us to consider when organising data points:</p>
+<ul>
+<li><p>Does the data portrayed tell any distinctive trends from the graph?</p></li>
+<li><p>Can we tell the differences between two similar bars while far apart?</p></li>
+</ul>
+<p>Organisation helps us answer these question, thus we would first classify the data according to an order, we can sort by the ascending order as illustrated in the graph alone.</p>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-77"></span>
+<span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="imgs/Core6.png" alt="Example of Organising Data in Bar Charts" width="150%"><p class="caption">
+Figure 1.5: Example of Organising Data in Bar Charts
+</p>
+</div>
+</div>
+<div id="multiplicative-scaling" class="section level4 unnumbered">
+<h4>Multiplicative scaling<a class="anchor" aria-label="anchor" href="#multiplicative-scaling"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here, we would try to showcase data from the rate of infections in multiple countries. Some questions that we might ask in the graph generation are of the following:</p>
+<ul>
+<li><p>Does the graph tell much information in 75% of the covered region?</p></li>
+<li><p>Would one consider the extreme points of the graph as outliers?</p></li>
+</ul>
+<p>With the help of these questions, we would be able to modify the graphs accordingly with the aid of Axis scaled units.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-9"></span>
 <img src="imgs/Core7.png" alt="Illustrating the use of a Semi-logarithmic Curve" width="100%"><p class="caption">
-Figure 13.6: Illustrating the use of a Semi-logarithmic Curve
+Figure 1.6: Illustrating the use of a Semi-logarithmic Curve
 </p>
 </div>
 </div>
 </div>
-<div id="aestatics" class="section level2" number="13.3">
-<h2>
-<span class="header-section-number">13.3</span> Aestatics<a class="anchor" aria-label="anchor" href="#aestatics"><i class="fas fa-link"></i></a>
+</div>
+<div id="aestatics" class="section level2 unnumbered">
+<h2>Aestatics<a class="anchor" aria-label="anchor" href="#aestatics"><i class="fas fa-link"></i></a>
 </h2>
+<div id="section-3" class="section level3 unnumbered panelset">
+<h3>
+<span class="tabbing-section"></span><a class="anchor" aria-label="anchor" href="#section-3"><i class="fas fa-link"></i></a>
+</h3>
 <p>Here, this is what would help improve the contrast between the each element</p>
-<div id="orientation" class="section level3" number="13.3.1">
-<h3>
-<span class="header-section-number">13.3.1</span> Orientation<a class="anchor" aria-label="anchor" href="#orientation"><i class="fas fa-link"></i></a>
-</h3>
-Using the figures from the section organization, we notice that it is pretty awkward to read vertical for a bar chart as the text are too small for each country, making it different to read. However, a simple solution to this is to have it be read horizontially instead.
+<div id="orientation" class="section level4 unnumbered">
+<h4>Orientation<a class="anchor" aria-label="anchor" href="#orientation"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here we would continue building on the example from organization, it is often that we would find ourselves wanting to read in a unidirectional path. Thus, the vertical bar chart generated would make it difficult to squeeze horizontal x-axis labels uniformly.</p>
+<p>Thus, we would try to ask whether rotation of the graph would make it simpler to read for both an aestatics point of view. Some food for thought questions to ask:</p>
+<ul>
+<li><p>Does switching the axis between the two variables tell a better picture?</p></li>
+<li><p>Would the labels be squeezed badly to illustrate our point?</p></li>
+</ul>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-78"></span>
+<span style="display:block;" id="fig:unnamed-chunk-10"></span>
 <img src="imgs/Core8.png" alt="Example of re-orientating charts to improve its aestatics " width="100%"><p class="caption">
-Figure 13.7: Example of re-orientating charts to improve its aestatics
+Figure 1.7: Example of re-orientating charts to improve its aestatics
 </p>
 </div>
 </div>
-<div id="size" class="section level3" number="13.3.2">
-<h3>
-<span class="header-section-number">13.3.2</span> Size<a class="anchor" aria-label="anchor" href="#size"><i class="fas fa-link"></i></a>
-</h3>
-Using one of the basic plotting figures, we showcased this graph with varying with labels.
+<div id="size" class="section level4 unnumbered">
+<h4>Size<a class="anchor" aria-label="anchor" href="#size"><i class="fas fa-link"></i></a>
+</h4>
+<p>The next point to consider while generating a plot is the variation of size of elements within the graph.</p>
+<p>Using the next two graphical outputs, we would be able to showcase the differences in the role of size labels.</p>
+<ul>
+<li><p>Would different size element be distracting in the graph generated?</p></li>
+<li><p>Is there a role for these elements?</p></li>
+</ul>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-79-1"></span>
+<span style="display:block;" id="fig:unnamed-chunk-11-1"></span>
 <img src="imgs/Core9.png" alt="Example of how label changes improve its aestatics " width="100%"><p class="caption">
-Figure 13.8: Example of how label changes improve its aestatics
+Figure 1.8: Example of how label changes improve its aestatics
 </p>
 </div>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-79-2"></span>
+<span style="display:block;" id="fig:unnamed-chunk-11-2"></span>
 <img src="imgs/Core9_1.png" alt="Example of how label changes improve its aestatics " width="100%"><p class="caption">
-Figure 13.9: Example of how label changes improve its aestatics
+Figure 1.9: Example of how label changes improve its aestatics
 </p>
 </div>
-<p>As seen from exercise 9.1 and 9.2, there is a difference in the observed images. It is often awkward and one would often attempt to make it complementary as seen the future labels.</p>
-</div>
-<div id="color" class="section level3" number="13.3.3">
-<h3>
-<span class="header-section-number">13.3.3</span> Color<a class="anchor" aria-label="anchor" href="#color"><i class="fas fa-link"></i></a>
-</h3>
 <p>Color is one of the key elements used in to attract audiences directly without dismissing attention.</p>
 <p>On the left is a figure produced from a Nature article which includes the 3 of the 4 principles.</p>
 <p>It is truthful as it covers the usage of 95 percentage confidence interval of the growth shark eggs which helps the audience of the paper understand how much deviation one would expect from line generated. However, one would find it difficult to interpret the difference in graph seen by the dashed line.
 Next we will cover how one would try to attempt to improve such a figure.</p>
 </div>
-<div id="saturation" class="section level3" number="13.3.4">
-<h3>
-<span class="header-section-number">13.3.4</span> Saturation<a class="anchor" aria-label="anchor" href="#saturation"><i class="fas fa-link"></i></a>
-</h3>
-<p>insert the annotation of circled areas of Solid dashed line.
-One would try to reduce the overlapping area by reducing saturation or increasing transparency which produces a clean figure seen below by decreasing the saturation of the colors. It reduces the distracting elements which can help us comprehend it quickly</p>
+<div id="hue-color-part-i" class="section level4 unnumbered">
+<h4>Hue, Color Part I<a class="anchor" aria-label="anchor" href="#hue-color-part-i"><i class="fas fa-link"></i></a>
+</h4>
+<p>Color is one of the key elements used in to attract audiences directly without dismissing attention. The wrong combination of colors would often create confusion in interpreting the graph pretty easily.</p>
+<p>Color comes in two forms, Saturation and Hue. In this section, we will focus on Hue.</p>
+<p>In this example, we would be trying to recreate a graph from the first figure of a Nature article listed below with their data, <a href="https://www.nature.com/articles/s41598-020-79953-0" class="uri">https://www.nature.com/articles/s41598-020-79953-0</a></p>
+<p>The graph generated by the article is decent but we would like to explore ways to minimise distracting elements. Thus, we would aim to answer some questions in how Color affects the graphs produced here.</p>
+<ul>
+<li><p>How to remove the overlapping regions between plots?</p></li>
+<li><p>Can we minimise the affect of different colors in the same graph?</p></li>
+</ul>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-80"></span>
+<span style="display:block;" id="fig:unnamed-chunk-12"></span>
 <img src="imgs/Core10.png" alt="Example of Removing visual clutter" width="100%"><p class="caption">
-Figure 13.10: Example of Removing visual clutter
+Figure 1.10: Example of Removing visual clutter
 </p>
 </div>
 </div>
-<div id="hue" class="section level3" number="13.3.5">
-<h3>
-<span class="header-section-number">13.3.5</span> Hue<a class="anchor" aria-label="anchor" href="#hue"><i class="fas fa-link"></i></a>
-</h3>
-<p>In the next graph, we can attempt to narrow down the emphasis on a graph by dulling the difference in color as seen in following graph. Here we would be able to plant a greater emphasis on what we plan to illustrate which is seen from the temperature graph.</p>
+<div id="saturation-color-part-ii" class="section level4 unnumbered">
+<h4>Saturation, Color Part II<a class="anchor" aria-label="anchor" href="#saturation-color-part-ii"><i class="fas fa-link"></i></a>
+</h4>
+<p>Saturation is another element that one would be able to integrate into the graph without much of a concern.</p>
+<p>One would be able to place emphasis on particular element by dulling the saturation of other elements in the graph.</p>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-81"></span>
+<span style="display:block;" id="fig:unnamed-chunk-13"></span>
 <img src="imgs/Core11.png" alt="Example of emphasizing on a single element in the graph" width="100%"><p class="caption">
-Figure 13.11: Example of emphasizing on a single element in the graph
+Figure 1.11: Example of emphasizing on a single element in the graph
 </p>
 </div>
 </div>
-<div id="color-palette" class="section level3" number="13.3.6">
-<h3>
-<span class="header-section-number">13.3.6</span> Color palette<a class="anchor" aria-label="anchor" href="#color-palette"><i class="fas fa-link"></i></a>
-</h3>
-Here we try to introduce to the complementary colors of what one would attempt to do by introducing what would work best
-Here are some graphs generated to illustrate the differences.
+<div id="color-palette-color-part-iii" class="section level4 unnumbered">
+<h4>Color palette, Color Part III<a class="anchor" aria-label="anchor" href="#color-palette-color-part-iii"><i class="fas fa-link"></i></a>
+</h4>
+<p>The color palette is one of the most utilised tools on the internet for a notable reason, it helps blend the usage of different colors well.</p>
+<p>Here are some graphs generated to illustrate the difference in blending colors.</p>
+<p>Questions that one would like to ask when tackling the usage of colors are of the following:</p>
+<ul>
+<li><p>Is there a distinctive contrast between the colors used?</p></li>
+<li><p>Would the differences of colors distract your audience easily?</p></li>
+</ul>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-82"></span>
+<span style="display:block;" id="fig:unnamed-chunk-14"></span>
 <img src="imgs/Core9_2.png" alt="Example of how label changes improve its aestatics " width="100%"><p class="caption">
-Figure 13.12: Example of how label changes improve its aestatics
+Figure 1.12: Example of how label changes improve its aestatics
 </p>
 </div>
-<p>We can see why the colors on the left would not be able to showcase the difference as the colors are of the same category of saturation and Hue which makes it difficult to use on a palette when one tried to illustrate their ideas. Using Neutral colors are okay but they do not seem to really stand out when one tried to illustrate different elements. However, the graphs achieved on the right are aestatically pleasing as they are part of a complementary wheel which makes the design of the graph more smooth.</p>
 </div>
-<div id="grid-linesline-type-and-line-width" class="section level3" number="13.3.7">
-<h3>
-<span class="header-section-number">13.3.7</span> Grid lines,line type and line width<a class="anchor" aria-label="anchor" href="#grid-linesline-type-and-line-width"><i class="fas fa-link"></i></a>
-</h3>
-<p>In the area of grid lines, one would attempt to remove them as they would stand out in the figure which makes it distracting as discussed earlier, we can reduce the existence of the object by changing its saturation or by removing in. Show 3 examples where removing doesn’t work. You may opt for a minimalistic style by making the intervals shaded white to keep it as simple as possible.</p>
+<div id="grid-lines" class="section level4 unnumbered">
+<h4>Grid lines<a class="anchor" aria-label="anchor" href="#grid-lines"><i class="fas fa-link"></i></a>
+</h4>
+<p>Grid Lines are an important element as they help us gauge the length of the element in both axis. However,they would distract the audience when its use is unnecessary.</p>
+<p>Questions that we would have to ask are:</p>
+<ul>
+<li><p>What role does the grid lines play in gauging the data between points?</p></li>
+<li><p>Would the removal of grid lines help us understand the quantitative difference between different elements?</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<img src="imgs/Core2.png" alt="Example of using grid lines to gauge cases between each day" width="100%"><p class="caption">
+Figure 1.13: Example of using grid lines to gauge cases between each day
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<img src="imgs/Core12.png" alt="Example of a pie chart without grid lines" width="100%"><p class="caption">
+Figure 1.14: Example of a pie chart without grid lines
+</p>
+</div>
 
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
+</div>
   <div class="chapter-nav">
-<div class="prev"><a href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">12</span> Using Pandas to Explore COVID-19 Data</a></div>
+<div class="prev"><a href="index.html"></a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#core-visualisation-principles"><span class="header-section-number">13</span> Core Visualisation Principles</a></li>
+<li><a class="nav-link" href="#core-visualisation-principles"><span class="header-section-number">1</span> Core Visualisation Principles</a></li>
 <li>
-<a class="nav-link" href="#truthfulness"><span class="header-section-number">13.1</span> Truthfulness</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#graphical-scaling"><span class="header-section-number">13.1.1</span> Graphical scaling</a></li>
-<li><a class="nav-link" href="#axis-unit-scale-labels."><span class="header-section-number">13.1.2</span> Axis unit scale labels.</a></li>
-</ul>
+<a class="nav-link" href="#truthfulness">Truthfulness</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#section-1"></a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#function"><span class="header-section-number">13.2</span> Function</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#discrete-or-continuous-dots-versus-bars"><span class="header-section-number">13.2.1</span> Discrete or Continuous, dots versus bars</a></li>
-<li><a class="nav-link" href="#organisation"><span class="header-section-number">13.2.2</span> Organisation</a></li>
-<li><a class="nav-link" href="#multiplicative-scaling"><span class="header-section-number">13.2.3</span> Multiplicative scaling</a></li>
-</ul>
+<a class="nav-link" href="#function">Function</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#section-2"></a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#aestatics"><span class="header-section-number">13.3</span> Aestatics</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#orientation"><span class="header-section-number">13.3.1</span> Orientation</a></li>
-<li><a class="nav-link" href="#size"><span class="header-section-number">13.3.2</span> Size</a></li>
-<li><a class="nav-link" href="#color"><span class="header-section-number">13.3.3</span> Color</a></li>
-<li><a class="nav-link" href="#saturation"><span class="header-section-number">13.3.4</span> Saturation</a></li>
-<li><a class="nav-link" href="#hue"><span class="header-section-number">13.3.5</span> Hue</a></li>
-<li><a class="nav-link" href="#color-palette"><span class="header-section-number">13.3.6</span> Color palette</a></li>
-<li><a class="nav-link" href="#grid-linesline-type-and-line-width"><span class="header-section-number">13.3.7</span> Grid lines,line type and line width</a></li>
-</ul>
+<a class="nav-link" href="#aestatics">Aestatics</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#section-3"></a></li></ul>
 </li>
 </ul>
 
@@ -318,7 +348,7 @@ Figure 13.12: Example of how label changes improve its aestatics
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-08.</p>
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -326,34 +356,6 @@ Figure 13.12: Example of how label changes improve its aestatics
   </div>
 
 </div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
-for (let popover of popovers) {
-  const div = document.createElement('div');
-  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
-  div.innerHTML = popover.getAttribute('data-content');
-
-  var has_math = div.querySelector("span.math");
-  if (has_math) {
-    document.body.appendChild(div);
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
-    MathJax.Hub.Queue(function() {
-      popover.setAttribute('data-content', div.innerHTML);
-      document.body.removeChild(div);
-    })
-  }
-}
-</script>
+</footer>
 </body>
 </html>
