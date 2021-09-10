@@ -1,0 +1,255 @@
+## Introduction
+
+### A simple start
+
+```{python}
+print('Hello World')
+```
+
+```{python}
+print('Hello! '*5)
+```
+
+### Python syntax is very readable and easily understood.
+
+```{python}
+name = 'Batman'
+
+if name == 'Batman':
+    print('Hello Batman!')
+else:
+    print('Hello World!')
+```
+
+### The Python Intepreter
+
+-   The Python 'brain' is called the '_Python **Interpreter**_' (Latest version is 3.9).
+-   The Python interpreter can only work on a single command at a time.
+-   If you give a list of _commands_, it goes through them one at a time.
+
+```{python,collapse=T}
+print('Hello World!')                # Command 0
+print('Hello Galaxy!')               # Command 1
+print('Hello Universe!')             # Command 2
+```
+
+### 2 | Some Python Basics
+
+### Comments in Python
+
+-   We can use a `#` to write comments.
+-   The Python interpretor ignores all comments.
+
+```{python,collapse=T}
+print('One')              # This is a comment
+# print('Two')            # The intepreter ignores this line
+print('Three')
+```
+
+### Python is case sensitive
+
+```{python}
+print('Hello World')      # This WILL work
+```
+
+```{python,error=T}
+Print('Hello World')      # This will NOT work
+```
+
+### `x` is a variable. 'x' is an English letter.
+
+```{python}
+print('x')      # Print the English letter 'x'
+```
+
+```{python}
+x = 10
+print(x)        # Princt the value of the variable x
+```
+
+### `=` is not the same as '=='
+
+- `=` is used to **make** something equal.
+- `==` is used to **check** if something is equal.
+
+```{python}
+x = 10            # Make x have the value 10
+```
+
+```{python}
+x == 20           # Tell me if x is equal to 20?
+```
+
+```{python}
+x == 10           # Tell me if x is equal to 10?
+```
+
+### Be careful of spaces(indentations) at the start of a line
+
+```{python}
+# This WILL work
+x = 10
+print(x)
+```
+
+```{python,eval=F}
+# This will NOT work
+x = 10
+    print(x)
+```
+
+### Python has many (many) cool packages
+
+Basic Python is limited but can be extended with packages.
+
+Let's understand what this means.
+
+```{python,error=T}
+sqrt(4)       # Will NOT work because basic Python is limited
+```
+
+Let's import a package called `math` to fix this problem.
+
+```{python}
+import math   # Adding(importing) the functions of the 'math' package
+```
+
+```{python}
+math.sqrt(4)
+```
+
+We can use other packages too. Lets consider the package **numpy**.
+
+```{python}
+import numpy as np     # We are lazy! We type 'np' instead of 'numpy'
+```
+
+```{python}
+np.sqrt(4)
+```
+
+### The `.` and 'hidden' functions
+
+The `.` shows ownership.
+
+-   `math.sqrt()` means the `sqrt()` function belonging to the package `math`
+-   `np.sqrt()` means the `sqrt()` function belonging to the package `numpy`
+-   'Everything' in Python have useful functions that are sort of 'hidden'.
+
+### Example 1: `upper()` a method that belongs to 'letters'
+
+```{python}
+'My name is Batman'.upper()
+```
+
+### Example 2: `split()` a method that belongs to 'letters'
+
+```{python}
+'My name is Batman'.split()
+```
+
+### Example 3: Available methods depends on what you have
+
+```{python,error=T,eval=F}
+1234.split()              # Will NOT work because split() is not a method available to numbers
+```
+
+### Python Lists and numpy Arrays
+
+-   Two import ways to store information in Python are Python Lists and numpy Arrays.
+
+```{python}
+py_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]                  # A Python list
+np_array = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10] )      # a numpy array
+```
+
+Althoug they look similary each have different features
+
+### Example 1: Selecting elements that satisfy a criterion
+
+````{python}
+np_array[np_array > 4]    # Show me (subset) numbers more than 4
+```
+
+```{python,error=T}
+py_list[py_list > 4]      # Will NOT work
+```
+
+### Example 2: Adding a number to an array
+
+```{python}
+np_array + 100            # Add 100 to all elements
+```
+
+```{python,error=T}
+py_list + 100             # Will NOT work
+```
+### Example 3: Growing a list
+
+```{python}
+py_list + [100,200]       # Appends the numbers to the list
+```
+
+```{python,error=T}
+np_array + [100,200]     # Will NOT work
+```
+
+### 2.9|Accessing elements of lists and arrays
+
+- **Important**: Python starts counting at 0
+
+### Examples 1: Selecting one element (indexing)
+
+```{python}
+py_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+```{python}
+# First item
+py_list[0]
+````
+
+```{python}
+# Second item
+py_list[1]
+```
+
+```{python}
+# Last item
+py_list[-1]
+```
+
+### Examples 2: Selecting a range of elements (slicing)
+
+```{python}
+py_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+```{python}
+# Start at index 3 (i.e. '4') and give two (5-3) elements
+py_list[3:5]
+```
+
+```{python}
+# Show me 3 elements from the start
+py_list[:3]
+```
+
+```{python}
+# Show me all elements from the index 3
+py_list[3:]
+```
+
+```{python}
+# Show me everything (from start to end)
+py_list[:]
+```
+
+### Getting Help
+
+-   Googling for help is the fastest way to get a problem solved.
+-   However, you can also get information from within Colab by using the following:
+
+```{python,eval=F}
+?np.cos
+```

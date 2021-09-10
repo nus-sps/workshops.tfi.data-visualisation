@@ -8,17 +8,17 @@ language:
     chapter_name: "Chapter "
 include: [python_outputs/*]
 rmd_files: [
-  'index.Rmd',
-  'files_rmd/00_introduction.Rmd',
-  'files_rmd/01_pre-workshop_00_instructions.Rmd',
-  'files_rmd/01_pre-workshop_01_basic-python.Rmd',
-  'files_rmd/01_pre-workshop_02_basic-python-exercises.Rmd',
-   'files_rmd/01_pre-workshop_03_basic-pandas.Rmd',
-   'files_rmd/01_pre-workshop_04_basic-pandas-exercises.Rmd',
-   'files_rmd/02_workshop_00_instructions.Rmd',
-    'files_rmd/02_workshop_01_basic-plotting.Rmd',
-    'files_rmd/02_workshop_01_Exercise.Rmd',
-   'files_rmd/02_workshop_02_exploratory-analysis-with-pandas.Rmd',
-    'files_rmd/02_workshop_03_covid-19-data-with-pandas.Rmd',
-   'files_rmd/02_workshop_04_core-visualisation-concepts.Rmd'
+ 'index.Rmd',
+# 'files_rmd/00_introduction.Rmd',
+ 'files_rmd/01_pre-workshop_00_instructions.Rmd',
+ 'files_rmd/01_pre-workshop_01_basic-python.Rmd',
+# 'files_rmd/01_pre-workshop_02_basic-python-exercises.Rmd',
+# 'files_rmd/01_pre-workshop_03_basic-pandas.Rmd',
+# 'files_rmd/01_pre-workshop_04_basic-pandas-exercises.Rmd',
+# 'files_rmd/02_workshop_00_instructions.Rmd',
+# 'files_rmd/02_workshop_01_basic-plotting.Rmd',
+# 'files_rmd/02_workshop_01_Exercise.Rmd',
+# 'files_rmd/02_workshop_02_exploratory-analysis-with-pandas.Rmd',
+# 'files_rmd/02_workshop_03_covid-19-data-with-pandas.Rmd',
+# 'files_rmd/02_workshop_04_core-visualisation-concepts.Rmd'
 ]

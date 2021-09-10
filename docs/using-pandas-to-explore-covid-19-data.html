@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 11 Using Pandas to Explore COVID-19 Data | TFI e-Workshop | Using Python To Tell Stories With Data</title>
+<title>Chapter 12 Using Pandas to Explore COVID-19 Data | TFI e-Workshop | Using Python To Tell Stories With Data</title>
 <meta name="author" content="SPS Science Communication Team">
-<meta name="description" content="11.1 Plans for this section In the previous two sections, we introduced basics to plotting using matplotlib and generating exploratory analysis &amp; visualisations using pandas. In this section, we...">
+<meta name="description" content="12.1 Plans for this section In the previous two sections, we introduced basics to plotting using matplotlib and generating exploratory analysis &amp; visualisations using pandas. In this section, we...">
 <meta name="generator" content="bookdown 0.23 with bs4_book()">
-<meta property="og:title" content="Chapter 11 Using Pandas to Explore COVID-19 Data | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta property="og:title" content="Chapter 12 Using Pandas to Explore COVID-19 Data | TFI e-Workshop | Using Python To Tell Stories With Data">
 <meta property="og:type" content="book">
-<meta property="og:description" content="11.1 Plans for this section In the previous two sections, we introduced basics to plotting using matplotlib and generating exploratory analysis &amp; visualisations using pandas. In this section, we...">
+<meta property="og:description" content="12.1 Plans for this section In the previous two sections, we introduced basics to plotting using matplotlib and generating exploratory analysis &amp; visualisations using pandas. In this section, we...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 11 Using Pandas to Explore COVID-19 Data | TFI e-Workshop | Using Python To Tell Stories With Data">
-<meta name="twitter:description" content="11.1 Plans for this section In the previous two sections, we introduced basics to plotting using matplotlib and generating exploratory analysis &amp; visualisations using pandas. In this section, we...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="twitter:title" content="Chapter 12 Using Pandas to Explore COVID-19 Data | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta name="twitter:description" content="12.1 Plans for this section In the previous two sections, we introduced basics to plotting using matplotlib and generating exploratory analysis &amp; visualisations using pandas. In this section, we...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
@@ -54,10 +54,11 @@
 <li><a class="" href="python-pandas-exercises.html"><span class="header-section-number">7</span> Python Pandas : Exercises</a></li>
 <li class="book-part">Workshop</li>
 <li><a class="" href="instructions-1.html">Instructions</a></li>
-<li><a class="" href="basic-plotting-with-pandas.html"><span class="header-section-number">9</span> Basic Plotting with Pandas</a></li>
-<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">10</span> Using Pandas to Explore Data</a></li>
-<li><a class="active" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">11</span> Using Pandas to Explore COVID-19 Data</a></li>
-<li><a class="" href="core-visualisation-principles.html"><span class="header-section-number">12</span> Core Visualisation Principles</a></li>
+<li><a class="" href="basic-plotting-with-matplotlib.html"><span class="header-section-number">9</span> Basic Plotting with Matplotlib</a></li>
+<li><a class="" href="exercise-for-basic-plotting-for-matplotlib.html"><span class="header-section-number">10</span> Exercise for Basic Plotting for Matplotlib</a></li>
+<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">11</span> Using Pandas to Explore Data</a></li>
+<li><a class="active" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">12</span> Using Pandas to Explore COVID-19 Data</a></li>
+<li><a class="" href="core-visualisation-principles.html"><span class="header-section-number">13</span> Core Visualisation Principles</a></li>
 </ul>
 
         <div class="book-extra">
@@ -65,30 +66,159 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="using-pandas-to-explore-covid-19-data" class="section level1" number="11">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="using-pandas-to-explore-covid-19-data" class="section level1" number="12">
 <h1>
-<span class="header-section-number">11</span> Using Pandas to Explore COVID-19 Data<a class="anchor" aria-label="anchor" href="#using-pandas-to-explore-covid-19-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12</span> Using Pandas to Explore COVID-19 Data<a class="anchor" aria-label="anchor" href="#using-pandas-to-explore-covid-19-data"><i class="fas fa-link"></i></a>
 </h1>
-<div id="plans-for-this-section" class="section level2" number="11.1">
+<div id="plans-for-this-section" class="section level2" number="12.1">
 <h2>
-<span class="header-section-number">11.1</span> Plans for this section<a class="anchor" aria-label="anchor" href="#plans-for-this-section"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.1</span> Plans for this section<a class="anchor" aria-label="anchor" href="#plans-for-this-section"><i class="fas fa-link"></i></a>
 </h2>
 <p>In the previous two sections, we introduced basics to plotting using <code>matplotlib</code> and generating exploratory analysis &amp; visualisations using <code>pandas</code>. In this section, we are going to put these skills into practice and explore the COVID19 dataset from GitHub (<a href="https://github.com/datasets/covid-19" class="uri">https://github.com/datasets/covid-19</a>) that is maintained by Johns Hopkins University.</p>
 </div>
-<div id="housekeeping" class="section level2" number="11.2">
+<div id="housekeeping" class="section level2" number="12.2">
 <h2>
-<span class="header-section-number">11.2</span> Housekeeping<a class="anchor" aria-label="anchor" href="#housekeeping"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.2</span> Housekeeping<a class="anchor" aria-label="anchor" href="#housekeeping"><i class="fas fa-link"></i></a>
 </h2>
 <p>It is always good to get a rough idea about a dataset, right at the start.</p>
 <!-- Exercise -->
-<div id="exercise-2-what-are-we-dealing-with" class="section level3 unnumbered panelset">
+<div id="exercise-1-what-are-we-dealing-with" class="section level3 unnumbered panelset">
 <h3>
-<span class="my-exercises">Exercise 2 | </span> What are we dealing with?<a class="anchor" aria-label="anchor" href="#exercise-2-what-are-we-dealing-with"><i class="fas fa-link"></i></a>
+<span class="my-exercises">Exercise 1 | </span> What are we dealing with?<a class="anchor" aria-label="anchor" href="#exercise-1-what-are-we-dealing-with"><i class="fas fa-link"></i></a>
 </h3>
-<div id="result-3" class="section level4 unnumbered panelset">
-<h4>Result<a class="anchor" aria-label="anchor" href="#result-3"><i class="fas fa-link"></i></a>
+<div id="result-7" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-7"><i class="fas fa-link"></i></a>
 </h4>
 <br><div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+<th>
+Confirmed
+</th>
+<th>
+Recovered
+</th>
+<th>
+Deaths
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<th>
+count
+</th>
+<td>
+1.142700e+05
+</td>
+<td>
+1.142700e+05
+</td>
+<td>
+114270.000000
+</td>
+</tr>
+<tr>
+<th>
+mean
+</th>
+<td>
+3.832402e+05
+</td>
+<td>
+2.055785e+05
+</td>
+<td>
+8941.022079
+</td>
+</tr>
+<tr>
+<th>
+std
+</th>
+<td>
+2.057547e+06
+</td>
+<td>
+1.153802e+06
+</td>
+<td>
+40707.331433
+</td>
+</tr>
+<tr>
+<th>
+min
+</th>
+<td>
+0.000000e+00
+</td>
+<td>
+0.000000e+00
+</td>
+<td>
+0.000000
+</td>
+</tr>
+<tr>
+<th>
+25%
+</th>
+<td>
+4.410000e+02
+</td>
+<td>
+2.600000e+01
+</td>
+<td>
+6.000000
+</td>
+</tr>
+<tr>
+<th>
+50%
+</th>
+<td>
+9.767000e+03
+</td>
+<td>
+3.811000e+03
+</td>
+<td>
+155.000000
+</td>
+</tr>
+<tr>
+<th>
+75%
+</th>
+<td>
+1.213500e+05
+</td>
+<td>
+6.130400e+04
+</td>
+<td>
+2185.000000
+</td>
+</tr>
+<tr>
+<th>
+max
+</th>
+<td>
+3.879675e+07
+</td>
+<td>
+3.097475e+07
+</td>
+<td>
+637531.000000
+</td>
+</tr>
+</tbody>
+</table></div>
+<div class="inline-table"><table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
 <th>
 </th>
@@ -224,20 +354,20 @@ Afghanistan
 <li><p>What are column names?</p></li>
 </ol>
 </div>
-<div id="solution" class="section level4 unnumbered panelset">
-<h4>Solution<a class="anchor" aria-label="anchor" href="#solution"><i class="fas fa-link"></i></a>
+<div id="solution-3" class="section level4 unnumbered panelset">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-3"><i class="fas fa-link"></i></a>
 </h4>
 <br><div class="sourceCode">
 <pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv'</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
 
-<span class="c1">#df.shape</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 
-<span class="c1">#df.columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
 
-<span class="c1">#df.describe()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 
-<span class="c1">#df.info()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -246,12 +376,12 @@ Afghanistan
 <!-- Exercise -->
 </div>
 </div>
-<div id="exercise-3-drop-those-unnecessary-columns" class="section level3 unnumbered panelset">
+<div id="exercise-2-drop-those-unnecessary-columns" class="section level3 unnumbered panelset">
 <h3>
-<span class="my-exercises">Exercise 3 | </span> Drop those unnecessary columns?<a class="anchor" aria-label="anchor" href="#exercise-3-drop-those-unnecessary-columns"><i class="fas fa-link"></i></a>
+<span class="my-exercises">Exercise 2 | </span> Drop those unnecessary columns?<a class="anchor" aria-label="anchor" href="#exercise-2-drop-those-unnecessary-columns"><i class="fas fa-link"></i></a>
 </h3>
-<div id="result-4" class="section level4 unnumbered panelset">
-<h4>Result<a class="anchor" aria-label="anchor" href="#result-4"><i class="fas fa-link"></i></a>
+<div id="result-8" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-8"><i class="fas fa-link"></i></a>
 </h4>
 <br><div class="inline-table"><table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
@@ -394,12 +524,12 @@ Afghanistan
 <!-- Exercise -->
 </div>
 </div>
-<div id="exercise-4-subset-to-asean-countries-only" class="section level3 unnumbered panelset">
+<div id="exercise-3-subset-to-asean-countries-only" class="section level3 unnumbered panelset">
 <h3>
-<span class="my-exercises">Exercise 4 | </span> Subset to ASEAN countries only<a class="anchor" aria-label="anchor" href="#exercise-4-subset-to-asean-countries-only"><i class="fas fa-link"></i></a>
+<span class="my-exercises">Exercise 3 | </span> Subset to ASEAN countries only<a class="anchor" aria-label="anchor" href="#exercise-3-subset-to-asean-countries-only"><i class="fas fa-link"></i></a>
 </h3>
-<div id="result-5" class="section level4 unnumbered panelset">
-<h4>Result<a class="anchor" aria-label="anchor" href="#result-5"><i class="fas fa-link"></i></a>
+<div id="result-9" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-9"><i class="fas fa-link"></i></a>
 </h4>
 <br><div class="inline-table"><table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
@@ -533,15 +663,15 @@ Brunei
 <ol style="list-style-type: decimal">
 <li>
 <p>Find a way to subset the dataframe to only contain ASEAN countries. Here is a list of the ASEAN countries.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="using-pandas-to-explore-covid-19-data.html#cb59-1" aria-hidden="true" tabindex="-1"></a>ASEAN_countries_list <span class="op">=</span> [</span>
-<span id="cb59-2"><a href="using-pandas-to-explore-covid-19-data.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="st">'Brunei'</span>, <span class="st">'Burma'</span>, <span class="st">'Cambodia'</span>,</span>
-<span id="cb59-3"><a href="using-pandas-to-explore-covid-19-data.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="st">'Indonesia'</span>, <span class="st">'Laos'</span>, <span class="st">'Malaysia'</span>,</span>
-<span id="cb59-4"><a href="using-pandas-to-explore-covid-19-data.html#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="st">'Philippines'</span>, <span class="st">'Singapore'</span>, <span class="st">'Vietnam'</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="using-pandas-to-explore-covid-19-data.html#cb58-1" aria-hidden="true" tabindex="-1"></a>ASEAN_countries_list <span class="op">=</span> [</span>
+<span id="cb58-2"><a href="using-pandas-to-explore-covid-19-data.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="st">'Brunei'</span>, <span class="st">'Burma'</span>, <span class="st">'Cambodia'</span>,</span>
+<span id="cb58-3"><a href="using-pandas-to-explore-covid-19-data.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="st">'Indonesia'</span>, <span class="st">'Laos'</span>, <span class="st">'Malaysia'</span>,</span>
+<span id="cb58-4"><a href="using-pandas-to-explore-covid-19-data.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="st">'Philippines'</span>, <span class="st">'Singapore'</span>, <span class="st">'Vietnam'</span>]</span></code></pre></div>
 </li>
 </ol>
 </div>
-<div id="solution-1" class="section level4 unnumbered panelset">
-<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-1"><i class="fas fa-link"></i></a>
+<div id="solution-4" class="section level4 unnumbered panelset">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-4"><i class="fas fa-link"></i></a>
 </h4>
 <br><div class="sourceCode">
 <pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="n">ASEAN_countries</span> <span class="o">=</span> <span class="p">[</span>
@@ -563,17 +693,17 @@ Brunei
 </div>
 </div>
 </div>
-<div id="exploration-of-covid19-dataset-bar-chart" class="section level2" number="11.3">
+<div id="exploration-of-covid19-dataset-bar-chart" class="section level2" number="12.3">
 <h2>
-<span class="header-section-number">11.3</span> Exploration of COVID19 dataset: Bar Chart<a class="anchor" aria-label="anchor" href="#exploration-of-covid19-dataset-bar-chart"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.3</span> Exploration of COVID19 dataset: Bar Chart<a class="anchor" aria-label="anchor" href="#exploration-of-covid19-dataset-bar-chart"><i class="fas fa-link"></i></a>
 </h2>
 <!-- Exercise -->
-<div id="exercise-5-plotting-the-total-deaths-in-each-country" class="section level3 unnumbered panelset">
+<div id="exercise-4-plotting-the-total-deaths-in-each-country" class="section level3 unnumbered panelset">
 <h3>
-<span class="my-exercises">Exercise 5 | </span> Plotting the Total Deaths in each country<a class="anchor" aria-label="anchor" href="#exercise-5-plotting-the-total-deaths-in-each-country"><i class="fas fa-link"></i></a>
+<span class="my-exercises">Exercise 4 | </span> Plotting the Total Deaths in each country<a class="anchor" aria-label="anchor" href="#exercise-4-plotting-the-total-deaths-in-each-country"><i class="fas fa-link"></i></a>
 </h3>
-<div id="result-6" class="section level4 unnumbered panelset">
-<h4>Result<a class="anchor" aria-label="anchor" href="#result-6"><i class="fas fa-link"></i></a>
+<div id="result-10" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-10"><i class="fas fa-link"></i></a>
 </h4>
 <p><br><img src="python_outputs/__my_python_output__covid-barchart.py.png" class="python-result-img"></p>
 </div>
@@ -588,25 +718,31 @@ Brunei
 <strong>Hint</strong>: Maybe make the barchart descending!</p></li>
 </ol>
 </div>
-<div id="solution-2" class="section level4 unnumbered panelset">
-<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-2"><i class="fas fa-link"></i></a>
+<div id="solution-5" class="section level4 unnumbered panelset">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-5"><i class="fas fa-link"></i></a>
 </h4>
 <br><div class="sourceCode">
-<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="c1"># Pandas Manipulation #</span>
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="n">ASEAN_countries</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Brunei'</span><span class="p">,</span> <span class="s1">'Burma'</span><span class="p">,</span> <span class="s1">'Cambodia'</span><span class="p">,</span>    <span class="s1">'Indonesia'</span><span class="p">,</span>
+
+
+
+
+
+<span class="c1"># Pandas Manipulation #</span>
 <span class="n">latest_date</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df_ASEAN</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">])</span>
 <span class="n">df_ASEAN_latest_date</span> <span class="o">=</span> <span class="n">df_ASEAN</span><span class="p">[</span><span class="n">df_ASEAN</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span> <span class="o">==</span> <span class="n">latest_date</span><span class="p">]</span>
-<span class="n">df_ASEAN_latest_date</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Country'</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">df_ASEAN_latest_date</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">'Deaths'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">df_ASEAN_latest_date</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Country'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_ASEAN_latest_date</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Deaths'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Plotting #</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">df_ASEAN_latest_date</span><span class="p">[</span><span class="s1">'Deaths'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">'barh'</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df_ASEAN_latest_date</span><span class="p">[</span><span class="s1">'Deaths'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'barh'</span><span class="p">)</span>
 
 <span class="c1"># Pretty Things #</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Total Deaths'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Country'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Number of Deaths due to COVID-19 by countries'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Total Deaths'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Country'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Number of Deaths due to COVID-19 by countries'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -615,17 +751,17 @@ Brunei
 </div>
 </div>
 </div>
-<div id="exploration-of-covid19-dataset-time-series" class="section level2" number="11.4">
+<div id="exploration-of-covid19-dataset-time-series" class="section level2" number="12.4">
 <h2>
-<span class="header-section-number">11.4</span> Exploration of COVID19 dataset: Time-Series<a class="anchor" aria-label="anchor" href="#exploration-of-covid19-dataset-time-series"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4</span> Exploration of COVID19 dataset: Time-Series<a class="anchor" aria-label="anchor" href="#exploration-of-covid19-dataset-time-series"><i class="fas fa-link"></i></a>
 </h2>
 <!-- Exercise -->
-<div id="exercise-6-total-confirmed-cases-in-each-country-over-time" class="section level3 unnumbered panelset">
+<div id="exercise-5-total-confirmed-cases-in-each-country-over-time" class="section level3 unnumbered panelset">
 <h3>
-<span class="my-exercises">Exercise 6 | </span> Total Confirmed Cases in each country over time<a class="anchor" aria-label="anchor" href="#exercise-6-total-confirmed-cases-in-each-country-over-time"><i class="fas fa-link"></i></a>
+<span class="my-exercises">Exercise 5 | </span> Total Confirmed Cases in each country over time<a class="anchor" aria-label="anchor" href="#exercise-5-total-confirmed-cases-in-each-country-over-time"><i class="fas fa-link"></i></a>
 </h3>
-<div id="result-7" class="section level4 unnumbered panelset">
-<h4>Result<a class="anchor" aria-label="anchor" href="#result-7"><i class="fas fa-link"></i></a>
+<div id="result-11" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-11"><i class="fas fa-link"></i></a>
 </h4>
 <p><br><img src="python_outputs/__my_python_output__covid-time-series.py.png" class="python-result-img"></p>
 </div>
@@ -640,12 +776,12 @@ Brunei
 <li><p>Enable the legend</p></li>
 </ol>
 </div>
-<div id="solution-3" class="section level4 unnumbered panelset">
-<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-3"><i class="fas fa-link"></i></a>
+<div id="solution-6" class="section level4 unnumbered panelset">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-6"><i class="fas fa-link"></i></a>
 </h4>
 <br><div class="sourceCode">
 <pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="c1"># Plotting #</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="c1"># Iterate through our countries so we can plot automatically plot them!</span>
 <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">ASEAN_countries</span><span class="p">:</span>
@@ -654,11 +790,11 @@ Brunei
 
 <span class="c1"># Pretty Things #</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Number of Confirmed Cases'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Date'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Number of Confirmed Cases over time in ASEAN countries</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Number of Confirmed Cases'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Date'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Confirmed Cases over time in ASEAN countries</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -667,17 +803,17 @@ Brunei
 </div>
 </div>
 </div>
-<div id="exploration-of-covid19-dataset-time-series-daily-cases" class="section level2" number="11.5">
+<div id="exploration-of-covid19-dataset-time-series-daily-cases" class="section level2" number="12.5">
 <h2>
-<span class="header-section-number">11.5</span> Exploration of COVID19 dataset: Time-Series Daily Cases<a class="anchor" aria-label="anchor" href="#exploration-of-covid19-dataset-time-series-daily-cases"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.5</span> Exploration of COVID19 dataset: Time-Series Daily Cases<a class="anchor" aria-label="anchor" href="#exploration-of-covid19-dataset-time-series-daily-cases"><i class="fas fa-link"></i></a>
 </h2>
 <!-- Exercise -->
-<div id="exercise-7-daily-confirmed-cases-in-each-country-over-time" class="section level3 unnumbered panelset">
+<div id="exercise-6-daily-confirmed-cases-in-each-country-over-time" class="section level3 unnumbered panelset">
 <h3>
-<span class="my-exercises">Exercise 7 | </span> Daily Confirmed Cases in each country over time<a class="anchor" aria-label="anchor" href="#exercise-7-daily-confirmed-cases-in-each-country-over-time"><i class="fas fa-link"></i></a>
+<span class="my-exercises">Exercise 6 | </span> Daily Confirmed Cases in each country over time<a class="anchor" aria-label="anchor" href="#exercise-6-daily-confirmed-cases-in-each-country-over-time"><i class="fas fa-link"></i></a>
 </h3>
-<div id="result-8" class="section level4 unnumbered panelset">
-<h4>Result<a class="anchor" aria-label="anchor" href="#result-8"><i class="fas fa-link"></i></a>
+<div id="result-12" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-12"><i class="fas fa-link"></i></a>
 </h4>
 <p><br><img src="python_outputs/__my_python_output__covid-time-series-daily.py.png" class="python-result-img"></p>
 </div>
@@ -694,8 +830,8 @@ Brunei
 <li><p>Enable the legend</p></li>
 </ol>
 </div>
-<div id="solution-4" class="section level4 unnumbered panelset">
-<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-4"><i class="fas fa-link"></i></a>
+<div id="solution-7" class="section level4 unnumbered panelset">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-7"><i class="fas fa-link"></i></a>
 </h4>
 <br><div class="sourceCode">
 <pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -706,7 +842,7 @@ Brunei
 <span class="n">df_ASEAN</span><span class="p">[</span><span class="n">df_ASEAN</span><span class="p">[</span><span class="s1">'Daily'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
 
 <span class="c1"># Plotting #</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="c1"># Iterate through our countries so we can plot automatically plot them!</span>
 <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">ASEAN_countries</span><span class="p">:</span>
@@ -715,11 +851,11 @@ Brunei
 
 <span class="c1"># Pretty Things #</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Number of Daily Cases'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Date'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Number of Daily Cases over time in ASEAN countries'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Number of Daily Cases'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Date'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Daily Cases over time in ASEAN countries'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -731,28 +867,28 @@ Brunei
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="using-pandas-to-explore-data.html"><span class="header-section-number">10</span> Using Pandas to Explore Data</a></div>
-<div class="next"><a href="core-visualisation-principles.html"><span class="header-section-number">12</span> Core Visualisation Principles</a></div>
+<div class="prev"><a href="using-pandas-to-explore-data.html"><span class="header-section-number">11</span> Using Pandas to Explore Data</a></div>
+<div class="next"><a href="core-visualisation-principles.html"><span class="header-section-number">13</span> Core Visualisation Principles</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#using-pandas-to-explore-covid-19-data"><span class="header-section-number">11</span> Using Pandas to Explore COVID-19 Data</a></li>
-<li><a class="nav-link" href="#plans-for-this-section"><span class="header-section-number">11.1</span> Plans for this section</a></li>
+<li><a class="nav-link" href="#using-pandas-to-explore-covid-19-data"><span class="header-section-number">12</span> Using Pandas to Explore COVID-19 Data</a></li>
+<li><a class="nav-link" href="#plans-for-this-section"><span class="header-section-number">12.1</span> Plans for this section</a></li>
 <li>
-<a class="nav-link" href="#housekeeping"><span class="header-section-number">11.2</span> Housekeeping</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#exercise-2-what-are-we-dealing-with">Exercise 2 |  What are we dealing with?</a></li>
-<li><a class="nav-link" href="#exercise-3-drop-those-unnecessary-columns">Exercise 3 |  Drop those unnecessary columns?</a></li>
-<li><a class="nav-link" href="#exercise-4-subset-to-asean-countries-only">Exercise 4 |  Subset to ASEAN countries only</a></li>
+<a class="nav-link" href="#housekeeping"><span class="header-section-number">12.2</span> Housekeeping</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#exercise-1-what-are-we-dealing-with">Exercise 1 |  What are we dealing with?</a></li>
+<li><a class="nav-link" href="#exercise-2-drop-those-unnecessary-columns">Exercise 2 |  Drop those unnecessary columns?</a></li>
+<li><a class="nav-link" href="#exercise-3-subset-to-asean-countries-only">Exercise 3 |  Subset to ASEAN countries only</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#exploration-of-covid19-dataset-bar-chart"><span class="header-section-number">11.3</span> Exploration of COVID19 dataset: Bar Chart</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise-5-plotting-the-total-deaths-in-each-country">Exercise 5 |  Plotting the Total Deaths in each country</a></li></ul>
+<a class="nav-link" href="#exploration-of-covid19-dataset-bar-chart"><span class="header-section-number">12.3</span> Exploration of COVID19 dataset: Bar Chart</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise-4-plotting-the-total-deaths-in-each-country">Exercise 4 |  Plotting the Total Deaths in each country</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#exploration-of-covid19-dataset-time-series"><span class="header-section-number">11.4</span> Exploration of COVID19 dataset: Time-Series</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise-6-total-confirmed-cases-in-each-country-over-time">Exercise 6 |  Total Confirmed Cases in each country over time</a></li></ul>
+<a class="nav-link" href="#exploration-of-covid19-dataset-time-series"><span class="header-section-number">12.4</span> Exploration of COVID19 dataset: Time-Series</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise-5-total-confirmed-cases-in-each-country-over-time">Exercise 5 |  Total Confirmed Cases in each country over time</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#exploration-of-covid19-dataset-time-series-daily-cases"><span class="header-section-number">11.5</span> Exploration of COVID19 dataset: Time-Series Daily Cases</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise-7-daily-confirmed-cases-in-each-country-over-time">Exercise 7 |  Daily Confirmed Cases in each country over time</a></li></ul>
+<a class="nav-link" href="#exploration-of-covid19-dataset-time-series-daily-cases"><span class="header-section-number">12.5</span> Exploration of COVID19 dataset: Time-Series Daily Cases</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise-6-daily-confirmed-cases-in-each-country-over-time">Exercise 6 |  Daily Confirmed Cases in each country over time</a></li></ul>
 </li>
 </ul>
 
@@ -770,7 +906,7 @@ Brunei
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-08-30.</p>
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
