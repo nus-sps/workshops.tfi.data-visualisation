@@ -1,24 +1,13 @@
-```{r,echo=F}
+# Some Python Basics
+
+```{r,echo=F,eval=F}
 colab_file <- function(link,text){
   logo = '<img src="https://miro.medium.com/max/512/0*zNcjWYiZcJgreZAs.png" width="25px">'
   output = paste0('<a href="',link,'" target="_blank">',logo,text,'</a>')
   return(output)
 }
 
-colab_file('x','x')
 ```
-
-
-# Some Python Basics
-
-This chapter will quickly introduce you to some basic of Python.
-You need to:
-
-1. Watch the 10 minute video in section. and
-    - You can access the Colab notebook relevant to the video `r colab_file('link','here')`.
-1. Work on the exercises shown below.
-    - Here is a template
-    - The solution to the exercises can be found `r colab_file('link','here')`.
 
 ## A Quick Summary {.unnumbered}
 
@@ -40,3 +29,103 @@ You need to:
 10. Get help by using `?`.
 
 :::
+
+## Before the Workshop
+
+This chapter will quickly introduce you to some basic of Python.
+You need to:
+
+1. Watch the 10 minute video in section. and
+    - You can access the Colab notebook relevant to the video below.
+1. Work on the exercises shown below on Colab.
+    - The solution to the exercises can also be found below.
+
+
+## Exercises & Video File {.panelset}
+
+### Basic Exercises {.unnumbered}
+
+Create a new notebook in Colab and use it to answer the following questions.
+
+1. Predict the output of the following code blocks?
+   Run them in Colab to check if your predictions were correct?
+
+   **Note:** You might have to look on the internet for the meaning of some symbols (such as `/` and `%`)
+   1. ```{python,eval=F}
+      7 / 3 == 7 / 3.0
+      ```
+
+   2. ```{python,eval=F}
+   'nesia' in 'Indonesia'
+   ```
+   3. ```{python,eval=F}
+   (2 + 3) == 5
+   ```
+
+   5. ```{python,eval=F}
+    2 + 3 == 5
+    ```
+
+    6. ```{python,eval=F}
+    "2" + "3" == "5"
+    ```
+
+    3. ```{python,eval=F}
+    11 % 3
+    ```
+
+    4. ```{python,eval=F}
+    1 < 2 and 11 >= 9
+    ```
+
+    4. ```{python,eval=F}
+    2 > 5 or (1 < 2 and 11 >= 9)
+    ```
+
+2. Hello Batman & Robin
+   ```{python,eval=F}
+   name = 'Batman'
+
+   if name == 'Batman':
+      print('Hello Batman!')
+   else:
+      print('Hello World!')
+   ```
+   1. Modify the above code to print '`Hello Hello Hello Hello Batman`' when the `name` is '`Batman`'.
+   2. Modify the code to respond to `Robin` instead of `Batman`.
+3. The following code has a few bugs; fix them!
+    ```{python,eval=F}
+    x,y = 3,4
+    	z = sqrt(x**2 + y**2)
+        print(x,y,z)
+    ```
+
+4. Use the following lists and numpy arrays to answer the following questions
+
+     ```{python,eval=F}
+     my_np_list = np.array([0182, 0269, 0341, 0410, 0523,
+                            0697, 0728, 0856, 0948, 101,
+                            1120, 1272, 1312, 1460, 1564,
+                            1642, 1717, 1816, 1923, 2087])               
+     ```
+
+   1. What is the number in the 4th position in the array?
+   2. What is the last number in the array?
+   3. What are the first 3 values?
+   4. What are the values from the 4th to the 10th position? (This should include the numbers at the 4th and 10th positions.)
+   5. What are the values in the list greater than 500?
+   7. Use the 'hidden' numpy functions `max()`, `min()`, `mean()` and `std()` to find the maximum, minimum, mean and standard deviation of the values of the numpy array.
+   8. Make all the numbers less than 500 equal to zero!
+   6. What are the values in the list greater than 500 **and** less than 1000?
+
+### Basic Exercises (Solution) {.unnumbered}
+
+```{r,echo=F,out.width="100%"}
+knitr::include_url("files_jupyter/python-basics_some-fundamentals_exercises-solutions_colab.html",height="6000px")
+```
+
+### Colab file for Video {.unnumbered}
+
+```{r,echo=F,out.width="100%"}
+knitr::include_url("files_jupyter/python-basics_python-fundamentals_colab.html",height="6000px")
+```

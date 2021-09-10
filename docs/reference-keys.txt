@@ -1,32 +1,4 @@
 part-pre-workshop-material
 some-python-basics
-<<<<<<< HEAD
-python-is-case-sensitive
-x-is-a-variable.-x-is-an-english-letter
-we-can-use-flettersx-to-combine-english-with-variables
-be-mindful-of-spacesindentation-at-the-start-of-a-line
-python-has-functions
-brackets-in-python
-python-has-many-many-cool-packages
-you-can-think-of-the-dot.-as-indicating-ownership
-we-can-store-data-using-lists
-we-can-store-data-using-dictionaries
-we-can-store-data-using-numpy-arrays
-python-sometimes-act-like-a-prima-donna-when-you-make-an-error
-python-basics-exercises
-some-pandas-basics
-python-is-case-sensitive-1
-x-is-a-variable.-x-is-an-english-letter-1
-we-can-use-flettersx-to-combine-english-with-variables-1
-be-mindful-of-spacesindentation-at-the-start-of-a-line-1
-python-has-functions-1
-brackets-in-python-1
-python-has-many-many-cool-packages-1
-you-can-think-of-the-dot.-as-indicating-ownership-1
-we-can-store-data-using-lists-1
-we-can-store-data-using-dictionaries-1
-we-can-store-data-using-numpy-arrays-1
-python-sometimes-act-like-a-prima-donna-when-you-make-an-error-1
-python-pandas-exercises
-=======
->>>>>>> chammika-branch
+before-the-workshop
+exercises-video-file

@@ -6,29 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 2 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data</title>
 <meta name="author" content="SPS Science Communication Team">
-<<<<<<< HEAD
-<meta name="description" content="4.1 Python is Case Sensitive This will work. print('Hello World') #&gt; Hello World This will not. Print('Hello World') #&gt; Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 4 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
-=======
-<meta name="description" content="This chapter will quickly introduce you to some basic of Python. You need to: Watch the 10 minute video in section. and You can access the Colab notebook relevant to the video here. Work on the...">
+<meta name="description" content="A Quick Summary  Use # to write comments. Python is case sensitive. x is not the same as ‘x’. = is not the same as ==. Be careful about indentaions at the start of a line. Add functionalit by...">
 <meta name="generator" content="bookdown 0.23 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
->>>>>>> chammika-branch
 <meta property="og:type" content="book">
-<meta property="og:description" content="This chapter will quickly introduce you to some basic of Python. You need to: Watch the 10 minute video in section. and You can access the Colab notebook relevant to the video here. Work on the...">
+<meta property="og:description" content="A Quick Summary  Use # to write comments. Python is case sensitive. x is not the same as ‘x’. = is not the same as ==. Be careful about indentaions at the start of a line. Add functionalit by...">
 <meta name="twitter:card" content="summary">
-<<<<<<< HEAD
-<meta name="twitter:title" content="Chapter 4 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
-<meta name="twitter:description" content="4.1 Python is Case Sensitive This will work. print('Hello World') #&gt; Hello World This will not. Print('Hello World') #&gt; Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-=======
 <meta name="twitter:title" content="Chapter 2 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
-<meta name="twitter:description" content="This chapter will quickly introduce you to some basic of Python. You need to: Watch the 10 minute video in section. and You can access the Colab notebook relevant to the video here. Work on the...">
+<meta name="twitter:description" content="A Quick Summary  Use # to write comments. Python is case sensitive. x is not the same as ‘x’. = is not the same as ==. Be careful about indentaions at the start of a line. Add functionalit by...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
->>>>>>> chammika-branch
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
@@ -58,14 +46,7 @@
 <li><a class="" href="index.html"></a></li>
 <li class="book-part">Pre Workshop Material</li>
 <li><a class="" href="instructions.html">Instructions</a></li>
-<<<<<<< HEAD
-<li><a class="active" href="some-python-basics.html"><span class="header-section-number">4</span> Some Python Basics</a></li>
-<li><a class="" href="python-basics-exercises.html"><span class="header-section-number">5</span> Python Basics : Exercises</a></li>
-<li><a class="" href="some-pandas-basics.html"><span class="header-section-number">6</span> Some Pandas Basics</a></li>
-<li><a class="" href="python-pandas-exercises.html"><span class="header-section-number">7</span> Python Pandas : Exercises</a></li>
-=======
 <li><a class="active" href="some-python-basics.html"><span class="header-section-number">2</span> Some Python Basics</a></li>
->>>>>>> chammika-branch
 </ul>
 
         <div class="book-extra">
@@ -77,21 +58,6 @@
 <h1>
 <span class="header-section-number">2</span> Some Python Basics<a class="anchor" aria-label="anchor" href="#some-python-basics"><i class="fas fa-link"></i></a>
 </h1>
-<p>This chapter will quickly introduce you to some basic of Python.
-You need to:</p>
-<ol style="list-style-type: decimal">
-<li>Watch the 10 minute video in section. and
-<ul>
-<li>You can access the Colab notebook relevant to the video <a href="link" target="_blank"><img src="https://miro.medium.com/max/512/0*zNcjWYiZcJgreZAs.png" width="25px">here</a>.</li>
-</ul>
-</li>
-<li>Work on the exercises shown below.
-<ul>
-<li>Here is a template</li>
-<li>The solution to the exercises can be found <a href="">here</a>.</li>
-</ul>
-</li>
-</ol>
 <div id="a-quick-summary" class="section level2 unnumbered">
 <h2>A Quick Summary<a class="anchor" aria-label="anchor" href="#a-quick-summary"><i class="fas fa-link"></i></a>
 </h2>
@@ -122,7 +88,101 @@ You need to:</p>
 <li>Get help by using <code><a href="https://rdrr.io/r/utils/Question.html">?</a></code>.</li>
 </ol>
 </div>
+</div>
+<div id="before-the-workshop" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Before the Workshop<a class="anchor" aria-label="anchor" href="#before-the-workshop"><i class="fas fa-link"></i></a>
+</h2>
+<p>This chapter will quickly introduce you to some basic of Python.
+You need to:</p>
+<ol style="list-style-type: decimal">
+<li>Watch the 10 minute video in section. and
+<ul>
+<li>You can access the Colab notebook relevant to the video below.</li>
+</ul>
+</li>
+<li>Work on the exercises shown below on Colab.
+<ul>
+<li>The solution to the exercises can also be found below.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div id="exercises-video-file" class="section level2 panelset" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Exercises &amp; Video File<a class="anchor" aria-label="anchor" href="#exercises-video-file"><i class="fas fa-link"></i></a>
+</h2>
+<div id="basic-exercises" class="section level3 unnumbered">
+<h3>Basic Exercises<a class="anchor" aria-label="anchor" href="#basic-exercises"><i class="fas fa-link"></i></a>
+</h3>
+<p>Create a new notebook in Colab and use it to answer the following questions.</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Predict the output of the following code blocks?
+Run them in Colab to check if your predictions were correct?</p>
+<p><strong>Note:</strong> You might have to look on the internet for the meaning of some symbols (such as <code><a href="https://rdrr.io/r/base/Arithmetic.html">/</a></code> and <code>%</code>)</p>
+<ol style="list-style-type: decimal">
+<li><pre class="{python,eval=f}"><code>   7 / 3 == 7 / 3.0</code></pre></li>
+<li><pre class="{python,eval=f}"><code>'nesia' in 'Indonesia'</code></pre></li>
+<li><pre class="{python,eval=f}"><code>(2 + 3) == 5</code></pre></li>
+<li><pre class="{python,eval=f}"><code> 2 + 3 == 5</code></pre></li>
+<li><pre class="{python,eval=f}"><code> "2" + "3" == "5"</code></pre></li>
+<li><pre class="{python,eval=f}"><code> 11 % 3</code></pre></li>
+<li><pre class="{python,eval=f}"><code> 1 &lt; 2 and 11 &gt;= 9</code></pre></li>
+<li><pre class="{python,eval=f}"><code> 2 &gt; 5 or (1 &lt; 2 and 11 &gt;= 9)</code></pre></li>
+</ol>
+</li>
+<li>
+<p>Hello Batman &amp; Robin</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="some-python-basics.html#cb10-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'Batman'</span></span>
+<span id="cb10-2"><a href="some-python-basics.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="some-python-basics.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">==</span> <span class="st">'Batman'</span>:</span>
+<span id="cb10-4"><a href="some-python-basics.html#cb10-4" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'Hello Batman!'</span>)</span>
+<span id="cb10-5"><a href="some-python-basics.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-6"><a href="some-python-basics.html#cb10-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'Hello World!'</span>)</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Modify the above code to print ‘<code>Hello Hello Hello Hello Batman</code>’ when the <code>name</code> is ‘<code>Batman</code>.’</li>
+<li>Modify the code to respond to <code>Robin</code> instead of <code>Batman</code>.</li>
+</ol>
+</li>
+<li>
+<p>The following code has a few bugs; fix them!</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="some-python-basics.html#cb11-1" aria-hidden="true" tabindex="-1"></a>x,y <span class="op">=</span> <span class="dv">3</span>,<span class="dv">4</span></span>
+<span id="cb11-2"><a href="some-python-basics.html#cb11-2" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> sqrt(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb11-3"><a href="some-python-basics.html#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x,y,z)</span></code></pre></div>
+</li>
+<li>
+<p>Use the following lists and numpy arrays to answer the following questions</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="some-python-basics.html#cb12-1" aria-hidden="true" tabindex="-1"></a>my_np_list <span class="op">=</span> np.array([<span class="dv">0182</span>, <span class="dv">0269</span>, <span class="dv">0341</span>, <span class="dv">0410</span>, <span class="dv">0523</span>,</span>
+<span id="cb12-2"><a href="some-python-basics.html#cb12-2" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">0697</span>, <span class="dv">0728</span>, <span class="dv">0856</span>, <span class="dv">0948</span>, <span class="dv">101</span>,</span>
+<span id="cb12-3"><a href="some-python-basics.html#cb12-3" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">1120</span>, <span class="dv">1272</span>, <span class="dv">1312</span>, <span class="dv">1460</span>, <span class="dv">1564</span>,</span>
+<span id="cb12-4"><a href="some-python-basics.html#cb12-4" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">1642</span>, <span class="dv">1717</span>, <span class="dv">1816</span>, <span class="dv">1923</span>, <span class="dv">2087</span>])               </span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>What is the number in the 4th position in the array?</li>
+<li>What is the last number in the array?</li>
+<li>What are the first 3 values?</li>
+<li>What are the values from the 4th to the 10th position? (This should include the numbers at the 4th and 10th positions.)</li>
+<li>What are the values in the list greater than 500?</li>
+<li>Use the ‘hidden’ numpy functions <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">min()</a></code>, <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> and <code>std()</code> to find the maximum, minimum, mean and standard deviation of the values of the numpy array.</li>
+<li>Make all the numbers less than 500 equal to zero!</li>
+<li>What are the values in the list greater than 500 <strong>and</strong> less than 1000?</li>
+</ol>
+</li>
+</ol>
+</div>
+<div id="basic-exercises-solution" class="section level3 unnumbered">
+<h3>Basic Exercises (Solution)<a class="anchor" aria-label="anchor" href="#basic-exercises-solution"><i class="fas fa-link"></i></a>
+</h3>
+<iframe src="files_jupyter/python-basics_some-fundamentals_exercises-solutions_colab.html" width="100%" height="6000px">
+</iframe>
+</div>
+<div id="colab-file-for-video" class="section level3 unnumbered">
+<h3>Colab file for Video<a class="anchor" aria-label="anchor" href="#colab-file-for-video"><i class="fas fa-link"></i></a>
+</h3>
+<iframe src="files_jupyter/python-basics_python-fundamentals_colab.html" width="100%" height="6000px">
+</iframe>
 
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -133,6 +193,14 @@ You need to:</p>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#some-python-basics"><span class="header-section-number">2</span> Some Python Basics</a></li>
 <li><a class="nav-link" href="#a-quick-summary">A Quick Summary</a></li>
+<li><a class="nav-link" href="#before-the-workshop"><span class="header-section-number">2.1</span> Before the Workshop</a></li>
+<li>
+<a class="nav-link" href="#exercises-video-file"><span class="header-section-number">2.2</span> Exercises &amp; Video File</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#basic-exercises">Basic Exercises</a></li>
+<li><a class="nav-link" href="#basic-exercises-solution">Basic Exercises (Solution)</a></li>
+<li><a class="nav-link" href="#colab-file-for-video">Colab file for Video</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">
@@ -149,11 +217,7 @@ You need to:</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-<<<<<<< HEAD
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-08.</p>
-=======
     <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-10.</p>
->>>>>>> chammika-branch
   </div>
 
   <div class="col-12 col-md-6 mt-3">
