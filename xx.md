@@ -83,3 +83,41 @@ Get help by using `?`.
 
 ```
 
+
+
+# Pandas
+
+
+
+| Question                                 |                        Possible code                         |
+| ---------------------------------------- | :----------------------------------------------------------: |
+| How many rows and columns are there?     |                          `df.shape`                          |
+| What are the names of the columns?       |                         `df.colmns`                          |
+| Let’s look at a sample of the data       |                 `df.head()`<br />`df.tail()`                 |
+| What type of data is contained?          |                         `df.info()`                          |
+| Some descriptive statistics of the data  |                       `df.describe()`                        |
+| What are the unique values in a columns? |                  `df[column_name].unique()`                  |
+| How many unique values are there?        |               `df[column_name].value_counts()`               |
+| How to locate certain rows and columns?  | Columns: `df[[column_names]]`<br />By number: `df.iloc[row_number,column_number]<br />`By name: `df.loc[row_index,column_name]` |
+| Are there any missing numbers?           | Dataframe :`df.isna()`<br />Row-wise :`df.isna().any(axis = 1)`<br />Column-wise :`df.isna(axis = 0)` |
+| D                                        |                                                              |
+| Replace missing numbers                  |                 `df.fillna(0,inplace=True)`                  |
+
+
+
+## Housekeeping
+
+1. Are there any unnecessary columns? Lets drop them!
+2. Change column names?
+3. Change values to be nicer?
+4. How many numbers are missing? What are we going to do with them?
+   1. Who missed the tests?
+   2. Fill missing numbers
+   3. Drop missing numbers
+5. Questions (subsetting)
+   1. How many major, distributio?
+   2. How many females, gender?
+   3. How many females taking chemistry?
+6. What are the max, min, median of the test columns?
+7. Is a particualr student in my class?
+8. 

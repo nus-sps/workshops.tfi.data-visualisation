@@ -1,8 +1,39 @@
 # The Power of Dataframes
 
+```{r, echo=F}
+file_link <-"https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls"
+```
+
 In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s de-facto module for data analysis. In addition to using Pandas you will see how immensely efficient it is to have your data in a dataframe than in a spreadsheet.
 
 ## Just enough {-}
 Pandas offer several ways (i.e. different syntaxes) to achieve a specific goal. We will not cover all of these. Instead, we will only highlight a minimally sufficient set of syntax and instructions.
 
-To learn the power of Pandas, we will use a dataset of test scores for a dummy class. You can access the data at 'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls'
+To learn the power of Pandas, we will use a dataset of test scores for a dummy class. You can access the data at `r file_link`.
+
+
+`r my_fun.exercise('Uploding Files to Colab')`
+
+#### Task {-}
+
+Although Pandas can read the file directly over the internet, it will be good for us to learn how to upload files to Colab.<br>
+So,
+
+1. Download the `xls` file from the following link by right-clicking and using 'Save as...'<br>
+`r file_link`.
+1. Upload the file to Colab.
+1. Use the following code to read the file into Pandas.
+
+    ```{python,eval=F}
+    import pandas as pd
+    pd.read_excel('dummy_class.xls')
+    ```
+
+  Now we are ready to start exploring the Pandas by exploring the dataset. It is best practice to first understand what kind of dataset you are dealing with. So, lets do some data 'house keeping'!
+
+`r my_fun.exercise('Uploding Files to Colab')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('dummy-class_housekeeping.py'))
+```

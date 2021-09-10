@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 2 The Power of Dataframes | TFI e-Workshop | Using Python To Tell Stories With Data</title>
 <meta name="author" content="SPS Science Communication Team">
-<meta name="description" content="This e-workshop is one of several e-workshops and e-talks organised by NUS and other ASEAN universities with the support of the Temasek Foundation International.">
+<meta name="description" content="In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s...">
 <meta name="generator" content="bookdown 0.23 with bs4_book()">
 <meta property="og:title" content="Chapter 2 The Power of Dataframes | TFI e-Workshop | Using Python To Tell Stories With Data">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This e-workshop is one of several e-workshops and e-talks organised by NUS and other ASEAN universities with the support of the Temasek Foundation International.">
+<meta property="og:description" content="In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 2 The Power of Dataframes | TFI e-Workshop | Using Python To Tell Stories With Data">
-<meta name="twitter:description" content="This e-workshop is one of several e-workshops and e-talks organised by NUS and other ASEAN universities with the support of the Temasek Foundation International.">
+<meta name="twitter:description" content="In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -56,14 +56,428 @@
 <h1>
 <span class="header-section-number">2</span> The Power of Dataframes<a class="anchor" aria-label="anchor" href="#the-power-of-dataframes"><i class="fas fa-link"></i></a>
 </h1>
+<p>In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s de-facto module for data analysis. In addition to using Pandas you will see how immensely efficient it is to have your data in a dataframe than in a spreadsheet.</p>
+<div id="just-enough" class="section level2 unnumbered">
+<h2>Just enough<a class="anchor" aria-label="anchor" href="#just-enough"><i class="fas fa-link"></i></a>
+</h2>
+<p>Pandas offer several ways (i.e. different syntaxes) to achieve a specific goal. We will not cover all of these. Instead, we will only highlight a minimally sufficient set of syntax and instructions.</p>
+<p>To learn the power of Pandas, we will use a dataset of test scores for a dummy class. You can access the data at <a href="https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls" class="uri">https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls</a>.</p>
+<div id="exercise-1-uploding-files-to-colab" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-exercises">Exercise 1 | </span> Uploding Files to Colab<a class="anchor" aria-label="anchor" href="#exercise-1-uploding-files-to-colab"><i class="fas fa-link"></i></a>
+</h3>
+<div id="task" class="section level4 unnumbered">
+<h4>Task<a class="anchor" aria-label="anchor" href="#task"><i class="fas fa-link"></i></a>
+</h4>
+<p>Although Pandas can read the file directly over the internet, it will be good for us to learn how to upload files to Colab.<br>
+So,</p>
+<ol style="list-style-type: decimal">
+<li><p>Download the <code>xls</code> file from the following link by right-clicking and using ‘Save as…’<br><a href="https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls" class="uri">https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls</a>.</p></li>
+<li><p>Upload the file to Colab.</p></li>
+<li>
+<p>Use the following code to read the file into Pandas.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="the-power-of-dataframes.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="the-power-of-dataframes.html#cb1-2" aria-hidden="true" tabindex="-1"></a>pd.read_excel(<span class="st">'dummy_class.xls'</span>)</span></code></pre></div>
+</li>
+</ol>
+<p>Now we are ready to start exploring the Pandas by exploring the dataset. It is best practice to first understand what kind of dataset you are dealing with. So, lets do some data ‘house keeping!’</p>
+</div>
+</div>
+<div id="exercise-2-uploding-files-to-colab" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-exercises">Exercise 2 | </span> Uploding Files to Colab<a class="anchor" aria-label="anchor" href="#exercise-2-uploding-files-to-colab"><i class="fas fa-link"></i></a>
+</h3>
+<div id="result" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+<th>
+Unnamed: 0
+</th>
+<th>
+Name
+</th>
+<th>
+Major
+</th>
+<th>
+Gender
+</th>
+<th>
+Test 1 (30%)
+</th>
+<th>
+Test 2 (20%)
+</th>
+<th>
+Test 3 (50%)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<th>
+0
+</th>
+<td>
+0
+</td>
+<td>
+Braiden Henson
+</td>
+<td>
+PHY
+</td>
+<td>
+M
+</td>
+<td>
+20.205
+</td>
+<td>
+18.960
+</td>
+<td>
+21.25
+</td>
+</tr>
+<tr>
+<th>
+1
+</th>
+<td>
+1
+</td>
+<td>
+Gustavo Vang
+</td>
+<td>
+CHM
+</td>
+<td>
+F
+</td>
+<td>
+13.470
+</td>
+<td>
+17.440
+</td>
+<td>
+18.75
+</td>
+</tr>
+<tr>
+<th>
+2
+</th>
+<td>
+2
+</td>
+<td>
+Ronin Christian
+</td>
+<td>
+PHY
+</td>
+<td>
+M
+</td>
+<td>
+18.366
+</td>
+<td>
+15.560
+</td>
+<td>
+43.75
+</td>
+</tr>
+<tr>
+<th>
+3
+</th>
+<td>
+3
+</td>
+<td>
+Owen Anderson
+</td>
+<td>
+LS
+</td>
+<td>
+F
+</td>
+<td>
+18.366
+</td>
+<td>
+16.360
+</td>
+<td>
+18.75
+</td>
+</tr>
+<tr>
+<th>
+4
+</th>
+<td>
+4
+</td>
+<td>
+Kyla Young
+</td>
+<td>
+PHY
+</td>
+<td>
+M
+</td>
+<td>
+15.306
+</td>
+<td>
+17.896
+</td>
+<td>
+17.50
+</td>
+</tr>
+<tr>
+<th>
+5
+</th>
+<td>
+5
+</td>
+<td>
+Wyatt Oliver
+</td>
+<td>
+PHY
+</td>
+<td>
+M
+</td>
+<td>
+12.246
+</td>
+<td>
+14.088
+</td>
+<td>
+32.50
+</td>
+</tr>
+<tr>
+<th>
+6
+</th>
+<td>
+6
+</td>
+<td>
+Essence Bauer
+</td>
+<td>
+LS
+</td>
+<td>
+M
+</td>
+<td>
+16.530
+</td>
+<td>
+16.720
+</td>
+<td>
+31.25
+</td>
+</tr>
+<tr>
+<th>
+7
+</th>
+<td>
+7
+</td>
+<td>
+Maryjane Sandoval
+</td>
+<td>
+LS
+</td>
+<td>
+F
+</td>
+<td>
+18.981
+</td>
+<td>
+16.400
+</td>
+<td>
+43.75
+</td>
+</tr>
+<tr>
+<th>
+8
+</th>
+<td>
+8
+</td>
+<td>
+Carl Trujillo
+</td>
+<td>
+LS
+</td>
+<td>
+F
+</td>
+<td>
+15.306
+</td>
+<td>
+13.680
+</td>
+<td>
+47.50
+</td>
+</tr>
+<tr>
+<th>
+9
+</th>
+<td>
+9
+</td>
+<td>
+Halle Fritz
+</td>
+<td>
+LS
+</td>
+<td>
+F
+</td>
+<td>
+17.754
+</td>
+<td>
+9.040
+</td>
+<td>
+41.25
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="tasks" class="section level4 unnumbered panelset">
+<h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks"><i class="fas fa-link"></i></a>
+</h4>
+<p><br></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="the-power-of-dataframes.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="the-power-of-dataframes.html#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'dummy_class.xls'</span>)</span></code></pre></div>
+<p>Starting with the code above, answer the questions in the following table using the Pandas command indicated.</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="43%">
+<col width="56%">
+</colgroup>
+<thead><tr class="header">
+<th>Question</th>
+<th align="center">Possible code</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>How many rows and columns are there?</td>
+<td align="center"><code>df.shape</code></td>
+</tr>
+<tr class="even">
+<td>What are the names of the columns?</td>
+<td align="center"><code>df.colmns</code></td>
+</tr>
+<tr class="odd">
+<td>Can we look at a sample of the data</td>
+<td align="center">
+<code>df.head()</code><br><code>df.tail()</code>
+</td>
+</tr>
+<tr class="even">
+<td>What type of data is contained?</td>
+<td align="center"><code>df.info()</code></td>
+</tr>
+<tr class="odd">
+<td>Can we have descriptive statistics of the data?</td>
+<td align="center"><code>df.describe()</code></td>
+</tr>
+<tr class="even">
+<td>What are the unique values in a column?</td>
+<td align="center"><code>df[column_name].unique()</code></td>
+</tr>
+<tr class="odd">
+<td>How many unique values are there?</td>
+<td align="center"><code>df[column_name].value_counts()</code></td>
+</tr>
+<tr class="even">
+<td>Are there any missing numbers?</td>
+<td align="center">Dataframe :<code>df.isna()</code><br>Row-wise :<code>df.isna().any(axis = 1)</code><br>Column-wise :<code>df.isna(axis = 0)</code>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="solution" class="section level4 unnumbered panelset">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'dummy_class.xls'</span><span class="p">)</span>
 
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">'Major'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">'Major'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
+
+</div>
+</div>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="index.html"><span class="header-section-number">1</span> Welcome to…</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#the-power-of-dataframes"><span class="header-section-number">2</span> The Power of Dataframes</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-power-of-dataframes"><span class="header-section-number">2</span> The Power of Dataframes</a></li>
+<li>
+<a class="nav-link" href="#just-enough">Just enough</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#exercise-1-uploding-files-to-colab">Exercise 1 |  Uploding Files to Colab</a></li>
+<li><a class="nav-link" href="#exercise-2-uploding-files-to-colab">Exercise 2 |  Uploding Files to Colab</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
