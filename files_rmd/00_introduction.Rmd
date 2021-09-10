@@ -49,8 +49,6 @@ sn2 <- '^[The best way to learn is to teach!]'
 
 The Python interpreter can only understand one instruction at a time. Therefore, we usually write many instructions in a single file (code) and then 'pass' it onto the interpreter. These files typically have the extension `.py`. However, Python can also be used interactively using an environment called `r jup`.
 
-#### How do I use Python? {.unnumbered}
-
 One of the best (and easiest) ways to get started with Python is to use an online environment like Colab. However, if want you can also install it on your computer using the **Anaconda distribution** OR installing it locally on your machine without Anaconda!
 
 ## Ways to access Python?
@@ -105,10 +103,10 @@ You **do not** have to install Python locally on your machine for this workshop.
 **Step 1.** Visit the `r link` at [Anaconda](https://www.anaconda.com/products/individual).<br>
 **Step 2.** Download and install the 64-bit _Python 3_ distribution suitable for your operating system.<br>(**Windows** users should run Anaconda as **Administrator**)
 
-
+<!--
 ##### Updating packages with Anaconda {-}
 
-##### Using Anaconda-Navigator {-}
+##### Using Anaconda-Navigator {-} -->
 
 #### Without Anaconda {-}
 If you would like to install Python locally on your machine for this workshop or for your own use:
