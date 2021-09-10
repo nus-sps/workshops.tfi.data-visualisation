@@ -1,2 +1,10 @@
+fig:unnamed-chunk-4
+fig:unnamed-chunk-6
 welcome-to
 part-workshop
+general-flow
+if-you-have-any-difficulties
+basic-plotting-with-matplotlib
+some-simple-plots
+multiple-plots
+other-plots
