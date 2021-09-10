@@ -132,6 +132,7 @@ df %>%
 #### Objectives {-}
 
 By the end of this workshops, you will be able to:
+
 1. Use Python (matplotlib) to produce high quality plots
 1. Use Python (pandas) to query simple datasets
 1. Use Python (pandas + matplotlib) to produce visualisations of COVID-19 data.
