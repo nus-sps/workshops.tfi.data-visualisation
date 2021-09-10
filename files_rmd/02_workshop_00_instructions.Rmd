@@ -1,7 +1,7 @@
-# (PART) Workshop
+# (PART\*) Workshop {-}
 
 
-# Instructions {.unnumbered}
+# Instructions
 
 ## General flow
 
@@ -11,7 +11,7 @@
 
    1.  **Copy and paste** (use the button) the code for the examples in your Colab.
 
-```{r,fig.cap='Use the **Copy to Clipboard** button.',fig.align='center',out.width='80%'}
+```{r,fig.cap='Use the **Copy to Clipboard** button.',fig.align='center',out.width='80%',echo=F}
 knitr::include_graphics('imgs/copy-to-clipboard.jpg')
 ```
 
