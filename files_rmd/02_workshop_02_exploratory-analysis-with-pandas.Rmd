@@ -1,6 +1,6 @@
 # Using Pandas to Explore Data
 
-Here we will be using pandas to do some exploratory plots on a dataset containing `Gender`, `Height` and, `Weight`. The dataset we are going to be using is an edited version from [Kaggle](https://www.kaggle.com/mustafaali96/weight-height/version/1) where we trimmed to 200 total rows and converted everything to the metric system.
+In this chapter we will use the package `pandas` to do some exploratory plots on a dataset containing `Gender`, `Height` and, `Weight`. The dataset is an edited version from [Kaggle](https://www.kaggle.com/mustafaali96/weight-height/version/1) where we trimmed to 200 total rows and converted everything to the metric system.
 
 ## Barcharts
 

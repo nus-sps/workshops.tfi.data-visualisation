@@ -15,8 +15,9 @@ The dataframe is huge with many countries!
 '''
 
 # %% Solution
-import pandas as pd  # Hide
 from sys import argv  # Hide
+
+import pandas as pd  # Hide
 
 data_url = 'https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv'  # Hide
 df_all = pd.read_csv(data_url)  # Hide
@@ -32,7 +33,6 @@ filtered_ASEAN_rows = df_all['Country'].isin(ASEAN_countries)
 
 # Select the ASEAN rows
 df_ASEAN = df_all[filtered_ASEAN_rows]
+df_ASEAN.head()
 with open(f'{argv[0]}.html', 'w') as file:                 # Hide
     file.write(df_ASEAN.head().to_html())                  # Hide
-
-df_ASEAN.head()
