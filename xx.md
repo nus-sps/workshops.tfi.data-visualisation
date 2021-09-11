@@ -83,3 +83,32 @@ Get help by using `?`.
 
 ```
 
+
+
+# Pandas
+
+
+
+
+| How to locate certain rows and columns?         | Columns: `df[[column_names]]`<br />By number: `df.iloc[row_number,column_number]<br />`By name: `df.loc[row_index,column_name]` |
+| D                                               |                                                              |
+| Replace missing numbers                         |                 `df.fillna(0,inplace=True)`                  |
+
+
+
+## Housekeeping
+
+1. Are there any unnecessary columns? Lets drop them!
+2. Change column names?
+3. Change values to be nicer?
+4. How many numbers are missing? What are we going to do with them?
+   1. Who missed the tests?
+   2. Fill missing numbers
+   3. Drop missing numbers
+5. Questions (subsetting)
+   1. How many major, distributio?
+   2. How many females, gender?
+   3. How many females taking chemistry?
+6. What are the max, min, median of the test columns?
+7. Is a particualr student in my class?
+8. Sort the class by ascendin total

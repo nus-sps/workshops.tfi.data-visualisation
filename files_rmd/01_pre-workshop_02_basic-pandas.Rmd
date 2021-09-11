@@ -1,126 +1,203 @@
-# Some Pandas Basics
+# The Power of Dataframes
 
-```{r echo=F}
-my_section <- function(title){
-  s <- paste('## ',title,' {}')
-  return(s)
-}
+```{r, echo=F}
+file_link <-"https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls"
+```
+
+In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s de-facto module for data analysis. In addition to using Pandas you will see how immensely efficient it is to have your data in a dataframe than in a spreadsheet.
+
+## Just enough {-}
+Pandas offer several ways (i.e. different syntaxes) to achieve a specific goal. We will not cover all of these. Instead, we will only highlight a minimally sufficient set of syntax and instructions.
+
+To learn the power of Pandas, we will use a dataset of test scores for a dummy class. You can access the data at `r file_link`.
+
+
+`r my_fun.exercise('Uploding Files to Colab')`
+
+#### Task {-}
+
+Although Pandas can read the file directly over the internet, it will be good for us to learn how to upload files to Colab.<br>
+So,
+
+1. Download the `xls` file from the following link by right-clicking and using 'Save as...'<br>
+`r file_link`.
+1. Upload the file to Colab.
+1. Use the following code to read the file into Pandas.
+
+    ```{python,eval=F}
+    import pandas as pd
+    pd.read_excel('dummy_class.xls')
+    ```
+
+  Now we are ready to start exploring the Pandas by exploring the dataset. It is best practice to first understand what kind of dataset you are dealing with. So, lets do some data 'house keeping'!
+
+`r my_fun.exercise('Uploding Files to Colab')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('dummy-class_housekeeping.py'))
+```
+
+`r my_fun.example('Housekeeping Round 2 : Rename stuff')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('dummy-class_housekeeping-02.py'))
+```
+
+`r my_fun.example('Housekeeping Round 3 : Missing Numbers')`
+
+#### Result {-}
+
+
+```{python,echo=F,results='asis'}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+df.fillna(0,inplace=True)
+df.head(15).to_html()
+```
+
+#### Tasks {-}
+
+Missing numbers are common in real datasets. It is important to have a policy on how you deal with them. Let's fill the missing numbers with 0 for our class.
+But, we first lets see how to locate missing data.
+
+<!-- We can do a few things about missing data. -->
+<!-- 1. Remove the entry with the missing data -->
+<!-- 1. Remove the column with the missing data -->
+<!-- 1. Fill the missing data with a numbers -->
+<!-- 1. Fill the missing data with a row or column average. -->
+
+<!-- Let see how we can do these. But, we first lets see how to locate missing data. -->
+
+
+#### Code {-}
+
+```{python,echo=F}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
 
 ```
 
-`r my_section('Python is Case Sensitive')`
-
-This will work.
-
-```{r echo = T, engine = 'python'}
-print('Hello World')
+```{python, eval=F}
+# Missing everywhere
+df.isna()           
 ```
 
-This will **not**.
-
-```{r echo = T, engine = 'python', error=T}
-Print('Hello World')
-```
-
-`r my_section('<code>x</code> is a variable. \'x\' is an English letter')`
-
-We asking Python to print the English letter 'x'.
-```{r echo = T, engine = 'python'}
-print('x')
-```
-
-We asking Python to print the value related to the **variable** `x`.
-```{r echo = T, engine = 'python'}
-x = 10
-print(x)
-```
-
-`r my_section('We can use f\'letters{x}\' to combine English with variables')`
-
-```{r echo = T, engine = 'python'}
-x = 10
-text = 'My age is {x}.'
-print(text)
-```
-
-`r my_section('Be mindful of spaces(indentation) at the start of a line')`
-
-This will work.
-
-```{r echo = T, engine = 'python'}
-x = 10
-y = 20
-```
-
-This will **not**.
-
-```{r echo=T, engine='python', eval = F}
-x = 10
-  y = 20
+```{python, eval=T,echo=F,results='asis'}
+df.isna().head().to_html()           
 ```
 
 
-`r my_section('Python has functions')`
+Shows columns that have missing values   
 
-`print()` is a good example of a function in Python. For this function to work it needs something (which we call an argument) to print. We need supply this argument within the function's brackets `()`.
-
-```{r echo = T, engine = 'python'}
-print('Hello World')
+```{python}
+df.isna().any(axis=0)  
 ```
 
-A typical function usually can accept additional arguments to do more things. For example the `print()` function allows us to add something to the end.
+Shows rows that have missing values
 
-```{r echo = T, engine = 'python'}
-print('Hello World', end = '******')
+```{python}
+df.isna().any(axis=1).head(20)
 ```
 
-You can find out all about a function my looking at its help file as follows
+Show the rows that have missing values
 
-```{r echo = T, engine = 'python', eval = F}
-print?
-```
-```
-print(...)
-    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
-
-    Prints the values to a stream, or to sys.stdout by default.
-    Optional keyword arguments:
-    file:  a file-like object (stream); defaults to the current sys.stdout.
-    sep:   string inserted between values, default a space.
-    end:   string appended after the last value, default a newline.
-    flush: whether to forcibly flush the stream.
+```{python,eval=F}
+mask = df.isna().any(axis=1)
+df[mask]
 ```
 
-`r my_section('Brackets in Python')`
-
-```{r echo=T,engine='python'}
-print('Hello World')
-
+```{python,echo=F,results='asis'}
+mask = df.isna().any(axis=1)
+df[mask].to_html()
 ```
 
-`r my_section('Python has many (many) cool packages')`
+Replace values with 0
 
-```{r echo=T,engine='python'}
-print('Hello World')
-```
--   Example: `math.sqrt()` means `sqrt()` belonging to `math`
-
-`r my_section('You can think of the dot(\'.\') as indicating ownership')`
-
-```{r echo=T,engine='python'}
-print('Hello World')
-
+```{python,eval=F}
+df.fillna(0,inplace=True)
 ```
 
-`r my_section('We can store data using lists')`
+```{python,echo=F,results='asis'}
+df.fillna(0,inplace=True)
+df.to_html()
+```
 
-`r my_section('We can store data using dictionaries')`
+`r my_fun.exercise('Find a student')`
 
-`r my_section('We can store data using numpy arrays')`
+#### Results {-}
 
-`r my_section('Python sometimes act like a prima donna when you make an error')`
+```{python,echo=F,results='asis'}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+students = ['Maryjane Sandoval' , 'Ronin Christian']
+mask=df.isin(students).any(axis=1)
+df[mask].to_html()
+```
 
-```{r echo=T,engine='python'}
-print('Hello World')
+#### Tasks {-}
 
+1. Use the 'hidden' function `isin()` to find out if **Maryjane Sandoval** and **Ronin Christian** are in the class?
+1. Locate the corresponding rows in the dataframe
+
+#### Solution {-}
+
+```{python,eval=F}
+students = ['Maryjane Sandoval' , 'Ronin Christian']
+mask=df.isin(students).any(axis=1)
+df[mask]
+```
+
+```{python}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+students = ['Maryjane Sandoval' , 'Ronin Christian']
+mask=df.isin(students).any(axis=1)
+df[mask]
+```
+
+`r my_fun.example('Moving Around')`
+
+```{python,echo=F}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+```
+
+#### Tasks {-}
+
+1. Show rows 5 to 10 for columns 3 to 5
+1. What are the names of the female students?
+1. What are the names of the female students studying chemsitry?
+
+#### Code {-}
+
+| How                                        | Command  |
+| ------------------------------------------ | :------: |
+| By specifying a name                       | `loc[]`  |
+| By specifying a row number (starting at 0) | `iloc[]` |
+
+
+Show rows 5 to 10 for columns 3 to 5
+
+```{python}
+df.iloc[5:11,3:6]
+```
+
+What are the names of the female students?
+
+```{python}
+mask = df['Gender'] == 'F'
+df.loc[mask,['Name']]
+```
+
+What are the names of the female students studying chemistry?
+
+```{python}
+mask = (df['Gender'] == 'F') & (df['Major'] == 'Chemistry')
 ```
