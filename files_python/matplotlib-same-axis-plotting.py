@@ -16,23 +16,28 @@ x_1 = [0, 1, 2, 3, 4, 5]
 y_1 = [0, 2, 4, 6, 8, 10]
 
 x_2 = [5, 4, 3, 2, 1, 0]
-y_2 = [0, 2, 4, 6, 8, 10]
+y_2 = [0, 2, 4, 6, 8, 20]
 
 
 
-fig, ax = plt.subplots(figsize=(6, 5)) # Hide
+fig, ax1 = plt.subplots(figsize = (5,5))
 
 # Actual plotting #
-plt.plot(x_1, y_1, marker = 'o', linestyle = '-', 
+ax1.plot(x_1, y_1, marker = 'o', linestyle = '-', 
           color = '#08D9D6', label = 'Graph 1')
+ax1.set_xlabel('This is the x-axis', fontsize = 16)
+ax1.set_ylabel('This is the y-axis for 1!', fontsize = 16)
+ax1.legend()
 
-plt.plot(x_2, y_2, marker = '*', markersize='5', linestyle = 'dashed',
+
+ax2 = ax1.twinx()  # Create a new Axes object which uses the same x-axis as ax1
+
+
+ax2.plot(x_2, y_2, marker = '*', markersize='5', linestyle = 'dashed',
           color = '#FF2E63', label = 'Graph 2')
+ax2.set_ylabel('This is the y-axis for 2!', fontsize = 16)
+ax2.legend()
 
-# Aesthetics #
-plt.legend()
-plt.xlabel('This is the x-axis', fontsize = 16)
-plt.ylabel('This is the y-axis', fontsize = 16)
 plt.title('This is the Title!', fontsize = 20)
 plt.tight_layout()
 plt.savefig(f'{argv[0]}.png')  # Hide
