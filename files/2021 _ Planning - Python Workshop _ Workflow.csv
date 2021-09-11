@@ -1,14 +1,17 @@
 Dates,Part,Time,Things to do,Duration
-September 11 Onwards,Before Workshop,,Create (free) Google Account,
-September 11 Onwards,Before Workshop,,Watch 10 min video to learn the basics of Python,
-September 11 Onwards,Before Workshop,,Practice exercises for Python basics,
-September 11 Onwards,Before Workshop,,Watch 15 min video to learn the basics of Pandas,
-September 11 Onwards,Before Workshop,,Practice exercises for Pandas basics,
-September 18,Workshop,10:00 AM,Introduction to SPS and the Workshop,15 mins
-September 18,Workshop,10:15 AM,Basic plotting using matplotlib,45 mins
-September 18,Workshop,11:00 AM,Exploratory Analysis + Visualistion using Pandas,45 mins
-September 18,Workshop,11:45 AM,Analysing COVID-19 data using Pandas,45 mins
-September 18,Workshop,12:30 PM,Core visualisation concepts,15 mins
+September 11 Onwards,Before Workshop,,"-- Create (free) Google Account to access Colab<br>
+-- Watch 10 min video to learn the basics of Python<br>
+-- Practice exercises for Python basics",
+September 18,Workshop,10:00 AM,"Introduction to SPS and the Workshop
+(Prof. Liou Yih Cherng)",15 mins
+September 18,Workshop,10:15 AM,"Basic plotting using matplotlib
+(Kai Ze Te, Chammika Udalagama)",45 mins
+September 18,Workshop,11:00 AM,"Exploratory Analysis + Visualistion using Pandas
+(Darren Teo, Chammika Udalagama)",45 mins
+September 18,Workshop,11:45 AM,"Analysing COVID-19 data using Pandas
+(Darren Teo, Chammika Udalagama)",45 mins
+September 18,Workshop,12:30 PM,"Core visualisation concepts
+(Kai Ze Te)",15 mins
 September 18,Workshop,12:45 PM,"Discussion.
 Survey (About workshop, requests & possible collaborations)",15 mins
 September 18,Workshop,1:00 PM,Workshop ends,

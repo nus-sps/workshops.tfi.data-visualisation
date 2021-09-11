@@ -1,126 +1,142 @@
 # Some Python Basics
 
-```{r echo=F}
-my_section <- function(title){
-  s <- paste('## ',title,' {}')
-  return(s)
+```{r,echo=F,eval=F}
+colab_file <- function(link,text){
+  logo = '<img src="https://miro.medium.com/max/512/0*zNcjWYiZcJgreZAs.png" width="25px">'
+  output = paste0('<a href="',link,'" target="_blank">',logo,text,'</a>')
+  return(output)
 }
 
 ```
 
-`r my_section('Python is Case Sensitive')`
+## A Quick Summary {.unnumbered}
 
-This will work.
+<!-- .rmdnote, .rmdcaution, .rmdimportant, .rmdtip, and .rmdwarning -->
 
-```{r echo = T, engine = 'python'}
-print('Hello World')
+::: {.rmdwarning}
+
+1.  Use `#` to write comments.
+2.  Python is case sensitive.
+3.  `x`  is not the same as `‘x’`.
+4.  `=` is not the same as `==`.
+5.  Be careful about indentaions at the start of a line.
+6.  Add functionalit by using packages.
+    -   E.g. `import numpy as np`
+7.  `.` indicates ownership.
+    -   E.g. `np.sum()` means the `sum()` function belonging to numpy.
+8.  You can store data as list or numpy arrays.
+9.  Access elements of a list using `[2:3]`.
+10. Get help by using `?`.
+
+:::
+
+## Before the Workshop
+
+This chapter will quickly introduce you to some basic of Python.
+You need to:
+
+1. Watch the two videos (4 mins and 12 mins) videos in below.
+    - We have also shared Colab notebook relevant to the video.
+1. Work on the short exercises shown below on Colab.
+    - The solution to the exercises can also be found below.
+    - This should take you about 20 minutes.
+
+
+## Exercises & Video File {.panelset}
+
+### Videos {-}
+
+#### Getting started with Colab (3.5 mins) {-}
+<iframe src="https://drive.google.com/file/d/1bjsUaTFVj_cySD8QHOGo-aUha6PcKR6s/preview" width="640" height="480"></iframe>
+
+#### Some Python Basics (12 mins) {-}
+<iframe src="https://drive.google.com/file/d/1it2IHEpLOetka_bZdZfYrb87yXbKFlfM/preview" width="640" height="480"></iframe>
+
+### Video (Colab file) {.unnumbered}
+
+```{r,echo=F,out.width="100%"}
+knitr::include_url("files_jupyter/python-basics_python-fundamentals_colab.html",height="6000px")
 ```
 
-This will **not**.
+### Basic Exercises {.unnumbered}
 
-```{r echo = T, engine = 'python', error=T}
-Print('Hello World')
+Create a new notebook in Colab and use it to answer the following questions.
+
+1. Predict the output of the following code blocks?
+   Run them in Colab to check if your predictions were correct?
+
+   **Note:** You might have to look on the internet for the meaning of some symbols (such as `/` and `%`)
+   1. ```{python,eval=F}
+      7 / 3 == 7 / 3.0
+      ```
+
+   2. ```{python,eval=F}
+   'nesia' in 'Indonesia'
+   ```
+   3. ```{python,eval=F}
+   (2 + 3) == 5
+   ```
+
+   5. ```{python,eval=F}
+    2 + 3 == 5
+    ```
+
+    6. ```{python,eval=F}
+    "2" + "3" == "5"
+    ```
+
+    3. ```{python,eval=F}
+    11 % 3
+    ```
+
+    4. ```{python,eval=F}
+    1 < 2 and 11 >= 9
+    ```
+
+    4. ```{python,eval=F}
+    2 > 5 or (1 < 2 and 11 >= 9)
+    ```
+
+2. Hello Batman & Robin
+   ```{python,eval=F}
+   name = 'Batman'
+
+   if name == 'Batman':
+      print('Hello Batman!')
+   else:
+      print('Hello World!')
+   ```
+   1. Modify the above code to print '`Hello Hello Hello Hello Batman`' when the `name` is '`Batman`'.
+   2. Modify the code to respond to `Robin` instead of `Batman`.
+3. The following code has a few bugs; fix them!
+    ```{python,eval=F}
+    x,y = 3,4
+    	z = sqrt(x**2 + y**2)
+        print(x,y,z)
+    ```
+
+4. Use the following lists and numpy arrays to answer the following questions
+
+     ```{python,eval=F}
+     my_np_list = np.array([0182, 0269, 0341, 0410, 0523,
+                            0697, 0728, 0856, 0948, 101,
+                            1120, 1272, 1312, 1460, 1564,
+                            1642, 1717, 1816, 1923, 2087])               
+     ```
+
+   1. What is the number in the 4th position in the array?
+   2. What is the last number in the array?
+   3. What are the first 3 values?
+   4. What are the values from the 4th to the 10th position? (This should include the numbers at the 4th and 10th positions.)
+   5. What are the values in the list greater than 500?
+   7. Use the 'hidden' numpy functions `max()`, `min()`, `mean()` and `std()` to find the maximum, minimum, mean and standard deviation of the values of the numpy array.
+   8. Make all the numbers less than 500 equal to zero!
+   6. What are the values in the list greater than 500 **and** less than 1000?
+
+### Basic Exercises (Solution) {.unnumbered}
+
+```{r,echo=F,out.width="100%"}
+knitr::include_url("files_jupyter/python-basics_some-fundamentals_exercises-solutions_colab.html",height="6000px")
 ```
 
-`r my_section('<code>x</code> is a variable. \'x\' is an English letter')`
 
-We asking Python to print the English letter 'x'.
-```{r echo = T, engine = 'python'}
-print('x')
-```
-
-We asking Python to print the value related to the **variable** `x`.
-```{r echo = T, engine = 'python'}
-x = 10
-print(x)
-```
-
-`r my_section('We can use f\'letters{x}\' to combine English with variables')`
-
-```{r echo = T, engine = 'python'}
-x = 10
-text = 'My age is {x}.'
-print(text)
-```
-
-`r my_section('Be mindful of spaces(indentation) at the start of a line')`
-
-This will work.
-
-```{r echo = T, engine = 'python'}
-x = 10
-y = 20
-```
-
-This will **not**.
-
-```{r echo=T, engine='python', eval = F}
-x = 10
-  y = 20
-```
-
-
-`r my_section('Python has functions')`
-
-`print()` is a good example of a function in Python. For this function to work it needs something (which we call an argument) to print. We need supply this argument within the function's brackets `()`.
-
-```{r echo = T, engine = 'python'}
-print('Hello World')
-```
-
-A typical function usually can accept additional arguments to do more things. For example the `print()` function allows us to add something to the end.
-
-```{r echo = T, engine = 'python'}
-print('Hello World', end = '******')
-```
-
-You can find out all about a function my looking at its help file as follows
-
-```{r echo = T, engine = 'python', eval = F}
-print?
-```
-```
-print(...)
-    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
-
-    Prints the values to a stream, or to sys.stdout by default.
-    Optional keyword arguments:
-    file:  a file-like object (stream); defaults to the current sys.stdout.
-    sep:   string inserted between values, default a space.
-    end:   string appended after the last value, default a newline.
-    flush: whether to forcibly flush the stream.
-```
-
-`r my_section('Brackets in Python')`
-
-```{r echo=T,engine='python'}
-print('Hello World')
-
-```
-
-`r my_section('Python has many (many) cool packages')`
-
-```{r echo=T,engine='python'}
-print('Hello World')
-```
--   Example: `math.sqrt()` means `sqrt()` belonging to `math`
-
-`r my_section('You can think of the dot(\'.\') as indicating ownership')`
-
-```{r echo=T,engine='python'}
-print('Hello World')
-
-```
-
-`r my_section('We can store data using lists')`
-
-`r my_section('We can store data using dictionaries')`
-
-`r my_section('We can store data using numpy arrays')`
-
-`r my_section('Python sometimes act like a prima donna when you make an error')`
-
-```{r echo=T,engine='python'}
-print('Hello World')
-
-```

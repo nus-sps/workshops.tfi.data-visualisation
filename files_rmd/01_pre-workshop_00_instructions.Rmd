@@ -1,24 +1,30 @@
-# (PART) Pre Workshop Material
+# (PART\*) Pre Workshop Material {-}
 
 ```{r}
 my_logo_piazza <- '<img src="http://piazza.com/images/splash/PageTop/Piazza-Icon.png" class="float-right" width="110px"/>'
 ```
 
 
-# Instructions {.unnumbered}
+# Instructions
 
-We like for you to have learnt some basics about Python and Colab before the day of the workshop. This way we will be able to use the workshop time to learn more advanced ideas and solve difficulties you have. 
+We like for you to have learnt some basics about Python and Colab **before** the workshop. This way, we can use the workshop time to focus on more advanced ideas and pay more attention to solving difficulties you might encounter. So,  please **work on the activities given in section [Some Python Basics] before you come to the workshop**. It will take no more than 30 minutes.
 
-Before you come to the workshop, please:
+if you have any questions or encounter any difficulties please reach out to us through Piazza (see below).
 
-1. Watch the 15 minute video on 'A Whirlwind Introduction to Python'.
-1. Watch the 5 minute video on using Colab for Python.
-1. Work on the basic exercise.
-1. Watch the 20 minute video on 'A Whirlwind Introduction to Python'.
-1. Work on the basic exercise.
+## Start Communicatiing with Us! {.unnumbered}
 
-## Start Communication {.unnumbered}
-
-`r my_logo_piazza`We are going to use the platform Piazza before and during the workshop. So, you can start to communicate with the instructors and other participants even before the workshops starts using Piazza. Please use the email from Piazza to join the class and ask questions. 
+`r my_logo_piazza`We are going to use the platform Piazza before and during the workshop. This way, you can start to communicate with the instructors and other participants even before the workshop. So, please use the email from Piazza to register and start talking to us!
 
 Please use Piazza for **all** your questions.
+
+::: {.rmdtip}
+If necessary Piazza allows you to share Python code.
+
+```{r,out.width='75%',fig.align='center',echo=F}
+knitr::include_graphics("https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48040066646/original/YNJ0m8Wsz1UVTf7arF8gqzjKERE22B71-A.png?1589490612")
+```
+
+```{r,out.width='75%',fig.align='center',echo=F}
+knitr::include_graphics("https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48040066775/original/lqkaZfbo_fEhdKNj-h3HeD11ddf_JwHQrw.png?1589490718")
+```
+:::

@@ -6,17 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 4 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data</title>
 <meta name="author" content="SPS Science Communication Team">
-<meta name="description" content="4.1 Python is Case Sensitive This will work. print('Hello World') #&gt; Hello World This will not. Print('Hello World') #&gt; Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="description" content="A Quick Summary  Use # to write comments. Python is case sensitive. x is not the same as ‘x’. = is not the same as ==. Be careful about indentaions at the start of a line. Add functionalit by...">
+<meta name="generator" content="bookdown 0.23 with bs4_book()">
 <meta property="og:title" content="Chapter 4 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
 <meta property="og:type" content="book">
-<meta property="og:description" content="4.1 Python is Case Sensitive This will work. print('Hello World') #&gt; Hello World This will not. Print('Hello World') #&gt; Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name...">
+<meta property="og:description" content="A Quick Summary  Use # to write comments. Python is case sensitive. x is not the same as ‘x’. = is not the same as ==. Be careful about indentaions at the start of a line. Add functionalit by...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 4 Some Python Basics | TFI e-Workshop | Using Python To Tell Stories With Data">
-<meta name="twitter:description" content="4.1 Python is Case Sensitive This will work. print('Hello World') #&gt; Hello World This will not. Print('Hello World') #&gt; Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="twitter:description" content="A Quick Summary  Use # to write comments. Python is case sensitive. x is not the same as ‘x’. = is not the same as ==. Be careful about indentaions at the start of a line. Add functionalit by...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
@@ -43,15 +43,15 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"></a></li>
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to…</a></li>
 <li class="book-part">Introduction</li>
 <li><a class="" href="hello.html"><span class="header-section-number">2</span> Hello</a></li>
 <li class="book-part">Pre Workshop Material</li>
-<li><a class="" href="instructions.html">Instructions</a></li>
+<li><a class="" href="instructions.html"><span class="header-section-number">3</span> Instructions</a></li>
 <li><a class="active" href="some-python-basics.html"><span class="header-section-number">4</span> Some Python Basics</a></li>
-<li><a class="" href="python-basics-exercises.html"><span class="header-section-number">5</span> Python Basics : Exercises</a></li>
-<li><a class="" href="some-pandas-basics.html"><span class="header-section-number">6</span> Some Pandas Basics</a></li>
-<li><a class="" href="python-pandas-exercises.html"><span class="header-section-number">7</span> Python Pandas : Exercises</a></li>
+<li class="book-part">Workshop</li>
+<li><a class="" href="instructions-1.html"><span class="header-section-number">5</span> Instructions</a></li>
+<li><a class="" href="basic-plotting-with-matplotlib.html"><span class="header-section-number">6</span> Basic Plotting with matplotlib</a></li>
 </ul>
 
         <div class="book-extra">
@@ -63,142 +63,170 @@
 <h1>
 <span class="header-section-number">4</span> Some Python Basics<a class="anchor" aria-label="anchor" href="#some-python-basics"><i class="fas fa-link"></i></a>
 </h1>
-<div id="python-is-case-sensitive" class="section level2" number="4.1">
-<h2>
-<span class="header-section-number">4.1</span> Python is Case Sensitive<a class="anchor" aria-label="anchor" href="#python-is-case-sensitive"><i class="fas fa-link"></i></a>
+<div id="a-quick-summary" class="section level2 unnumbered">
+<h2>A Quick Summary<a class="anchor" aria-label="anchor" href="#a-quick-summary"><i class="fas fa-link"></i></a>
 </h2>
-<p>This will work.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="some-python-basics.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span></code></pre></div>
-<pre><code>#&gt; Hello World</code></pre>
-<p>This will <strong>not</strong>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="some-python-basics.html#cb7-1" aria-hidden="true" tabindex="-1"></a>Print(<span class="st">'Hello World'</span>)</span></code></pre></div>
-<pre><code>#&gt; Error in py_call_impl(callable, dots$args, dots$keywords): NameError: name 'Print' is not defined
-#&gt; 
-#&gt; Detailed traceback:
-#&gt;   File "&lt;string&gt;", line 1, in &lt;module&gt;</code></pre>
-</div>
-<div id="x-is-a-variable.-x-is-an-english-letter" class="section level2" number="4.2">
-<h2>
-<span class="header-section-number">4.2</span> <code>x</code> is a variable. ‘x’ is an English letter<a class="anchor" aria-label="anchor" href="#x-is-a-variable.-x-is-an-english-letter"><i class="fas fa-link"></i></a>
-</h2>
-<p>We asking Python to print the English letter ‘x.’</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="some-python-basics.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'x'</span>)</span></code></pre></div>
-<pre><code>#&gt; x</code></pre>
-<p>We asking Python to print the value related to the <strong>variable</strong> <code>x</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="some-python-basics.html#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb11-2"><a href="some-python-basics.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre></div>
-<pre><code>#&gt; 10</code></pre>
-</div>
-<div id="we-can-use-flettersx-to-combine-english-with-variables" class="section level2" number="4.3">
-<h2>
-<span class="header-section-number">4.3</span> We can use f’letters{x}’ to combine English with variables<a class="anchor" aria-label="anchor" href="#we-can-use-flettersx-to-combine-english-with-variables"><i class="fas fa-link"></i></a>
-</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="some-python-basics.html#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb13-2"><a href="some-python-basics.html#cb13-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">'My age is </span><span class="sc">{x}</span><span class="st">.'</span></span>
-<span id="cb13-3"><a href="some-python-basics.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text)</span></code></pre></div>
-<pre><code>#&gt; My age is {x}.</code></pre>
-</div>
-<div id="be-mindful-of-spacesindentation-at-the-start-of-a-line" class="section level2" number="4.4">
-<h2>
-<span class="header-section-number">4.4</span> Be mindful of spaces(indentation) at the start of a line<a class="anchor" aria-label="anchor" href="#be-mindful-of-spacesindentation-at-the-start-of-a-line"><i class="fas fa-link"></i></a>
-</h2>
-<p>This will work.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="some-python-basics.html#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb15-2"><a href="some-python-basics.html#cb15-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">20</span></span></code></pre></div>
-<p>This will <strong>not</strong>.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="some-python-basics.html#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb16-2"><a href="some-python-basics.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  y <span class="op">=</span> <span class="dv">20</span></span></code></pre></div>
-</div>
-<div id="python-has-functions" class="section level2" number="4.5">
-<h2>
-<span class="header-section-number">4.5</span> Python has functions<a class="anchor" aria-label="anchor" href="#python-has-functions"><i class="fas fa-link"></i></a>
-</h2>
-<p><code><a href="https://rdrr.io/r/base/print.html">print()</a></code> is a good example of a function in Python. For this function to work it needs something (which we call an argument) to print. We need supply this argument within the function’s brackets <code>()</code>.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="some-python-basics.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span></code></pre></div>
-<pre><code>#&gt; Hello World</code></pre>
-<p>A typical function usually can accept additional arguments to do more things. For example the <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> function allows us to add something to the end.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="some-python-basics.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>, end <span class="op">=</span> <span class="st">'******'</span>)</span></code></pre></div>
-<pre><code>#&gt; Hello World******</code></pre>
-<p>You can find out all about a function my looking at its help file as follows</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="some-python-basics.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>?</span></code></pre></div>
-<pre><code>print(...)
-    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
-
-    Prints the values to a stream, or to sys.stdout by default.
-    Optional keyword arguments:
-    file:  a file-like object (stream); defaults to the current sys.stdout.
-    sep:   string inserted between values, default a space.
-    end:   string appended after the last value, default a newline.
-    flush: whether to forcibly flush the stream.</code></pre>
-</div>
-<div id="brackets-in-python" class="section level2" number="4.6">
-<h2>
-<span class="header-section-number">4.6</span> Brackets in Python<a class="anchor" aria-label="anchor" href="#brackets-in-python"><i class="fas fa-link"></i></a>
-</h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="some-python-basics.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span></code></pre></div>
-<pre><code>#&gt; Hello World</code></pre>
-</div>
-<div id="python-has-many-many-cool-packages" class="section level2" number="4.7">
-<h2>
-<span class="header-section-number">4.7</span> Python has many (many) cool packages<a class="anchor" aria-label="anchor" href="#python-has-many-many-cool-packages"><i class="fas fa-link"></i></a>
-</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="some-python-basics.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span></code></pre></div>
-<pre><code>#&gt; Hello World</code></pre>
+<!-- .rmdnote, .rmdcaution, .rmdimportant, .rmdtip, and .rmdwarning -->
+<div class="rmdwarning">
+<ol style="list-style-type: decimal">
+<li>Use <code>#</code> to write comments.</li>
+<li>Python is case sensitive.</li>
+<li>
+<code>x</code> is not the same as <code>‘x’</code>.</li>
+<li>
+<code><a href="https://rdrr.io/r/base/assignOps.html">=</a></code> is not the same as <code><a href="https://rdrr.io/r/base/Comparison.html">==</a></code>.</li>
+<li>Be careful about indentaions at the start of a line.</li>
+<li>Add functionalit by using packages.
 <ul>
-<li>Example: <code>math.sqrt()</code> means <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> belonging to <code>math</code>
+<li>E.g. <code>import numpy as np</code>
 </li>
 </ul>
+</li>
+<li>
+<code>.</code> indicates ownership.
+<ul>
+<li>E.g. <code>np.sum()</code> means the <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> function belonging to numpy.</li>
+</ul>
+</li>
+<li>You can store data as list or numpy arrays.</li>
+<li>Access elements of a list using <code>[2:3]</code>.</li>
+<li>Get help by using <code><a href="https://rdrr.io/r/utils/Question.html">?</a></code>.</li>
+</ol>
 </div>
-<div id="you-can-think-of-the-dot.-as-indicating-ownership" class="section level2" number="4.8">
-<h2>
-<span class="header-section-number">4.8</span> You can think of the dot(‘.’) as indicating ownership<a class="anchor" aria-label="anchor" href="#you-can-think-of-the-dot.-as-indicating-ownership"><i class="fas fa-link"></i></a>
-</h2>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="some-python-basics.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span></code></pre></div>
-<pre><code>#&gt; Hello World</code></pre>
 </div>
-<div id="we-can-store-data-using-lists" class="section level2" number="4.9">
+<div id="before-the-workshop" class="section level2" number="4.1">
 <h2>
-<span class="header-section-number">4.9</span> We can store data using lists<a class="anchor" aria-label="anchor" href="#we-can-store-data-using-lists"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1</span> Before the Workshop<a class="anchor" aria-label="anchor" href="#before-the-workshop"><i class="fas fa-link"></i></a>
 </h2>
+<p>This chapter will quickly introduce you to some basic of Python.
+You need to:</p>
+<ol style="list-style-type: decimal">
+<li>Watch the two videos (4 mins and 12 mins) videos in below.
+<ul>
+<li>We have also shared Colab notebook relevant to the video.</li>
+</ul>
+</li>
+<li>Work on the short exercises shown below on Colab.
+<ul>
+<li>The solution to the exercises can also be found below.</li>
+<li>This should take you about 20 minutes.</li>
+</ul>
+</li>
+</ol>
 </div>
-<div id="we-can-store-data-using-dictionaries" class="section level2" number="4.10">
+<div id="exercises-video-file" class="section level2 panelset" number="4.2">
 <h2>
-<span class="header-section-number">4.10</span> We can store data using dictionaries<a class="anchor" aria-label="anchor" href="#we-can-store-data-using-dictionaries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> Exercises &amp; Video File<a class="anchor" aria-label="anchor" href="#exercises-video-file"><i class="fas fa-link"></i></a>
 </h2>
+<div id="videos" class="section level3 unnumbered">
+<h3>Videos<a class="anchor" aria-label="anchor" href="#videos"><i class="fas fa-link"></i></a>
+</h3>
+<div id="getting-started-with-colab-3.5-mins" class="section level4 unnumbered">
+<h4>Getting started with Colab (3.5 mins)<a class="anchor" aria-label="anchor" href="#getting-started-with-colab-3.5-mins"><i class="fas fa-link"></i></a>
+</h4>
+<iframe src="https://drive.google.com/file/d/1bjsUaTFVj_cySD8QHOGo-aUha6PcKR6s/preview" width="640" height="480">
+</iframe>
 </div>
-<div id="we-can-store-data-using-numpy-arrays" class="section level2" number="4.11">
-<h2>
-<span class="header-section-number">4.11</span> We can store data using numpy arrays<a class="anchor" aria-label="anchor" href="#we-can-store-data-using-numpy-arrays"><i class="fas fa-link"></i></a>
-</h2>
+<div id="some-python-basics-12-mins" class="section level4 unnumbered">
+<h4>Some Python Basics (12 mins)<a class="anchor" aria-label="anchor" href="#some-python-basics-12-mins"><i class="fas fa-link"></i></a>
+</h4>
+<iframe src="https://drive.google.com/file/d/1it2IHEpLOetka_bZdZfYrb87yXbKFlfM/preview" width="640" height="480">
+</iframe>
 </div>
-<div id="python-sometimes-act-like-a-prima-donna-when-you-make-an-error" class="section level2" number="4.12">
-<h2>
-<span class="header-section-number">4.12</span> Python sometimes act like a prima donna when you make an error<a class="anchor" aria-label="anchor" href="#python-sometimes-act-like-a-prima-donna-when-you-make-an-error"><i class="fas fa-link"></i></a>
-</h2>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="some-python-basics.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World'</span>)</span></code></pre></div>
-<pre><code>#&gt; Hello World</code></pre>
+</div>
+<div id="video-colab-file" class="section level3 unnumbered">
+<h3>Video (Colab file)<a class="anchor" aria-label="anchor" href="#video-colab-file"><i class="fas fa-link"></i></a>
+</h3>
+<iframe src="files_jupyter/python-basics_python-fundamentals_colab.html" width="100%" height="6000px">
+</iframe>
+</div>
+<div id="basic-exercises" class="section level3 unnumbered">
+<h3>Basic Exercises<a class="anchor" aria-label="anchor" href="#basic-exercises"><i class="fas fa-link"></i></a>
+</h3>
+<p>Create a new notebook in Colab and use it to answer the following questions.</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Predict the output of the following code blocks?
+Run them in Colab to check if your predictions were correct?</p>
+<p><strong>Note:</strong> You might have to look on the internet for the meaning of some symbols (such as <code><a href="https://rdrr.io/r/base/Arithmetic.html">/</a></code> and <code>%</code>)</p>
+<ol style="list-style-type: decimal">
+<li><pre class="{python,eval=f}"><code>   7 / 3 == 7 / 3.0</code></pre></li>
+<li><pre class="{python,eval=f}"><code>'nesia' in 'Indonesia'</code></pre></li>
+<li><pre class="{python,eval=f}"><code>(2 + 3) == 5</code></pre></li>
+<li><pre class="{python,eval=f}"><code> 2 + 3 == 5</code></pre></li>
+<li><pre class="{python,eval=f}"><code> "2" + "3" == "5"</code></pre></li>
+<li><pre class="{python,eval=f}"><code> 11 % 3</code></pre></li>
+<li><pre class="{python,eval=f}"><code> 1 &lt; 2 and 11 &gt;= 9</code></pre></li>
+<li><pre class="{python,eval=f}"><code> 2 &gt; 5 or (1 &lt; 2 and 11 &gt;= 9)</code></pre></li>
+</ol>
+</li>
+<li>
+<p>Hello Batman &amp; Robin</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="some-python-basics.html#cb13-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'Batman'</span></span>
+<span id="cb13-2"><a href="some-python-basics.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="some-python-basics.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">==</span> <span class="st">'Batman'</span>:</span>
+<span id="cb13-4"><a href="some-python-basics.html#cb13-4" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'Hello Batman!'</span>)</span>
+<span id="cb13-5"><a href="some-python-basics.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb13-6"><a href="some-python-basics.html#cb13-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'Hello World!'</span>)</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Modify the above code to print ‘<code>Hello Hello Hello Hello Batman</code>’ when the <code>name</code> is ‘<code>Batman</code>.’</li>
+<li>Modify the code to respond to <code>Robin</code> instead of <code>Batman</code>.</li>
+</ol>
+</li>
+<li>
+<p>The following code has a few bugs; fix them!</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="some-python-basics.html#cb14-1" aria-hidden="true" tabindex="-1"></a>x,y <span class="op">=</span> <span class="dv">3</span>,<span class="dv">4</span></span>
+<span id="cb14-2"><a href="some-python-basics.html#cb14-2" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> sqrt(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb14-3"><a href="some-python-basics.html#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x,y,z)</span></code></pre></div>
+</li>
+<li>
+<p>Use the following lists and numpy arrays to answer the following questions</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="some-python-basics.html#cb15-1" aria-hidden="true" tabindex="-1"></a>my_np_list <span class="op">=</span> np.array([<span class="dv">0182</span>, <span class="dv">0269</span>, <span class="dv">0341</span>, <span class="dv">0410</span>, <span class="dv">0523</span>,</span>
+<span id="cb15-2"><a href="some-python-basics.html#cb15-2" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">0697</span>, <span class="dv">0728</span>, <span class="dv">0856</span>, <span class="dv">0948</span>, <span class="dv">101</span>,</span>
+<span id="cb15-3"><a href="some-python-basics.html#cb15-3" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">1120</span>, <span class="dv">1272</span>, <span class="dv">1312</span>, <span class="dv">1460</span>, <span class="dv">1564</span>,</span>
+<span id="cb15-4"><a href="some-python-basics.html#cb15-4" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">1642</span>, <span class="dv">1717</span>, <span class="dv">1816</span>, <span class="dv">1923</span>, <span class="dv">2087</span>])               </span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>What is the number in the 4th position in the array?</li>
+<li>What is the last number in the array?</li>
+<li>What are the first 3 values?</li>
+<li>What are the values from the 4th to the 10th position? (This should include the numbers at the 4th and 10th positions.)</li>
+<li>What are the values in the list greater than 500?</li>
+<li>Use the ‘hidden’ numpy functions <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">min()</a></code>, <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> and <code>std()</code> to find the maximum, minimum, mean and standard deviation of the values of the numpy array.</li>
+<li>Make all the numbers less than 500 equal to zero!</li>
+<li>What are the values in the list greater than 500 <strong>and</strong> less than 1000?</li>
+</ol>
+</li>
+</ol>
+</div>
+<div id="basic-exercises-solution" class="section level3 unnumbered">
+<h3>Basic Exercises (Solution)<a class="anchor" aria-label="anchor" href="#basic-exercises-solution"><i class="fas fa-link"></i></a>
+</h3>
+<iframe src="files_jupyter/python-basics_some-fundamentals_exercises-solutions_colab.html" width="100%" height="6000px">
+</iframe>
 
 </div>
 </div>
+</div>
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="instructions.html">Instructions</a></div>
-<div class="next"><a href="python-basics-exercises.html"><span class="header-section-number">5</span> Python Basics : Exercises</a></div>
+<div class="prev"><a href="instructions.html"><span class="header-section-number">3</span> Instructions</a></div>
+<div class="next"><a href="instructions-1.html"><span class="header-section-number">5</span> Instructions</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#some-python-basics"><span class="header-section-number">4</span> Some Python Basics</a></li>
-<li><a class="nav-link" href="#python-is-case-sensitive"><span class="header-section-number">4.1</span> Python is Case Sensitive</a></li>
-<li><a class="nav-link" href="#x-is-a-variable.-x-is-an-english-letter"><span class="header-section-number">4.2</span> x is a variable. ‘x’ is an English letter</a></li>
-<li><a class="nav-link" href="#we-can-use-flettersx-to-combine-english-with-variables"><span class="header-section-number">4.3</span> We can use f’letters{x}’ to combine English with variables</a></li>
-<li><a class="nav-link" href="#be-mindful-of-spacesindentation-at-the-start-of-a-line"><span class="header-section-number">4.4</span> Be mindful of spaces(indentation) at the start of a line</a></li>
-<li><a class="nav-link" href="#python-has-functions"><span class="header-section-number">4.5</span> Python has functions</a></li>
-<li><a class="nav-link" href="#brackets-in-python"><span class="header-section-number">4.6</span> Brackets in Python</a></li>
-<li><a class="nav-link" href="#python-has-many-many-cool-packages"><span class="header-section-number">4.7</span> Python has many (many) cool packages</a></li>
-<li><a class="nav-link" href="#you-can-think-of-the-dot.-as-indicating-ownership"><span class="header-section-number">4.8</span> You can think of the dot(‘.’) as indicating ownership</a></li>
-<li><a class="nav-link" href="#we-can-store-data-using-lists"><span class="header-section-number">4.9</span> We can store data using lists</a></li>
-<li><a class="nav-link" href="#we-can-store-data-using-dictionaries"><span class="header-section-number">4.10</span> We can store data using dictionaries</a></li>
-<li><a class="nav-link" href="#we-can-store-data-using-numpy-arrays"><span class="header-section-number">4.11</span> We can store data using numpy arrays</a></li>
-<li><a class="nav-link" href="#python-sometimes-act-like-a-prima-donna-when-you-make-an-error"><span class="header-section-number">4.12</span> Python sometimes act like a prima donna when you make an error</a></li>
+<li><a class="nav-link" href="#a-quick-summary">A Quick Summary</a></li>
+<li><a class="nav-link" href="#before-the-workshop"><span class="header-section-number">4.1</span> Before the Workshop</a></li>
+<li>
+<a class="nav-link" href="#exercises-video-file"><span class="header-section-number">4.2</span> Exercises &amp; Video File</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#videos">Videos</a></li>
+<li><a class="nav-link" href="#video-colab-file">Video (Colab file)</a></li>
+<li><a class="nav-link" href="#basic-exercises">Basic Exercises</a></li>
+<li><a class="nav-link" href="#basic-exercises-solution">Basic Exercises (Solution)</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">
@@ -215,7 +243,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-08.</p>
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -223,6 +251,34 @@
   </div>
 
 </div></div>
-</footer>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
 </body>
 </html>

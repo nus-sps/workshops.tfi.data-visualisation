@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Python Basics | Some Fundamentals in 10 minutes | TFI e-Workshop | Using Python To Tell Stories With Data</title>
+<meta name="author" content="SPS Science Communication Team">
+<meta name="description" content="3.0.1 The . and ‘hidden’ functions The . shows ownership. math.sqrt() means the sqrt() function belonging to the package math  np.sqrt() means the sqrt() function belonging to the package numpy...">
+<meta name="generator" content="bookdown 0.23 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Python Basics | Some Fundamentals in 10 minutes | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta property="og:type" content="book">
+<meta property="og:description" content="3.0.1 The . and ‘hidden’ functions The . shows ownership. math.sqrt() means the sqrt() function belonging to the package math  np.sqrt() means the sqrt() function belonging to the package numpy...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Python Basics | Some Fundamentals in 10 minutes | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta name="twitter:description" content="3.0.1 The . and ‘hidden’ functions The . shows ownership. math.sqrt() means the sqrt() function belonging to the package math  np.sqrt() means the sqrt() function belonging to the package numpy...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+<link rel="stylesheet" href="my-style.css">
+<link rel="stylesheet" href="my-pygments.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">TFI e-Workshop | Using Python To Tell Stories With Data</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li class="book-part">Pre Workshop Material</li>
+<li><a class="" href="instructions.html">Instructions</a></li>
+<li><a class="" href="some-python-basics.html"><span class="header-section-number">2</span> Some Python Basics</a></li>
+<li><a class="active" href="python-basics-some-fundamentals-in-10-minutes.html"><span class="header-section-number">3</span> Python Basics | Some Fundamentals in 10 minutes</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="python-basics-some-fundamentals-in-10-minutes" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Python Basics | Some Fundamentals in 10 minutes<a class="anchor" aria-label="anchor" href="#python-basics-some-fundamentals-in-10-minutes"><i class="fas fa-link"></i></a>
+</h1>
+<div id="the-.-and-hidden-functions" class="section level3" number="3.0.1">
+<h3>
+<span class="header-section-number">3.0.1</span> The <code>.</code> and ‘hidden’ functions<a class="anchor" aria-label="anchor" href="#the-.-and-hidden-functions"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <code>.</code> shows ownership.</p>
+<ul>
+<li>
+<code>math.sqrt()</code> means the <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> function belonging to the package <code>math</code>
+</li>
+<li>
+<code>np.sqrt()</code> means the <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> function belonging to the package <code>numpy</code>
+</li>
+<li>‘Everything’ in Python have useful functions that are sort of ‘hidden.’</li>
+</ul>
+</div>
+<div id="example-1-upper-a-method-that-belongs-to-letters" class="section level3" number="3.0.2">
+<h3>
+<span class="header-section-number">3.0.2</span> Example 1: <code>upper()</code> a method that belongs to ‘letters’<a class="anchor" aria-label="anchor" href="#example-1-upper-a-method-that-belongs-to-letters"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">'My name is Batman'</span>.upper()</span></code></pre></div>
+<pre><code>#&gt; 'MY NAME IS BATMAN'</code></pre>
+</div>
+<div id="example-2-split-a-method-that-belongs-to-letters" class="section level3" number="3.0.3">
+<h3>
+<span class="header-section-number">3.0.3</span> Example 2: <code>split()</code> a method that belongs to ‘letters’<a class="anchor" aria-label="anchor" href="#example-2-split-a-method-that-belongs-to-letters"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">'My name is Batman'</span>.split()</span></code></pre></div>
+<pre><code>#&gt; ['My', 'name', 'is', 'Batman']</code></pre>
+</div>
+<div id="example-3-available-methods-depends-on-what-you-have" class="section level3" number="3.0.4">
+<h3>
+<span class="header-section-number">3.0.4</span> Example 3: Available methods depends on what you have<a class="anchor" aria-label="anchor" href="#example-3-available-methods-depends-on-what-you-have"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1234.</span>split()              <span class="co"># Will NOT work because split() is not a method available to numbers</span></span></code></pre></div>
+</div>
+<div id="python-lists-and-numpy-arrays" class="section level3" number="3.0.5">
+<h3>
+<span class="header-section-number">3.0.5</span> Python Lists and numpy Arrays<a class="anchor" aria-label="anchor" href="#python-lists-and-numpy-arrays"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Two import ways to store information in Python are Python Lists and numpy Arrays.</li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb39-1" aria-hidden="true" tabindex="-1"></a>py_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]                  <span class="co"># A Python list</span></span>
+<span id="cb39-2"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb39-2" aria-hidden="true" tabindex="-1"></a>np_array <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>] )      <span class="co"># a numpy array</span></span></code></pre></div>
+<p>Althoug they look similary each have different features</p>
+</div>
+<div id="example-1-selecting-elements-that-satisfy-a-criterion" class="section level3" number="3.0.6">
+<h3>
+<span class="header-section-number">3.0.6</span> Example 1: Selecting elements that satisfy a criterion<a class="anchor" aria-label="anchor" href="#example-1-selecting-elements-that-satisfy-a-criterion"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb40-1" aria-hidden="true" tabindex="-1"></a>np_array[np_array <span class="op">&gt;</span> <span class="dv">4</span>]    <span class="co"># Show me (subset) numbers more than 4</span></span></code></pre></div>
+<pre><code>#&gt; array([ 5,  6,  7,  8,  9, 10])</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb42-1" aria-hidden="true" tabindex="-1"></a>py_list[py_list <span class="op">&gt;</span> <span class="dv">4</span>]      <span class="co"># Will NOT work</span></span></code></pre></div>
+<pre><code>#&gt; Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: '&gt;' not supported between instances of 'list' and 'int'
+#&gt; 
+#&gt; Detailed traceback:
+#&gt;   File "&lt;string&gt;", line 1, in &lt;module&gt;</code></pre>
+</div>
+<div id="example-2-adding-a-number-to-an-array" class="section level3" number="3.0.7">
+<h3>
+<span class="header-section-number">3.0.7</span> Example 2: Adding a number to an array<a class="anchor" aria-label="anchor" href="#example-2-adding-a-number-to-an-array"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb44-1" aria-hidden="true" tabindex="-1"></a>np_array <span class="op">+</span> <span class="dv">100</span>            <span class="co"># Add 100 to all elements</span></span></code></pre></div>
+<pre><code>#&gt; array([101, 102, 103, 104, 105, 106, 107, 108, 109, 110])</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb46-1" aria-hidden="true" tabindex="-1"></a>py_list <span class="op">+</span> <span class="dv">100</span>             <span class="co"># Will NOT work</span></span></code></pre></div>
+<pre><code>#&gt; Error in py_call_impl(callable, dots$args, dots$keywords): TypeError: can only concatenate list (not "int") to list
+#&gt; 
+#&gt; Detailed traceback:
+#&gt;   File "&lt;string&gt;", line 1, in &lt;module&gt;</code></pre>
+</div>
+<div id="example-3-growing-a-list" class="section level3" number="3.0.8">
+<h3>
+<span class="header-section-number">3.0.8</span> Example 3: Growing a list<a class="anchor" aria-label="anchor" href="#example-3-growing-a-list"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb48-1" aria-hidden="true" tabindex="-1"></a>py_list <span class="op">+</span> [<span class="dv">100</span>,<span class="dv">200</span>]       <span class="co"># Appends the numbers to the list</span></span></code></pre></div>
+<pre><code>#&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 200]</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb50-1" aria-hidden="true" tabindex="-1"></a>np_array <span class="op">+</span> [<span class="dv">100</span>,<span class="dv">200</span>]     <span class="co"># Will NOT work</span></span></code></pre></div>
+<pre><code>#&gt; Error in py_call_impl(callable, dots$args, dots$keywords): ValueError: operands could not be broadcast together with shapes (10,) (2,) 
+#&gt; 
+#&gt; Detailed traceback:
+#&gt;   File "&lt;string&gt;", line 1, in &lt;module&gt;</code></pre>
+</div>
+<div id="accessing-elements-of-lists-and-arrays" class="section level3" number="3.0.9">
+<h3>
+<span class="header-section-number">3.0.9</span> 2.9|Accessing elements of lists and arrays<a class="anchor" aria-label="anchor" href="#accessing-elements-of-lists-and-arrays"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<strong>Important</strong>: Python starts counting at 0</li>
+</ul>
+</div>
+<div id="examples-1-selecting-one-element-indexing" class="section level3" number="3.0.10">
+<h3>
+<span class="header-section-number">3.0.10</span> Examples 1: Selecting one element (indexing)<a class="anchor" aria-label="anchor" href="#examples-1-selecting-one-element-indexing"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb52-1" aria-hidden="true" tabindex="-1"></a>py_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First item</span></span>
+<span id="cb53-2"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb53-2" aria-hidden="true" tabindex="-1"></a>py_list[<span class="dv">0</span>]</span></code></pre></div>
+<pre><code>#&gt; 1</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Second item</span></span>
+<span id="cb55-2"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb55-2" aria-hidden="true" tabindex="-1"></a>py_list[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>#&gt; 2</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Last item</span></span>
+<span id="cb57-2"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb57-2" aria-hidden="true" tabindex="-1"></a>py_list[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div>
+<pre><code>#&gt; 10</code></pre>
+</div>
+<div id="examples-2-selecting-a-range-of-elements-slicing" class="section level3" number="3.0.11">
+<h3>
+<span class="header-section-number">3.0.11</span> Examples 2: Selecting a range of elements (slicing)<a class="anchor" aria-label="anchor" href="#examples-2-selecting-a-range-of-elements-slicing"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb59-1" aria-hidden="true" tabindex="-1"></a>py_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start at index 3 (i.e. '4') and give two (5-3) elements</span></span>
+<span id="cb60-2"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb60-2" aria-hidden="true" tabindex="-1"></a>py_list[<span class="dv">3</span>:<span class="dv">5</span>]</span></code></pre></div>
+<pre><code>#&gt; [4, 5]</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show me 3 elements from the start</span></span>
+<span id="cb62-2"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb62-2" aria-hidden="true" tabindex="-1"></a>py_list[:<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>#&gt; [1, 2, 3]</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show me all elements from the index 3</span></span>
+<span id="cb64-2"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb64-2" aria-hidden="true" tabindex="-1"></a>py_list[<span class="dv">3</span>:]</span></code></pre></div>
+<pre><code>#&gt; [4, 5, 6, 7, 8, 9, 10]</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show me everything (from start to end)</span></span>
+<span id="cb66-2"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb66-2" aria-hidden="true" tabindex="-1"></a>py_list[:]</span></code></pre></div>
+<pre><code>#&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code></pre>
+</div>
+<div id="getting-help" class="section level3" number="3.0.12">
+<h3>
+<span class="header-section-number">3.0.12</span> Getting Help<a class="anchor" aria-label="anchor" href="#getting-help"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Googling for help is the fastest way to get a problem solved.</li>
+<li>However, you can also get information from within Colab by using the following:</li>
+</ul>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="python-basics-some-fundamentals-in-10-minutes.html#cb68-1" aria-hidden="true" tabindex="-1"></a>?np.cos</span></code></pre></div>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="some-python-basics.html"><span class="header-section-number">2</span> Some Python Basics</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li>
+<a class="nav-link" href="#python-basics-some-fundamentals-in-10-minutes"><span class="header-section-number">3</span> Python Basics | Some Fundamentals in 10 minutes</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-.-and-hidden-functions"><span class="header-section-number">3.0.1</span> The . and ‘hidden’ functions</a></li>
+<li><a class="nav-link" href="#example-1-upper-a-method-that-belongs-to-letters"><span class="header-section-number">3.0.2</span> Example 1: upper() a method that belongs to ‘letters’</a></li>
+<li><a class="nav-link" href="#example-2-split-a-method-that-belongs-to-letters"><span class="header-section-number">3.0.3</span> Example 2: split() a method that belongs to ‘letters’</a></li>
+<li><a class="nav-link" href="#example-3-available-methods-depends-on-what-you-have"><span class="header-section-number">3.0.4</span> Example 3: Available methods depends on what you have</a></li>
+<li><a class="nav-link" href="#python-lists-and-numpy-arrays"><span class="header-section-number">3.0.5</span> Python Lists and numpy Arrays</a></li>
+<li><a class="nav-link" href="#example-1-selecting-elements-that-satisfy-a-criterion"><span class="header-section-number">3.0.6</span> Example 1: Selecting elements that satisfy a criterion</a></li>
+<li><a class="nav-link" href="#example-2-adding-a-number-to-an-array"><span class="header-section-number">3.0.7</span> Example 2: Adding a number to an array</a></li>
+<li><a class="nav-link" href="#example-3-growing-a-list"><span class="header-section-number">3.0.8</span> Example 3: Growing a list</a></li>
+<li><a class="nav-link" href="#accessing-elements-of-lists-and-arrays"><span class="header-section-number">3.0.9</span> 2.9|Accessing elements of lists and arrays</a></li>
+<li><a class="nav-link" href="#examples-1-selecting-one-element-indexing"><span class="header-section-number">3.0.10</span> Examples 1: Selecting one element (indexing)</a></li>
+<li><a class="nav-link" href="#examples-2-selecting-a-range-of-elements-slicing"><span class="header-section-number">3.0.11</span> Examples 2: Selecting a range of elements (slicing)</a></li>
+<li><a class="nav-link" href="#getting-help"><span class="header-section-number">3.0.12</span> Getting Help</a></li>
+</ul>
+</li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-10.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

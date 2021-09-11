@@ -1,0 +1,203 @@
+# The Power of Dataframes
+
+```{r, echo=F}
+file_link <-"https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls"
+```
+
+In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s de-facto module for data analysis. In addition to using Pandas you will see how immensely efficient it is to have your data in a dataframe than in a spreadsheet.
+
+## Just enough {-}
+Pandas offer several ways (i.e. different syntaxes) to achieve a specific goal. We will not cover all of these. Instead, we will only highlight a minimally sufficient set of syntax and instructions.
+
+To learn the power of Pandas, we will use a dataset of test scores for a dummy class. You can access the data at `r file_link`.
+
+
+`r my_fun.exercise('Uploding Files to Colab')`
+
+#### Task {-}
+
+Although Pandas can read the file directly over the internet, it will be good for us to learn how to upload files to Colab.<br>
+So,
+
+1. Download the `xls` file from the following link by right-clicking and using 'Save as...'<br>
+`r file_link`.
+1. Upload the file to Colab.
+1. Use the following code to read the file into Pandas.
+
+    ```{python,eval=F}
+    import pandas as pd
+    pd.read_excel('dummy_class.xls')
+    ```
+
+  Now we are ready to start exploring the Pandas by exploring the dataset. It is best practice to first understand what kind of dataset you are dealing with. So, lets do some data 'house keeping'!
+
+`r my_fun.exercise('Uploding Files to Colab')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('dummy-class_housekeeping.py'))
+```
+
+`r my_fun.example('Housekeeping Round 2 : Rename stuff')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('dummy-class_housekeeping-02.py'))
+```
+
+`r my_fun.example('Housekeeping Round 3 : Missing Numbers')`
+
+#### Result {-}
+
+
+```{python,echo=F,results='asis'}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+df.fillna(0,inplace=True)
+df.head(15).to_html()
+```
+
+#### Tasks {-}
+
+Missing numbers are common in real datasets. It is important to have a policy on how you deal with them. Let's fill the missing numbers with 0 for our class.
+But, we first lets see how to locate missing data.
+
+<!-- We can do a few things about missing data. -->
+<!-- 1. Remove the entry with the missing data -->
+<!-- 1. Remove the column with the missing data -->
+<!-- 1. Fill the missing data with a numbers -->
+<!-- 1. Fill the missing data with a row or column average. -->
+
+<!-- Let see how we can do these. But, we first lets see how to locate missing data. -->
+
+
+#### Code {-}
+
+```{python,echo=F}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+
+```
+
+```{python, eval=F}
+# Missing everywhere
+df.isna()           
+```
+
+```{python, eval=T,echo=F,results='asis'}
+df.isna().head().to_html()           
+```
+
+
+Shows columns that have missing values   
+
+```{python}
+df.isna().any(axis=0)  
+```
+
+Shows rows that have missing values
+
+```{python}
+df.isna().any(axis=1).head(20)
+```
+
+Show the rows that have missing values
+
+```{python,eval=F}
+mask = df.isna().any(axis=1)
+df[mask]
+```
+
+```{python,echo=F,results='asis'}
+mask = df.isna().any(axis=1)
+df[mask].to_html()
+```
+
+Replace values with 0
+
+```{python,eval=F}
+df.fillna(0,inplace=True)
+```
+
+```{python,echo=F,results='asis'}
+df.fillna(0,inplace=True)
+df.to_html()
+```
+
+`r my_fun.exercise('Find a student')`
+
+#### Results {-}
+
+```{python,echo=F,results='asis'}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+students = ['Maryjane Sandoval' , 'Ronin Christian']
+mask=df.isin(students).any(axis=1)
+df[mask].to_html()
+```
+
+#### Tasks {-}
+
+1. Use the 'hidden' function `isin()` to find out if **Maryjane Sandoval** and **Ronin Christian** are in the class?
+1. Locate the corresponding rows in the dataframe
+
+#### Solution {-}
+
+```{python,eval=F}
+students = ['Maryjane Sandoval' , 'Ronin Christian']
+mask=df.isin(students).any(axis=1)
+df[mask]
+```
+
+```{python}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+students = ['Maryjane Sandoval' , 'Ronin Christian']
+mask=df.isin(students).any(axis=1)
+df[mask]
+```
+
+`r my_fun.example('Moving Around')`
+
+```{python,echo=F}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+```
+
+#### Tasks {-}
+
+1. Show rows 5 to 10 for columns 3 to 5
+1. What are the names of the female students?
+1. What are the names of the female students studying chemsitry?
+
+#### Code {-}
+
+| How                                        | Command  |
+| ------------------------------------------ | :------: |
+| By specifying a name                       | `loc[]`  |
+| By specifying a row number (starting at 0) | `iloc[]` |
+
+
+Show rows 5 to 10 for columns 3 to 5
+
+```{python}
+df.iloc[5:11,3:6]
+```
+
+What are the names of the female students?
+
+```{python}
+mask = df['Gender'] == 'F'
+df.loc[mask,['Name']]
+```
+
+What are the names of the female students studying chemistry?
+
+```{python}
+mask = (df['Gender'] == 'F') & (df['Major'] == 'Chemistry')
+```

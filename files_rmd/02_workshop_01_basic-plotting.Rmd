@@ -1,22 +1,70 @@
-# Basic Plotting with Matplotlib
-We would first be exploring how one begin to plot with Matplotlib with Python. 
+# Basic Plotting with matplotlib
 
-## Elementary Plot
-`r my_fun.example('Test: A Simple Plot')`
+```{r, fig.align='center',fig.cap="The various parts of a `matplotlib` figure. (From [matplotlib.org](https://matplotlib.org/))",out.extra='style="margin-left:auto;"',echo=FALSE}
+knitr::include_graphics('https://matplotlib.org/3.1.1/_images/sphx_glr_anatomy_001.png')
+```
 
+## Some Simple Plots
+
+`r my_fun.example('A Simple Plot')`
 
 ```{python,results='asis',echo=F,cache=F}
 from my_functions import render_python
-print(render_python('a-simple-plot.py'))
+print(render_python('matplotlib_a-simple-plot-01.py'))
 ```
-## Histograms
+
+`r my_fun.exercise('A Simple Plot')`
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib_a-simple-plot-01_exercise.py'))
+```
+
+`r my_fun.example('Another Way to Plot')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib_a-simple-plot-01_pyplot.py'))
+```
+
+`r my_fun.example('Plotting and Filling')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib_filled-plot.py'))
+```
+
+## Multiple Plots
+
+`r my_fun.example('A Column of Axes')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib-diff-axis-plotting.py'))
+```
+
+`r my_fun.example('Grid')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib_grid.py'))
+```
+
+`r my_fun.example('One plot - Two Axes')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib-same-axis-plotting.py'))
+```
+
+## Other Plots
+
 `r my_fun.example('Histograms')`
 
 ```{python,results='asis',echo=F,cache=F}
 from my_functions import render_python
 print(render_python('matplotlib-histograms.py'))
 ```
-## Boxplots
+
 `r my_fun.example('Boxplots')`
 
 ```{python,results='asis',echo=F,cache=F}
@@ -24,26 +72,10 @@ from my_functions import render_python
 print(render_python('matplotlib-boxplot.py'))
 ```
 
-## Plotting on Multiple axis
-### Same Axis
-`r my_fun.example('Plotting on the same axis')`
+<!-- ### Integrating advance elements into plotting -->
+<!-- `r my_fun.example('Something more advanced')` -->
 
-```{python,results='asis',echo=F,cache=F}
-from my_functions import render_python
-print(render_python('matplotlib-same-axis-plotting.py'))
-```
-### Different axis
-`r my_fun.example('Plotting on different axis')`
-
-```{python,results='asis',echo=F,cache=F}
-from my_functions import render_python
-print(render_python('matplotlib-diff-axis-plotting.py'))
-```
-
-### Integrating advance elements into plotting
-`r my_fun.example('Something more advanced')`
-
-```{python,results='asis',echo=F,cache=F}
-from my_functions import render_python
-print(render_python('matplotlib-advanced.py'))
-```
+<!-- ```{python,results='asis',echo=F,cache=F} -->
+<!-- from my_functions import render_python -->
+<!-- print(render_python('matplotlib-advanced.py')) -->
+<!-- ``` -->

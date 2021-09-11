@@ -46,7 +46,7 @@ library(kableExtra)
 
 if (Sys.info()['user'] == 'chammika') {
   use_python('/home/chammika/miniconda3/bin/python')
-} else if (Sys.info()['user'] == 'Darren') {
+} else if (Sys.info()['user'] == 'Darren Teo') {
   use_python('D:\\minconda')
 } else {
   use_python('D:\\minconda')
@@ -58,7 +58,7 @@ if (Sys.info()['user'] == 'chammika') {
 
 `# (PART) Welcome {-}`
 
-# {.unnumbered}
+# Welcome to...
 
 
 <div class = "front-title">
@@ -66,7 +66,7 @@ if (Sys.info()['user'] == 'chammika') {
 </div>
 
 ```{r,echo = F,out.width = "100%"}
-knitr::include_graphics('http://sps.nus.edu.sg/~chammika/workshops/2019_tfi_hanoi/img/sps_all-2017-edited.jpg')
+knitr::include_graphics('imgs/sps_all-2017-edited.jpg')
 ```
 
 ## About this eWorkshop {.unnumbered .panelset}
@@ -90,7 +90,7 @@ df <- read_csv(filename, col_types = cols(Time = col_character(), Duration = col
 
 df %>%
   kbl() %>%
-  kable_paper("hover", full_width = F) %>%
+  kable_paper("hover", full_width = T) %>%
   collapse_rows(columns = 1:2)
 ```
 
@@ -115,9 +115,9 @@ df %>%
 
 -   We will email the participants more details, closer to the date of the workshop.
 
-### Objectives {-}
+### Aims & Objectives {-}
 
-<br>
+#### Aims {-}
 
 1.  To help those of you who want to start programming to get started.
     -   We do not expect your code to be super-efficient; it just needs to work. Perfection can come later.
@@ -127,6 +127,16 @@ df %>%
     -   basic Python
     -   handling data
     -   plotting.
+
+
+#### Objectives {-}
+
+By the end of this workshops, you will be able to:
+
+1. Use Python (matplotlib) to produce high quality plots
+1. Use Python (pandas) to query simple datasets
+1. Use Python (pandas + matplotlib) to produce visualisations of COVID-19 data.
+1. Indentify and apply core principles for effective visualisation of data.
 
 ### Supporting Institutions  {.unnumbered}
 
