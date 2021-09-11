@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 2 The Power of Dataframes | TFI e-Workshop | Using Python To Tell Stories With Data">
 <meta name="twitter:description" content="In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
@@ -80,7 +80,7 @@ So,</p>
 <span id="cb1-2"><a href="the-power-of-dataframes.html#cb1-2" aria-hidden="true" tabindex="-1"></a>pd.read_excel(<span class="st">'dummy_class.xls'</span>)</span></code></pre></div>
 </li>
 </ol>
-<p>Now we are ready to start exploring the Pandas by exploring the dataset. It is best practice to first understand what kind of dataset you are dealing with. So, lets do some data ‘house keeping!’</p>
+<p>Now we are ready to start exploring the Pandas by exploring the dataset. It is best practice to first understand what kind of dataset you are dealing with. So, lets do some data ‘house keeping’!</p>
 </div>
 </div>
 <div id="exercise-2-uploding-files-to-colab" class="section level3 unnumbered panelset">
@@ -438,27 +438,18 @@ F
 <div id="solution" class="section level4 unnumbered panelset">
 <h4>Solution<a class="anchor" aria-label="anchor" href="#solution"><i class="fas fa-link"></i></a>
 </h4>
-<br><div class="sourceCode">
-<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'dummy_class.xls'</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s1">'Major'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s1">'Major'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</code></pre>
-</div>
+<p><br>
+```{python}
+import pandas as pd
+df = pd.read_excel(‘dummy_class.xls’)</p>
+<p>df.shape</p>
+<p>df.columns</p>
+<p>df.head(3)
+df.tail(3)</p>
+<p>df.info()</p>
+<p>df.describe()</p>
+<p>df[‘Major’].unique()</p>
+<p>df[‘Major’].value_counts()</p>
 
 </div>
 </div>

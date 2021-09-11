@@ -66,7 +66,12 @@ class My_Section:
         highlighted_code = highlight(
             cleaned_code, PythonLexer(), HtmlFormatter())
 
+
         return f'{tag_open}{highlighted_code}{tag_close}'
+
+
+
+
 
     def create_output(self):
 
