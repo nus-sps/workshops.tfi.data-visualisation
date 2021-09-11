@@ -140,7 +140,7 @@ def create_result_output(filename):
         os.system(cmd)
         result_files = glob.glob(f'python_outputs/*{filename}*')
 
-    result_filename = result_files[0];
+    result_filename = result_files[0]
     result_fileext = result_filename.split('.')
     result_fileext = result_fileext[-1]
 
@@ -155,3 +155,6 @@ def create_result_output(filename):
 #print(render_python('a-simple-plot.py'))
 # print(render_python('covid-subset-asean.py'))
 # print(HtmlFormatter().get_style_defs('.highlight'))
+
+file = 'dummy-class_housekeeping.py'
+render_python(file)

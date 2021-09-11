@@ -18,15 +18,19 @@ df = pd.read_excel('dummy_class.xls')
 | Can we have descriptive statistics of the data? |                       `df.describe()`                        |
 | What are the unique values in a column?        |                  `df[column_name].unique()`                  |
 | How many unique values are there?               |               `df[column_name].value_counts()`               |
-| Are there any missing numbers?                  | Dataframe :`df.isna()`<br />Row-wise :`df.isna().any(axis = 1)`<br />Column-wise :`df.isna(axis = 0)` |
 '''
 
 # %% Solution
 from sys import argv  # Hide
 
 import pandas as pd
-df = pd.read_excel('dummy_class.xls')
+# df = pd.read_excel('dummy_class.xls')
 df = pd.read_excel('files/dummy_class.xls')  # Hide
+
+with open(f'{argv[0]}.html', 'w') as file:            # Hide
+    file.write(df.head(10).to_html())                  # Hide
+
+print(f'{argv[0]}.html')
 
 df.shape
 
@@ -42,6 +46,3 @@ df.describe()
 df['Major'].unique()
 
 df['Major'].value_counts()
-
-with open(f'{argv[0]}.html', 'w') as file:             # Hide
-   file.write(df.head(10).to_html())                  # Hide

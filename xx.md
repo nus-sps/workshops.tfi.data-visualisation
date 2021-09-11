@@ -89,19 +89,10 @@ Get help by using `?`.
 
 
 
-| Question                                 |                        Possible code                         |
-| ---------------------------------------- | :----------------------------------------------------------: |
-| How many rows and columns are there?     |                          `df.shape`                          |
-| What are the names of the columns?       |                         `df.colmns`                          |
-| Let’s look at a sample of the data       |                 `df.head()`<br />`df.tail()`                 |
-| What type of data is contained?          |                         `df.info()`                          |
-| Some descriptive statistics of the data  |                       `df.describe()`                        |
-| What are the unique values in a columns? |                  `df[column_name].unique()`                  |
-| How many unique values are there?        |               `df[column_name].value_counts()`               |
-| How to locate certain rows and columns?  | Columns: `df[[column_names]]`<br />By number: `df.iloc[row_number,column_number]<br />`By name: `df.loc[row_index,column_name]` |
-| Are there any missing numbers?           | Dataframe :`df.isna()`<br />Row-wise :`df.isna().any(axis = 1)`<br />Column-wise :`df.isna(axis = 0)` |
-| D                                        |                                                              |
-| Replace missing numbers                  |                 `df.fillna(0,inplace=True)`                  |
+
+| How to locate certain rows and columns?         | Columns: `df[[column_names]]`<br />By number: `df.iloc[row_number,column_number]<br />`By name: `df.loc[row_index,column_name]` |
+| D                                               |                                                              |
+| Replace missing numbers                         |                 `df.fillna(0,inplace=True)`                  |
 
 
 
@@ -120,4 +111,4 @@ Get help by using `?`.
    3. How many females taking chemistry?
 6. What are the max, min, median of the test columns?
 7. Is a particualr student in my class?
-8. 
+8. Sort the class by ascendin total

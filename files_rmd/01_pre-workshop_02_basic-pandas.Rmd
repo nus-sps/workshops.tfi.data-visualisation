@@ -37,3 +37,167 @@ So,
 from my_functions import render_python
 print(render_python('dummy-class_housekeeping.py'))
 ```
+
+`r my_fun.example('Housekeeping Round 2 : Rename stuff')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('dummy-class_housekeeping-02.py'))
+```
+
+`r my_fun.example('Housekeeping Round 3 : Missing Numbers')`
+
+#### Result {-}
+
+
+```{python,echo=F,results='asis'}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+df.fillna(0,inplace=True)
+df.head(15).to_html()
+```
+
+#### Tasks {-}
+
+Missing numbers are common in real datasets. It is important to have a policy on how you deal with them. Let's fill the missing numbers with 0 for our class.
+But, we first lets see how to locate missing data.
+
+<!-- We can do a few things about missing data. -->
+<!-- 1. Remove the entry with the missing data -->
+<!-- 1. Remove the column with the missing data -->
+<!-- 1. Fill the missing data with a numbers -->
+<!-- 1. Fill the missing data with a row or column average. -->
+
+<!-- Let see how we can do these. But, we first lets see how to locate missing data. -->
+
+
+#### Code {-}
+
+```{python,echo=F}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+
+```
+
+```{python, eval=F}
+# Missing everywhere
+df.isna()           
+```
+
+```{python, eval=T,echo=F,results='asis'}
+df.isna().head().to_html()           
+```
+
+
+Shows columns that have missing values   
+
+```{python}
+df.isna().any(axis=0)  
+```
+
+Shows rows that have missing values
+
+```{python}
+df.isna().any(axis=1).head(20)
+```
+
+Show the rows that have missing values
+
+```{python,eval=F}
+mask = df.isna().any(axis=1)
+df[mask]
+```
+
+```{python,echo=F,results='asis'}
+mask = df.isna().any(axis=1)
+df[mask].to_html()
+```
+
+Replace values with 0
+
+```{python,eval=F}
+df.fillna(0,inplace=True)
+```
+
+```{python,echo=F,results='asis'}
+df.fillna(0,inplace=True)
+df.to_html()
+```
+
+`r my_fun.exercise('Find a student')`
+
+#### Results {-}
+
+```{python,echo=F,results='asis'}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+students = ['Maryjane Sandoval' , 'Ronin Christian']
+mask=df.isin(students).any(axis=1)
+df[mask].to_html()
+```
+
+#### Tasks {-}
+
+1. Use the 'hidden' function `isin()` to find out if **Maryjane Sandoval** and **Ronin Christian** are in the class?
+1. Locate the corresponding rows in the dataframe
+
+#### Solution {-}
+
+```{python,eval=F}
+students = ['Maryjane Sandoval' , 'Ronin Christian']
+mask=df.isin(students).any(axis=1)
+df[mask]
+```
+
+```{python}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+students = ['Maryjane Sandoval' , 'Ronin Christian']
+mask=df.isin(students).any(axis=1)
+df[mask]
+```
+
+`r my_fun.example('Moving Around')`
+
+```{python,echo=F}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+```
+
+#### Tasks {-}
+
+1. Show rows 5 to 10 for columns 3 to 5
+1. What are the names of the female students?
+1. What are the names of the female students studying chemsitry?
+
+#### Code {-}
+
+| How                                        | Command  |
+| ------------------------------------------ | :------: |
+| By specifying a name                       | `loc[]`  |
+| By specifying a row number (starting at 0) | `iloc[]` |
+
+
+Show rows 5 to 10 for columns 3 to 5
+
+```{python}
+df.iloc[5:11,3:6]
+```
+
+What are the names of the female students?
+
+```{python}
+mask = df['Gender'] == 'F'
+df.loc[mask,['Name']]
+```
+
+What are the names of the female students studying chemistry?
+
+```{python}
+mask = (df['Gender'] == 'F') & (df['Major'] == 'Chemistry')
+```
