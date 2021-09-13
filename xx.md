@@ -89,10 +89,16 @@ Get help by using `?`.
 
 
 
+| Are there any missing numbers?                  | Dataframe :`df.isna()`<br />Row-wise :`df.isna().any(axis = 1)`<br />Column-wise :`df.isna(axis = 0)` |
+
 
 | How to locate certain rows and columns?         | Columns: `df[[column_names]]`<br />By number: `df.iloc[row_number,column_number]<br />`By name: `df.loc[row_index,column_name]` |
 | D                                               |                                                              |
 | Replace missing numbers                         |                 `df.fillna(0,inplace=True)`                  |
+
+If we want to see specific rows or columns in the dateframe, we have two options.
+
+
 
 
 
@@ -112,3 +118,22 @@ Get help by using `?`.
 6. What are the max, min, median of the test columns?
 7. Is a particualr student in my class?
 8. Sort the class by ascendin total
+
+Topic: GEH1033 | Lectures n Such
+Start Time : Sep 9, 2021 11:57 AM
+
+Meeting Recording:
+
+
+Access Passcode: anthropogenic_21
+
+
+
+Topic: TFI e-Workshop 1 : Using Python to Tell Stories with Data
+Start Time : Sep 11, 2021 09:30 AM
+
+Meeting Recording:
+https://nus-sg.zoom.us/rec/share/Lr_RbQlLJUBkSoAD1UWrQVOVWLOBwdeeyrKBWG_O6EPGb6tlyWVc13KcjE5_Qx5M.4qvbiOivsy_WdaN-
+
+Access Passcode: 1-mirror-on-the-head
+

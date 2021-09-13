@@ -169,6 +169,13 @@ df=pd.read_excel('files/dummy_class.xls')
 df.drop(columns = ['Unnamed: 0'],inplace=True)
 ```
 
+#### Results {-}
+
+```{python,echo=F,results='asis'}
+mask = (df['Gender'] == 'F') & (df['Major'] == 'Chemistry')
+df[mask].to_html()
+```
+
 #### Tasks {-}
 
 1. Show rows 5 to 10 for columns 3 to 5
@@ -199,5 +206,5 @@ df.loc[mask,['Name']]
 What are the names of the female students studying chemistry?
 
 ```{python}
-mask = (df['Gender'] == 'F') & (df['Major'] == 'Chemistry')
+mask = (df['Gender'] == 'F') & (df['Major'] == 'CHM')
 ```
