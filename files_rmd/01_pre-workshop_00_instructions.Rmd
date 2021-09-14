@@ -13,19 +13,7 @@ r. So,  please **work on the activities given in section [Some Python Basics] be
 if you have any questions or encounter any difficulties please reach out to us through Piazza (see below). Please use Piazza for **all** your questions.
 
 **2. Activate Piazza:**
-<br>Please activate your Piazza account using the email from Piazza or this link. Once you have activate the account please copy and paste the following code as a question so that you are familiar with how to share code.
-```{python,eval=F}
-# This is a comment
-name = 'Batman'
-
-# This is another comment
-if name == 'Batman':
-   print('Hello Batman!')
-else:
-   print('Hello World!')
-```
-
-## Start Communicatiing with Us! {.unnumbered}
+<br>`r my_logo_piazza`We are going to use the platform Piazza before and during the workshop. This way, you can start to communicate with the instructors and other participants even before the workshop. **Please activate your Piazza account using the email we sent through Piazza or <a href="piazza.com/nus.edu.sg/fall2021/tfi_eworkshop_1thailand" target="_blank">this link</a>**. Once you have activate the account please copy and paste the following code as a question so that you are familiar with how to share code.
 
 ```{python,eval=F}
 # This is a comment
