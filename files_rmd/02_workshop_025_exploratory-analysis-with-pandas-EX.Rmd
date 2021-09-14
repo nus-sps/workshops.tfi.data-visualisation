@@ -1,0 +1,41 @@
+# Using Pandas to Explore Data EX
+In this chapter you will use the package `pandas` to do some exploratory plots on a dataset containing `Gender`, `Preparation.course.completion` and, various test scores. The dataset is an edited version from [Kaggle](https://www.kaggle.com/spscientist/students-performance-in-exams) where we trimmed to 200 total rows and reduced some columns.
+
+Imagine you are a teacher and want to investigate the effectiveness of a test preparation course you have developed (`test.preparation.course`). You have randomly selected 200 students to either take this course or to not take the course. Their `scores` have also been recorded.
+
+The overall task is for you to see if taking the test preparation course would help in the various tests.
+
+You are also tasked to find out any correlations between `math.score`, `reading.score` and `writing.score`.
+
+## Housekeeping
+
+`r my_fun.exercise('What are we dealing with')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('pandas-explore-EX1.py'))
+```
+## Boxplots 
+
+`r my_fun.exercise('Boxplots for the two groups')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('pandas-explore-EX2.py'))
+```
+
+## Scatterplot
+Now that you know that the test preparation course does not really help students increase their scores.
+
+Maybe it is possible to help someone on another test depending on how they are doing with the other tests.
+
+`r my_fun.example('Scatterplot')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('pandas-explore-EX3.py'))
+```
+
+With these information in mind, you are able to perhaps change the test preparation course materials to better help your students!
+
+You are also able to identify at-risk students straight away from just one test, and could possibly help them score better for their other 2 tests!

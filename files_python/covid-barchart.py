@@ -19,7 +19,7 @@ import pandas as pd  # Hide
 data_url = 'https://raw.githubusercontent.com/datasets/covid-19/main/data/countries-aggregated.csv'  # Hide
 df_all = pd.read_csv(data_url)  # Hide
 
-ASEAN_countries = ['Brunei', 'Burma', 'Cambodia',    'Indonesia',
+ASEAN_countries = ['Brunei', 'Burma', 'Cambodia',    'Indonesia', # Hide
                    'Laos', 'Malaysia',    'Philippines', 'Singapore', 'Vietnam']  # Hide
 
 filtered_ASEAN_rows = df_all['Country'].isin(ASEAN_countries)  # Hide
