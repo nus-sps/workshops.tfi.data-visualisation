@@ -1,8 +1,11 @@
 fig:fig-jupyter-example
 fig:fig-sublime-example
 fig:fig-colab-example
+<<<<<<< HEAD
 fig:unnamed-chunk-21
 fig:unnamed-chunk-23
+=======
+>>>>>>> main
 welcome-to
 hello
 what-topics-will-we-discuss
@@ -17,6 +20,7 @@ instructions
 some-python-basics
 before-the-workshop
 exercises-video-file
+<<<<<<< HEAD
 instructions-1
 general-flow
 if-you-have-any-difficulties
@@ -36,3 +40,5 @@ housekeeping
 exploration-of-covid19-dataset-bar-chart
 exploration-of-covid19-dataset-time-series
 exploration-of-covid19-dataset-time-series-daily-cases
+=======
+>>>>>>> main

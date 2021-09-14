@@ -54,7 +54,12 @@
 <li><a class="" href="basic-plotting-with-matplotlib.html"><span class="header-section-number">6</span> Basic Plotting with matplotlib</a></li>
 <li><a class="active" href="the-power-of-dataframes.html"><span class="header-section-number">7</span> The Power of Dataframes</a></li>
 <li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">8</span> Using Pandas to Explore Data</a></li>
+<<<<<<< HEAD
 <li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">9</span> Using Pandas to Explore COVID-19 Data</a></li>
+=======
+<li><a class="" href="using-pandas-to-explore-data-ex.html"><span class="header-section-number">9</span> Using Pandas to Explore Data EX</a></li>
+<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">10</span> Using Pandas to Explore COVID-19 Data</a></li>
+>>>>>>> main
 </ul>
 
         <div class="book-extra">
@@ -86,11 +91,16 @@ So,</p>
 <li><p>Upload the file to Colab.</p></li>
 <li>
 <p>Use the following code to read the file into Pandas.</p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="the-power-of-dataframes.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb17-2"><a href="the-power-of-dataframes.html#cb17-2" aria-hidden="true" tabindex="-1"></a>pd.read_excel(<span class="st">'dummy_class.xls'</span>)</span></code></pre></div>
+=======
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="the-power-of-dataframes.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-2"><a href="the-power-of-dataframes.html#cb16-2" aria-hidden="true" tabindex="-1"></a>pd.read_excel(<span class="st">'dummy_class.xls'</span>)</span></code></pre></div>
+>>>>>>> main
 </li>
 </ol>
-<p>Now we are ready to start exploring the Pandas by exploring the dataset. It is best practice to first understand what kind of dataset you are dealing with. So, lets do some data ‘house keeping!’</p>
+<p>Now we are ready to start exploring the Pandas by exploring the dataset. It is best practice to first understand what kind of dataset you are dealing with. So, lets do some data ‘house keeping’!</p>
 </div>
 </div>
 <div id="exercise-2-uploding-files-to-colab" class="section level3 unnumbered panelset">
@@ -394,8 +404,13 @@ F
 <h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks-1"><i class="fas fa-link"></i></a>
 </h4>
 <p><br></p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="the-power-of-dataframes.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb18-2"><a href="the-power-of-dataframes.html#cb18-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'dummy_class.xls'</span>)</span></code></pre></div>
+=======
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="the-power-of-dataframes.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb17-2"><a href="the-power-of-dataframes.html#cb17-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'dummy_class.xls'</span>)</span></code></pre></div>
+>>>>>>> main
 <p>Starting with the code above, answer the questions in the following table using the Pandas command indicated.</p>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1296,8 +1311,13 @@ But, we first lets see how to locate missing data.</p>
 <div id="code-8" class="section level4 unnumbered">
 <h4>Code<a class="anchor" aria-label="anchor" href="#code-8"><i class="fas fa-link"></i></a>
 </h4>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="the-power-of-dataframes.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Missing everywhere</span></span>
 <span id="cb19-2"><a href="the-power-of-dataframes.html#cb19-2" aria-hidden="true" tabindex="-1"></a>df.isna()           </span></code></pre></div>
+=======
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="the-power-of-dataframes.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Missing everywhere</span></span>
+<span id="cb18-2"><a href="the-power-of-dataframes.html#cb18-2" aria-hidden="true" tabindex="-1"></a>df.isna()           </span></code></pre></div>
+>>>>>>> main
 ’
 <div class="inline-table"><table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
@@ -1484,7 +1504,11 @@ False
 </table></div>
 <p>’</p>
 <p>Shows columns that have missing values</p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="the-power-of-dataframes.html#cb20-1" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">0</span>)  </span></code></pre></div>
+=======
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="the-power-of-dataframes.html#cb19-1" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">0</span>)  </span></code></pre></div>
+>>>>>>> main
 <pre><code>#&gt; Name            False
 #&gt; Major           False
 #&gt; Gender          False
@@ -1493,7 +1517,11 @@ False
 #&gt; Test 3 (50%)     True
 #&gt; dtype: bool</code></pre>
 <p>Shows rows that have missing values</p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="the-power-of-dataframes.html#cb22-1" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>).head(<span class="dv">20</span>)</span></code></pre></div>
+=======
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="the-power-of-dataframes.html#cb21-1" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>).head(<span class="dv">20</span>)</span></code></pre></div>
+>>>>>>> main
 <pre><code>#&gt; 0     False
 #&gt; 1     False
 #&gt; 2     False
@@ -1516,8 +1544,13 @@ False
 #&gt; 19    False
 #&gt; dtype: bool</code></pre>
 <p>Show the rows that have missing values</p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="the-power-of-dataframes.html#cb24-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb24-2"><a href="the-power-of-dataframes.html#cb24-2" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+=======
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="the-power-of-dataframes.html#cb23-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-2"><a href="the-power-of-dataframes.html#cb23-2" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+>>>>>>> main
 ’
 <div class="inline-table"><table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
@@ -1704,7 +1737,11 @@ NaN
 </table></div>
 <p>’</p>
 <p>Replace values with 0</p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="the-power-of-dataframes.html#cb25-1" aria-hidden="true" tabindex="-1"></a>df.fillna(<span class="dv">0</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+=======
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="the-power-of-dataframes.html#cb24-1" aria-hidden="true" tabindex="-1"></a>df.fillna(<span class="dv">0</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+>>>>>>> main
 ’
 <div class="inline-table"><table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
@@ -2906,6 +2943,7 @@ F
 <div id="solution-2" class="section level4 unnumbered">
 <h4>Solution<a class="anchor" aria-label="anchor" href="#solution-2"><i class="fas fa-link"></i></a>
 </h4>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="the-power-of-dataframes.html#cb26-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">'Maryjane Sandoval'</span> , <span class="st">'Ronin Christian'</span>]</span>
 <span id="cb26-2"><a href="the-power-of-dataframes.html#cb26-2" aria-hidden="true" tabindex="-1"></a>mask<span class="op">=</span>df.isin(students).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb26-3"><a href="the-power-of-dataframes.html#cb26-3" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
@@ -2915,6 +2953,17 @@ F
 <span id="cb27-4"><a href="the-power-of-dataframes.html#cb27-4" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">'Maryjane Sandoval'</span> , <span class="st">'Ronin Christian'</span>]</span>
 <span id="cb27-5"><a href="the-power-of-dataframes.html#cb27-5" aria-hidden="true" tabindex="-1"></a>mask<span class="op">=</span>df.isin(students).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb27-6"><a href="the-power-of-dataframes.html#cb27-6" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+=======
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="the-power-of-dataframes.html#cb25-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">'Maryjane Sandoval'</span> , <span class="st">'Ronin Christian'</span>]</span>
+<span id="cb25-2"><a href="the-power-of-dataframes.html#cb25-2" aria-hidden="true" tabindex="-1"></a>mask<span class="op">=</span>df.isin(students).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb25-3"><a href="the-power-of-dataframes.html#cb25-3" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="the-power-of-dataframes.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb26-2"><a href="the-power-of-dataframes.html#cb26-2" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_excel(<span class="st">'files/dummy_class.xls'</span>)</span>
+<span id="cb26-3"><a href="the-power-of-dataframes.html#cb26-3" aria-hidden="true" tabindex="-1"></a>df.drop(columns <span class="op">=</span> [<span class="st">'Unnamed: 0'</span>],inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb26-4"><a href="the-power-of-dataframes.html#cb26-4" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">'Maryjane Sandoval'</span> , <span class="st">'Ronin Christian'</span>]</span>
+<span id="cb26-5"><a href="the-power-of-dataframes.html#cb26-5" aria-hidden="true" tabindex="-1"></a>mask<span class="op">=</span>df.isin(students).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb26-6"><a href="the-power-of-dataframes.html#cb26-6" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+>>>>>>> main
 <pre><code>#&gt;                 Name Major Gender  Test 1 (30%)  Test 2 (20%)  Test 3 (50%)
 #&gt; 2    Ronin Christian   PHY      M        18.366         15.56         43.75
 #&gt; 7  Maryjane Sandoval    LS      F        18.981         16.40         43.75</code></pre>
@@ -2991,7 +3040,11 @@ Test 3 (50%)
 </tbody>
 </table></div>
 <p>Show rows 5 to 10 for columns 3 to 5</p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="the-power-of-dataframes.html#cb29-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">5</span>:<span class="dv">11</span>,<span class="dv">3</span>:<span class="dv">6</span>]</span></code></pre></div>
+=======
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="the-power-of-dataframes.html#cb28-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">5</span>:<span class="dv">11</span>,<span class="dv">3</span>:<span class="dv">6</span>]</span></code></pre></div>
+>>>>>>> main
 <pre><code>#&gt;     Test 1 (30%)  Test 2 (20%)  Test 3 (50%)
 #&gt; 5         12.246        14.088         32.50
 #&gt; 6         16.530        16.720         31.25
@@ -3000,8 +3053,13 @@ Test 3 (50%)
 #&gt; 9         17.754         9.040         41.25
 #&gt; 10        19.593        16.880         32.50</code></pre>
 <p>What are the names of the female students?</p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="the-power-of-dataframes.html#cb31-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> df[<span class="st">'Gender'</span>] <span class="op">==</span> <span class="st">'F'</span></span>
 <span id="cb31-2"><a href="the-power-of-dataframes.html#cb31-2" aria-hidden="true" tabindex="-1"></a>df.loc[mask,[<span class="st">'Name'</span>]]</span></code></pre></div>
+=======
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="the-power-of-dataframes.html#cb30-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> df[<span class="st">'Gender'</span>] <span class="op">==</span> <span class="st">'F'</span></span>
+<span id="cb30-2"><a href="the-power-of-dataframes.html#cb30-2" aria-hidden="true" tabindex="-1"></a>df.loc[mask,[<span class="st">'Name'</span>]]</span></code></pre></div>
+>>>>>>> main
 <pre><code>#&gt;                  Name
 #&gt; 1        Gustavo Vang
 #&gt; 3       Owen Anderson
@@ -3021,7 +3079,11 @@ Test 3 (50%)
 #&gt; 24           Ean Haas
 #&gt; 32        Katie Ayers</code></pre>
 <p>What are the names of the female students studying chemistry?</p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="the-power-of-dataframes.html#cb33-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (df[<span class="st">'Gender'</span>] <span class="op">==</span> <span class="st">'F'</span>) <span class="op">&amp;</span> (df[<span class="st">'Major'</span>] <span class="op">==</span> <span class="st">'CHM'</span>)</span></code></pre></div>
+=======
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="the-power-of-dataframes.html#cb32-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (df[<span class="st">'Gender'</span>] <span class="op">==</span> <span class="st">'F'</span>) <span class="op">&amp;</span> (df[<span class="st">'Major'</span>] <span class="op">==</span> <span class="st">'Chemistry'</span>)</span></code></pre></div>
+>>>>>>> main
 
 </div>
 </div>

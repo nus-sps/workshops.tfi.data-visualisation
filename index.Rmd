@@ -44,7 +44,11 @@ library(reticulate)
 library(readr)
 library(kableExtra)
 
-if (Sys.info()['user'] == 'chammika') {
+if (Sys.info()['nodename'] == 'giskard.local'){
+  use_python('/usr/local/bin/python')
+  py_install("pygments")
+  py_install("xlrd")
+}else if (Sys.info()['user'] == 'chammika') {
   use_python('/home/chammika/miniconda3/bin/python')
 } else if (Sys.info()['user'] == 'Darren Teo') {
   use_python('D:\\minconda')
