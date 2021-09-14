@@ -4,21 +4,30 @@
 my_logo_piazza <- '<img src="http://piazza.com/images/splash/PageTop/Piazza-Icon.png" class="float-right" width="110px"/>'
 ```
 
-
 # Instructions
 
-We like for you to have learnt some basics about Python and Colab **before** the workshop. This way, we can use the workshop time to focus on more advanced ideas and pay more attention to solving difficulties you might encounter. So,  please **work on the activities given in section [Some Python Basics] before you come to the workshop**. It will take no more than 30 minutes.
+**1. Go through the pre-workshop activities**
+<br>We like for you to have learnt some basics about Python and Colab **before** the workshop. This way, we can use the workshop time to focus on more advanced ideas and pay more attention to solving difficulties you might encounte
+r. So,  please **work on the activities given in section [Some Python Basics] before you come to the workshop**. It will take no more than 30 minutes.
 
-if you have any questions or encounter any difficulties please reach out to us through Piazza (see below).
+if you have any questions or encounter any difficulties please reach out to us through Piazza (see below). Please use Piazza for **all** your questions.
 
-## Start Communicatiing with Us! {.unnumbered}
+**2. Activate Piazza:**
+<br>`r my_logo_piazza`We are going to use the platform Piazza before and during the workshop. This way, you can start to communicate with the instructors and other participants even before the workshop. **Please activate your Piazza account using the email we sent through Piazza or <a href="piazza.com/nus.edu.sg/fall2021/tfi_eworkshop_1thailand" target="_blank">this link</a>**. Once you have activate the account please copy and paste the following code as a question so that you are familiar with how to share code.
 
-`r my_logo_piazza`We are going to use the platform Piazza before and during the workshop. This way, you can start to communicate with the instructors and other participants even before the workshop. So, please use the email from Piazza to register and start talking to us!
+```{python,eval=F}
+# This is a comment
+name = 'Batman'
 
-Please use Piazza for **all** your questions.
+# This is another comment
+if name == 'Batman':
+   print('Hello Batman!')
+else:
+   print('Hello World!')
+```
 
-::: {.rmdtip}
-If necessary Piazza allows you to share Python code.
+<!-- ::: {.rmdtip} -->
+Piazza allows you to share Python code as follows.
 
 ```{r,out.width='75%',fig.align='center',echo=F}
 knitr::include_graphics("https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48040066646/original/YNJ0m8Wsz1UVTf7arF8gqzjKERE22B71-A.png?1589490612")
@@ -27,4 +36,4 @@ knitr::include_graphics("https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdes
 ```{r,out.width='75%',fig.align='center',echo=F}
 knitr::include_graphics("https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48040066775/original/lqkaZfbo_fEhdKNj-h3HeD11ddf_JwHQrw.png?1589490718")
 ```
-:::
+<!-- ::: -->

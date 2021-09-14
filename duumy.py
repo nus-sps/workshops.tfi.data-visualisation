@@ -45,11 +45,3 @@ df[mask]
 mask
 
 df.columns
-
-df.iloc[5:11,3:6]
-
-
-mask = df['Gender'] == 'F'
-df.loc[mask,['Name']]
-
-mask = (df['Gender'] == 'F') & (df['Major'] == 'Chemistry')

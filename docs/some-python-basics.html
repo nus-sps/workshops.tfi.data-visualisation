@@ -52,6 +52,9 @@
 <li class="book-part">Workshop</li>
 <li><a class="" href="instructions-1.html"><span class="header-section-number">5</span> Instructions</a></li>
 <li><a class="" href="basic-plotting-with-matplotlib.html"><span class="header-section-number">6</span> Basic Plotting with matplotlib</a></li>
+<li><a class="" href="the-power-of-dataframes.html"><span class="header-section-number">7</span> The Power of Dataframes</a></li>
+<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">8</span> Using Pandas to Explore Data</a></li>
+<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">9</span> Using Pandas to Explore COVID-19 Data</a></li>
 </ul>
 
         <div class="book-extra">
@@ -162,12 +165,12 @@ Run them in Colab to check if your predictions were correct?</p>
 </li>
 <li>
 <p>Hello Batman &amp; Robin</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="some-python-basics.html#cb13-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'Batman'</span></span>
-<span id="cb13-2"><a href="some-python-basics.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="some-python-basics.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">==</span> <span class="st">'Batman'</span>:</span>
-<span id="cb13-4"><a href="some-python-basics.html#cb13-4" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'Hello Batman!'</span>)</span>
-<span id="cb13-5"><a href="some-python-basics.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb13-6"><a href="some-python-basics.html#cb13-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'Hello World!'</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="some-python-basics.html#cb14-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'Batman'</span></span>
+<span id="cb14-2"><a href="some-python-basics.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="some-python-basics.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">==</span> <span class="st">'Batman'</span>:</span>
+<span id="cb14-4"><a href="some-python-basics.html#cb14-4" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'Hello Batman!'</span>)</span>
+<span id="cb14-5"><a href="some-python-basics.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb14-6"><a href="some-python-basics.html#cb14-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'Hello World!'</span>)</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Modify the above code to print ‘<code>Hello Hello Hello Hello Batman</code>’ when the <code>name</code> is ‘<code>Batman</code>.’</li>
 <li>Modify the code to respond to <code>Robin</code> instead of <code>Batman</code>.</li>
@@ -175,16 +178,16 @@ Run them in Colab to check if your predictions were correct?</p>
 </li>
 <li>
 <p>The following code has a few bugs; fix them!</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="some-python-basics.html#cb14-1" aria-hidden="true" tabindex="-1"></a>x,y <span class="op">=</span> <span class="dv">3</span>,<span class="dv">4</span></span>
-<span id="cb14-2"><a href="some-python-basics.html#cb14-2" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> sqrt(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb14-3"><a href="some-python-basics.html#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x,y,z)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="some-python-basics.html#cb15-1" aria-hidden="true" tabindex="-1"></a>x,y <span class="op">=</span> <span class="dv">3</span>,<span class="dv">4</span></span>
+<span id="cb15-2"><a href="some-python-basics.html#cb15-2" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> sqrt(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb15-3"><a href="some-python-basics.html#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x,y,z)</span></code></pre></div>
 </li>
 <li>
 <p>Use the following lists and numpy arrays to answer the following questions</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="some-python-basics.html#cb15-1" aria-hidden="true" tabindex="-1"></a>my_np_list <span class="op">=</span> np.array([<span class="dv">0182</span>, <span class="dv">0269</span>, <span class="dv">0341</span>, <span class="dv">0410</span>, <span class="dv">0523</span>,</span>
-<span id="cb15-2"><a href="some-python-basics.html#cb15-2" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">0697</span>, <span class="dv">0728</span>, <span class="dv">0856</span>, <span class="dv">0948</span>, <span class="dv">101</span>,</span>
-<span id="cb15-3"><a href="some-python-basics.html#cb15-3" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">1120</span>, <span class="dv">1272</span>, <span class="dv">1312</span>, <span class="dv">1460</span>, <span class="dv">1564</span>,</span>
-<span id="cb15-4"><a href="some-python-basics.html#cb15-4" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">1642</span>, <span class="dv">1717</span>, <span class="dv">1816</span>, <span class="dv">1923</span>, <span class="dv">2087</span>])               </span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="some-python-basics.html#cb16-1" aria-hidden="true" tabindex="-1"></a>my_np_list <span class="op">=</span> np.array([<span class="dv">0182</span>, <span class="dv">0269</span>, <span class="dv">0341</span>, <span class="dv">0410</span>, <span class="dv">0523</span>,</span>
+<span id="cb16-2"><a href="some-python-basics.html#cb16-2" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">0697</span>, <span class="dv">0728</span>, <span class="dv">0856</span>, <span class="dv">0948</span>, <span class="dv">101</span>,</span>
+<span id="cb16-3"><a href="some-python-basics.html#cb16-3" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">1120</span>, <span class="dv">1272</span>, <span class="dv">1312</span>, <span class="dv">1460</span>, <span class="dv">1564</span>,</span>
+<span id="cb16-4"><a href="some-python-basics.html#cb16-4" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">1642</span>, <span class="dv">1717</span>, <span class="dv">1816</span>, <span class="dv">1923</span>, <span class="dv">2087</span>])               </span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>What is the number in the 4th position in the array?</li>
 <li>What is the last number in the array?</li>
@@ -243,7 +246,7 @@ Run them in Colab to check if your predictions were correct?</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-11.</p>
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-14.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -156,5 +156,5 @@ def create_result_output(filename):
 # print(render_python('covid-subset-asean.py'))
 # print(HtmlFormatter().get_style_defs('.highlight'))
 
-file = 'dummy-class_housekeeping.py'
-render_python(file)
+# file = 'dummy-class_housekeeping.py'
+# render_python(file)
