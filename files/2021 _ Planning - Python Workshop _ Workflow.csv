@@ -1,17 +1,19 @@
 Dates,Part,Time,Things to do,Duration
-September 11 Onwards,Before Workshop,,"-- Create (free) Google Account to access Colab<br>
--- Watch 10 min video to learn the basics of Python<br>
+September 11 Onwards,Before Workshop,,"-- Create (free) Google Account to access Colab
+
+-- Watch 10 min video to learn the basics of Python
+
 -- Practice exercises for Python basics",
 September 18,Workshop,10:00 AM,"Introduction to SPS and the Workshop
 (Prof. Liou Yih Cherng)",15 mins
-September 18,Workshop,10:15 AM,"Basic plotting using matplotlib
+September 11 Onwards,Before Workshop,10:15 AM,Some Colab Basics
+(Chammika Udalagama),15 mins
+September 18,Workshop,10:30 AM,"Basic plotting using matplotlib
 (Kai Ze Te, Chammika Udalagama)",45 mins
-September 18,Workshop,11:00 AM,"Exploratory Analysis + Visualistion using Pandas
+September 18,Workshop,11:15 AM,"Exploratory Analysis + Visualistion using Pandas
 (Darren Teo, Chammika Udalagama)",45 mins
-September 18,Workshop,11:45 AM,"Analysing COVID-19 data using Pandas
+September 18,Workshop,12:00 PM,"Analysing COVID-19 data using Pandas
 (Darren Teo, Chammika Udalagama)",45 mins
-September 18,Workshop,12:30 PM,"Core visualisation concepts
-(Kai Ze Te)",15 mins
 September 18,Workshop,12:45 PM,"Discussion.
 Survey (About workshop, requests & possible collaborations)",15 mins
 September 18,Workshop,1:00 PM,Workshop ends,
