@@ -34,13 +34,15 @@ my_fun.exercise <- function(text, reset, same = F){
     counter_exercises <<- counter_exercises + 1
     counter_exercises_all <<- counter_exercises_all + 1
   }
+  
+  icon <- fa("try", fill = "steelblue")
+  icon <-' '
 
-  return(paste('### <span class = "my-exercises">Exercise ',counter_exercises,'| </span>',text,'{.unnumbered .panelset}\n'))
+  return(paste('###',icon,'<span class = "my-exercises">  Exercise ',counter_exercises,'| </span>',text,'{.unnumbered .panelset}\n'))
 }
 
 
 # Additional Tabbing
 my_fun.tab <- function(text){
-
   return(paste('### <span class = "tabbing-section"></span>',text,'{.unnumbered .panelset}\n'))
 }

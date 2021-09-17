@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "-----------------------------------> Knitting site."
-R -e "rmarkdown::clean_site()"
+#R -e "rmarkdown::clean_site()"
 
 #R -e "Sys.setenv(RSTUDIO_PANDOC='/Applications/RStudio.app/Contents/MacOS/pandoc');rmarkdown::render_site(output_format = 'bookdown::bs4_book', encoding = 'UTF-8')"
 
