@@ -1,10 +1,22 @@
 /* Global Styles */
 .my-exercises {
   color: darkred;
+  background: darkred;
+  color: white;
+  padding: .35em;
+  margin-right: .5em;
 }
 
 .my-examples {
   color: #096B72;
+  background: #096B72;
+  color: white;
+  padding: .35em;
+  margin-right: .5em;
+}
+
+.my-examples-div{
+  background: #096B72;
 }
 
 /* Styling for the Dataframe table */
@@ -28,10 +40,12 @@
 }
 
 .python-result-img{
-  width:75%;
+  width:85%;
   margin-left: auto;
   margin-right: auto;
 }
+
+
 
 /* index.Rmd */
 .front-title {

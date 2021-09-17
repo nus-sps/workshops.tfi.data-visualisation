@@ -20,6 +20,7 @@ my_fun.example <- function(text, reset, same = F){
   }
 
   return(paste('### <span class = "my-examples">Example ',counter_examples,'| </span>',text,'{.unnumbered .panelset}\n'))
+  # return(paste('### <div class="my-examples-div"><span class = "my-examples">Example ',counter_examples,'| </span>',text,'</div>{.unnumbered .panelset}\n'))
 }
 
 # To keep track of the examples

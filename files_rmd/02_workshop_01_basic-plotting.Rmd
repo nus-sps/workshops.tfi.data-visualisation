@@ -49,6 +49,13 @@ from my_functions import render_python
 print(render_python('matplotlib_grid.py'))
 ```
 
+`r my_fun.exercise('A Grid Exercise')`
+
+```{python,results='asis',echo=F,cache=F}
+from my_functions import render_python
+print(render_python('matplotlib_grid_exercise.py'))
+```
+
 `r my_fun.example('One plot - Two Axes')`
 
 ```{python,results='asis',echo=F,cache=F}
