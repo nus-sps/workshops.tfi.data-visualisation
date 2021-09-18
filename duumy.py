@@ -1,55 +1,24 @@
 import numpy as np
 import pandas as pd
 
-df = pd.read_excel('./files/dummy_class.xls')
-
 link = 'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls'
 
-pd.read_excel(link)
+df = pd.read_excel(link)
+my_to_replace = {
+    'PHY': 'Physics',
+    'CHM': 'Chemistry',
+    'LS': 'Life Sciences',
+    'CBIO': 'Comp. Biology',
+    'F': 'Female',
+    'M': 'Male'
+}
 
-df.head(3)
-df.tail(3)
-df.shape
-len(df)
-df.columns
-df.index
-df.describe()       # For numbered columns
-df.info()
-
-df['Major'].value_counts().plot(kind='barh')       # For all columns
-
-df['Major'].unique()
-'''
-Lets ask some questions:
-1. How many rows and colums are there?
-    - `df.shape`
-1. What are the names of the columns?
-1. Can we look at the data?
-'''
-
-
-# Locating missing dataset
-
+df.replace(to_replace=my_to_replace, inplace=True)
+my_to_drop = 'Unnamed: 0'
+df.drop(columns=my_to_drop, inplace=True)
 df.fillna(0, inplace=True)
+df['Total (100%)'] = df['Test 1 (30%)'] +	df['Test 2 (20%)'] +	df['Test 3 (50%)']
+mask = (df['Major'] == 'Physics') & (df['Total (100%)'] <= 60)
+df[mask].to_html()
 
-df.isin(['Maryjane Sandoval']).any()
-
-df['Major'].size()
-
-# %%
-df = pd.read_excel('files/dummy_class.xls')
-df.drop(columns=['Unnamed: 0'], inplace=True)
-students = ['Maryjane Sandoval', 'Ronin Christian']
-mask = df.isin(students).any(axis=1)
-df[mask]
-mask
-
-df.columns
-
-df.iloc[5:11,3:6]
-
-
-mask = df['Gender'] == 'F'
-df.loc[mask,['Name']]
-
-mask = (df['Gender'] == 'F') & (df['Major'] == 'Chemistry')
+df.groupby(by='Major').agg(['count',np.mean, np.std])

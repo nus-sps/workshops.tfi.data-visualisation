@@ -49,6 +49,12 @@
 <li class="book-part">Pre Workshop Material</li>
 <li><a class="" href="instructions.html"><span class="header-section-number">3</span> Instructions</a></li>
 <li><a class="" href="some-python-basics.html"><span class="header-section-number">4</span> Some Python Basics</a></li>
+<li class="book-part">Workshop</li>
+<li><a class="" href="instructions-1.html"><span class="header-section-number">5</span> Instructions</a></li>
+<li><a class="" href="basic-plotting-with-matplotlib.html"><span class="header-section-number">6</span> Basic Plotting with matplotlib</a></li>
+<li><a class="" href="the-power-of-dataframes.html"><span class="header-section-number">7</span> The Power of Dataframes</a></li>
+<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">8</span> Using Pandas to Explore Data</a></li>
+<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">9</span> Using Pandas to Explore COVID-19 Data</a></li>
 </ul>
 
         <div class="book-extra">
@@ -268,7 +274,7 @@ Figure 2.3: Example of a Colab notebook.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-15.</p>
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -276,6 +282,34 @@ Figure 2.3: Example of a Colab notebook.
   </div>
 
 </div></div>
-</footer>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
 </body>
 </html>

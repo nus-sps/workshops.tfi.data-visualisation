@@ -1,0 +1,4808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 The Power of Dataframes | TFI e-Workshop | Using Python To Tell Stories With Data</title>
+<meta name="author" content="SPS Science Communication Team">
+<meta name="description" content="In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s...">
+<meta name="generator" content="bookdown 0.23 with bs4_book()">
+<meta property="og:title" content="Chapter 7 The Power of Dataframes | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta property="og:type" content="book">
+<meta property="og:description" content="In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 The Power of Dataframes | TFI e-Workshop | Using Python To Tell Stories With Data">
+<meta name="twitter:description" content="In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+<link rel="stylesheet" href="my-style.css">
+<link rel="stylesheet" href="my-pygments.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">TFI e-Workshop | Using Python To Tell Stories With Data</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome to…</a></li>
+<li class="book-part">Introduction</li>
+<li><a class="" href="hello.html"><span class="header-section-number">2</span> Hello</a></li>
+<li class="book-part">Pre Workshop Material</li>
+<li><a class="" href="instructions.html"><span class="header-section-number">3</span> Instructions</a></li>
+<li><a class="" href="some-python-basics.html"><span class="header-section-number">4</span> Some Python Basics</a></li>
+<li class="book-part">Workshop</li>
+<li><a class="" href="instructions-1.html"><span class="header-section-number">5</span> Instructions</a></li>
+<li><a class="" href="basic-plotting-with-matplotlib.html"><span class="header-section-number">6</span> Basic Plotting with matplotlib</a></li>
+<li><a class="active" href="the-power-of-dataframes.html"><span class="header-section-number">7</span> The Power of Dataframes</a></li>
+<li><a class="" href="using-pandas-to-explore-data.html"><span class="header-section-number">8</span> Using Pandas to Explore Data</a></li>
+<li><a class="" href="using-pandas-to-explore-covid-19-data.html"><span class="header-section-number">9</span> Using Pandas to Explore COVID-19 Data</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="the-power-of-dataframes" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> The Power of Dataframes<a class="anchor" aria-label="anchor" href="#the-power-of-dataframes"><i class="fas fa-link"></i></a>
+</h1>
+<p>In this day and age of ‘big data,’ it almost an oxymoron to claim that ‘data analysis skills are important, relevant and useful.’ In this section, we will start using Pandas which is Python’s de-facto module for data analysis. In addition to using Pandas you will see how immensely efficient it is to have your data in a dataframe than in a spreadsheet.</p>
+<div id="just-enough" class="section level2 unnumbered">
+<h2>Just enough<a class="anchor" aria-label="anchor" href="#just-enough"><i class="fas fa-link"></i></a>
+</h2>
+<p>Pandas offer several ways (i.e. different syntaxes) to achieve a specific goal. We will not cover all of these. Instead, we will only highlight a minimally sufficient set of syntax and instructions.</p>
+<p>To learn the power of Pandas, we will use a dataset of test scores for a dummy class. You can access the data at <a href="https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls" class="uri">https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls</a>.</p>
+<div id="exercise-1-uploding-files-to-colab" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-exercises"> Exercise 1 </span> Uploding Files to Colab<a class="anchor" aria-label="anchor" href="#exercise-1-uploding-files-to-colab"><i class="fas fa-link"></i></a>
+</h3>
+<div id="task" class="section level4 unnumbered">
+<h4>Task<a class="anchor" aria-label="anchor" href="#task"><i class="fas fa-link"></i></a>
+</h4>
+<p>Although Pandas can read the file directly over the internet, it will be good for us to learn how to upload files to Colab.<br></p>
+<ol style="list-style-type: decimal">
+<li><p>Download the <code>xls</code> file from the following link by right-clicking and using ‘Save as…’<br><a href="https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls" class="uri">https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls</a>.</p></li>
+<li><p>Upload the file to Colab.</p></li>
+<li>
+<p>Use the following code to read the file into Pandas.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="the-power-of-dataframes.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb17-2"><a href="the-power-of-dataframes.html#cb17-2" aria-hidden="true" tabindex="-1"></a>pd.read_excel(<span class="st">'dummy_class.xls'</span>)</span></code></pre></div>
+</li>
+</ol>
+<p>Now we are ready to start exploring the Pandas by exploring the dataset!
+It is always best to first understand what kind of dataset you are dealing with. So, lets do some data ‘house keeping!’</p>
+</div>
+</div>
+<div id="exercise-2-some-housekeeping" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-exercises"> Exercise 2 </span> Some Housekeeping<a class="anchor" aria-label="anchor" href="#exercise-2-some-housekeeping"><i class="fas fa-link"></i></a>
+</h3>
+<div id="result-4" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-4"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+<th>
+Unnamed: 0
+</th>
+<th>
+Name
+</th>
+<th>
+Major
+</th>
+<th>
+Gender
+</th>
+<th>
+Test 1 (30%)
+</th>
+<th>
+Test 2 (20%)
+</th>
+<th>
+Test 3 (50%)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<th>
+0
+</th>
+<td>
+0
+</td>
+<td>
+Braiden Henson
+</td>
+<td>
+PHY
+</td>
+<td>
+M
+</td>
+<td>
+20.205
+</td>
+<td>
+18.960
+</td>
+<td>
+21.25
+</td>
+</tr>
+<tr>
+<th>
+1
+</th>
+<td>
+1
+</td>
+<td>
+Gustavo Vang
+</td>
+<td>
+CHM
+</td>
+<td>
+F
+</td>
+<td>
+13.470
+</td>
+<td>
+17.440
+</td>
+<td>
+18.75
+</td>
+</tr>
+<tr>
+<th>
+2
+</th>
+<td>
+2
+</td>
+<td>
+Ronin Christian
+</td>
+<td>
+PHY
+</td>
+<td>
+M
+</td>
+<td>
+18.366
+</td>
+<td>
+15.560
+</td>
+<td>
+43.75
+</td>
+</tr>
+<tr>
+<th>
+3
+</th>
+<td>
+3
+</td>
+<td>
+Owen Anderson
+</td>
+<td>
+LS
+</td>
+<td>
+F
+</td>
+<td>
+18.366
+</td>
+<td>
+16.360
+</td>
+<td>
+18.75
+</td>
+</tr>
+<tr>
+<th>
+4
+</th>
+<td>
+4
+</td>
+<td>
+Kyla Young
+</td>
+<td>
+PHY
+</td>
+<td>
+M
+</td>
+<td>
+15.306
+</td>
+<td>
+17.896
+</td>
+<td>
+17.50
+</td>
+</tr>
+<tr>
+<th>
+5
+</th>
+<td>
+5
+</td>
+<td>
+Wyatt Oliver
+</td>
+<td>
+PHY
+</td>
+<td>
+M
+</td>
+<td>
+12.246
+</td>
+<td>
+14.088
+</td>
+<td>
+32.50
+</td>
+</tr>
+<tr>
+<th>
+6
+</th>
+<td>
+6
+</td>
+<td>
+Essence Bauer
+</td>
+<td>
+LS
+</td>
+<td>
+M
+</td>
+<td>
+16.530
+</td>
+<td>
+16.720
+</td>
+<td>
+31.25
+</td>
+</tr>
+<tr>
+<th>
+7
+</th>
+<td>
+7
+</td>
+<td>
+Maryjane Sandoval
+</td>
+<td>
+LS
+</td>
+<td>
+F
+</td>
+<td>
+18.981
+</td>
+<td>
+16.400
+</td>
+<td>
+43.75
+</td>
+</tr>
+<tr>
+<th>
+8
+</th>
+<td>
+8
+</td>
+<td>
+Carl Trujillo
+</td>
+<td>
+LS
+</td>
+<td>
+F
+</td>
+<td>
+15.306
+</td>
+<td>
+13.680
+</td>
+<td>
+47.50
+</td>
+</tr>
+<tr>
+<th>
+9
+</th>
+<td>
+9
+</td>
+<td>
+Halle Fritz
+</td>
+<td>
+LS
+</td>
+<td>
+F
+</td>
+<td>
+17.754
+</td>
+<td>
+9.040
+</td>
+<td>
+41.25
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="tasks-2" class="section level4 unnumbered panelset">
+<h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks-2"><i class="fas fa-link"></i></a>
+</h4>
+<p><br></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="the-power-of-dataframes.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb18-2"><a href="the-power-of-dataframes.html#cb18-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'dummy_class.xls'</span>)</span></code></pre></div>
+<p>Starting with the code above, answer the questions in the following table using the Pandas command indicated.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="center"></th>
+<th>Question</th>
+<th align="center">Possible code</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="center">1.</td>
+<td>How many rows and columns are there?</td>
+<td align="center"><code>df.shape</code></td>
+</tr>
+<tr class="even">
+<td align="center">2.</td>
+<td>What are the names of the columns?</td>
+<td align="center"><code>df.colmns</code></td>
+</tr>
+<tr class="odd">
+<td align="center">3.</td>
+<td>Can we look at a sample of the data</td>
+<td align="center">
+<code>df.head()</code><br><code>df.tail()</code>
+</td>
+</tr>
+<tr class="even">
+<td align="center">4.</td>
+<td>What type of data is contained?</td>
+<td align="center"><code>df.info()</code></td>
+</tr>
+<tr class="odd">
+<td align="center">5.</td>
+<td>Can we have descriptive statistics of the data?</td>
+<td align="center"><code>df.describe()</code></td>
+</tr>
+<tr class="even">
+<td align="center">6.</td>
+<td>What are the unique values in a column?</td>
+<td align="center"><code>df[column_name].unique()</code></td>
+</tr>
+<tr class="odd">
+<td align="center">7.</td>
+<td>How many unique values are there?</td>
+<td align="center"><code>df[column_name].value_counts()</code></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="solution-1" class="section level4 unnumbered panelset">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-1"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># df = pd.read_excel('dummy_class.xls')</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">.html'</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">'Major'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">'Major'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</code></pre>
+</div>
+</div>
+</div>
+<div id="example-1-housekeeping-round-2-rename-stuff" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 1 </span> Housekeeping Round 2 : Rename stuff<a class="anchor" aria-label="anchor" href="#example-1-housekeeping-round-2-rename-stuff"><i class="fas fa-link"></i></a>
+</h3>
+<div id="result-5" class="section level4 unnumbered panelset">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-5"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+<th>
+Name
+</th>
+<th>
+Major
+</th>
+<th>
+Gender
+</th>
+<th>
+Test 1 (30%)
+</th>
+<th>
+Test 2 (20%)
+</th>
+<th>
+Test 3 (50%)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<th>
+0
+</th>
+<td>
+Braiden Henson
+</td>
+<td>
+Physics
+</td>
+<td>
+Male
+</td>
+<td>
+20.205
+</td>
+<td>
+18.960
+</td>
+<td>
+21.25
+</td>
+</tr>
+<tr>
+<th>
+1
+</th>
+<td>
+Gustavo Vang
+</td>
+<td>
+Chemistry
+</td>
+<td>
+Female
+</td>
+<td>
+13.470
+</td>
+<td>
+17.440
+</td>
+<td>
+18.75
+</td>
+</tr>
+<tr>
+<th>
+2
+</th>
+<td>
+Ronin Christian
+</td>
+<td>
+Physics
+</td>
+<td>
+Male
+</td>
+<td>
+18.366
+</td>
+<td>
+15.560
+</td>
+<td>
+43.75
+</td>
+</tr>
+<tr>
+<th>
+3
+</th>
+<td>
+Owen Anderson
+</td>
+<td>
+Life Sciences
+</td>
+<td>
+Female
+</td>
+<td>
+18.366
+</td>
+<td>
+16.360
+</td>
+<td>
+18.75
+</td>
+</tr>
+<tr>
+<th>
+4
+</th>
+<td>
+Kyla Young
+</td>
+<td>
+Physics
+</td>
+<td>
+Male
+</td>
+<td>
+15.306
+</td>
+<td>
+17.896
+</td>
+<td>
+17.50
+</td>
+</tr>
+<tr>
+<th>
+5
+</th>
+<td>
+Wyatt Oliver
+</td>
+<td>
+Physics
+</td>
+<td>
+Male
+</td>
+<td>
+12.246
+</td>
+<td>
+14.088
+</td>
+<td>
+32.50
+</td>
+</tr>
+<tr>
+<th>
+6
+</th>
+<td>
+Essence Bauer
+</td>
+<td>
+Life Sciences
+</td>
+<td>
+Male
+</td>
+<td>
+16.530
+</td>
+<td>
+16.720
+</td>
+<td>
+31.25
+</td>
+</tr>
+<tr>
+<th>
+7
+</th>
+<td>
+Maryjane Sandoval
+</td>
+<td>
+Life Sciences
+</td>
+<td>
+Female
+</td>
+<td>
+18.981
+</td>
+<td>
+16.400
+</td>
+<td>
+43.75
+</td>
+</tr>
+<tr>
+<th>
+8
+</th>
+<td>
+Carl Trujillo
+</td>
+<td>
+Life Sciences
+</td>
+<td>
+Female
+</td>
+<td>
+15.306
+</td>
+<td>
+13.680
+</td>
+<td>
+47.50
+</td>
+</tr>
+<tr>
+<th>
+9
+</th>
+<td>
+Halle Fritz
+</td>
+<td>
+Life Sciences
+</td>
+<td>
+Female
+</td>
+<td>
+17.754
+</td>
+<td>
+9.040
+</td>
+<td>
+41.25
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="tasks-3" class="section level4 unnumbered panelset">
+<h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks-3"><i class="fas fa-link"></i></a>
+</h4>
+<p><br></p>
+<p>Let’s tidy up our dataset by:</p>
+<ol style="list-style-type: decimal">
+<li>Dropping unnecessary columns (i.e.’Unnamed: 0’)</li>
+<li>Replacing the majors with full names:</li>
+<li>Replacing ‘M’ and ‘F’ with thier full form.</li>
+</ol>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="center">Before</th>
+<th align="left">After</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="center">PHY</td>
+<td align="left">Physics</td>
+</tr>
+<tr class="even">
+<td align="center">CHM</td>
+<td align="left">Chemistry</td>
+</tr>
+<tr class="odd">
+<td align="center">LS</td>
+<td align="left">Life Sciences</td>
+</tr>
+<tr class="even">
+<td align="center">CBIO’</td>
+<td align="left">Comp. Biology</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="solution-2" class="section level4 unnumbered panelset">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-2"><i class="fas fa-link"></i></a>
+</h4>
+<br><div class="sourceCode">
+<pre class="sourceCode python"><code class="sourceCode python"><div class="highlight"><pre><span></span><span class="n">my_to_replace</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'PHY'</span><span class="p">:</span> <span class="s1">'Physics'</span><span class="p">,</span>
+    <span class="s1">'CHM'</span><span class="p">:</span> <span class="s1">'Chemistry'</span><span class="p">,</span>
+    <span class="s1">'LS'</span><span class="p">:</span> <span class="s1">'Life Sciences'</span><span class="p">,</span>
+    <span class="s1">'CBIO'</span><span class="p">:</span> <span class="s1">'Comp. Biology'</span><span class="p">,</span>
+    <span class="s1">'F'</span><span class="p">:</span> <span class="s1">'Female'</span><span class="p">,</span>
+    <span class="s1">'M'</span><span class="p">:</span> <span class="s1">'Male'</span>
+<span class="p">}</span>
+
+<span class="c1"># What does inplace do?</span>
+<span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=</span><span class="n">my_to_replace</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Now lets drop the unnecessary columns</span>
+<span class="n">my_to_drop</span> <span class="o">=</span> <span class="s1">'Unnamed: 0'</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">my_to_drop</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</code></pre>
+</div>
+</div>
+</div>
+<div id="example-2-housekeeping-round-3-missing-numbers" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 2 </span> Housekeeping Round 3 : Missing Numbers<a class="anchor" aria-label="anchor" href="#example-2-housekeeping-round-3-missing-numbers"><i class="fas fa-link"></i></a>
+</h3>
+<div id="result-6" class="section level4 unnumbered">
+<h4>Result<a class="anchor" aria-label="anchor" href="#result-6"><i class="fas fa-link"></i></a>
+</h4>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+</tr></thead>
+<tbody>
+<tr>
+<th>
+10
+</th>
+
+<td>
+Marie Hoffman
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+19.593
+</td>
+
+<td>
+16.880
+</td>
+
+<td>
+32.50
+</td>
+
+</tr>
+<tr>
+<th>
+11
+</th>
+
+<td>
+Lilianna Kaufman
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+M
+</td>
+
+<td>
+26.328
+</td>
+
+<td>
+17.000
+</td>
+
+<td>
+50.00
+</td>
+
+</tr>
+<tr>
+<th>
+12
+</th>
+
+<td>
+Jaxon Chung
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+14.082
+</td>
+
+<td>
+16.680
+</td>
+
+<td>
+41.25
+</td>
+
+</tr>
+<tr>
+<th>
+13
+</th>
+
+<td>
+Zoey Oconnell
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+22.041
+</td>
+
+<td>
+14.128
+</td>
+
+<td>
+25.00
+</td>
+
+</tr>
+<tr>
+<th>
+14
+</th>
+
+<td>
+Quentin Kemp
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+0.000
+</td>
+
+<td>
+15.720
+</td>
+
+<td>
+35.00
+</td>
+
+</tr>
+<tr>
+<th>
+15
+</th>
+
+<td>
+Leo Mayo
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+F
+</td>
+
+<td>
+20.817
+</td>
+
+<td>
+14.680
+</td>
+
+<td>
+20.00
+</td>
+
+</tr>
+<tr>
+<th>
+16
+</th>
+
+<td>
+Camden Williams
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+22.653
+</td>
+
+<td>
+17.648
+</td>
+
+<td>
+50.00
+</td>
+
+</tr>
+<tr>
+<th>
+17
+</th>
+
+<td>
+Sidney Wiggins
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+F
+</td>
+
+<td>
+19.593
+</td>
+
+<td>
+14.680
+</td>
+
+<td>
+0.00
+</td>
+
+</tr>
+<tr>
+<th>
+18
+</th>
+
+<td>
+Solomon Fletcher
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+18.981
+</td>
+
+<td>
+15.000
+</td>
+
+<td>
+33.75
+</td>
+
+</tr>
+<tr>
+<th>
+19
+</th>
+
+<td>
+Riley Christensen
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+15.306
+</td>
+
+<td>
+16.016
+</td>
+
+<td>
+43.75
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="code-8" class="section level4 unnumbered">
+<h4>Code<a class="anchor" aria-label="anchor" href="#code-8"><i class="fas fa-link"></i></a>
+</h4>
+<p>Missing numbers are common in real datasets. Therefore, it is important to have a policy on how you deal with them. So, let’s fill the missing numbers with 0 for our class. But, first, let’s see how to locate missing data.</p>
+<p><strong>Note: </strong> Pandas uses <code>na</code> and <code>NaN</code> to represent missing numbers.</p>
+<ol style="list-style-type: decimal">
+<li>Check if there are missing numbers by using <code>info()</code>
+</li>
+<li>Use <code>isna()</code> and <code><a href="https://rdrr.io/r/base/any.html">any()</a></code> to locate:</li>
+<li>All the missing numbers in the dataframe.</li>
+<li>Any columns with missing numbers</li>
+<li>Any rows with missing numbers</li>
+</ol>
+<!-- We can do a few things about missing data. --><!-- 1. Remove the entry with the missing data --><!-- 1. Remove the column with the missing data --><!-- 1. Fill the missing data with a numbers --><!-- 1. Fill the missing data with a row or column average. --><!-- Let see how we can do these. But, we first lets see how to locate missing data. --><div id="how-many-missing-numbers-do-we-have" class="section level5 unnumbered">
+<h5>How many missing numbers do we have?<a class="anchor" aria-label="anchor" href="#how-many-missing-numbers-do-we-have"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="the-power-of-dataframes.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many missing numbers?</span></span>
+<span id="cb19-2"><a href="the-power-of-dataframes.html#cb19-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div>
+<pre><code>#&gt; &lt;class 'pandas.core.frame.DataFrame'&gt;
+#&gt; RangeIndex: 35 entries, 0 to 34
+#&gt; Data columns (total 6 columns):
+#&gt;  #   Column        Non-Null Count  Dtype  
+#&gt; ---  ------        --------------  -----  
+#&gt;  0   Name          35 non-null     object 
+#&gt;  1   Major         35 non-null     object 
+#&gt;  2   Gender        35 non-null     object 
+#&gt;  3   Test 1 (30%)  33 non-null     float64
+#&gt;  4   Test 2 (20%)  35 non-null     float64
+#&gt;  5   Test 3 (50%)  32 non-null     float64
+#&gt; dtypes: float64(3), object(3)
+#&gt; memory usage: 1.8+ KB</code></pre>
+</div>
+<div id="missing-everywhere" class="section level5 unnumbered">
+<h5>Missing everywhere<a class="anchor" aria-label="anchor" href="#missing-everywhere"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="the-power-of-dataframes.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Missing everywhere</span></span>
+<span id="cb21-2"><a href="the-power-of-dataframes.html#cb21-2" aria-hidden="true" tabindex="-1"></a>df.isna()           </span></code></pre></div>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+</tr></thead>
+<tbody>
+<tr>
+<th>
+0
+</th>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+</tr>
+<tr>
+<th>
+1
+</th>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+</tr>
+<tr>
+<th>
+2
+</th>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+</tr>
+<tr>
+<th>
+3
+</th>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+</tr>
+<tr>
+<th>
+4
+</th>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+<td>
+False
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="shows-columns-that-have-missing-values" class="section level5 unnumbered">
+<h5>Shows columns that have missing values<a class="anchor" aria-label="anchor" href="#shows-columns-that-have-missing-values"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="the-power-of-dataframes.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Columns with missing numbers</span></span>
+<span id="cb22-2"><a href="the-power-of-dataframes.html#cb22-2" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">0</span>)  </span></code></pre></div>
+<pre><code>#&gt; Name            False
+#&gt; Major           False
+#&gt; Gender          False
+#&gt; Test 1 (30%)     True
+#&gt; Test 2 (20%)    False
+#&gt; Test 3 (50%)     True
+#&gt; dtype: bool</code></pre>
+</div>
+<div id="shows-rows-that-have-missing-values" class="section level5 unnumbered">
+<h5>Shows rows that have missing values<a class="anchor" aria-label="anchor" href="#shows-rows-that-have-missing-values"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="the-power-of-dataframes.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rows with missing numbers</span></span>
+<span id="cb24-2"><a href="the-power-of-dataframes.html#cb24-2" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>).head(<span class="dv">20</span>)</span></code></pre></div>
+<pre><code>#&gt; 0     False
+#&gt; 1     False
+#&gt; 2     False
+#&gt; 3     False
+#&gt; 4     False
+#&gt; 5     False
+#&gt; 6     False
+#&gt; 7     False
+#&gt; 8     False
+#&gt; 9     False
+#&gt; 10    False
+#&gt; 11    False
+#&gt; 12    False
+#&gt; 13    False
+#&gt; 14     True
+#&gt; 15    False
+#&gt; 16    False
+#&gt; 17     True
+#&gt; 18    False
+#&gt; 19    False
+#&gt; dtype: bool</code></pre>
+</div>
+<div id="show-the-rows-that-have-missing-values" class="section level5 unnumbered">
+<h5>Show the rows that have missing values<a class="anchor" aria-label="anchor" href="#show-the-rows-that-have-missing-values"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="the-power-of-dataframes.html#cb26-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb26-2"><a href="the-power-of-dataframes.html#cb26-2" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+</tr></thead>
+<tbody>
+<tr>
+<th>
+14
+</th>
+
+<td>
+Quentin Kemp
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+15.720
+</td>
+
+<td>
+35.00
+</td>
+
+</tr>
+<tr>
+<th>
+17
+</th>
+
+<td>
+Sidney Wiggins
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+F
+</td>
+
+<td>
+19.593
+</td>
+
+<td>
+14.680
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+<tr>
+<th>
+28
+</th>
+
+<td>
+Norah Miles
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+M
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+18.440
+</td>
+
+<td>
+38.75
+</td>
+
+</tr>
+<tr>
+<th>
+32
+</th>
+
+<td>
+Katie Ayers
+</td>
+
+<td>
+CBIO
+</td>
+
+<td>
+F
+</td>
+
+<td>
+16.530
+</td>
+
+<td>
+10.280
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+<tr>
+<th>
+34
+</th>
+
+<td>
+Carter Crane
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+M
+</td>
+
+<td>
+20.817
+</td>
+
+<td>
+13.816
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="replace-values-with-0" class="section level5 unnumbered">
+<h5>Replace values with 0<a class="anchor" aria-label="anchor" href="#replace-values-with-0"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="the-power-of-dataframes.html#cb27-1" aria-hidden="true" tabindex="-1"></a>df.fillna(<span class="dv">0</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+</tr></thead>
+<tbody>
+<tr>
+<th>
+0
+</th>
+
+<td>
+Braiden Henson
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+20.205
+</td>
+
+<td>
+18.960
+</td>
+
+<td>
+21.25
+</td>
+
+</tr>
+<tr>
+<th>
+1
+</th>
+
+<td>
+Gustavo Vang
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+13.470
+</td>
+
+<td>
+17.440
+</td>
+
+<td>
+18.75
+</td>
+
+</tr>
+<tr>
+<th>
+2
+</th>
+
+<td>
+Ronin Christian
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+18.366
+</td>
+
+<td>
+15.560
+</td>
+
+<td>
+43.75
+</td>
+
+</tr>
+<tr>
+<th>
+3
+</th>
+
+<td>
+Owen Anderson
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+18.366
+</td>
+
+<td>
+16.360
+</td>
+
+<td>
+18.75
+</td>
+
+</tr>
+<tr>
+<th>
+4
+</th>
+
+<td>
+Kyla Young
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+15.306
+</td>
+
+<td>
+17.896
+</td>
+
+<td>
+17.50
+</td>
+
+</tr>
+<tr>
+<th>
+5
+</th>
+
+<td>
+Wyatt Oliver
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+12.246
+</td>
+
+<td>
+14.088
+</td>
+
+<td>
+32.50
+</td>
+
+</tr>
+<tr>
+<th>
+6
+</th>
+
+<td>
+Essence Bauer
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+M
+</td>
+
+<td>
+16.530
+</td>
+
+<td>
+16.720
+</td>
+
+<td>
+31.25
+</td>
+
+</tr>
+<tr>
+<th>
+7
+</th>
+
+<td>
+Maryjane Sandoval
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+18.981
+</td>
+
+<td>
+16.400
+</td>
+
+<td>
+43.75
+</td>
+
+</tr>
+<tr>
+<th>
+8
+</th>
+
+<td>
+Carl Trujillo
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+15.306
+</td>
+
+<td>
+13.680
+</td>
+
+<td>
+47.50
+</td>
+
+</tr>
+<tr>
+<th>
+9
+</th>
+
+<td>
+Halle Fritz
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+17.754
+</td>
+
+<td>
+9.040
+</td>
+
+<td>
+41.25
+</td>
+
+</tr>
+<tr>
+<th>
+10
+</th>
+
+<td>
+Marie Hoffman
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+19.593
+</td>
+
+<td>
+16.880
+</td>
+
+<td>
+32.50
+</td>
+
+</tr>
+<tr>
+<th>
+11
+</th>
+
+<td>
+Lilianna Kaufman
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+M
+</td>
+
+<td>
+26.328
+</td>
+
+<td>
+17.000
+</td>
+
+<td>
+50.00
+</td>
+
+</tr>
+<tr>
+<th>
+12
+</th>
+
+<td>
+Jaxon Chung
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+14.082
+</td>
+
+<td>
+16.680
+</td>
+
+<td>
+41.25
+</td>
+
+</tr>
+<tr>
+<th>
+13
+</th>
+
+<td>
+Zoey Oconnell
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+22.041
+</td>
+
+<td>
+14.128
+</td>
+
+<td>
+25.00
+</td>
+
+</tr>
+<tr>
+<th>
+14
+</th>
+
+<td>
+Quentin Kemp
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+0.000
+</td>
+
+<td>
+15.720
+</td>
+
+<td>
+35.00
+</td>
+
+</tr>
+<tr>
+<th>
+15
+</th>
+
+<td>
+Leo Mayo
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+F
+</td>
+
+<td>
+20.817
+</td>
+
+<td>
+14.680
+</td>
+
+<td>
+20.00
+</td>
+
+</tr>
+<tr>
+<th>
+16
+</th>
+
+<td>
+Camden Williams
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+22.653
+</td>
+
+<td>
+17.648
+</td>
+
+<td>
+50.00
+</td>
+
+</tr>
+<tr>
+<th>
+17
+</th>
+
+<td>
+Sidney Wiggins
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+F
+</td>
+
+<td>
+19.593
+</td>
+
+<td>
+14.680
+</td>
+
+<td>
+0.00
+</td>
+
+</tr>
+<tr>
+<th>
+18
+</th>
+
+<td>
+Solomon Fletcher
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+18.981
+</td>
+
+<td>
+15.000
+</td>
+
+<td>
+33.75
+</td>
+
+</tr>
+<tr>
+<th>
+19
+</th>
+
+<td>
+Riley Christensen
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+15.306
+</td>
+
+<td>
+16.016
+</td>
+
+<td>
+43.75
+</td>
+
+</tr>
+<tr>
+<th>
+20
+</th>
+
+<td>
+Malik Becker
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+12.858
+</td>
+
+<td>
+15.480
+</td>
+
+<td>
+46.25
+</td>
+
+</tr>
+<tr>
+<th>
+21
+</th>
+
+<td>
+Skylar Hensley
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+M
+</td>
+
+<td>
+23.877
+</td>
+
+<td>
+17.648
+</td>
+
+<td>
+32.50
+</td>
+
+</tr>
+<tr>
+<th>
+22
+</th>
+
+<td>
+Braydon Duran
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+15.918
+</td>
+
+<td>
+14.360
+</td>
+
+<td>
+41.25
+</td>
+
+</tr>
+<tr>
+<th>
+23
+</th>
+
+<td>
+Jalen Harmon
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+22.041
+</td>
+
+<td>
+16.880
+</td>
+
+<td>
+22.50
+</td>
+
+</tr>
+<tr>
+<th>
+24
+</th>
+
+<td>
+Ean Haas
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+19.593
+</td>
+
+<td>
+14.360
+</td>
+
+<td>
+30.00
+</td>
+
+</tr>
+<tr>
+<th>
+25
+</th>
+
+<td>
+Carolina Mcmahon
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+12.858
+</td>
+
+<td>
+18.080
+</td>
+
+<td>
+47.50
+</td>
+
+</tr>
+<tr>
+<th>
+26
+</th>
+
+<td>
+Elian Potter
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+23.265
+</td>
+
+<td>
+14.360
+</td>
+
+<td>
+31.25
+</td>
+
+</tr>
+<tr>
+<th>
+27
+</th>
+
+<td>
+Litzy White
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+20.817
+</td>
+
+<td>
+15.920
+</td>
+
+<td>
+16.25
+</td>
+
+</tr>
+<tr>
+<th>
+28
+</th>
+
+<td>
+Norah Miles
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+M
+</td>
+
+<td>
+0.000
+</td>
+
+<td>
+18.440
+</td>
+
+<td>
+38.75
+</td>
+
+</tr>
+<tr>
+<th>
+29
+</th>
+
+<td>
+Mariela Sheppard
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+M
+</td>
+
+<td>
+18.366
+</td>
+
+<td>
+11.000
+</td>
+
+<td>
+28.75
+</td>
+
+</tr>
+<tr>
+<th>
+30
+</th>
+
+<td>
+Isabela Stokes
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+M
+</td>
+
+<td>
+18.366
+</td>
+
+<td>
+16.800
+</td>
+
+<td>
+36.25
+</td>
+
+</tr>
+<tr>
+<th>
+31
+</th>
+
+<td>
+Kathleen Rodriguez
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+22.653
+</td>
+
+<td>
+17.760
+</td>
+
+<td>
+16.25
+</td>
+
+</tr>
+<tr>
+<th>
+32
+</th>
+
+<td>
+Katie Ayers
+</td>
+
+<td>
+CBIO
+</td>
+
+<td>
+F
+</td>
+
+<td>
+16.530
+</td>
+
+<td>
+10.280
+</td>
+
+<td>
+0.00
+</td>
+
+</tr>
+<tr>
+<th>
+33
+</th>
+
+<td>
+Tucker Sloan
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+M
+</td>
+
+<td>
+17.754
+</td>
+
+<td>
+15.040
+</td>
+
+<td>
+25.00
+</td>
+
+</tr>
+<tr>
+<th>
+34
+</th>
+
+<td>
+Carter Crane
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+M
+</td>
+
+<td>
+20.817
+</td>
+
+<td>
+13.816
+</td>
+
+<td>
+0.00
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+<!-- ---------------------- -->
+</div>
+</div>
+</div>
+<div id="example-3-adding-new-columns" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 3 </span> Adding New Columns<a class="anchor" aria-label="anchor" href="#example-3-adding-new-columns"><i class="fas fa-link"></i></a>
+</h3>
+<div id="results-6" class="section level4 unnumbered">
+<h4>Results<a class="anchor" aria-label="anchor" href="#results-6"><i class="fas fa-link"></i></a>
+</h4>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+<th>
+Total (100%)
+</th>
+
+</tr></thead>
+<tbody>
+<tr>
+<th>
+0
+</th>
+
+<td>
+Braiden Henson
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+20.205
+</td>
+
+<td>
+18.960
+</td>
+
+<td>
+21.25
+</td>
+
+<td>
+60.415
+</td>
+
+</tr>
+<tr>
+<th>
+1
+</th>
+
+<td>
+Gustavo Vang
+</td>
+
+<td>
+CHM
+</td>
+
+<td>
+F
+</td>
+
+<td>
+13.470
+</td>
+
+<td>
+17.440
+</td>
+
+<td>
+18.75
+</td>
+
+<td>
+49.660
+</td>
+
+</tr>
+<tr>
+<th>
+2
+</th>
+
+<td>
+Ronin Christian
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+18.366
+</td>
+
+<td>
+15.560
+</td>
+
+<td>
+43.75
+</td>
+
+<td>
+77.676
+</td>
+
+</tr>
+<tr>
+<th>
+3
+</th>
+
+<td>
+Owen Anderson
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+18.366
+</td>
+
+<td>
+16.360
+</td>
+
+<td>
+18.75
+</td>
+
+<td>
+53.476
+</td>
+
+</tr>
+<tr>
+<th>
+4
+</th>
+
+<td>
+Kyla Young
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+15.306
+</td>
+
+<td>
+17.896
+</td>
+
+<td>
+17.50
+</td>
+
+<td>
+50.702
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="code-9" class="section level4 unnumbered">
+<h4>Code<a class="anchor" aria-label="anchor" href="#code-9"><i class="fas fa-link"></i></a>
+</h4>
+<p>It is <strong>very</strong> easy to add columns with Pandas. Let’s add a column for the total of the test scores.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="the-power-of-dataframes.html#cb28-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Total (100%)'</span>] <span class="op">=</span> df[<span class="st">'Test 1 (30%)'</span>] <span class="op">+</span>   df[<span class="st">'Test 2 (20%)'</span>] <span class="op">+</span> df[<span class="st">'Test 3 (50%)'</span>]</span>
+<span id="cb28-2"><a href="the-power-of-dataframes.html#cb28-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
+<!-- ---------------------- -->
+</div>
+</div>
+<div id="exercise-3-is-maryjane-and-ronin-in-the-class" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-exercises"> Exercise 3 </span> Is Maryjane and Ronin in the class?<a class="anchor" aria-label="anchor" href="#exercise-3-is-maryjane-and-ronin-in-the-class"><i class="fas fa-link"></i></a>
+</h3>
+<div id="results-7" class="section level4 unnumbered">
+<h4>Results<a class="anchor" aria-label="anchor" href="#results-7"><i class="fas fa-link"></i></a>
+</h4>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+</tr></thead>
+<tbody>
+<tr>
+<th>
+2
+</th>
+
+<td>
+Ronin Christian
+</td>
+
+<td>
+PHY
+</td>
+
+<td>
+M
+</td>
+
+<td>
+18.366
+</td>
+
+<td>
+15.56
+</td>
+
+<td>
+43.75
+</td>
+
+</tr>
+<tr>
+<th>
+7
+</th>
+
+<td>
+Maryjane Sandoval
+</td>
+
+<td>
+LS
+</td>
+
+<td>
+F
+</td>
+
+<td>
+18.981
+</td>
+
+<td>
+16.40
+</td>
+
+<td>
+43.75
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="tasks-4" class="section level4 unnumbered">
+<h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks-4"><i class="fas fa-link"></i></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>Use the ‘hidden’ function <code>isin()</code> to find out if <strong>Maryjane Sandoval</strong> and <strong>Ronin Christian</strong> are in the class?</li>
+<li>Use a mask to locate the corresponding rows in the dataframe.</li>
+</ol>
+</div>
+<div id="solution-3" class="section level4 unnumbered">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-3"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="the-power-of-dataframes.html#cb29-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">'Maryjane Sandoval'</span> , <span class="st">'Ronin Christian'</span>]</span>
+<span id="cb29-2"><a href="the-power-of-dataframes.html#cb29-2" aria-hidden="true" tabindex="-1"></a>mask<span class="op">=</span>df.isin(students).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb29-3"><a href="the-power-of-dataframes.html#cb29-3" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="the-power-of-dataframes.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb30-2"><a href="the-power-of-dataframes.html#cb30-2" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_excel(<span class="st">'files/dummy_class.xls'</span>)</span>
+<span id="cb30-3"><a href="the-power-of-dataframes.html#cb30-3" aria-hidden="true" tabindex="-1"></a>df.drop(columns <span class="op">=</span> [<span class="st">'Unnamed: 0'</span>],inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb30-4"><a href="the-power-of-dataframes.html#cb30-4" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">'Maryjane Sandoval'</span> , <span class="st">'Ronin Christian'</span>]</span>
+<span id="cb30-5"><a href="the-power-of-dataframes.html#cb30-5" aria-hidden="true" tabindex="-1"></a>mask<span class="op">=</span>df.isin(students).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb30-6"><a href="the-power-of-dataframes.html#cb30-6" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+<pre><code>#&gt;                 Name Major Gender  Test 1 (30%)  Test 2 (20%)  Test 3 (50%)
+#&gt; 2    Ronin Christian   PHY      M        18.366         15.56         43.75
+#&gt; 7  Maryjane Sandoval    LS      F        18.981         16.40         43.75</code></pre>
+</div>
+</div>
+<div id="example-4-moving-around-and-asking-questions" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 4 </span> Moving Around and Asking Questions<a class="anchor" aria-label="anchor" href="#example-4-moving-around-and-asking-questions"><i class="fas fa-link"></i></a>
+</h3>
+<div id="tasks-5" class="section level4 unnumbered">
+<h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks-5"><i class="fas fa-link"></i></a>
+</h4>
+<p>One of the most powerful features of Pandas is how easy it is to find subsets of data that satisfy one or more conditions.</p>
+<ol style="list-style-type: decimal">
+<li>Show columns ‘Name’ and ‘Major.’</li>
+<li>Show rows 5 to 10 for columns 3 to 5.</li>
+<li>What are the names of the female students?</li>
+<li>What are the names of the female students <strong>and</strong> studying chemsitry?</li>
+</ol>
+</div>
+<div id="code-10" class="section level4 unnumbered">
+<h4>Code<a class="anchor" aria-label="anchor" href="#code-10"><i class="fas fa-link"></i></a>
+</h4>
+<p>Pandas offers us two ways (<code>loc</code> and <code>iloc</code>) to ‘move around’ in a dataframe.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>How</th>
+<th align="center">Command</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>By specifying a name</td>
+<td align="center"><code>loc[]</code></td>
+</tr>
+<tr class="even">
+<td>By specifying a row number (starting at 0)</td>
+<td align="center"><code>iloc[]</code></td>
+</tr>
+</tbody>
+</table></div>
+<div id="show-columns-name-and-major." class="section level5 unnumbered">
+<h5>Show columns ‘Name’ and ‘Major.’<a class="anchor" aria-label="anchor" href="#show-columns-name-and-major."><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="the-power-of-dataframes.html#cb32-1" aria-hidden="true" tabindex="-1"></a>df.loc[:,[<span class="st">'Name'</span>, <span class="st">'Major'</span>]]</span></code></pre></div>
+<pre><code>#&gt;                   Name          Major
+#&gt; 0       Braiden Henson        Physics
+#&gt; 1         Gustavo Vang      Chemistry
+#&gt; 2      Ronin Christian        Physics
+#&gt; 3        Owen Anderson  Life Sciences
+#&gt; 4           Kyla Young        Physics
+#&gt; 5         Wyatt Oliver        Physics
+#&gt; 6        Essence Bauer  Life Sciences
+#&gt; 7    Maryjane Sandoval  Life Sciences
+#&gt; 8        Carl Trujillo  Life Sciences
+#&gt; 9          Halle Fritz  Life Sciences
+#&gt; 10       Marie Hoffman  Life Sciences
+#&gt; 11    Lilianna Kaufman  Life Sciences
+#&gt; 12         Jaxon Chung        Physics
+#&gt; 13       Zoey Oconnell  Life Sciences
+#&gt; 14        Quentin Kemp      Chemistry
+#&gt; 15            Leo Mayo        Physics
+#&gt; 16     Camden Williams      Chemistry
+#&gt; 17      Sidney Wiggins        Physics
+#&gt; 18    Solomon Fletcher      Chemistry
+#&gt; 19   Riley Christensen      Chemistry
+#&gt; 20        Malik Becker        Physics
+#&gt; 21      Skylar Hensley      Chemistry
+#&gt; 22       Braydon Duran  Life Sciences
+#&gt; 23        Jalen Harmon  Life Sciences
+#&gt; 24            Ean Haas  Life Sciences
+#&gt; 25    Carolina Mcmahon        Physics
+#&gt; 26        Elian Potter        Physics
+#&gt; 27         Litzy White        Physics
+#&gt; 28         Norah Miles      Chemistry
+#&gt; 29    Mariela Sheppard  Life Sciences
+#&gt; 30      Isabela Stokes      Chemistry
+#&gt; 31  Kathleen Rodriguez        Physics
+#&gt; 32         Katie Ayers  Comp. Biology
+#&gt; 33        Tucker Sloan  Life Sciences
+#&gt; 34        Carter Crane  Life Sciences</code></pre>
+<p>This will work too.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="the-power-of-dataframes.html#cb34-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'Name'</span>, <span class="st">'Major'</span>]]</span></code></pre></div>
+</div>
+<div id="show-rows-5-to-10-for-columns-3-to-5" class="section level5 unnumbered">
+<h5>Show rows 5 to 10 for columns 3 to 5<a class="anchor" aria-label="anchor" href="#show-rows-5-to-10-for-columns-3-to-5"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="the-power-of-dataframes.html#cb35-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">5</span>:<span class="dv">11</span>,<span class="dv">3</span>:<span class="dv">6</span>]</span></code></pre></div>
+<pre><code>#&gt;     Test 1 (30%)  Test 2 (20%)  Test 3 (50%)
+#&gt; 5         12.246        14.088         32.50
+#&gt; 6         16.530        16.720         31.25
+#&gt; 7         18.981        16.400         43.75
+#&gt; 8         15.306        13.680         47.50
+#&gt; 9         17.754         9.040         41.25
+#&gt; 10        19.593        16.880         32.50</code></pre>
+</div>
+<div id="what-are-the-names-of-the-female-students" class="section level5 unnumbered">
+<h5>What are the names of the female students?<a class="anchor" aria-label="anchor" href="#what-are-the-names-of-the-female-students"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="the-power-of-dataframes.html#cb37-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> df[<span class="st">'Gender'</span>] <span class="op">==</span> <span class="st">'Female'</span>                 <span class="co"># Asking a question.</span></span>
+<span id="cb37-2"><a href="the-power-of-dataframes.html#cb37-2" aria-hidden="true" tabindex="-1"></a>df.loc[mask,[<span class="st">'Name'</span>,<span class="st">'Gender'</span>]]</span></code></pre></div>
+<pre><code>#&gt;                  Name  Gender
+#&gt; 1        Gustavo Vang  Female
+#&gt; 3       Owen Anderson  Female
+#&gt; 7   Maryjane Sandoval  Female
+#&gt; 8       Carl Trujillo  Female
+#&gt; 9         Halle Fritz  Female
+#&gt; 10      Marie Hoffman  Female
+#&gt; 13      Zoey Oconnell  Female
+#&gt; 14       Quentin Kemp  Female
+#&gt; 15           Leo Mayo  Female
+#&gt; 16    Camden Williams  Female
+#&gt; 17     Sidney Wiggins  Female
+#&gt; 18   Solomon Fletcher  Female
+#&gt; 19  Riley Christensen  Female
+#&gt; 22      Braydon Duran  Female
+#&gt; 23       Jalen Harmon  Female
+#&gt; 24           Ean Haas  Female
+#&gt; 32        Katie Ayers  Female</code></pre>
+</div>
+<div id="what-are-the-names-of-the-female-students-studying-chemistry" class="section level5 unnumbered">
+<h5>What are the names of the female students studying chemistry?<a class="anchor" aria-label="anchor" href="#what-are-the-names-of-the-female-students-studying-chemistry"><i class="fas fa-link"></i></a>
+</h5>
+<p>You can combine the use of <code><a href="https://rdrr.io/r/base/Comparison.html">==</a></code> with the <strong>and</strong> (<code><a href="https://rdrr.io/r/base/Logic.html">&amp;</a></code>) or the <strong>or</strong> (<code><a href="https://rdrr.io/r/base/Logic.html">|</a></code>) operator.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="the-power-of-dataframes.html#cb39-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (df[<span class="st">'Gender'</span>] <span class="op">==</span> <span class="st">'Female'</span>) <span class="op">&amp;</span> (df[<span class="st">'Major'</span>] <span class="op">==</span> <span class="st">'Chemistry'</span>)</span>
+<span id="cb39-2"><a href="the-power-of-dataframes.html#cb39-2" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+</tr></thead>
+<tbody>
+<tr>
+<th>
+1
+</th>
+
+<td>
+Gustavo Vang
+</td>
+
+<td>
+Chemistry
+</td>
+
+<td>
+Female
+</td>
+
+<td>
+13.470
+</td>
+
+<td>
+17.440
+</td>
+
+<td>
+18.75
+</td>
+
+</tr>
+<tr>
+<th>
+14
+</th>
+
+<td>
+Quentin Kemp
+</td>
+
+<td>
+Chemistry
+</td>
+
+<td>
+Female
+</td>
+
+<td>
+0.000
+</td>
+
+<td>
+15.720
+</td>
+
+<td>
+35.00
+</td>
+
+</tr>
+<tr>
+<th>
+16
+</th>
+
+<td>
+Camden Williams
+</td>
+
+<td>
+Chemistry
+</td>
+
+<td>
+Female
+</td>
+
+<td>
+22.653
+</td>
+
+<td>
+17.648
+</td>
+
+<td>
+50.00
+</td>
+
+</tr>
+<tr>
+<th>
+18
+</th>
+
+<td>
+Solomon Fletcher
+</td>
+
+<td>
+Chemistry
+</td>
+
+<td>
+Female
+</td>
+
+<td>
+18.981
+</td>
+
+<td>
+15.000
+</td>
+
+<td>
+33.75
+</td>
+
+</tr>
+<tr>
+<th>
+19
+</th>
+
+<td>
+Riley Christensen
+</td>
+
+<td>
+Chemistry
+</td>
+
+<td>
+Female
+</td>
+
+<td>
+15.306
+</td>
+
+<td>
+16.016
+</td>
+
+<td>
+43.75
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+<!-- ---------------------- -->
+</div>
+</div>
+</div>
+<div id="exercise-4-physics-students-with-less-that-60" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-exercises"> Exercise 4 </span> Physics students with less that 60%<a class="anchor" aria-label="anchor" href="#exercise-4-physics-students-with-less-that-60"><i class="fas fa-link"></i></a>
+</h3>
+<div id="results-8" class="section level4 unnumbered">
+<h4>Results<a class="anchor" aria-label="anchor" href="#results-8"><i class="fas fa-link"></i></a>
+</h4>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+<th>
+Total (100%)
+</th>
+
+</tr></thead>
+<tbody>
+<tr>
+<th>
+4
+</th>
+
+<td>
+Kyla Young
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Male
+</td>
+
+<td>
+15.306
+</td>
+
+<td>
+17.896
+</td>
+
+<td>
+17.50
+</td>
+
+<td>
+50.702
+</td>
+
+</tr>
+<tr>
+<th>
+5
+</th>
+
+<td>
+Wyatt Oliver
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Male
+</td>
+
+<td>
+12.246
+</td>
+
+<td>
+14.088
+</td>
+
+<td>
+32.50
+</td>
+
+<td>
+58.834
+</td>
+
+</tr>
+<tr>
+<th>
+15
+</th>
+
+<td>
+Leo Mayo
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Female
+</td>
+
+<td>
+20.817
+</td>
+
+<td>
+14.680
+</td>
+
+<td>
+20.00
+</td>
+
+<td>
+55.497
+</td>
+
+</tr>
+<tr>
+<th>
+17
+</th>
+
+<td>
+Sidney Wiggins
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Female
+</td>
+
+<td>
+19.593
+</td>
+
+<td>
+14.680
+</td>
+
+<td>
+0.00
+</td>
+
+<td>
+34.273
+</td>
+
+</tr>
+<tr>
+<th>
+27
+</th>
+
+<td>
+Litzy White
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Male
+</td>
+
+<td>
+20.817
+</td>
+
+<td>
+15.920
+</td>
+
+<td>
+16.25
+</td>
+
+<td>
+52.987
+</td>
+
+</tr>
+<tr>
+<th>
+31
+</th>
+
+<td>
+Kathleen Rodriguez
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Male
+</td>
+
+<td>
+22.653
+</td>
+
+<td>
+17.760
+</td>
+
+<td>
+16.25
+</td>
+
+<td>
+56.663
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="tasks-6" class="section level4 unnumbered">
+<h4>Tasks<a class="anchor" aria-label="anchor" href="#tasks-6"><i class="fas fa-link"></i></a>
+</h4>
+<p>Who are the Physics studnets with less than a total of 60%?</p>
+</div>
+<div id="solution-4" class="section level4 unnumbered">
+<h4>Solution<a class="anchor" aria-label="anchor" href="#solution-4"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="the-power-of-dataframes.html#cb40-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (df[<span class="st">'Major'</span>] <span class="op">==</span> <span class="st">'Physics'</span>) <span class="op">&amp;</span> (df[<span class="st">'Total (100%)'</span>] <span class="op">&lt;=</span> <span class="dv">60</span>)</span>
+<span id="cb40-2"><a href="the-power-of-dataframes.html#cb40-2" aria-hidden="true" tabindex="-1"></a>df[mask]</span></code></pre></div>
+</div>
+</div>
+<div id="example-5-grouping" class="section level3 unnumbered panelset">
+<h3>
+<span class="my-examples">Example 5 </span> Grouping<a class="anchor" aria-label="anchor" href="#example-5-grouping"><i class="fas fa-link"></i></a>
+</h3>
+<div id="results-9" class="section level4 unnumbered">
+<h4>Results<a class="anchor" aria-label="anchor" href="#results-9"><i class="fas fa-link"></i></a>
+</h4>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+<th>
+Total (100%)
+</th>
+
+</tr></thead>
+<tbody>
+<tr>
+<th>
+4
+</th>
+
+<td>
+Kyla Young
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Male
+</td>
+
+<td>
+15.306
+</td>
+
+<td>
+17.896
+</td>
+
+<td>
+17.50
+</td>
+
+<td>
+50.702
+</td>
+
+</tr>
+<tr>
+<th>
+5
+</th>
+
+<td>
+Wyatt Oliver
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Male
+</td>
+
+<td>
+12.246
+</td>
+
+<td>
+14.088
+</td>
+
+<td>
+32.50
+</td>
+
+<td>
+58.834
+</td>
+
+</tr>
+<tr>
+<th>
+15
+</th>
+
+<td>
+Leo Mayo
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Female
+</td>
+
+<td>
+20.817
+</td>
+
+<td>
+14.680
+</td>
+
+<td>
+20.00
+</td>
+
+<td>
+55.497
+</td>
+
+</tr>
+<tr>
+<th>
+17
+</th>
+
+<td>
+Sidney Wiggins
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Female
+</td>
+
+<td>
+19.593
+</td>
+
+<td>
+14.680
+</td>
+
+<td>
+0.00
+</td>
+
+<td>
+34.273
+</td>
+
+</tr>
+<tr>
+<th>
+27
+</th>
+
+<td>
+Litzy White
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Male
+</td>
+
+<td>
+20.817
+</td>
+
+<td>
+15.920
+</td>
+
+<td>
+16.25
+</td>
+
+<td>
+52.987
+</td>
+
+</tr>
+<tr>
+<th>
+31
+</th>
+
+<td>
+Kathleen Rodriguez
+</td>
+
+<td>
+Physics
+</td>
+
+<td>
+Male
+</td>
+
+<td>
+22.653
+</td>
+
+<td>
+17.760
+</td>
+
+<td>
+16.25
+</td>
+
+<td>
+56.663
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="code-11" class="section level4 unnumbered">
+<h4>Code<a class="anchor" aria-label="anchor" href="#code-11"><i class="fas fa-link"></i></a>
+</h4>
+<p>Another <strong>extremely</strong> powerful feature of Pandas is its ability to group items according to categories and then calculate values for those groupes.</p>
+<p>You can apply the ‘in-built’ function (<code>count()</code>, <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>, <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>, <code><a href="https://rdrr.io/r/stats/median.html">median()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">min()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code>, <code><a href="https://rdrr.io/r/base/mode.html">mode()</a></code>, <code>std()</code>, <code><a href="https://rdrr.io/r/stats/cor.html">var()</a></code>) directly to the groups. However, the real power of grouping comes with using <code>agg()</code> to apply any function.</p>
+<div id="what-are-the-means-of-the-scores-for-the-various-test-according-to-major" class="section level5 unnumbered">
+<h5>What are the means of the scores for the various test, according to Major<a class="anchor" aria-label="anchor" href="#what-are-the-means-of-the-scores-for-the-various-test-according-to-major"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="the-power-of-dataframes.html#cb41-1" aria-hidden="true" tabindex="-1"></a>df.groupby(by<span class="op">=</span><span class="st">'Major'</span>).mean().<span class="bu">round</span>(<span class="dv">2</span>)</span></code></pre></div>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+<th>
+Total (100%)
+</th>
+
+</tr>
+<tr>
+<th>
+Major
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+Chemistry
+</th>
+
+<td>
+14.08
+</td>
+
+<td>
+16.84
+</td>
+
+<td>
+36.09
+</td>
+
+<td>
+67.01
+</td>
+
+</tr>
+<tr>
+<th>
+Comp. Biology
+</th>
+
+<td>
+16.53
+</td>
+
+<td>
+10.28
+</td>
+
+<td>
+0.00
+</td>
+
+<td>
+26.81
+</td>
+
+</tr>
+<tr>
+<th>
+Life Sciences
+</th>
+
+<td>
+19.24
+</td>
+
+<td>
+14.69
+</td>
+
+<td>
+31.25
+</td>
+
+<td>
+65.18
+</td>
+
+</tr>
+<tr>
+<th>
+Physics
+</th>
+
+<td>
+17.76
+</td>
+
+<td>
+16.18
+</td>
+
+<td>
+27.81
+</td>
+
+<td>
+61.75
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="what-are-the-means-of-the-scores-for-the-various-tests-according-to-gender." class="section level5 unnumbered">
+<h5>What are the means of the scores for the various tests, according to Gender.<a class="anchor" aria-label="anchor" href="#what-are-the-means-of-the-scores-for-the-various-tests-according-to-gender."><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="the-power-of-dataframes.html#cb42-1" aria-hidden="true" tabindex="-1"></a>df.groupby(by<span class="op">=</span><span class="st">'Gender'</span>).mean().<span class="bu">round</span>(<span class="dv">2</span>)</span></code></pre></div>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+<th>
+Total (100%)
+</th>
+
+</tr>
+<tr>
+<th>
+Gender
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+Female
+</th>
+
+<td>
+17.47
+</td>
+
+<td>
+14.91
+</td>
+
+<td>
+29.63
+</td>
+
+<td>
+62.01
+</td>
+
+</tr>
+<tr>
+<th>
+Male
+</th>
+
+<td>
+17.48
+</td>
+
+<td>
+16.18
+</td>
+
+<td>
+30.90
+</td>
+
+<td>
+64.57
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="what-are-the-means-of-the-scores-for-the-various-tests-according-to-major-gender." class="section level5 unnumbered">
+<h5>What are the means of the scores for the various tests, according to Major &amp; Gender.<a class="anchor" aria-label="anchor" href="#what-are-the-means-of-the-scores-for-the-various-tests-according-to-major-gender."><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="the-power-of-dataframes.html#cb43-1" aria-hidden="true" tabindex="-1"></a>df.groupby(by<span class="op">=</span>[<span class="st">'Major'</span>,<span class="st">'Gender'</span>]).mean().<span class="bu">round</span>(<span class="dv">2</span>)</span></code></pre></div>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+Test 1 (30%)
+</th>
+
+<th>
+Test 2 (20%)
+</th>
+
+<th>
+Test 3 (50%)
+</th>
+
+<th>
+Total (100%)
+</th>
+
+</tr>
+<tr>
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<th rowspan="2" valign="top">
+Chemistry
+</th>
+
+<th>
+Female
+</th>
+
+<td>
+14.08
+</td>
+
+<td>
+16.36
+</td>
+
+<td>
+36.25
+</td>
+
+<td>
+66.70
+</td>
+
+</tr>
+<tr>
+<th>
+Male
+</th>
+
+<td>
+14.08
+</td>
+
+<td>
+17.63
+</td>
+
+<td>
+35.83
+</td>
+
+<td>
+67.54
+</td>
+
+</tr>
+<tr>
+<th>
+Comp. Biology
+</th>
+
+<th>
+Female
+</th>
+
+<td>
+16.53
+</td>
+
+<td>
+10.28
+</td>
+
+<td>
+0.00
+</td>
+
+<td>
+26.81
+</td>
+
+</tr>
+<tr>
+<th rowspan="2" valign="top">
+Life Sciences
+</th>
+
+<th>
+Female
+</th>
+
+<td>
+18.84
+</td>
+
+<td>
+14.68
+</td>
+
+<td>
+33.61
+</td>
+
+<td>
+67.13
+</td>
+
+</tr>
+<tr>
+<th>
+Male
+</th>
+
+<td>
+19.96
+</td>
+
+<td>
+14.72
+</td>
+
+<td>
+27.00
+</td>
+
+<td>
+61.67
+</td>
+
+</tr>
+<tr>
+<th rowspan="2" valign="top">
+Physics
+</th>
+
+<th>
+Female
+</th>
+
+<td>
+20.20
+</td>
+
+<td>
+14.68
+</td>
+
+<td>
+10.00
+</td>
+
+<td>
+44.89
+</td>
+
+</tr>
+<tr>
+<th>
+Male
+</th>
+
+<td>
+17.27
+</td>
+
+<td>
+16.48
+</td>
+
+<td>
+31.38
+</td>
+
+<td>
+65.12
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+</div>
+<div id="lets-use-mean-and-std-that-belongs-to-numpy" class="section level5 unnumbered">
+<h5>Let’s use <code>mean()</code> and <code>std()</code> that belongs to <code>numpy</code><a class="anchor" aria-label="anchor" href="#lets-use-mean-and-std-that-belongs-to-numpy"><i class="fas fa-link"></i></a>
+</h5>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="the-power-of-dataframes.html#cb44-1" aria-hidden="true" tabindex="-1"></a>df.groupby(by<span class="op">=</span>[<span class="st">'Major'</span>,<span class="st">'Gender'</span>]).agg([np.mean, np.std]).<span class="bu">round</span>(<span class="dv">2</span>)</span></code></pre></div>
+’
+<div class="inline-table"><table border="1" class="dataframe">
+<thead>
+<tr>
+<th>
+</th>
+
+<th>
+</th>
+
+<th colspan="2" halign="left">
+Test 1 (30%)
+</th>
+
+<th colspan="2" halign="left">
+Test 2 (20%)
+</th>
+
+<th colspan="2" halign="left">
+Test 3 (50%)
+</th>
+
+<th colspan="2" halign="left">
+Total (100%)
+</th>
+
+</tr>
+<tr>
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+mean
+</th>
+
+<th>
+std
+</th>
+
+<th>
+mean
+</th>
+
+<th>
+std
+</th>
+
+<th>
+mean
+</th>
+
+<th>
+std
+</th>
+
+<th>
+mean
+</th>
+
+<th>
+std
+</th>
+
+</tr>
+<tr>
+<th>
+Major
+</th>
+
+<th>
+Gender
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+<th>
+</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<th rowspan="2" valign="top">
+Chemistry
+</th>
+
+<th>
+Female
+</th>
+
+<td>
+14.08
+</td>
+
+<td>
+8.63
+</td>
+
+<td>
+16.36
+</td>
+
+<td>
+1.14
+</td>
+
+<td>
+36.25
+</td>
+
+<td>
+11.83
+</td>
+
+<td>
+66.70
+</td>
+
+<td>
+17.13
+</td>
+
+</tr>
+<tr>
+<th>
+Male
+</th>
+
+<td>
+14.08
+</td>
+
+<td>
+12.50
+</td>
+
+<td>
+17.63
+</td>
+
+<td>
+0.82
+</td>
+
+<td>
+35.83
+</td>
+
+<td>
+3.15
+</td>
+
+<td>
+67.54
+</td>
+
+<td>
+9.06
+</td>
+
+</tr>
+<tr>
+<th>
+Comp. Biology
+</th>
+
+<th>
+Female
+</th>
+
+<td>
+16.53
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+10.28
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+0.00
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+26.81
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+<tr>
+<th rowspan="2" valign="top">
+Life Sciences
+</th>
+
+<th>
+Female
+</th>
+
+<td>
+18.84
+</td>
+
+<td>
+2.35
+</td>
+
+<td>
+14.68
+</td>
+
+<td>
+2.47
+</td>
+
+<td>
+33.61
+</td>
+
+<td>
+10.28
+</td>
+
+<td>
+67.13
+</td>
+
+<td>
+8.06
+</td>
+
+</tr>
+<tr>
+<th>
+Male
+</th>
+
+<td>
+19.96
+</td>
+
+<td>
+3.89
+</td>
+
+<td>
+14.72
+</td>
+
+<td>
+2.45
+</td>
+
+<td>
+27.00
+</td>
+
+<td>
+17.91
+</td>
+
+<td>
+61.67
+</td>
+
+<td>
+21.03
+</td>
+
+</tr>
+<tr>
+<th rowspan="2" valign="top">
+Physics
+</th>
+
+<th>
+Female
+</th>
+
+<td>
+20.20
+</td>
+
+<td>
+0.87
+</td>
+
+<td>
+14.68
+</td>
+
+<td>
+0.00
+</td>
+
+<td>
+10.00
+</td>
+
+<td>
+14.14
+</td>
+
+<td>
+44.89
+</td>
+
+<td>
+15.01
+</td>
+
+</tr>
+<tr>
+<th>
+Male
+</th>
+
+<td>
+17.27
+</td>
+
+<td>
+4.29
+</td>
+
+<td>
+16.48
+</td>
+
+<td>
+1.66
+</td>
+
+<td>
+31.38
+</td>
+
+<td>
+12.85
+</td>
+
+<td>
+65.12
+</td>
+
+<td>
+10.41
+</td>
+
+</tr>
+</tbody>
+</table></div>
+<p>’</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="basic-plotting-with-matplotlib.html"><span class="header-section-number">6</span> Basic Plotting with matplotlib</a></div>
+<div class="next"><a href="using-pandas-to-explore-data.html"><span class="header-section-number">8</span> Using Pandas to Explore Data</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-power-of-dataframes"><span class="header-section-number">7</span> The Power of Dataframes</a></li>
+<li>
+<a class="nav-link" href="#just-enough">Just enough</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#exercise-1-uploding-files-to-colab"> Exercise 1  Uploding Files to Colab</a></li>
+<li><a class="nav-link" href="#exercise-2-some-housekeeping"> Exercise 2  Some Housekeeping</a></li>
+<li><a class="nav-link" href="#example-1-housekeeping-round-2-rename-stuff">Example 1  Housekeeping Round 2 : Rename stuff</a></li>
+<li><a class="nav-link" href="#example-2-housekeeping-round-3-missing-numbers">Example 2  Housekeeping Round 3 : Missing Numbers</a></li>
+<li><a class="nav-link" href="#example-3-adding-new-columns">Example 3  Adding New Columns</a></li>
+<li><a class="nav-link" href="#exercise-3-is-maryjane-and-ronin-in-the-class"> Exercise 3  Is Maryjane and Ronin in the class?</a></li>
+<li><a class="nav-link" href="#example-4-moving-around-and-asking-questions">Example 4  Moving Around and Asking Questions</a></li>
+<li><a class="nav-link" href="#exercise-4-physics-students-with-less-that-60"> Exercise 4  Physics students with less that 60%</a></li>
+<li><a class="nav-link" href="#example-5-grouping">Example 5  Grouping</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>TFI e-Workshop | Using Python To Tell Stories With Data</strong>" was written by SPS Science Communication Team. It was last built on 2021-09-18.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
