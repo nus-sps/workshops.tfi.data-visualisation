@@ -1,4 +1,4 @@
-# Using Pandas to Explore Data EX
+# Using Pandas to Explore Data Exercises
 In this chapter you will use the package `pandas` to do some exploratory plots on a dataset containing `Gender`, `Preparation.course.completion` and, various test scores. The dataset is an edited version from [Kaggle](https://www.kaggle.com/spscientist/students-performance-in-exams) where we trimmed to 200 total rows and reduced some columns.
 
 Imagine you are a teacher and want to investigate the effectiveness of a test preparation course you have developed (`test.preparation.course`). You have randomly selected 200 students to either take this course or to not take the course. Their `scores` have also been recorded.
