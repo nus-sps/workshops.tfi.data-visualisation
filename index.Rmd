@@ -43,6 +43,7 @@ xaringanExtra::use_panelset()
 library(reticulate)
 library(readr)
 library(kableExtra)
+library(fontawesome)
 
 if (Sys.info()['nodename'] == 'giskard.local'){
   use_python('/usr/local/bin/python')

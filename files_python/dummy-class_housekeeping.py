@@ -9,15 +9,17 @@ df = pd.read_excel('dummy_class.xls')
 
   Starting with the code above, answer the questions in the following table using the Pandas command indicated.
 
-  | Question                                        |                        Possible code                         |
-| ----------------------------------------------- | :----------------------------------------------------------: |
-| How many rows and columns are there?            |                          `df.shape`                          |
-| What are the names of the columns?              |                         `df.colmns`                          |
-| Can we look at a sample of the data             |                 `df.head()`<br />`df.tail()`                 |
-| What type of data is contained?                 |                         `df.info()`                          |
-| Can we have descriptive statistics of the data? |                       `df.describe()`                        |
-| What are the unique values in a column?        |                  `df[column_name].unique()`                  |
-| How many unique values are there?               |               `df[column_name].value_counts()`               |
+|      | Question                                        |          Possible code           |
+| :--: | ----------------------------------------------- | :------------------------------: |
+|  1.  | How many rows and columns are there?            |            `df.shape`            |
+|  2.  | What are the names of the columns?              |           `df.colmns`            |
+|  3.  | Can we look at a sample of the data             |   `df.head()`<br />`df.tail()`   |
+|  4.  | What type of data is contained?                 |           `df.info()`            |
+|  5.  | Can we have descriptive statistics of the data? |         `df.describe()`          |
+|  6.  | What are the unique values in a column?         |    `df[column_name].unique()`    |
+|  7.  | How many unique values are there?               | `df[column_name].value_counts()` |
+
+
 '''
 
 # %% Solution

@@ -17,7 +17,6 @@ To learn the power of Pandas, we will use a dataset of test scores for a dummy c
 #### Task {-}
 
 Although Pandas can read the file directly over the internet, it will be good for us to learn how to upload files to Colab.<br>
-So,
 
 1. Download the `xls` file from the following link by right-clicking and using 'Save as...'<br>
 `r file_link`.
@@ -29,9 +28,10 @@ So,
     pd.read_excel('dummy_class.xls')
     ```
 
-  Now we are ready to start exploring the Pandas by exploring the dataset. It is best practice to first understand what kind of dataset you are dealing with. So, lets do some data 'house keeping'!
+  Now we are ready to start exploring the Pandas by exploring the dataset!
+  It is always best to first understand what kind of dataset you are dealing with. So, lets do some data 'house keeping'!
 
-`r my_fun.exercise('Uploding Files to Colab')`
+`r my_fun.exercise('Some Housekeeping')`
 
 ```{python,results='asis',echo=F,cache=F}
 from my_functions import render_python
@@ -55,13 +55,20 @@ import pandas as pd
 df=pd.read_excel('files/dummy_class.xls')
 df.drop(columns = ['Unnamed: 0'],inplace=True)
 df.fillna(0,inplace=True)
-df.head(15).to_html()
+df.iloc[10:20].to_html()
 ```
 
-#### Tasks {-}
+#### Code {-}
 
-Missing numbers are common in real datasets. It is important to have a policy on how you deal with them. Let's fill the missing numbers with 0 for our class.
-But, we first lets see how to locate missing data.
+Missing numbers are common in real datasets. Therefore, it is important to have a policy on how you deal with them. So, let's fill the missing numbers with 0 for our class. But, first, let's see how to locate missing data.
+
+**Note: ** Pandas uses `na` and `NaN` to represent missing numbers.
+
+1. Check if there are missing numbers by using `info()`
+1. Use `isna()` and `any()` to locate:
+  1. All the missing numbers in the dataframe.
+  1. Any columns with missing numbers
+  1. Any rows with missing numbers
 
 <!-- We can do a few things about missing data. -->
 <!-- 1. Remove the entry with the missing data -->
@@ -71,15 +78,21 @@ But, we first lets see how to locate missing data.
 
 <!-- Let see how we can do these. But, we first lets see how to locate missing data. -->
 
-
-#### Code {-}
-
 ```{python,echo=F}
 import pandas as pd
 df=pd.read_excel('files/dummy_class.xls')
 df.drop(columns = ['Unnamed: 0'],inplace=True)
 
 ```
+
+##### How many missing numbers do we have? {-}   
+
+```{python}
+# How many missing numbers?
+df.info()
+```
+
+##### Missing everywhere {-}
 
 ```{python, eval=F}
 # Missing everywhere
@@ -90,20 +103,21 @@ df.isna()
 df.isna().head().to_html()           
 ```
 
-
-Shows columns that have missing values   
+##### Shows columns that have missing values {-}   
 
 ```{python}
+# Columns with missing numbers
 df.isna().any(axis=0)  
 ```
 
-Shows rows that have missing values
+##### Shows rows that have missing values {-}
 
 ```{python}
+# Rows with missing numbers
 df.isna().any(axis=1).head(20)
 ```
 
-Show the rows that have missing values
+##### Show the rows that have missing values {-}
 
 ```{python,eval=F}
 mask = df.isna().any(axis=1)
@@ -115,7 +129,7 @@ mask = df.isna().any(axis=1)
 df[mask].to_html()
 ```
 
-Replace values with 0
+##### Replace values with 0 {-}
 
 ```{python,eval=F}
 df.fillna(0,inplace=True)
@@ -126,7 +140,30 @@ df.fillna(0,inplace=True)
 df.to_html()
 ```
 
-`r my_fun.exercise('Find a student')`
+<!-- ---------------------- -->
+`r my_fun.example('Adding New Columns')`
+
+#### Results {-}
+
+```{python,echo=F,results='asis'}
+import pandas as pd
+df=pd.read_excel('files/dummy_class.xls')
+df.drop(columns = ['Unnamed: 0'],inplace=True)
+df['Total (100%)'] = df['Test 1 (30%)'] +	df['Test 2 (20%)'] +	df['Test 3 (50%)']
+df.head().to_html()
+```
+
+#### Code {-}
+
+It is **very** easy to add columns with Pandas. Let's add a column for the total of the test scores.
+
+```{python,eval=F}
+df['Total (100%)'] = df['Test 1 (30%)'] +	df['Test 2 (20%)'] + df['Test 3 (50%)']
+df.head()
+```
+
+<!-- ---------------------- -->
+`r my_fun.exercise('Is Maryjane and Ronin in the class?')`
 
 #### Results {-}
 
@@ -142,7 +179,7 @@ df[mask].to_html()
 #### Tasks {-}
 
 1. Use the 'hidden' function `isin()` to find out if **Maryjane Sandoval** and **Ronin Christian** are in the class?
-1. Locate the corresponding rows in the dataframe
+1. Use a mask to locate the corresponding rows in the dataframe.
 
 #### Solution {-}
 
@@ -161,12 +198,26 @@ mask=df.isin(students).any(axis=1)
 df[mask]
 ```
 
-`r my_fun.example('Moving Around')`
+`r my_fun.example('Moving Around and Asking Questions')`
 
 ```{python,echo=F}
 import pandas as pd
 df=pd.read_excel('files/dummy_class.xls')
 df.drop(columns = ['Unnamed: 0'],inplace=True)
+
+my_to_replace = {
+    'PHY': 'Physics',
+    'CHM': 'Chemistry',
+    'LS': 'Life Sciences',
+    'CBIO': 'Comp. Biology',
+    'F': 'Female',
+    'M': 'Male'
+}
+
+df.fillna(0,inplace=True)
+
+df.replace(my_to_replace,inplace=True)
+
 ```
 
 #### Results {-}
@@ -178,33 +229,171 @@ df[mask].to_html()
 
 #### Tasks {-}
 
-1. Show rows 5 to 10 for columns 3 to 5
+One of the most powerful features of Pandas is how easy it is to find subsets of data that satisfy one or more conditions.
+
+1. Show columns 'Name' and 'Major'.
+1. Show rows 5 to 10 for columns 3 to 5.
 1. What are the names of the female students?
-1. What are the names of the female students studying chemsitry?
+1. What are the names of the female students **and** studying chemsitry?
 
 #### Code {-}
+
+
+
+Pandas offers us two ways (`loc` and `iloc`) to 'move around' in a dataframe.
 
 | How                                        | Command  |
 | ------------------------------------------ | :------: |
 | By specifying a name                       | `loc[]`  |
 | By specifying a row number (starting at 0) | `iloc[]` |
 
+##### Show columns 'Name' and 'Major'. {-}
 
-Show rows 5 to 10 for columns 3 to 5
+```{python}
+df.loc[:,['Name', 'Major']]
+```
+
+This will work too.
+```{python,eval=F}
+df[['Name', 'Major']]
+```
+
+##### Show rows 5 to 10 for columns 3 to 5 {-}
 
 ```{python}
 df.iloc[5:11,3:6]
 ```
 
-What are the names of the female students?
+##### What are the names of the female students? {-}
 
 ```{python}
-mask = df['Gender'] == 'F'
-df.loc[mask,['Name']]
+mask = df['Gender'] == 'Female'                 # Asking a question.
+df.loc[mask,['Name','Gender']]
 ```
 
-What are the names of the female students studying chemistry?
+##### What are the names of the female students studying chemistry? {-}
 
-```{python}
-mask = (df['Gender'] == 'F') & (df['Major'] == 'CHM')
+You can combine the use of `==` with the **and** (`&`) or the **or** (`|`) operator.
+
+```{python,eval=F}
+mask = (df['Gender'] == 'Female') & (df['Major'] == 'Chemistry')
+df[mask]
+```
+
+```{python,echo=F,results='asis'}
+mask = (df['Gender'] == 'Female') & (df['Major'] == 'Chemistry')
+df[mask].to_html()
+```
+
+<!-- ---------------------- -->
+`r my_fun.exercise('Physics students with less that 60%')`
+
+#### Results {-}
+
+```{python,echo=F,results='asis'}
+import pandas as pd
+link = 'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls'
+
+df = pd.read_excel(link)
+my_to_replace = {
+    'PHY': 'Physics',
+    'CHM': 'Chemistry',
+    'LS': 'Life Sciences',
+    'CBIO': 'Comp. Biology',
+    'F': 'Female',
+    'M': 'Male'
+}
+
+df.replace(to_replace=my_to_replace, inplace=True)
+my_to_drop = 'Unnamed: 0'
+df.drop(columns=my_to_drop, inplace=True)
+df.fillna(0, inplace=True)
+df['Total (100%)'] = df['Test 1 (30%)'] +	df['Test 2 (20%)'] +	df['Test 3 (50%)']
+mask = (df['Major'] == 'Physics') & (df['Total (100%)'] <= 60)
+df[mask].to_html()
+```
+
+#### Tasks {-}
+
+Who are the Physics studnets with less than a total of 60%?
+
+#### Solution {-}
+
+```{python,eval=F}
+mask = (df['Major'] == 'Physics') & (df['Total (100%)'] <= 60)
+df[mask]
+```
+
+`r my_fun.example('Grouping')`
+
+#### Results {-}
+
+```{python,echo=F,results='asis'}
+import pandas as pd
+import numpy as np
+link = 'https://raw.githubusercontent.com/nus-sps/workshops.tfi.data-visualisation/main/files/dummy_class.xls'
+
+df = pd.read_excel(link)
+my_to_replace = {
+    'PHY': 'Physics',
+    'CHM': 'Chemistry',
+    'LS': 'Life Sciences',
+    'CBIO': 'Comp. Biology',
+    'F': 'Female',
+    'M': 'Male'
+}
+
+df.replace(to_replace=my_to_replace, inplace=True)
+my_to_drop = 'Unnamed: 0'
+df.drop(columns=my_to_drop, inplace=True)
+df.fillna(0, inplace=True)
+df['Total (100%)'] = df['Test 1 (30%)'] +	df['Test 2 (20%)'] +	df['Test 3 (50%)']
+mask = (df['Major'] == 'Physics') & (df['Total (100%)'] <= 60)
+df[mask].to_html()
+```
+
+#### Code {-}
+
+Another **extremely** powerful feature of Pandas is its ability to group items according to categories and then calculate values for those groupes.
+
+You can apply the 'in-built' function (`count()`, `sum()`, `mean()`, `median()`, `min()`, `max()`, `mode()`, `std()`, `var()`) directly to the groups. However, the real power of grouping comes with using `agg()` to apply any function.
+
+##### What are the means of the scores for the various test, according to Major {-}
+
+```{python,eval=F}
+df.groupby(by='Major').mean().round(2)
+```
+
+```{python,echo=F,results='asis'}
+df.groupby(by='Major').mean().round(2).to_html()
+```
+
+
+##### What are the means of the scores for the various tests, according to Gender. {-}
+```{python,eval=F}
+df.groupby(by='Gender').mean().round(2)
+```
+
+```{python,echo=F,results='asis'}
+df.groupby(by='Gender').mean().round(2).to_html()
+```
+
+
+#####  What are the means of the scores for the various tests, according to Major & Gender. {-}
+```{python,eval=F}
+df.groupby(by=['Major','Gender']).mean().round(2)
+```
+
+```{python,echo=F,results='asis'}
+df.groupby(by=['Major','Gender']).mean().round(2).to_html()
+```
+
+#####  Let's use `mean()` and `std()` that belongs to `numpy` {-}
+
+```{python,eval=F}
+df.groupby(by=['Major','Gender']).agg([np.mean, np.std]).round(2)
+```
+
+```{python,echo=F,results='asis'}
+df.groupby(by=['Major','Gender']).agg([np.mean, np.std]).round(2).to_html()
 ```
