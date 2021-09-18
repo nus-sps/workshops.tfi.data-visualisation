@@ -21,7 +21,7 @@ df = pd.read_csv(link) # Hide
 df_dropped = df.drop(columns = ['lunch', 'gender']) # Hide
 
 #Plotting boxplot
-ax = df.boxplot('math.score', by='test.preparation.course')
+ax = df_dropped.boxplot('math.score', by='test.preparation.course')
 ax.grid(alpha = 0.25)
 
 # Don't forget to add the labels for clarity!

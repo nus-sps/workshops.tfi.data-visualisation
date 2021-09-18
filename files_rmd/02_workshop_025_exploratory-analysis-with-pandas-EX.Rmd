@@ -29,7 +29,7 @@ Now that you know that the test preparation course does not really help students
 
 Maybe it is possible to help someone on another test depending on how they are doing with the other tests.
 
-`r my_fun.example('Scatterplot')`
+`r my_fun.exercise('Scatterplot')`
 
 ```{python,results='asis',echo=F,cache=F}
 from my_functions import render_python
