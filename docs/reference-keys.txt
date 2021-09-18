@@ -30,9 +30,13 @@ barcharts
 histograms
 scatterplots
 boxplots
+using-pandas-to-explore-data-ex
+housekeeping
+boxplots-1
+scatterplot
 using-pandas-to-explore-covid-19-data
 plans-for-this-section
-housekeeping
+housekeeping-1
 exploration-of-covid19-dataset-bar-chart
 exploration-of-covid19-dataset-time-series
 exploration-of-covid19-dataset-time-series-daily-cases

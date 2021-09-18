@@ -17,7 +17,7 @@ rmd_files: [
 'files_rmd/01_pre-workshop_02_basic-pandas.Rmd',
  #'files_rmd/02_workshop_01_Exercise.Rmd',
 'files_rmd/02_workshop_02_exploratory-analysis-with-pandas.Rmd',
-# 'files_rmd/02_workshop_025_exploratory-analysis-with-pandas-EX.Rmd',
+'files_rmd/02_workshop_025_exploratory-analysis-with-pandas-EX.Rmd',
 'files_rmd/02_workshop_03_covid-19-data-with-pandas.Rmd',
 #'files_rmd/02_workshop_04_core-visualisation-concepts.Rmd'
 ]

@@ -23,20 +23,22 @@ y_2 = [0, 2, 4, 6, 8, 20]
 fig, ax1 = plt.subplots(figsize = (5,5))
 
 # Actual plotting #
-ax1.plot(x_1, y_1, marker = 'o', linestyle = '-', 
+graph1 = ax1.plot(x_1, y_1, marker = 'o', linestyle = '-', 
           color = '#08D9D6', label = 'Graph 1')
 ax1.set_xlabel('This is the x-axis', fontsize = 16)
 ax1.set_ylabel('This is the y-axis for 1!', fontsize = 16)
-ax1.legend()
 
 
 ax2 = ax1.twinx()  # Create a new Axes object which uses the same x-axis as ax1
 
 
-ax2.plot(x_2, y_2, marker = '*', markersize='5', linestyle = 'dashed',
+graph2 = ax2.plot(x_2, y_2, marker = '*', markersize='5', linestyle = 'dashed',
           color = '#FF2E63', label = 'Graph 2')
 ax2.set_ylabel('This is the y-axis for 2!', fontsize = 16)
-ax2.legend()
+
+graphs = graph1+graph2
+graphlabels = [g.get_label() for g in graphs]
+plt.legend(graphs,graphlabels,loc=9)
 
 plt.title('This is the Title!', fontsize = 20)
 plt.tight_layout()
